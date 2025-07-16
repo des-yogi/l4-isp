@@ -1,0 +1,30 @@
+.logo {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: inline-flex;
+  align-items: center;
+
+  &:hover,
+  &:focus {
+
+    svg {
+      fill: var(--blue-500);
+    }
+  }
+
+  svg {
+    width: 133px;
+    height: 44px;
+    fill: var(--text-color);
+    transition: fill $transition-time;
+
+    @media (min-width: $screen-xl) {
+      width: 169px;
+      height: 56px;
+    }
+  }
+
+  // &--light {}
+  // &--dark {}
+}

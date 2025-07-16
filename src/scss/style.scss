@@ -1,0 +1,44 @@
+/*!*
+ * ВНИМАНИЕ! Этот файл генерируется автоматически.
+ * Не пишите сюда ничего вручную, все такие правки будут потеряны.
+ * Читайте ./README.md для понимания.
+ */
+
+@import '../../node_modules/bootstrap/scss/_functions';
+@import '../../node_modules/bootstrap/scss/_variables';
+@import '../../node_modules/bootstrap/scss/_mixins';
+@import '../../node_modules/bootstrap/scss/_dropdown';
+@import '../../node_modules/bootstrap/scss/_nav';
+@import '../../node_modules/bootstrap/scss/_accordion';
+@import '../../node_modules/bootstrap/scss/_modal';
+@import '../../node_modules/bootstrap/scss/_popover';
+@import '../../node_modules/swiper/swiper-bundle.css';
+@import './src/scss/variables.scss';
+@import './src/scss/mixins.scss';
+@import './src/blocks/accordion/accordion.scss';
+@import './src/blocks/breadcrumbs/breadcrumbs.scss';
+@import './src/blocks/btn/btn.scss';
+@import './src/blocks/burger/burger.scss';
+@import './src/blocks/close/close.scss';
+@import './src/blocks/dropdown/dropdown.scss';
+@import './src/blocks/embed-responsive/embed-responsive.scss';
+@import './src/blocks/field-actions/field-actions.scss';
+@import './src/blocks/field-checkbox/field-checkbox.scss';
+@import './src/blocks/field-radio/field-radio.scss';
+@import './src/blocks/field-select/field-select.scss';
+@import './src/blocks/field-text/field-text.scss';
+@import './src/blocks/form/form.scss';
+@import './src/blocks/logo/logo.scss';
+@import './src/blocks/main-nav/main-nav.scss';
+@import './src/blocks/modal/modal.scss';
+@import './src/blocks/page/page.scss';
+@import './src/blocks/page-footer/page-footer.scss';
+@import './src/blocks/page-header/page-header.scss';
+@import './src/blocks/pagination/pagination.scss';
+@import './src/blocks/scroll-link/scroll-link.scss';
+@import './src/blocks/sprite-svg/sprite-svg.scss';
+@import './src/blocks/table/table.scss';
+@import './src/blocks/table-mobile-scroll/table-mobile-scroll.scss';
+@import './src/blocks/tabs/tabs.scss';
+@import './src/blocks/typo/typo.scss';
+@import './src/scss/print.scss';

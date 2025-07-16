@@ -1,0 +1,18 @@
+.page-header {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &--slideUp {
+    transform: translateY(-76px);
+    transition: transform .5s ease-out;
+
+    @media (min-width: $screen-xxl) {
+      transform: translateY(-90px);
+    }
+  }
+
+  &--slideDown {
+    transform: translateY(0);
+    transition: transform .5s ease-out;
+  }
+}
