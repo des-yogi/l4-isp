@@ -1,0 +1,29 @@
+<!--DEV
+@ @include('blocks/review-card/review-card.html', {
+  "rating": "5",
+  "title": "ПриватБанк",
+  "text": "<p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>",
+  "logo": "privat-bank"
+})
+-->
+
+<article class="review-card"
+         data-theme-dark="review-card--dark"
+         data-theme-light="review-card--light">
+
+  <div class="stars" style="--rating: @@rating;">
+    <p class="visually-hidden">Rating of this product is @@rating out of 5</p>
+  </div>
+
+  <h3 class="review-card__title">@@title</h3>
+
+  <div class="review-card__text">
+    @@text
+  </div>
+
+  <div class="review-card__logo">
+    <img src="img/@@logo.svg" alt="ПриватБанк лого" loading="lazy">
+    <div class="swiper-lazy-preloader"></div>
+  </div>
+
+</article>

@@ -15,14 +15,31 @@
     <div class="page__content">
       @@include('blocks/page-header/page-header.html')
 
-      <main class="main">
+      <main class="main  main--hero">
 
-        <div class="container">
+        @@include('blocks/hero/hero.html')
 
+        @@include('blocks/benefits/benefits.html')
 
-          <div class="test" data-theme-light="test--light" data-theme-dark="test--dark" style="height: 50px; margin: 50px 0;">Блок с градиентом</div>
+        @@include('blocks/сustomer-services/сustomer-services.html')
 
-        </div>
+        @@include('blocks/tariffs/tariffs.html')
+
+        @@include('blocks/sp-offers/sp-offers.html')
+
+        @@include('blocks/coverage-map/coverage-map.html')
+
+        @@include('blocks/news-slider/news-slider.html')
+
+        @@include('blocks/connection-form/connection-form.html')
+
+        @@include('blocks/app-l4/app-l4.html')
+
+        @@include('blocks/reviews-slider/reviews-slider.html')
+
+        @@include('blocks/faq/faq.html')
+
+        @@include('blocks/customer-choice/customer-choice.html')
 
       </main>
 
@@ -33,6 +50,102 @@
     </div>
 
   </div>
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+ <script type="module">
+    import { DotLottie } from "https://esm.sh/@lottiefiles/dotlottie-web";
+
+    const canvases = document.querySelectorAll(".lottie-player");
+
+    if (canvases.length > 0) {
+      canvases.forEach(canvas => {
+        const src = canvas.dataset.src;
+        if (src) {
+          const fit = canvas.dataset.fit || "cover";
+          const alignRaw = canvas.dataset.align || "0.5,0.5";
+          const align = alignRaw.split(",").map(Number);
+
+          const dotLottie = new DotLottie({
+            canvas,
+            src,
+            loop: true,
+            autoplay: true,
+            layout: {
+              fit,
+              align
+            }
+          });
+        }
+      });
+    }
+  </script>
+
+  <!-- Lazy loading animation -->
+  <!-- <script type="module">
+    import { DotLottie } from "https://esm.sh/@lottiefiles/dotlottie-web";
+
+    // Функция инициализации анимации (как у тебя)
+    function initLottieAnimation(canvas) {
+      const src = canvas.dataset.src;
+      if (!src) return;
+
+      const fit = canvas.dataset.fit || "cover";
+      const alignRaw = canvas.dataset.align || "0.5,0.5";
+      const align = alignRaw.split(",").map(Number);
+
+      new DotLottie({
+        canvas,
+        src,
+        loop: true,
+        autoplay: true,
+        layout: {
+          fit,
+          align
+        }
+      });
+      // После инициализации убираем .lazy (чтобы не пересекалось повторно)
+      canvas.classList.remove("lazy");
+    }
+
+    // Для lazy-анимаций — через IntersectionObserver
+    const lazyCanvases = document.querySelectorAll(".lottie-player.lazy");
+    if ('IntersectionObserver' in window && lazyCanvases.length > 0) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            initLottieAnimation(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: "200px 0px", // Можно подгружать заранее, за 200px до вьюпорта
+        threshold: 0.1
+      });
+
+      lazyCanvases.forEach(canvas => observer.observe(canvas));
+    }
+
+    // Для обычных (не lazy) — стандартная инициализация
+    document.querySelectorAll(".lottie-player:not(.lazy)").forEach(initLottieAnimation);
+  </script> -->
+
+  <!-- Scripts map initialization Start -->
+  <script>
+    const apiKeyLocal = 'AIzaSyBqO-iJGp0LsZjKZrNhIjodnrqgxD7vVWU';
+
+    (g=>{ var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={ });var d=b.maps||(b.maps={ }),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{ await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${ c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: apiKeyLocal,
+      v: "weekly",
+    });
+  </script>
+
+  <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+  <!-- Scripts map initialization End -->
 
   @@include('_include/page_bottom.html')
 

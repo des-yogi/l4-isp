@@ -1,0 +1,27 @@
+<!--DEV
+@ @include('blocks/sp-offer-card/sp-offer-card.html', {
+  "img": "image-4x3-1",
+  "title": "Акція 5+1!"
+})
+-->
+
+<article class="sp-offer-card">
+  <h3 class="sp-offer-card__title">
+    <span>@@title</span>
+  </h3>
+  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
+    <picture>
+      <source srcset="img/@@img.webp,
+                      img/@@img.webp 2x" type="image/webp">
+      <img src="img/@@img.jpg"
+           srcset="img/@@img.jpg,
+                   img/@@img.jpg 2x"
+           alt='Alt text'
+           width="382"
+           height="287"
+           loading="lazy">
+    </picture>
+    <!-- 382x287, 458x344  2x -->
+  </a>
+  <div class="swiper-lazy-preloader"></div>
+</article>

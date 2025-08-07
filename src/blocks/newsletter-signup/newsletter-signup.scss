@@ -1,0 +1,88 @@
+.newsletter-signup {
+  $block-name:                &; // #{$block-name}__element
+
+  padding: 24px 16px;
+  backdrop-filter: blur(10px);
+
+  @media (min-width: $screen-xl) {
+    padding: 24px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    padding: 40px;
+  }
+
+  &__header {
+    margin-bottom: 16px;
+
+    p {
+      color: var(--text-pale-color);
+    }
+  }
+
+  // &__title {
+
+  // }
+
+  &__form {
+    margin-bottom: 16px;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px 24px;
+
+    .btn {
+      flex: 0 0 160px;
+
+      @media (min-width: $screen-md) {
+        max-width: 160px;
+      }
+
+      @media (max-width: $screen-xl - 1) {
+        flex: 1 1;
+        width: 100%;
+      }
+    }
+
+    .field-text {
+      flex: 1 1 auto;
+      min-width: 250px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__warning {
+    font-size: $font-size-sm;
+  }
+
+  &--dark {
+    // #{$block-name}__element
+    @include gradient-border-mask(
+      2px,
+      $border-radius--16,
+      var(--border-gradient-10),
+      var(--opacity-blue-20)
+    )
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1),
+                0 15px 30px 0 rgba(0, 0, 0, 0.1),
+                0 20px 40px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &--light {
+    @include gradient-border-mask(
+      2px,
+      $border-radius--16,
+      var(--border-gradient-10),
+      var(--opacity-blue-12)
+    )
+    box-shadow: 0 59px 17px 0 rgba(20, 122, 255, 0),
+                0 38px 15px 0 rgba(20, 122, 255, 0.02),
+                0 21px 13px 0 rgba(20, 122, 255, 0.08),
+                0 10px 10px 0 rgba(20, 122, 255, 0.13),
+                0 2px 5px 0 rgba(20, 122, 255, 0.15);
+  }
+}

@@ -1,0 +1,81 @@
+.faq {
+  @include block-margin;
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+  }
+
+  &__header-wrapper  {
+
+  }
+
+  &__header-col {
+    @include col(xs, 12);
+    @include col(md, 12);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    color: var(--text-color);
+
+    span  {
+      color: var(--blue-500);
+    }
+  }
+
+  &__intro {
+    color: var(--text-pale-color);
+
+    p {
+      hyphens: none;
+      text-wrap: balance;
+    }
+  }
+
+  &__body {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    overflow: hidden;
+  }
+
+  &--dark {
+
+    #{$block-name}__body {
+      @include gradient-border-mask(
+        2px,
+        0,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+
+      &::before {
+        inset: 0 -2px 0 -2px;
+      }
+    }
+  }
+
+  &--light {
+
+    #{$block-name}__body {
+      @include gradient-border-mask(
+        2px,
+        0,
+        var(--blue-150),
+        var(--blue-50)
+      )
+
+      &::before {
+        inset: 0 -2px 0 -2px;
+      }
+    }
+  }
+}

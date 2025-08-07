@@ -1,57 +1,47 @@
-// В этом файле должны быть стили для БЭМ-блока table, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, $media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-$gray-lightest:               hsl(0, 0%, 90%) !default;
-
-$text-color--muted:           hsl(0, 0%, 50%) !default;
-
-$border-color:                hsl(0, 0%, 60%) !default;
-
-$font-size--small:            0.75em !default;
-
-$line-height:                 1.375em !default;
-
-$field-padding-vertical:      0.3em !default;
-$field-padding-horizontal:    0.7em !default;
-
+table,
 .table {
 
   $block-name:                &; // #{$block-name}__element
 
   table-layout: fixed;
-  border-collapse: collapse;
+  //border-collapse: collapse;
+  border-spacing: 4px;
   width: 100%;
-  border: 1px solid $border-color;
-  margin: $line-height 0;
+  //border: 1px solid $border-color;
+  margin: 1em 0;
 
   caption {
-    padding-top: 0.4em;
-    text-align: right;
-    caption-side: bottom;
-    font-size: $font-size--small;
+    padding-bottom: 0.5em;
+    text-align: initial;
+    caption-side: top;
+    font-size: $font-size-sm;
     line-height: 1em;
-    color: $text-color--muted;
+    color: inherit;
   }
 
   td,
   th {
-    padding: $field-padding-vertical $field-padding-horizontal;
+    padding: 6px 12px;
     vertical-align: top;
-    border-bottom: 1px solid $border-color;
+    text-align: center;
+    border-radius: 6px;
+    //border-bottom: 1px solid $border-color;
 
-    &:not(:first-child) {
-      border-left: 1px solid $border-color;
-    }
+    // &:not(:first-child) {
+    //   border-left: 1px solid $border-color;
+    // }
   }
 
   th {
-    text-align: left;
+    font-weight: 500;
+    color: var(--th-color);
+    background-color: var(--th-bg-color);
   }
 
-  &__header {}
+  // tr:has(th + td)  {
 
-  &__body {}
-
-  &__footer {}
+  //   th {
+  //     background-color: red;
+  //   }
+  // }
 }

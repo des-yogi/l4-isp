@@ -17,9 +17,16 @@
   -ms-text-size-adjust: 100%; // stylelint-disable-line  property-no-vendor-prefix
   min-width: 320px;
   min-height: 100%;
+  font-size: $font-size-sm;
   scroll-behavior: smooth;
 
-  //font-size: 15px;
+  @media (min-width: $screen-md) {
+    font-size: $font-size;
+  }
+
+  @media (min-width: $screen-xxl) {
+    font-size: $font-size-lg;
+  }
 
   &__inner {
     min-height: 100vh;
@@ -35,39 +42,42 @@
     flex-shrink: 0;
   }
 
-  //Firefox only
-  /* «цвет ползунка» «цвет полосы скроллбара» */
-  scrollbar-color: $main-color $secondary-color;
-  // color1 (wdtn ползунка) color2 (цвет всего скролбара)
-  scrollbar-width: thin;  /* толщина */
+  &,
+  & * {
+    //Firefox only
+    /* «цвет ползунка» «цвет полосы скроллбара» */
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-bg-color);
+    // color1 (wdtn ползунка) color2 (цвет всего скролбара)
+    scrollbar-width: thin;  /* толщина */
 
-  //for webkit browsers (Chrome, Opera, Safary, Edge ets.)
-  //Here is a complete list of all the new pseudo-elements. All of these pseudo-elements must be prefixed with -webkit-:
-  // scrollbar
-  // scrollbar-button
-  // scrollbar-track
-  // scrollbar-track-piece
-  // scrollbar-thumb
-  // scrollbar-corner
-  // resize
+    //for webkit browsers (Chrome, Opera, Safary, Edge ets.)
+    //Here is a complete list of all the new pseudo-elements. All of these pseudo-elements must be prefixed with -webkit-:
+    // scrollbar
+    // scrollbar-button
+    // scrollbar-track
+    // scrollbar-track-piece
+    // scrollbar-thumb
+    // scrollbar-corner
+    // resize
 
-  /* полоса прокрутки (скроллбар) */
-  ::-webkit-scrollbar {
-    width: 6px; /* ширина для вертикального скролла */
-    height: 6px; /* высота для горизонтального скролла */
-    background-color: $secondary-color;
-  }
+    /* полоса прокрутки (скроллбар) */
+    ::-webkit-scrollbar {
+      width: 6px; /* ширина для вертикального скролла */
+      height: 6px; /* высота для горизонтального скролла */
+      background-color: var(--scrollbar-bg-color);
+    }
 
-  /* ползунок скроллбара */
-  ::-webkit-scrollbar-thumb {
-    background-color: $main-color;
-    border-radius: 8px;
-    box-shadow: none;
-    //box-shadow: inset 1px 1px 10px #f3faf7;
-  }
+    /* ползунок скроллбара */
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb-color);
+      border-radius: 4px;
+      box-shadow: none;
+      //box-shadow: inset 1px 1px 10px #f3faf7;
+    }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: darken($main-color, 5%);
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: var(--blue-700);
+    }
   }
 
   // Theme toggler classes - Start
@@ -188,19 +198,26 @@ svg {
   }
 }
 
+#map {
+
+  svg {
+    fill: revert-layer;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
 a {
-  color: $link-color;
+  color: var(--link-color);
   background-color: transparent;
-  transition: color 0.3s;
+  transition: color $transition-time;
 
   &:hover,
   &:focus {
-    color: $link-color--hover;
+    color: var(--link-color-hover);
   }
 
   // &:visited {
@@ -242,12 +259,12 @@ a {
 }
 
 .clearfix {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: "";
-    display: table;
+    display: ta                            ble;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -261,17 +278,21 @@ a {
   li::before {
     display: none;
   }
+
+  li {
+    margin: 0;
+  }
 }
 
 /* Кастомизируем выделение текста на сайте */
 *:not(img)::selection {
-  color: $white;
-  background-color: $main-color; /* Safari, Chrome, Opera */
+  color: var(--white);
+  background-color: var(--blue-600); /* Safari, Chrome, Opera */
 }
 
 *:not(img)::-moz-selection {
-  color: $white;
-  background-color: $main-color; /* FireFox */
+  color: var(--white);
+  background-color: var(--blue-600); /* FireFox */
 }
 
 /*
@@ -326,9 +347,6 @@ a {
 } */
 
 
-// background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);
-// background-image: svg-load('../blocks/sprite-svg/svg/phone.svg', fill=$main-color);
-
 .invisible-scrollbar {
   scrollbar-width: none;
 
@@ -337,20 +355,194 @@ a {
   }
 }
 
+.faq-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 10px;
+  margin: 0;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.publishedon {
+  display: inline-flex;
+  align-items: center;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: var(--text-color);
+
+  &:empty {
+    display: none;
+  }
+}
+
+.main {
+  padding-top: 88px;
+
+  @media (min-width: $screen-md) {
+    padding-top: calc(50px + 76px);
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: calc(50px + 86px);
+  }
+
+  &--hero {
+    padding-top: 0 !important;
+  }
+}
+
+.content {
+
+  & > *:first-child {
+    margin-top: 96px;
+    //margin-bottom: 96px;
+  }
+
+  & > *:last-child {
+    //margin-top: 96px;
+    margin-bottom: 96px;
+  }
+}
+
+.swiper-wrapper,
+.swiper-slide {
+  box-sizing: border-box;
+}
+
+.swiper-slide {
+  height: auto;
+
+  // &.swiper-slide-active {
+  // }
+}
+
+.swiper-controls {
+  display: flex;
+  //flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  //margin: 24px 0;
+
+  &:has(.swiper-button-lock) {
+    display: none;
+  }
+
+  @media (min-width: $screen-md) {
+    justify-content: initial;
+    max-width: auto;
+    width: 250px;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+  position: static;
+  left: unset;
+  right: unset;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  min-height: auto;
+  padding: 0;
+  transition: background $transition-time;
+
+  // &:hover,
+  // &:focus {
+  //   //background-color: $main-pale--hover;
+  // }
+
+  //&:active {
+    //background-color: $main-pale--active;
+  //}
+
+  &::after {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: background $transition-time;
+  }
+}
+
+.swiper-button-prev {
+
+  &::after {
+    transform: scale(-1,1);
+    background-image: svg-load('../blocks/sprite-svg/svg/right-lg.svg', fill=$white);
+  }
+
+  &:hover,
+  &:focus {
+
+    &::after {
+      background-image: svg-load('../blocks/sprite-svg/svg/right-lg.svg', fill=#277DFF) !important;
+    }
+  }
+
+  &.btn--secondary--light {
+
+    &::after {
+      background-image: svg-load('../blocks/sprite-svg/svg/right-lg.svg', fill=#121721);
+    }
+  }
+}
+
+.swiper-button-next {
+
+  &::after {
+    background-image: svg-load('../blocks/sprite-svg/svg/right-lg.svg', fill=$white);
+  }
+
+  &:hover,
+  &:focus {
+
+    &::after {
+      background-image: svg-load('../blocks/sprite-svg/svg/right-lg.svg', fill=#277DFF) !important;
+    }
+  }
+
+  &.btn--secondary--light {
+
+    &::after {
+      background-image: svg-load('../blocks/sprite-svg/svg/right-lg.svg', fill=#121721);
+    }
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0.5 !important;
+}
+
+.swiper-button-lock {
+  display: none;
+}
+
+
+// background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);
+// background-image: svg-load('../blocks/sprite-svg/svg/phone.svg', fill=$main-color);
+
+/*
 .test-col {
   @include col(xs, 12);
-  @include col(sm, 6);
-  @include col(md, 4);
-  @include col(lg, 3);
+  @include col(md, 6);
+  @include col(xl, 4);
 }
-
-.test {
-
-  &--light {
-    background: linear-gradient(180deg, rgba(0, 100, 100, 0.01) 0%, rgba(0, 100, 100, 0.2) 100%);
-  }
-
-  &--dark {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%)
-  }
-}
+*/

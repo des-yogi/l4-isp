@@ -1,0 +1,136 @@
+.service-card {
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+
+  & > * {
+    margin: 0;
+  }
+
+  &__icon {
+
+    &:empty {
+      display: none;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+      //fill:
+    }
+  }
+
+  &__title {
+    font-size: 20px !important;
+  }
+
+  &__text,
+  &__slogan {
+    font-size: $font-size;
+  }
+
+  &__text {
+    opacity: 0.9;
+  }
+
+  &__slogan {
+    font-weight: 500;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &--solid {
+
+    &#{$block-name}--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+
+      #{$block-name}__icon {
+        color: var(--blue-500);
+      }
+    }
+
+    &#{$block-name}--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--gradient-60-50),
+        var(--opacity-white-40)
+      )
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1),
+                  0 15px 30px 0 rgba(0, 0, 0, 0.1),
+                  0 20px 40px 0 rgba(0, 0, 0, 0.15);
+
+
+      #{$block-name}__icon {
+        color: var(--blue-500);
+      }
+    }
+  }
+
+  &--clear {
+
+    &#{$block-name}--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        transparent
+      )
+    }
+
+    &#{$block-name}--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--opacity-blue-20),
+        var(--opacity-white-40)
+      )
+
+      #{$block-name}__title {
+        color: var(--blue-500);
+      }
+    }
+
+    #{$block-name}__icon {
+      display: none;
+    }
+  }
+
+  &--dark {
+    @include gradient-border-mask(
+      2px,
+      $border-radius--12,
+      var(--border-gradient-10),
+      var(--opacity-blue-20)
+    )
+
+    #{$block-name}__icon {
+      color: var(--blue-500);
+    }
+  }
+
+  &--light {
+    @include gradient-border-mask(
+      2px,
+      $border-radius--12,
+      var(--blue-500),
+      linear-gradient(278deg, rgba(39, 125, 255, 0.9) 0%, rgba(39, 125, 255, 0.8) 100%)
+    )
+
+    #{$block-name}__icon {
+      color: var(--blue-900);
+    }
+  }
+}

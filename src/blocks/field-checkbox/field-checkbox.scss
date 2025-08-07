@@ -3,7 +3,7 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 
   &__title {
     display: block;
@@ -34,38 +34,44 @@
     &:hover {
 
       #{$block-name}__name-text {
-        color: $link-color--hover;
+
+        &::before {
+          border-color: var(--blue-500);
+        }
       }
     }
   }
 
   &__name-text {
-    color: $title-color;
+    color: var(--text-color);
+    user-select: none;
 
     &::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      width: 22px;
-      height: 22px;
-      border: 1px solid $border-color;
+      width: 24px;
+      height: 24px;
+      // background: var(--grey-700);
+      border: 1px solid var(--grey-900);
       border-radius: $border-radius / 2;
 
       @at-root input:checked ~ & {
-        background-color: $border-color;
+        background-color: var(--blue-500);
       }
     }
 
     @at-root input:focus ~ &::before {
       @include field-focus;
+      border-color: var(--blue-500);
     }
 
     &::after {
       content: '';
       position: absolute;
-      top: 5px;
-      left: 5px;
+      top: 6px;
+      left: 6px;
       width: 12px;
       height: 8px;
       opacity: 0;
@@ -104,5 +110,32 @@
 
   &__help-text {
     @include field-help-text;
+  }
+
+  &--dark {
+
+    #{$block-name}__name {
+
+    }
+
+    #{$block-name}__name-text {
+
+      &::before {
+        background: var(--grey-700);
+        border: 1px solid var(--grey-900);
+      }
+    }
+  }
+
+  &--light {
+
+    #{$block-name}__name-text {
+      //background: var(--white);
+      //border: 1px solid var(--blue-150);
+
+      &::before {
+        border: 1px solid var(--blue-150);
+      }
+    }
   }
 }

@@ -1,0 +1,123 @@
+<!--DEV
+@ @include('../../blocks/sp-offers/sp-offers.html')
+-->
+
+<section class="sp-offers">
+
+  <div class="container  sp-offers__header">
+    <h2 class="sp-offers__title">
+      <img src="img/fire-48.svg" alt="" width="48" height="48" loading="lazy">
+      <span>Акції</span>
+    </h2>
+    <div class="sp-offers__intro">
+      <p>В стислі терміни організовуємо стабільний доступ, що відповідає сучасним стандартам безпеки надання доступу до мережі Інтернет.</p>
+    </div>
+  </div>
+
+  <div class="swiper  sp-offers__slider">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-1",
+          "title": "Акція 5+1!"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-2",
+          "title": "Запроси друга"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-3",
+          "title": "Резервний тариф BackUP"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-4",
+          "title": "Комфортний переїзд"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-1",
+          "title": "Акція 5+1!"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-2",
+          "title": "Запроси друга"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-3",
+          "title": "Резервний тариф BackUP"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-4",
+          "title": "Комфортний переїзд"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-1",
+          "title": "Акція 5+1!"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-2",
+          "title": "Запроси друга"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-3",
+          "title": "Резервний тариф BackUP"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-4",
+          "title": "Комфортний переїзд"
+        })
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container  sp-offers__controls">
+    <div class="swiper-controls">
+      <div class="btn  btn--secondary  swiper-button-prev  sp-offers__btn-prev"
+           data-theme-dark="btn--secondary--dark"
+           data-theme-light="btn--secondary--light"></div>
+      <div class="swiper-pagination  sp-offers__pagination"></div>
+      <div class="btn  btn--secondary  swiper-button-next  sp-offers__btn-next"
+           data-theme-dark="btn--secondary--dark"
+           data-theme-light="btn--secondary--light"></div>
+    </div>
+
+    <a href="#" class="btn  btn--secondary  sp-offers__all" data-theme-dark="btn--secondary--dark" data-theme-light="btn--secondary--light">
+      <span>Усі акції</span>
+    </a>
+  </div>
+
+</section>

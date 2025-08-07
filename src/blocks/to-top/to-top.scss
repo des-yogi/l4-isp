@@ -1,0 +1,35 @@
+.to-top {
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: fixed;
+  right: 16px;
+  bottom: 32px;
+  z-index: 10;
+  width: 56px;
+  height: 56px;
+  color: transparent;
+  background-color: $secondary-color;
+  font: 0/0 a;
+  // см. img_to_bg/to-up.svg
+  // http://yoksel.github.io/url-encoder/ru/
+  background-size: 30px;
+  //background-image: svg-load('../blocks/sprite-svg/svg/chevron-down.svg', fill=$white);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid $white;
+  border-radius: $border-radius;
+  transform: rotate(180deg);
+
+  .js & {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+

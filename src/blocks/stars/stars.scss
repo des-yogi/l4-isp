@@ -1,0 +1,41 @@
+:root {
+  --star-size: 30px;
+  --star-color: var(--grey-300);
+  --star-background: var(--yellow);
+}
+
+.stars {
+
+  $block-name:                &; // #{$block-name}__element
+
+  --percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--star-size);
+  font-family: $font-family; // make sure ★ appears correctly
+  line-height: 1;
+
+  &::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(to right, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  // &__score {
+  //   font-size: 16px;
+  //   font-weight: 700;
+  //   color: $main-color;
+
+  //   @media (min-width: $screen-xxl) {
+  //     font-size: 18px;
+  //   }
+
+  //   &:empty {
+  //     display: none;
+  //   }
+  // }
+}

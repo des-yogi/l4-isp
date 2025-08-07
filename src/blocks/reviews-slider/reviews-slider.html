@@ -1,0 +1,112 @@
+<!--DEV
+@ @include('blocks/reviews-slider/reviews-slider.html')
+-->
+
+<section class="reviews-slider"
+         data-theme-dark="reviews-slider--dark"
+         data-theme-light="reviews-slider--light">
+
+  <div class="container  reviews-slider__header">
+    <h2 class="reviews-slider__title">Що кажуть наші клієнти?</h2>
+    <div class="reviews-slider__intro">
+      <p>Ми відкриті до співпраці з інтеграторами та брендами, щоб разом створювати якісні технологічні рішення. Наша команда забезпечує стабільне підключення, гнучкі умови партнерства та індивідуальний підхід до кожного проєкту.</p>
+      <p><strong>Якщо ви шукаєте надійного партнера для впровадження передових рішень – ми готові до співпраці!</strong></p>
+    </div>
+  </div>
+
+  <div class="swiper  reviews-slider__content">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide  reviews-slider__slide">
+        @@include('../../blocks/review-card/review-card.html', {
+          "rating": "5",
+          "title": "ПриватБанк",
+          "text": "<p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>",
+          "logo": "privat-bank"
+        })
+      </div>
+
+      <div class="swiper-slide  reviews-slider__slide">
+        @@include('../../blocks/review-card/review-card.html', {
+          "rating": "4",
+          "title": "Ясенсвіт",
+          "text": "<p>Компанія ЯСЕНСВІТ цінує якість у всьому — від продукції до партнерів. Співпраця з L4 дозволяє нам ефективно керувати бізнес-процесами, забезпечуючи безперебійну роботу офісів, логістичних центрів і комунікацій з клієнтами.</p>",
+          "logo": "yasensvit"
+        })
+      </div>
+
+      <div class="swiper-slide  reviews-slider__slide">
+        @@include('../../blocks/review-card/review-card.html', {
+          "rating": "5",
+          "title": "Justin",
+          "text": "<p>Для логістичної компанії стабільне з'єднання є критично важливим. Завдяки L4 наші відділення працюють без перебоїв, а система відстеження посилок функціонує без збоїв. Швидкість, надійність та якість обслуговування — ось за що ми цінуємо L4.</p>",
+          "logo": "justin"
+        })
+      </div>
+
+      <div class="swiper-slide  reviews-slider__slide">
+        @@include('../../blocks/review-card/review-card.html', {
+          "rating": "5",
+          "title": "Sushi Master UA",
+          "text": "<p>Мережа Sushi Master обирає лише надійних партнерів, адже стабільний інтернет — це запорука бездоганної роботи наших сервісів. Завдяки L4 ми маємо швидке та безперебійне з'єднання, що дозволяє оперативно приймати замовлення та підтримувати якісний сервіс для наших клієнтів.</p>",
+          "logo": "sushi-master-ua"
+        })
+      </div>
+
+      <div class="swiper-slide  reviews-slider__slide">
+        @@include('../../blocks/review-card/review-card.html', {
+          "rating": "5",
+          "title": "ПриватБанк",
+          "text": "<p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>",
+          "logo": "privat-bank"
+        })
+      </div>
+
+      <div class="swiper-slide  reviews-slider__slide">
+        @@include('../../blocks/review-card/review-card.html', {
+          "rating": "5",
+          "title": "Ясенсвіт",
+          "text": "<p>Компанія ЯСЕНСВІТ цінує якість у всьому — від продукції до партнерів. Співпраця з L4 дозволяє нам ефективно керувати бізнес-процесами, забезпечуючи безперебійну роботу офісів, логістичних центрів і комунікацій з клієнтами.</p>",
+          "logo": "yasensvit"
+        })
+      </div>
+
+      <div class="swiper-slide  reviews-slider__slide">
+        @@include('../../blocks/review-card/review-card.html', {
+          "rating": "5",
+          "title": "Justin",
+          "text": "<p>Для логістичної компанії стабільне з'єднання є критично важливим. Завдяки L4 наші відділення працюють без перебоїв, а система відстеження посилок функціонує без збоїв. Швидкість, надійність та якість обслуговування — ось за що ми цінуємо L4.</p>",
+          "logo": "justin"
+        })
+      </div>
+
+      <div class="swiper-slide  reviews-slider__slide">
+        @@include('../../blocks/review-card/review-card.html', {
+          "rating": "5",
+          "title": "Sushi Master UA",
+          "text": "<p>Мережа Sushi Master обирає лише надійних партнерів, адже стабільний інтернет — це запорука бездоганної роботи наших сервісів. Завдяки L4 ми маємо швидке та безперебійне з'єднання, що дозволяє оперативно приймати замовлення та підтримувати якісний сервіс для наших клієнтів.</p>",
+          "logo": "sushi-master-ua"
+        })
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container  reviews-slider__controls">
+    <div class="swiper-controls">
+      <div class="btn  btn--secondary  swiper-button-prev  reviews-slider__btn-prev"
+           data-theme-dark="btn--secondary--dark"
+           data-theme-light="btn--secondary--light"></div>
+      <div class="swiper-pagination  reviews-slider__pagination"></div>
+      <div class="btn  btn--secondary  swiper-button-next  reviews-slider__btn-next"
+           data-theme-dark="btn--secondary--dark"
+           data-theme-light="btn--secondary--light"></div>
+    </div>
+
+    <a href="#" class="btn  btn--secondary  reviews-slider__all"
+                data-theme-dark="btn--secondary--dark"
+                data-theme-light="btn--secondary--light">
+      <span>Усі відгуки</span>
+    </a>
+  </div>
+</section>

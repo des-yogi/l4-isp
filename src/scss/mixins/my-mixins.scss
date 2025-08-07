@@ -1,9 +1,11 @@
-@mixin text-hide {
-  font-size: 0;
-  line-height: 0;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
+@mixin visibility-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
   border: 0;
 }
 
@@ -49,5 +51,113 @@
     @media (prefers-reduced-motion: reduce) {
       transition: none;
     }
+  }
+}
+
+@mixin block-margin {
+  margin-top: 64px;
+  margin-bottom: 64px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    margin-top: 128px;
+    margin-bottom: 128px;
+  }
+}
+
+@mixin gradient-border(
+  $border-width: 1px,
+  $radius: 16px,
+  $border-gradient: linear-gradient(90deg, #7f53ac, #314155),
+  $bg-gradient: linear-gradient(90deg, #181e29, #232a3d)
+) {
+  border-radius: $radius;
+  padding: $border-width;
+  background:
+    #{$border-gradient} border-box,
+    #{$bg-gradient} padding-box;
+  border: $border-width solid transparent; // обязательно!
+  // box-sizing: border-box; // если не глобально
+}
+
+@mixin gradient-border-above(
+  $border-width: 2px,
+  $radius: 16px,
+  $border-gradient: linear-gradient(45deg, #7f53ac, #314155),
+  $bg-gradient: linear-gradient(90deg, #181e29, #232a3d)
+) {
+  position: relative;
+  border-radius: $radius;
+  background: $border-gradient;
+  // Здесь можно задать любой паддинг для контента!
+  // padding: ...;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: $border-width;
+    border-radius: $radius;
+    background: $bg-gradient;
+    z-index: 1; // поверх основного блока
+    pointer-events: none; // не мешает взаимодействию
+    // Для эффекта "толщины" бордера:
+    // Используем box-shadow, либо inset/inset-clip
+    // Но проще — через двойную обводку (см. ниже)
+    // Если нужен "размытый" или светящийся бордер — можно добавить filter или opacity
+    // Если нужен blend-mode — просто добавь сюда!
+  }
+
+  > * {
+    position: relative;
+    z-index: 2; // поверх псевдоэлемента
+  }
+}
+
+@mixin gradient-border-mask(
+  $border-width: 2px,
+  $radius: 16px,
+  $border-gradient: linear-gradient(90deg, rgba(127,83,172,0.6), rgba(49,65,85,0.6)),
+  $bg-gradient: linear-gradient(90deg, rgba(24,30,41,0.6), rgba(35,42,61,0.6))
+) {
+  position: relative;
+  //z-index: 0;
+  border-radius: $radius;
+  background: $bg-gradient;
+  //overflow: hidden; // важно для маски ?? Надо протестировать
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: $radius;
+    background: $border-gradient;
+    pointer-events: none;
+    z-index: 1;
+
+    // Маска: оставляем только бордер заданной толщины
+    // -webkit-mask-image:
+    //   radial-gradient(circle, white 100%, transparent 100%);
+    // -webkit-mask:
+    //   linear-gradient(#fff 0 0) content-box,
+    //   linear-gradient(#fff 0 0); // fallback для WebKit
+    // -webkit-mask-composite: xor;
+    // mask-composite: exclude;
+
+    // Универсальная маска для толщины бордера:
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: $border-width;
+    transition: background $transition-time;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
   }
 }

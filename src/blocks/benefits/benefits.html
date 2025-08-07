@@ -1,0 +1,69 @@
+<!--DEV
+@ @include('blocks/benefits/benefits.html')
+-->
+
+<section class="container  benefits">
+  <div class="row  benefits__row">
+
+    <div class="benefits__col-card">
+      @@include('../../blocks/service-card/service-card.html', {
+        "addClass": "",
+        "icon": "speed-32",
+        "title": "Швидкість",
+        "text": "Можливість одночасно грати онлайн, дивитись улюблені серіали, завантажувати відео.",
+        "slogan": "Повна свобода дій!"
+      })
+    </div>
+
+    <div class="benefits__col-card">
+      @@include('../../blocks/service-card/service-card.html', {
+        "addClass": "",
+        "icon": "video-32",
+        "title": "Мережа покриття",
+        "text": "Присутність по всій Київській області та всій Черкаській області. Інтернет без меж навіть в невеликих містах та селах!",
+        "slogan": ""
+      })
+    </div>
+
+    <div class="benefits__col-caption">
+      <h2 class="benefits__title">Надшвидкісний інтернет до 1 Гбіт/с</h2>
+    </div>
+
+    <div class="benefits__col-card">
+      @@include('../../blocks/service-card/service-card.html', {
+        "addClass": "",
+        "icon": "video-32",
+        "title": "Стабільність та енергонезалежність",
+        "text": "Якісний оптоволоконний інтернет 24 години на добу 7 днів на тиждень.",
+        "slogan": "Без нервів, без затримок, без збоїв."
+      })
+    </div>
+
+    <div class="benefits__col-card">
+      @@include('../../blocks/service-card/service-card.html', {
+        "addClass": "",
+        "icon": "gamepad-32",
+        "title": "Технічна підтримка",
+        "text": "Оперативна та якісна підтримка абонентів як в дистанційному режимі, так і на виїзді.",
+        "slogan": ""
+      })
+    </div>
+
+    <div class="embed-responsive  benefits__img">
+      <picture>
+        <source srcset="img/benefits.webp" type="image/webp">
+        <img src="img/benefits.png" alt="" width="1219" height="695" loading="lazy">
+      </picture>
+    </div>
+  </div>
+
+
+  <div class="benefits__footer">
+    <h4 class="benefits__footer-title">Дізнайтесь про всі переваги підключення</h4>
+    <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
+    <button class="btn  btn--glow">
+      <span>Замовити консультацію</span>
+      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+    </button>
+  </div>
+</section>

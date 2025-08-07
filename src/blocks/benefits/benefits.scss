@@ -1,0 +1,121 @@
+.benefits {
+  //padding-bottom: 72px;
+  //padding-top: 72px;
+  @include block-margin;
+
+  @media (min-width: $screen-xl) {
+    margin-top: 170px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    margin-top: 200px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__row {
+    justify-content: space-between;
+    gap: 40px 0;
+    position: relative;
+    margin-bottom: 74px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 190px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 100px;
+    }
+
+    & > *:nth-child(1) {
+
+      @media (min-width: $screen-xl) {
+        order: -2;
+      }
+    }
+
+    & > *:nth-child(3) {
+
+      @media (min-width: $screen-xl) {
+        order: -1;
+      }
+    }
+  }
+
+  &__col-card {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+  }
+
+  &__col-caption {
+    @include col(xs, 12);
+    @include col(md, 12);
+    @include col(xl, 4);
+  }
+
+  &__title {
+    margin: 0 !important;
+    text-align: center;
+
+    @media (min-width: $screen-xl) {
+      transform: translateY(-58px);
+    }
+
+    @media (min-width: $screen-xl) {
+      transform: translateY(-75px);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    bottom: -74px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 438px;
+    //margin-top: -46%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $screen-md) {
+      bottom: -190px;
+      max-width: 688px;
+    }
+
+    @media (min-width: $screen-xl) {
+      bottom: -100px;
+      max-width: 1219px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: bottom center;
+    }
+  }
+
+  &__footer {
+    max-width: 790px;
+    padding-top: 70px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+
+    @media (min-width: $screen-xl) {
+      padding-top: 80px;
+      margin: 0 auto 0 auto;
+    }
+
+    p {
+      color: var(--text-pale-color);
+    }
+
+    .btn {
+      margin-top: 24px;
+    }
+  }
+
+  &__footer-title {
+    margin-top: 0;
+  }
+}

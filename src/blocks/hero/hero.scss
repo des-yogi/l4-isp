@@ -1,0 +1,21 @@
+.hero {
+  $block-name:                &; // #{$block-name}__element
+
+  height: 492px;
+  padding-top: 88px;
+  color: var(--text-color);
+  background: var(--bg-color);
+  background: var(--blue-200);
+  border-radius: 0 0 24px 24px;
+
+  @media (min-width: $screen-md) {
+    height: 510px;
+    padding-top: calc(50px + 76px);
+    border-radius: 0 0 72px 72px;
+  }
+
+  @media (min-width: $screen-xl) {
+    height: 720px;
+    padding-top: calc(50px + 86px);
+  }
+}

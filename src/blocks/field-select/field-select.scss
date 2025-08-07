@@ -3,7 +3,7 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 
   &__name {
     @include field-name;
@@ -14,23 +14,22 @@
   }
 
   &__select {
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
     width: 100%;
-    padding: $field-padding-vertical $field-padding-horizontal;
+    height: 56px;
+    padding: 0 46px 0 16px;
     font-size: inherit;
     font-weight: inherit;
     font-family: inherit;
     line-height: inherit;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
     appearance: none;
-    color: $title-color;
-    background-color: $white;
-    background-image: svg-load('../blocks/field-select/bg-img/select-down.svg', fill=$border-color);
+    background-size: 24px;
+    background-position: right 16px center;
     background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 20px;
+    border: 1px solid transparent;
+    border-radius: $border-radius--12;
+    transition: border-color $transition-time;
 
     &[multiple] {
       background-image: none;
@@ -62,4 +61,21 @@
   &__help-text {
     @include field-help-text;
   }
+
+  &--dark {
+
+    #{$block-name}__select {
+      color: var(--text-color);
+      background-color: var(--opacity-white-4);
+      background-image: svg-load('../blocks/field-select/bg-img/select-down.svg', fill=$white);
+      border-color: rgba(255, 255, 255, 0.1);
+
+      option {
+        color: var(--text-color) !important;
+        background-color: var(--opacity-white-4) !important;
+      }
+    }
+  }
+
+  &--light {}
 }

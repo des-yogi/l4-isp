@@ -1,0 +1,242 @@
+.app-l4 {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+
+  @media (min-width: $screen-xl) {
+    position: relative;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    color: var(--text-color);
+
+    @media (min-width: $screen-xl) {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      //max-width: 410px;
+      padding-top: 56px;
+      padding-bottom: 56px;
+      margin-bottom: 0;
+    }
+
+    & > * {
+
+      @media (min-width: $screen-xl) {
+        max-width: 410px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 24px;
+  }
+
+  &__intro,
+  &__cta-text {
+    margin: 24px 0 16px;
+    font-size: $font-size;
+    font-weight: 500;
+    text-wrap: balance;
+
+    @media (min-width: $screen-md) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &__intro {
+
+    @media (min-width: $screen-xl) {
+      margin-top: 0;
+    }
+  }
+
+  &__features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px 16px;
+    padding-left: 24px;
+    margin: 0;
+    list-style-image: url("../img/check-square.png");
+
+    @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
+      flex-direction: initial;
+      flex-wrap: wrap;
+      //flex-wrap: normal;
+      gap: 8px 24px;
+    }
+  }
+
+  &__features-item {
+    margin: 0 !important;
+    line-height: inherit;
+
+    @media (min-width: $screen-md) {
+      flex: 0 1;
+      flex-basis: calc(50% - 12px);
+      //width: calc(50% - 12px);
+    }
+
+    & > span {
+      display: inline-flex;
+      transform: translateY(-2px) translateX(5px);
+
+      @media (min-width: $screen-xl) {
+        transform: translateY(-1px) translateX(5px);
+      }
+    }
+  }
+
+  // &__cta-text {
+
+  // }
+
+  &__app-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  // &__app-item {
+
+  // }
+
+  &__app-link {
+    display: inline-flex;
+
+    &:hover,
+    &:focus {
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      display: inline-flex;
+      transition: transform $transition-time;
+    }
+  }
+
+  &__bg {
+    position: relative;
+    height: 240px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: $border-radius--32;
+    overflow: hidden;
+
+    @media (min-width: $screen-md) {
+      height: 280px;
+      //background-position: right center;
+      //background-size: contain;
+    }
+
+    @media (min-width: $screen-xl) {
+      height: 620px;
+      border-radius: $border-radius--72;
+    }
+
+    @media (min-width: $screen-xl) and (max-width: $screen-xxl - 1) {
+      padding-right: 0;
+    }
+
+    @media (min-width: $screen-xxl) {
+      height: 710px;
+      background-position: right -90px top;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 -2px 0 -2px;
+      border-radius: $border-radius--32;
+      pointer-events: none;
+      z-index: 1;
+      // Универсальная маска для толщины бордера:
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      padding: 2px;
+
+      @media (min-width: $screen-xl) {
+        border-radius: $border-radius--72;
+      }
+    }
+
+    .row,
+    #{$block-name}__img-bg-col,
+    #{$block-name}__img-bg {
+      height: 100%;
+    }
+
+    & > * {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__img-bg-col {
+    @include col(xs, 12);
+    @include col(md, 8);
+    @include col-offset(xl, 5);
+    @include col(xl, 7);
+    @include col-offset(xxl, 5);
+    @include col(xxl, 7);
+  }
+
+  &__img-bg {
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+
+      @media (min-width: $screen-md) {
+        //transform: translateX(-10%);
+        object-position: left center;
+      }
+
+      @media (min-width: $screen-xl) {
+        //transform: translateX(40px);
+        object-fit: cover;
+        object-position: left top;
+      }
+    }
+  }
+
+  &--dark {
+
+    #{$block-name}__bg {
+      background-color: var(--blue-950);
+
+      &::before {
+        background: var(--border-gradient-10);
+      }
+    }
+  }
+
+  &--light {
+
+    #{$block-name}__bg {
+      background-color: var(--blue-150);
+
+      &::before {
+        background: var(--opacity-blue-8);
+      }
+    }
+  }
+}

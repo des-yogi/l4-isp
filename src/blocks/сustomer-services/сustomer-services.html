@@ -1,0 +1,190 @@
+<!--DEV
+@ @include('blocks/customer-services/customer-services.html')
+-->
+
+<section class="container  tabs  customer-services">
+  <nav class="customer-services__nav">
+    <div class="nav nav-tabs" id="serviceNav" role="tablist" data-theme-dark="nav--dark" data-theme-light="nav--light">
+      <button class="nav-link active" id="service-1" data-bs-toggle="tab" data-bs-target="#service-pane-1" type="button" role="tab" aria-controls="service-pane-1" aria-selected="true">
+        <span>Домашній інтернет та ТБ</span>
+      </button>
+
+      <button class="nav-link" id="service-2" data-bs-toggle="tab" data-bs-target="#service-pane-2" type="button" role="tab" aria-controls="service-pane-2" aria-selected="false">
+        <span>Для дому та офісу</span>
+      </button>
+
+      <button class="nav-link" id="service-3" data-bs-toggle="tab" data-bs-target="#service-pane-3" type="button" role="tab" aria-controls="service-pane-3" aria-selected="false">
+        <span>Юридичним особам</span>
+      </button>
+
+      <button class="nav-link" id="service-4" data-bs-toggle="tab" data-bs-target="#service-pane-4" type="button" role="tab" aria-controls="service-pane-4" aria-selected="false">
+        <span>Державні заклади</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="customer-services__header">
+    <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
+    <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
+    <p>Ми знаходимо рішення для кожного абонента!</p>
+  </div>
+
+  <div class="tab-content  customer-services__content" id="serviceContent">
+    <div class="tab-pane fade show active" id="service-pane-1" role="tabpanel" aria-labelledby="service-1" tabindex="0">
+      <div class="row  customer-services__row">
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--solid",
+            "icon": "speed-32",
+            "title": "1000 Мбіт/с",
+            "text": "Космічна швидкість інтернету забезпечить будь-які потреби всіх членів родини",
+            "slogan": ""
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--solid",
+            "icon": "video-32",
+            "title": "Цифрове ТБ",
+            "text": "Бездоганна якість трансляції національних, преміальних та спеціальних каналів",
+            "slogan": ""
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--solid",
+            "icon":  "gamepad-32",
+            "title": "Онлайн ігри без гальм",
+            "text": "Грайте у World of Tanks чи інші супер-ігри онлайн.",
+            "slogan": "Найнижчий ping тільки в нашій мережі!"
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--clear",
+            "icon":  "",
+            "title": "18 років досвіду",
+            "text": "Нас обрали багато сімей. Працюємо надійно і якісно з 2005 року, постійно оновлюючи обладнання",
+            "slogan": ""
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--clear",
+            "icon":  "",
+            "title": "Цифрове ТБ",
+            "text": "Зручні тарифи для кожного — для студентів, пенсіонерів, сімей та домашніх офісів. Обирайте",
+            "slogan": ""
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--clear",
+            "icon":  "",
+            "title": "Акції та знижки",
+            "text": "Шалені акційні пропозиції! Знижки на підключення та абонплату, реферальна програма, бонуси за друзів та трейд-ін!",
+            "slogan": ""
+          })
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="service-pane-2" role="tabpanel" aria-labelledby="service-2" tabindex="0">
+      <div class="row  customer-services__row">
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--solid",
+            "icon": "speed-32",
+            "title": "1000 Мбіт/с",
+            "text": "Космічна швидкість інтернету забезпечить будь-які потреби всіх членів родини",
+            "slogan": ""
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--solid",
+            "icon": "video-32",
+            "title": "Цифрове ТБ",
+            "text": "Бездоганна якість трансляції національних, преміальних та спеціальних каналів",
+            "slogan": ""
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--solid",
+            "icon":  "gamepad-32",
+            "title": "Онлайн ігри без гальм",
+            "text": "Грайте у World of Tanks чи інші супер-ігри онлайн.",
+            "slogan": "Найнижчий ping тільки в нашій мережі!"
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--clear",
+            "icon":  "",
+            "title": "18 років досвіду",
+            "text": "Нас обрали багато сімей. Працюємо надійно і якісно з 2005 року, постійно оновлюючи обладнання",
+            "slogan": ""
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--clear",
+            "icon":  "",
+            "title": "Цифрове ТБ",
+            "text": "Зручні тарифи для кожного — для студентів, пенсіонерів, сімей та домашніх офісів. Обирайте",
+            "slogan": ""
+          })
+        </div>
+
+        <div class="customer-services__col">
+          @@include('../../blocks/service-card/service-card.html', {
+            "addClass": "service-card--clear",
+            "icon":  "",
+            "title": "Акції та знижки",
+            "text": "Шалені акційні пропозиції! Знижки на підключення та абонплату, реферальна програма, бонуси за друзів та трейд-ін!",
+            "slogan": ""
+          })
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="service-pane-3" role="tabpanel" aria-labelledby="service-3" tabindex="0">3...</div>
+
+    <div class="tab-pane fade" id="service-pane-4" role="tabpanel" aria-labelledby="service-4" tabindex="0">4...</div>
+  </div>
+
+  <div class="customer-services__ctrl">
+    <button class="btn  btn--glow">
+      <span>Замовити консультацію</span>
+      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+    </button>
+
+    <button class="btn">
+      <span>Підключитись</span>
+      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+    </button>
+  </div>
+
+  <canvas class="lottie-player  lazy"
+          data-src="js/FORM.lottie"
+          data-fit="contain"
+          data-align=""
+          width="700"
+          height="300">
+  </canvas>
+
+</section>

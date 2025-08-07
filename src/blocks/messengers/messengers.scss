@@ -1,0 +1,32 @@
+.messengers {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+
+  $block-name:                &; // #{$block-name}__element
+
+  // &__item {
+  // }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    text-decoration: none;
+    color: var(--text-color);
+    background: transparent;
+    user-select: none;
+
+    &:hover,
+    &:focus {
+      color: var(--main-nav-link-hover-color);
+    }
+
+    &:active {
+      color: var(--main-nav-link-active-color);
+    }
+  }
+}

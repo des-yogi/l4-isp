@@ -2,98 +2,100 @@
 @ @include('blocks/main-nav/main-nav.html')
 -->
 
-<nav class="main-nav">
-  <button id="main-nav-toggler" class="main-nav__toggler  burger"><span></span></button>
+<nav class="main-nav" data-theme-dark="main-nav--dark" data-theme-light="main-nav--light">
   <ul class="main-nav__list">
-    <li class="main-nav__item  main-nav__item--active">
+    <li class="main-nav__item  main-nav__item--parent">
       <a href="#" class="main-nav__link" rel="category">
-        Інтернет
+        <span>Інтернет</span>
+        <svg class="chevron" width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down"></use></svg>
       </a>
       <div class="main-nav__sublist-wrapper  main-nav__sublist-wrapper--lvl-2">
-        <ul class="main-nav__list  main-nav__list--lvl-2">
-          <li class="main-nav__item  main-nav__item--lvl-2">
+        <ul class="main-nav__list  lvl-2">
+          <li class="main-nav__item  lvl-2  active">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Домашній інтернет
+              <span>Домашній інтернет</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Для бізнесу
+              <span>Для бізнесу</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Юридичним особам
+              <span>Юридичним особам</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Державним закладам
+              <span>Державним закладам</span>
             </a>
           </li>
         </ul>
       </div>
     </li>
 
-    <li class="main-nav__item">
+    <li class="main-nav__item  active">
       <a href="#" class="main-nav__link">
-        Телебачення
+        <span>Телебачення</span>
       </a>
     </li>
     <li class="main-nav__item">
       <a href="#" class="main-nav__link">
-        Послуги
+        <span>Послуги</span>
       </a>
     </li>
     <li class="main-nav__item">
       <a href="#" class="main-nav__link">
-        Акції
+        <svg width="20" height="20" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#fire"></use></svg>
+        <span>Акції</span>
       </a>
     </li>
-    <li class="main-nav__item">
+    <li class="main-nav__item  main-nav__item--parent">
       <a href="#" class="main-nav__link">
-        Абоненту
+        <span>Абоненту</span>
+        <svg class="chevron" width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down"></use></svg>
       </a>
       <div class="main-nav__sublist-wrapper  main-nav__sublist-wrapper--lvl-2">
-        <ul class="main-nav__list  main-nav__list--lvl-2">
-          <li class="main-nav__item  main-nav__item--lvl-2">
+        <ul class="main-nav__list  lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Про компанію
+              <span>Про компанію</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Співпраця
+              <span>Співпраця</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Вакансії
+              <span>Вакансії</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Документи
+              <span>Документи</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Питання і відповіді
+              <span>Питання і відповіді</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Мобільний додаток
+              <span>Мобільний додаток</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              SpeedTest
+              <span>SpeedTest</span>
             </a>
           </li>
-          <li class="main-nav__item  main-nav__item--lvl-2">
+          <li class="main-nav__item  lvl-2">
             <a href="#" class="main-nav__link  main-nav__link--lvl-2">
-              Відгуки
+              <span>Відгуки</span>
             </a>
           </li>
         </ul>
@@ -101,17 +103,17 @@
     </li>
     <li class="main-nav__item">
       <a href="#" class="main-nav__link">
-        Магазин
+        <span>Магазин</span>
       </a>
     </li>
     <li class="main-nav__item">
       <a href="#" class="main-nav__link">
-        Новини
+        <span>Новини</span>
       </a>
     </li>
     <li class="main-nav__item">
       <a href="#" class="main-nav__link">
-        Контакти
+        <span>Контакти</span>
       </a>
     </li>
   </ul>
