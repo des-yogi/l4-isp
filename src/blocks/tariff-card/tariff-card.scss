@@ -130,11 +130,12 @@
     color: inherit;
   }
 
-  // &__opt-list {
+  &__opt-list {
+    font-family: $font-family;
 
   //   @media (min-width: $screen-md) {
   //   }
-  // }
+  }
 
   &__opt-item {
     display: flex;
