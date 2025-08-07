@@ -1,0 +1,112 @@
+<!--DEV
+@ @include('blocks/news-slider/news-slider.html')
+-->
+
+<section class="container  news-slider">
+  <div class="news-slider__header">
+    <h2 class="news-slider__title">Новини</h2>
+    <div class="news-slider__intro"><p></p></div>
+  </div>
+
+  <div class="swiper  news-slider__container">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-10x16-1",
+          "title": "L4 прискорюється: збільшуємо швидкість без доплат!",
+          "descr": "Ми робимо інтернет ще швидшим! Тепер ваш тариф працює на повну потужність — без додаткових витрат"
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-4x3-1",
+          "title": "Приєднання до мережі с. Васильків, Звенигородський район",
+          "descr": "L4 розширює покриття! Тепер мешканці села Васильків можуть користуватися швидкісним інтернетом без обмежень."
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-4x3-2",
+          "title": "Мешканцям с. Вільховець, с. Княжа та с. Гусакове",
+          "descr": "Ми працюємо для вас! Незабаром високошвидкісний інтернет стане доступним і у вашій місцевості. Слідкуйте за новинами!"
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-4x3-3",
+          "title": "Припинення дії тарифів на мобільний зв’язок",
+          "descr": "Звертаємо увагу, що деякі тарифи на мобільний зв’язок будуть скасовані. Детальна інформація доступна у вашому особистому кабінеті та на сайті."
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-4x3-4",
+          "title": "Lorem ipsum dolor sit amet consectetur",
+          "descr": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur assumenda architecto earum doloremque optio consectetur aliquid. Numquam molestiae, culpa."
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-10x16-1",
+          "title": "L4 прискорюється: збільшуємо швидкість без доплат!",
+          "descr": "Ми робимо інтернет ще швидшим! Тепер ваш тариф працює на повну потужність — без додаткових витрат"
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-4x3-1",
+          "title": "Приєднання до мережі с. Васильків, Звенигородський район",
+          "descr": "L4 розширює покриття! Тепер мешканці села Васильків можуть користуватися швидкісним інтернетом без обмежень."
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-4x3-2",
+          "title": "Мешканцям с. Вільховець, с. Княжа та с. Гусакове",
+          "descr": "Ми працюємо для вас! Незабаром високошвидкісний інтернет стане доступним і у вашій місцевості. Слідкуйте за новинами!"
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-4x3-3",
+          "title": "Припинення дії тарифів на мобільний зв’язок",
+          "descr": "Звертаємо увагу, що деякі тарифи на мобільний зв’язок будуть скасовані. Детальна інформація доступна у вашому особистому кабінеті та на сайті."
+        })
+      </div>
+
+      <div class="swiper-slide  news-slider__slide">
+        @@include('../../blocks/news-card/news-card.html', {
+          "img": "image-4x3-4",
+          "title": "Lorem ipsum dolor sit amet consectetur",
+          "descr": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur assumenda architecto earum doloremque optio consectetur aliquid. Numquam molestiae, culpa."
+        })
+      </div>
+
+    </div>
+  </div>
+
+  <div class="news-slider__controls">
+    <div class="swiper-controls">
+      <div class="btn  btn--secondary  swiper-button-prev  news-slider__btn-prev"
+           data-theme-dark="btn--secondary--dark"
+           data-theme-light="btn--secondary--light"></div>
+      <div class="swiper-pagination  news-slider__pagination"></div>
+      <div class="btn  btn--secondary  swiper-button-next  news-slider__btn-next"
+           data-theme-dark="btn--secondary--dark"
+           data-theme-light="btn--secondary--light"></div>
+    </div>
+
+    <a href="#" class="btn  btn--secondary  news-slider__all" data-theme-dark="btn--secondary--dark" data-theme-light="btn--secondary--light">
+      <span>Усі новини</span>
+    </a>
+  </div>
+</section>

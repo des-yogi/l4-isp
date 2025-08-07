@@ -1,98 +1,156 @@
-// В этом файле должны быть стили для БЭМ-блока main-nav, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-$gray-lightest:               hsl(0, 0%, 90%) !default;
-
-$screen-xs:                   0 !default;
-$screen-sm:                   480px !default;
-$screen-md:                   768px !default;
-$screen-lg:                   992px !default;
-$screen-xl:                   1200px !default;
-$screen-xxl:                  1800px !default;
-
-$menu-desktop-width:          $screen-xl !default;
-$toggler-part-height:         3px !default;
-$toggler-part-bg-color:       #000 !default;
-
-$transition-time:             0.3s !default;
-
 .main-nav {
 
   $block-name:                &; // #{$block-name}__element
 
+  display: none;
   position: relative;
-  z-index: 10;
+  z-index: 5;
+
+  @media (min-width: $menu-desktop-width) {
+    display: flex;
+  }
 
   // первый уровень
   &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    height: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
 
-    // мобильный вид списка
-    @media (max-width: ($menu-desktop-width - 1)) {
+    &.lvl-2 {
+      padding: 8px 0;
+      margin-top: 10px;
 
-      // открытие/закрытие меню только в случае работающего JS
-
-      .js & {
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.2s;
-      }
-
-      .js #{$block-name}--open & {
-        max-height: 100vh;
-        transition: max-height 0.6s;
-      }
-    }
-
-    // настольный вид списка
-    @media (min-width: $menu-desktop-width) {
-      display: flex;
-      flex-wrap: wrap;
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   z-index: -1;
+      //   inset: 0;
+      //   background: rgba(0, 0, 0, 0.3);
+      //   backdrop-filter: blur(10px);
+      // }
     }
   }
 
   &__item {
     position: relative;
+    margin: 0 !important;
 
-    &--active {
+    &:hover,
+    &:focus-within {
 
       & > #{$block-name}__link {
-        color: red;
+        position: relative;
+        color: var(--main-nav-link-hover-color);
+        background: radial-gradient(102.75% 31.15% at 50% 50%,
+                    rgba(39, 125, 255, 0.08) 0%,
+                    rgba(39, 125, 255, 0.00) 48%,
+                    rgba(39, 125, 255, 0.00) 100%);
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(to right, transparent, var(--blue-500) 64%, transparent);
+        }
+
+        &::before {
+          top: 0;
+        }
+
+        &::after {
+          bottom: 0;
+        }
+
+        .chevron {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    &.active {
+
+      & > #{$block-name}__link {
+        color: var(--main-nav-link-active-color);
+        background: radial-gradient(102.75% 31.15% at 50% 50%,
+                    rgba(39, 125, 255, 0.08) 0%,
+                    rgba(39, 125, 255, 0.00) 48%,
+                    rgba(39, 125, 255, 0.00) 100%);
+      }
+    }
+
+    &.lvl-2 {
+      width: 100%;
+
+      & > #{$block-name}__link {
+        justify-content: initial;
+        width: 100%;
       }
     }
   }
 
   &__link {
-    display: block;
-    padding: 0.5em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 8px;
     text-decoration: none;
-    background-color: #fff;
+    white-space: nowrap;
+    color: var(--main-nav-link-color);
+    //background-color: #fff;
+
+    @media (min-width: $screen-xxl) {
+      padding: 16px;
+    }
 
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: aquamarine;
+      color: var(--main-nav-link-hover-color);
+      //text-shadow: 0 0 10px var(--white);
+      background: radial-gradient(102.75% 31.15% at 50% 50%,
+                    rgba(39, 125, 255, 0.08) 0%,
+                    rgba(39, 125, 255, 0.00) 48%,
+                    rgba(39, 125, 255, 0.00) 100%);
+    }
+
+    &:active {
+      color: var(--main-nav-link-active-color) !important;
+      background: radial-gradient(102.75% 31.15% at 50% 50%,
+                    rgba(39, 125, 255, 0.08) 0%,
+                    rgba(39, 125, 255, 0.00) 48%,
+                    rgba(39, 125, 255, 0.00) 100%);
+    }
+
+    .chevron {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.2s;
+    }
+
+    svg + span {
+      margin-left: 4px;
     }
 
     &--lvl-2 {
+      min-width: 250px;
+      padding: 13px 16px;
 
       @media (max-width: ($menu-desktop-width - 1)) {
         padding-left: 1.2em;
       }
     }
-
-    &--lvl-3 {
-
-      @media (max-width: ($menu-desktop-width - 1)) {
-        padding-left: 2.4em;
-      }
-    }
   }
 
   &__sublist-wrapper {
+    background: none;
 
     &--lvl-2 {
 
@@ -104,7 +162,7 @@ $transition-time:             0.3s !default;
         opacity: 0;
         height: 0;
         overflow: hidden;
-        transition: opacity $transition-time;
+        //transition: opacity $transition-time;
 
         // stylelint-disable  max-nesting-depth
         #{$block-name}__item--show-child > &,
@@ -116,47 +174,48 @@ $transition-time:             0.3s !default;
         // stylelint-enable
       }
     }
+  }
 
-    &--lvl-3 {
+  &--dark {
 
-      @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 100%;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
+    #{$block-name}__list {
 
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item--lvl-2:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
+      &.lvl-2 {
+        @include gradient-border-mask(
+          2px,
+          12px,
+          var(--border-gradient-10),
+          var(--blue-950)
+        )
+        //backdrop-filter: blur(10px);
+
+        // &::after {
+        //   background: rgba(0, 0, 0, 0.6);
+        // }
       }
     }
   }
 
+  &--light {
+    #{$block-name}__list {
 
+      &.lvl-2 {
+        @include gradient-border-mask(
+          2px,
+          12px,
+          var(--border-gradient-10),
+          var(--white)
+        )
+        //backdrop-filter: blur(10px);
 
-  // переключатель
+        // &::after {
+        //   background: rgba(255, 255, 255, 0.8);
+        // }
 
-  &__toggler {
-    display: inline-block;
-    padding: 0;
-    background: none;
-    border: none;
-
-    .no-js & {
-      display: none;
-    }
-
-    @media (min-width: $menu-desktop-width) {
-      display: none;
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05),
+                    0 4px 4px 0 rgba(0, 0, 0, 0.05),
+                    0 10px 10px 0 rgba(0, 0, 0, 0.1);
+      }
     }
   }
 }

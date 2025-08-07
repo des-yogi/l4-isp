@@ -1,49 +1,50 @@
-// В этом файле должны быть стили для БЭМ-блока burger, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-$toggler-part-height:         3px !default;
-$toggler-part-bg-color:       #000 !default;
-
 .burger {
-
   $block-name:                &; // #{$block-name}__element
 
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
   user-select: none;
   cursor: pointer;
 
+  @media (min-width: $menu-desktop-width) {
+    display: none;
+  }
+
   > span {
     display: inline-block;
-    width: 100%;
+    width: 18px;
     height: $toggler-part-height;
-    background: $toggler-part-bg-color;
+    background: var(--toggler-part-bg-color);
     position: relative;
+    border-radius: 2px;
     transition: background $transition-time $transition-time;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       left: 0;
-      width: 100%;
+      width: 18px;
       height: $toggler-part-height;
-      background: $toggler-part-bg-color;
       transform-origin: 50% 50%;
+      background: var(--toggler-part-bg-color);
+      border-radius: 2px;
       transition: top $transition-time $transition-time, transform $transition-time;
     }
 
-    &:before {
-      top: -10px;
+    &::before {
+      top: -7px;
     }
 
-    &:after {
-      top: 10px;
+    &::after {
+      top: 7px;
     }
   }
 
@@ -53,19 +54,42 @@ $toggler-part-bg-color:       #000 !default;
       transition: background $transition-time 0s;
       background: transparent;
 
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         transition: top $transition-time, transform $transition-time $transition-time;
         top: 0;
       }
 
-      &:before {
+      &::before {
         transform: rotate3d(0, 0, 1, 45deg);
       }
 
-      &:after {
+      &::after {
         transform: rotate3d(0, 0, 1, -45deg);
       }
     }
+  }
+
+  &--dark {
+
+    @include gradient-border-mask(
+      2px,
+      50%,
+      var(--border-gradient-10),
+      var(--black)
+    );
+  }
+
+  &--light {
+
+    @include gradient-border-mask(
+      2px,
+      50%,
+      var(--gradient-60-50),
+      var(--white)
+    );
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05),
+                0 4px 4px 0 rgba(0, 0, 0, 0.05),
+                0 10px 10px 0 rgba(0, 0, 0, 0.1);
   }
 }

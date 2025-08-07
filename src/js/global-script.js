@@ -86,105 +86,33 @@ window.addEventListener('resize', () => {
 
 })();
 
-// $(document).ready(function(){
-//   if(window.matchMedia('(min-width: 1366px)').matches){
-//   // do functionality on screens bigger than 1366px
-//     $("#sticker").sticky({
-//       topSpacing: 100
-//     });
-//   }
-//   return false;
-// });
-
-/*(function () {
-  //const agreementElems = document.querySelectorAll('.contacts__agreement');
-  const agreementElems = document.querySelectorAll('[class$="__agreement"]');
-
-  for (let i = 0; i < agreementElems.length; i++) {
-    let agreementElem = agreementElems[i];
-    if (!agreementElem) return;
-    //const submitBtn = agreementElem.querySelector('.contacts__submit');
-    const submitBtn = agreementElem.querySelector('button[type=submit]');
-    const agreementCheckbox = agreementElem.querySelector('.agreement-field');
-
-    if (agreementCheckbox) {
-      agreementCheckbox.addEventListener('change', function (e) {
-        if (!e.target.checked) {
-          submitBtn.disabled = true;
-        } else {
-          submitBtn.disabled = false;
-        }
-      });
-    }
-  }
-
-})();*/
-
-/**
-   * Theme Switcher Script
-   *
-   * Автоматически определяет и применяет светлую или тёмную тему на основе системных настроек пользователя.
-   * Позволяет вручную переключать тему с плавной анимацией перехода.
-   * Сохраняет выбор пользователя в localStorage и синхронизирует тему между всеми открытыми вкладками.
-   * При удалении значения из localStorage возвращается к системной теме.
-   *
-   * Основные возможности:
-   * - Автоматический выбор темы при первой загрузке (по system preference).
-   * - Переключение темы по кнопке с id="toggle-theme" с плавным переходом.
-   * - Реакция на изменение системной темы (если пользователь не выбрал вручную).
-   * - Синхронизация темы между вкладками через событие storage.
-   * - Отключение анимации при первой установке темы (через класс no-transition).
-   *
-   * Для корректной работы требуется:
-   * - Кнопка с id="toggle-theme" для ручного переключения.
-   * - Класс "no-transition" на <html> для предотвращения анимации при первой загрузке.
-   * - CSS для .theme-transition с нужными transition-свойствами:
-   * - html.no-transition *,
-   * - html.no-transition {
-   * -   transition: none !important;
-   * - }
-   * - html.theme-transition * {
-   * -  transition:
-   * -    background-color 0.3s ease,
-   * -     color 0.3s ease,
-   * -     border-color 0.3s ease;
-   * - }
-   */
-
-/**
- * Theme Switcher Script (универсальный, расширяемый)
- *
- * Основные возможности:
- * - Автоматический выбор темы при первой загрузке (по system preference)
- * - Переключение темы по кнопке с id="toggle-theme" с плавным переходом
- * - Переключение классов для элементов через data-атрибуты (data-theme-light, data-theme-dark)
- * - Переключение стилей Google Maps через data-атрибуты на #map (data-map-light, data-map-dark)
- * - Не ломается, если часть data-атрибутов отсутствует
- *
- * Для корректной работы требуется::
- * - Класс no-transition должен быть на <html> при первой загрузке (или устанавливаться скриптом на долю секунды).
- * - Класс theme-transition добавляется скриптом на время анимации.
- * - CSS должен содержать правила для .theme-transition с нужными transition-свойствами..
- * - html.no-transition *,
- * - html.no-transition {
- * -   transition: none !important;
- * - }
- * - html.theme-transition * {
- * -  transition:
- * -    background-color 0.3s ease,
- * -     color 0.3s ease,
- * -     border-color 0.3s ease;
- * - }
- * - Элементы, которые должны менять класс при смене темы, должны содержать соответствующие data-атрибуты data-theme-light="" и data-theme-dark="" внтури их классы-модификаторы для своего варианта темы
- * - Контейнер карты должен быть с id="map" и data-map-light/data-map-dark (по желанию)
- * - Кнопка с id="toggle-theme" для ручного переключения темы
- * - myMap — глобальный экземпляр карты Google Maps (если нужно динамически менять стиль)
- */
-
 (function () {
   const html = document.documentElement;
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
   const btnId = 'toggle-theme';
+  const STORAGE_KEY = 'site-theme'; // ключ для хранения выбранной темы
+
+  /**
+   * Получить сохранённую тему из localStorage
+   * @returns {'light'|'dark'|null}
+   */
+  function getSavedTheme() {
+    try {
+      const value = localStorage.getItem(STORAGE_KEY);
+      if (value === 'light' || value === 'dark') return value;
+    } catch {}
+    return null;
+  }
+
+  /**
+   * Сохранить выбранную тему в localStorage
+   * @param {'light'|'dark'} theme
+   */
+  function saveTheme(theme) {
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch {}
+  }
 
   /**
    * Получить текущую системную тему
@@ -198,7 +126,7 @@ window.addEventListener('resize', () => {
    */
   function disableTransitionTemporarily() {
     html.classList.add('no-transition');
-    void html.offsetWidth; // reflow для применения класса
+    void html.offsetWidth;
     setTimeout(() => {
       html.classList.remove('no-transition');
     }, 10);
@@ -222,7 +150,6 @@ window.addEventListener('resize', () => {
     document.querySelectorAll('[data-theme-light], [data-theme-dark]').forEach(el => {
       const lightClass = el.getAttribute('data-theme-light');
       const darkClass = el.getAttribute('data-theme-dark');
-      // Проверяем наличие классов и применяем только те, которые указаны
       if (lightClass) el.classList.toggle(lightClass, theme === 'light');
       if (darkClass) el.classList.toggle(darkClass, theme === 'dark');
     });
@@ -230,28 +157,30 @@ window.addEventListener('resize', () => {
 
   /**
    * Применить стиль для Google Maps через data-атрибуты на #map
-   * - Если карта не инициализирована — ничего не произойдет
-   * - Если нужный data-map-... не указан, стиль карты не будет меняться
    */
+  // function applyMapStyle(theme) {
+  //   const mapEl = document.getElementById('map');
+  //   if (!mapEl || !window.myMap || !window.google) return;
+  //   const styleUrl = mapEl.getAttribute(`data-map-${theme}`);
+  //   if (!styleUrl) return;
+  //   fetch(styleUrl)
+  //     .then(r => {
+  //       if (!r.ok) throw new Error('Style JSON not found');
+  //       return r.json();
+  //     })
+  //     .then(styleJson => {
+  //       window.myMap.setOptions({ styles: styleJson });
+  //     })
+  //     .catch(() => {});
+  // }
+
   function applyMapStyle(theme) {
     const mapEl = document.getElementById('map');
-    if (!mapEl || !window.myMap || !window.google) return;
-
-    const styleUrl = mapEl.getAttribute(`data-map-${theme}`);
-    if (!styleUrl) return; // стиль для темы не задан
-
-    // Загружаем JSON файл и применяем стиль
-    fetch(styleUrl)
-      .then(r => {
-        if (!r.ok) throw new Error('Style JSON not found');
-        return r.json();
-      })
-      .then(styleJson => {
-        window.myMap.setOptions({ styles: styleJson });
-      })
-      .catch(() => {
-        // Не падаем если файл не найден или формат неверный
-      });
+    if (!mapEl || !window.myMap) return;
+    const mapId = mapEl.getAttribute(`data-map-${theme}`);
+    if (!mapId) return;
+    window.myMap.setOptions({ mapId });
+    //window.location.reload(); // принудительная перезарузка
   }
 
   /**
@@ -262,9 +191,8 @@ window.addEventListener('resize', () => {
   function applyTheme(theme, animate = false) {
     if (animate) enableThemeTransition();
     html.setAttribute('data-theme', theme);
-
-    applyThemeClasses(theme);   // Переключаем классы на элементах
-    applyMapStyle(theme);       // Переключаем стиль карты, если нужно
+    applyThemeClasses(theme);
+    applyMapStyle(theme);
   }
 
   /**
@@ -273,6 +201,7 @@ window.addEventListener('resize', () => {
   function toggleTheme() {
     const current = html.getAttribute('data-theme') || getSystemTheme();
     const next = current === 'dark' ? 'light' : 'dark';
+    saveTheme(next); // сохраняем выбор пользователя!
     applyTheme(next, true);
   }
 
@@ -281,15 +210,56 @@ window.addEventListener('resize', () => {
    */
   window.addEventListener('DOMContentLoaded', () => {
     disableTransitionTemporarily();
-    applyTheme(getSystemTheme(), false);
+
+    // 1. Смотрим, есть ли сохранённая тема
+    const savedTheme = getSavedTheme();
+    if (savedTheme) {
+      applyTheme(savedTheme, false);
+    } else {
+      // 2. Если нет, берём system theme
+      applyTheme(getSystemTheme(), false);
+    }
 
     const btn = document.getElementById(btnId);
     if (btn) btn.addEventListener('click', toggleTheme);
 
-    // Автоматическая смена темы при изменении системной настройки (по желанию)
-    // prefersDark.addEventListener('change', (e) => {
-    //   applyTheme(e.matches ? 'dark' : 'light', true);
-    // });
+    // Автоматическая смена темы при изменении системной настройки (только если пользователь не выбрал вручную)
+    prefersDark.addEventListener('change', (e) => {
+      if (!getSavedTheme()) {
+        applyTheme(e.matches ? 'dark' : 'light', true);
+      }
+    });
   });
-
 })();
+
+(function () {
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
+      container: 'body',
+      popperConfig: function (defaultConfig) {
+        return {
+          ...defaultConfig,
+          modifiers: [
+            ...defaultConfig.modifiers,
+            {
+              name: 'offset',
+              options: {
+                offset: [8, 8], // Сдвиг окна относительно элемента-триггера [x, y]
+              }
+            }
+          ]
+        };
+      }
+    }))
+})();
+
+(function(){
+  const phoneElems = document.getElementsByClassName('phone-mask');
+  Array.prototype.forEach.call(phoneElems, function (item) {
+    const phoneMask = IMask(
+      item, {
+        mask: '+{38} (\\000) 000 00 00',
+        lazy: true, // make placeholder always visible
+    });
+  });
+}());

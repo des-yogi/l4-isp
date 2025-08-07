@@ -1,0 +1,123 @@
+<!--DEV
+@ @include('blocks/connection-form/connection-form.html')
+-->
+
+<section class="container  connection-form"
+         data-theme-dark="connection-form--dark"
+         data-theme-light="connection-form--light">
+  <div class="row  connection-form__outer-row">
+
+    <div class="connection-form__info-col">
+      <div class="connection-form__info">
+        <header class="connection-form__info-header">
+          <h2 class="connection-form__title">Як підключитись?</h2>
+          <div class="connection-form__descr">
+            <p>Вам потрібно лише залишити заявку, а всі клопоти з підключення ми забираємо на себе.</p>
+          </div>
+        </header>
+
+        <ol class="list-nostyled  connection-form__info-list">
+          <li class="connection-form__info-item">
+            <p class="h5  connection-form__item-title">Зателефонуйте нам</p>
+            <p>Отримайте детальну консультацію, або заповніть заявку  – тоді ми самі вам зателефонуємо.</p>
+          </li>
+          <li class="connection-form__info-item">
+            <p class="h5  connection-form__item-title">Оберіть тариф</p>
+            <p>Оберіть тарифний план, який сподобався, або акційний тарифний план</p>
+          </li>
+          <li class="connection-form__info-item">
+            <p class="h5  connection-form__item-title">Внесіть аванс</p>
+            <p>Вартість підключення, терміни та інші умови можуть змінюватись в період проведення акцій.</p>
+          </li>
+        </ol>
+
+        <div class="connection-form__info-footer">
+          <p class="connection-form__info-footer-title">Знадобиться всього 5 хвилин, щоб забезпечити собі стабільний та надійний інтернет.</p>
+          <ul class="list-nostyled  connection-form__tel-list">
+            <li class="connection-form__tel-item">
+              <a href="tel:+380987866966" class="h3  connection-form__tel-link">098-786-69-66</a>
+            </li>
+            <li class="connection-form__tel-item">
+              <a href="tel:+380987866966" class="h3  connection-form__tel-link">098-786-69-66</a>
+            </li>
+            <li class="connection-form__tel-item">
+              <a href="tel:+380987866966" class="h3  connection-form__tel-link">098-786-69-66</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="connection-form__form-col">
+      <section class="connection-form__form-wrapper">
+        <h3 class="connection-form__form-title">Залишити заявку</h3>
+        <p class="connection-form__form-intro">Ми знаходимо рішення для кожного абонента!</p>
+
+        <form class="form  connection-form__form" action="#" method="post">
+          <label class="field-text"
+                 data-theme-dark="field-text--dark"
+                 data-theme-light="field-text--light">
+            <!-- <span class="field-text__name">Текст</span> -->
+            <span class="field-text__input-wrap">
+              <input class="field-text__input  required" type="text" name="name" value="" placeholder="Ім’я">
+              <span class="field-text__help-text" data-error="name"></span>
+            </span>
+          </label>
+
+          <label class="field-text"
+                 data-theme-dark="field-text--dark"
+                 data-theme-light="field-text--light">
+            <!-- <span class="field-text__name">Текст</span> -->
+            <span class="field-text__input-wrap">
+              <input class="field-text__input  required" type="email" name="mail" value="" placeholder="Email">
+              <span class="field-text__help-text" data-error="mail"></span>
+            </span>
+          </label>
+
+          <label class="field-text"
+                 data-theme-dark="field-text--dark"
+                 data-theme-light="field-text--light">
+            <!-- <span class="field-text__name">Текст</span> -->
+            <span class="field-text__input-wrap">
+              <input class="field-text__input  required" type="text" inputmode="tel" name="tel" value="" placeholder="+38 (0__) ___ __ __">
+              <span class="field-text__help-text" data-error="tel"></span>
+            </span>
+          </label>
+
+          <label class="field-text"
+                 data-theme-dark="field-text--dark"
+                 data-theme-light="field-text--light">
+            <!-- <span class="field-text__name">Текст</span> -->
+            <span class="field-text__input-wrap">
+              <textarea class="field-text__input  required" name="message" placeholder="Ваш коментар" rows="1"></textarea>
+              <span class="field-text__help-text" data-error="message"></span>
+            </span>
+          </label>
+
+          <div class="field-actions  field-actions__agreement  connection-form__agreement">
+
+            <button class="btn" type="submit"
+                    data-theme-dark="btn--dark"
+                    data-theme-light="btn--light">
+              <span>Відправити</span>
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+            </button>
+
+            <div class="field-checkbox"
+                 data-theme-dark="field-checkbox--dark"
+                 data-theme-light="field-checkbox--light">
+              <label class="field-checkbox__name">
+                <input class="field-checkbox__input" type="checkbox" name="agreement" value="" checked>
+                <span class="field-checkbox__name-text">Я згоден на обробку персональних даних відповідно до <a href="#">Політиці конфіденційності</a></span>
+              </label>
+            </div>
+
+
+          </div>
+
+        </form>
+      </section>
+    </div>
+
+  </div>
+</section>

@@ -1,36 +1,56 @@
-// В этом файле должны быть стили для БЭМ-блока btn, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .btn {
 
   $block-name:                &; // #{$block-name}__element
 
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 56px;
+  padding: 8px 24px;
   margin: 0;
-  // padding: $field-padding-vertical  $field-padding-horizontal;
-  white-space: nowrap;
-  vertical-align: middle;
-  user-select: none;
-  text-align: center;
-  font-size: 1em;
+  font-size: 16px;
+  font-weight: 500;
   font-family: inherit;
   line-height: $line-height;
+  text-align: center;
   text-decoration: none;
   text-transform: none;
-  color: $text-color;
-  border-radius: $border-radius;
-  border: 1px solid $gray-lighter;
-  background-color: $gray-lightest;
-  background-image: none;
+  white-space: nowrap;
+  color: var(--blue-900);
+  border-radius: $border-radius--16;
+  border: 1px solid var(--blue-700);
+  background-color: var(--blue-500);
+  box-shadow: 0 59px 17px 0 rgba(20, 122, 255, 0),
+              0 38px 15px 0 rgba(20, 122, 255, 0.02),
+              0 21px 13px 0 rgba(20, 122, 255, 0.08),
+              0 10px 10px 0 rgba(20, 122, 255, 0.13),
+              0 2px 5px 0 rgba(20, 122, 255, 0.15);
+  backdrop-filter: blur(10px);
+  user-select: none;
   cursor: pointer;
+  transition: all $transition-time;
+
+  &:has(svg + span) {
+    padding-left: 20px;
+  }
+
+  &:has(span + svg) {
+    padding-right: 22px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    transition: fill 0.1s ease-in-out;
+  }
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
-    // background-color: darken($gray-lightest, 10%);
+    color: var(--blue-900);
+    background-color: var(--blue-600);
     // border-color: darken($gray-lighter, 12%);
   }
 
@@ -43,39 +63,169 @@
   &:disabled {
     // opacity: $opacity;
     cursor: not-allowed;
-    color: $text-color;
-    background-color: $gray-lightest;
-    border-color: $gray-lighter;
+    color: var(--grey-500) !important;
+    background-color: transparent !important;
+    border-color: var(--opacity-black-8) !important;
+    box-shadow: none !important;
 
     @at-root a.btn--disabled {
       pointer-events: none;
     }
   }
 
-  // &__icon {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  // }
+  &--dark {
 
+    &--disabled,
+    &:disabled {
+      border-color: var(--opacity-white-12) !important;
+    }
+  }
 
+  &--light {
 
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   border: 1px solid $color-main;
+    &--disabled,
+    &:disabled {
+      border-color: var(--blue-150) !important;
+    }
+  }
 
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     border-color: darken($color-main, 12%);
-  //   }
+  &--header {
+    height: 44px;
+    padding: 9px 16px;
+    border-radius: $border-radius--32;
 
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     border-color: $color-main;
-  //   }
-  // }
+    &:has(svg + span) {
+      padding-left: 12px;
+    }
+
+    &:has(span + svg) {
+      padding-right: 12px;
+    }
+  }
+
+  &--icon-only {
+    width: 56px;
+    padding: 0;
+  }
+
+  &--glow {
+    color: var(--text-color);
+
+    @include gradient-border-mask(
+      2px,
+      $border-radius--16,
+      var(--border-gradient-10),
+      var(--opacity-black-50)
+    )
+    border: none;
+    box-shadow: var(--shadow-blur);
+    backdrop-filter: blur(10px);
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: -10px;
+      background-color:hsla(187,100%,62%,1);
+      background-image:
+      radial-gradient(at 46% 0%, hsla(175,100%,50%,1) 0px, transparent 50%),
+      radial-gradient(at 20% 90%, hsla(189,100%,56%,1) 0px, transparent 50%),
+      radial-gradient(at 100% 51%, hsla(215,100%,50%,1) 0px, transparent 50%),
+      radial-gradient(at 47% 100%, hsla(214,100%,32%,1) 0px, transparent 50%);
+      filter: blur(10px);
+      opacity: 0.2;
+      border-radius: $border-radius--32;
+    }
+
+    &:hover,
+    &:focus {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--16,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+      color: #fff;
+
+      &::after {
+        opacity: 0.8;
+      }
+    }
+
+    &--disabled,
+    &:disabled {
+     color: #fff;
+     background-color: $color-main;
+     border-color: $color-main;
+    }
+  }
+
+  &--secondary {
+    color: var(--text-color);
+    box-shadow: var(--shadow-blur);
+    border: none;
+
+    &::before {
+      transition: background $transition-time;
+    }
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--16,
+        var(--border-gradient-10),
+        var(--opacity-white-4)
+      )
+
+      &:hover,
+      &:focus {
+        color: var(--blue-500) !important;
+        background: var(--opacity-white-8);
+      }
+
+      &--disabled,
+      &:disabled {
+        color: var(--grey-600) !important;
+        background: transparent;
+
+        &::before {
+          background: var(--opacity-white-12);
+        }
+      }
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--16,
+        var(--border-gradient-10),
+        var(--gradient-60-50)
+      )
+      border: 1px solid var(--border-gradient-10);
+
+      &:hover,
+      &:focus {
+        color: var(--blue-600) !important;
+        background:
+          linear-gradient(180deg, rgba(39, 125, 255, 0.04) 0%,
+                                  rgba(39, 125, 255, 0.04) 100%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%,
+                                  rgba(255, 255, 255, 0.5) 100%);
+
+        &::before {
+          background: var(--blue-150);
+        }
+      }
+
+      &--disabled,
+      &:disabled {
+        color: var(--grey-500) !important;
+        background: transparent;
+
+        &::before {
+          background: var(--opacity-black-8);
+        }
+      }
+    }
+  }
 }

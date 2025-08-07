@@ -1,0 +1,77 @@
+<!--DEV
+@ @include('blocks/faq/faq.html')
+-->
+
+<section class="faq"
+         data-theme-dark="faq--dark"
+         data-theme-light="faq--light">
+
+  <div class="faq__inner">
+
+    <div class="container">
+      <div class="row  faq__header-row">
+        <div class="faq__header-col">
+          <div class="faq__header">
+            <h2 class="faq__title">
+              Часті питання про інтернет від <span>L4</span>
+            </h2>
+            <div class="faq__intro">
+              <p>Є питання? У нас є відповіді. Перегляньте наш розділ поширених запитань, щоб отримати цінну інформацію про наші процеси, ціни тощо. Прозорість є основою нашої взаємодії з клієнтами.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container  faq__body">
+      <div class="accordion accordion-flush"
+           id="accordionFaq"
+           data-theme-dark="accordion--dark"
+           data-theme-light="accordion--light">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+              <span>Accordion Item #1</span>
+              <span class="accordion-icon">
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+              </span>
+            </button>
+          </h2>
+          <div id="collapse-1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the first item’s accordion body.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+              <span>Accordion Item #2</span>
+              <span class="accordion-icon">
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+              </span>
+            </button>
+          </h2>
+          <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+              <span>Accordion Item #3</span>
+              <span class="accordion-icon">
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+              </span>
+            </button>
+          </h2>
+          <div id="collapse-3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>

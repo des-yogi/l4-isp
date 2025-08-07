@@ -1,0 +1,37 @@
+<!--DEV
+@ @include('blocks/news-card/news-card.html', {
+  "img": "image-4x3-1",
+  "title": "L4 прискорюється: збільшуємо швидкість без доплат!",
+  "descr": "Ми робимо інтернет ще швидшим! Тепер ваш тариф працює на повну потужність — без додаткових витрат"
+})
+-->
+
+<article class="news-card">
+  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
+    <picture>
+      <source srcset="img/@@img.webp,
+                      img/@@img.webp 2x" type="image/webp">
+      <img src="img/@@img.jpg"
+           srcset="img/@@img.jpg,
+                   img/@@img.jpg 2x"
+           alt='Alt text'
+           width="382"
+           height="239"
+           loading="lazy">
+    </picture>
+    <div class="swiper-lazy-preloader"></div>
+    <!-- image-10x16-1 -->
+    <!-- 382x239, 458x286  2x -->
+  </a>
+
+  <div class="news-card__text">
+    <div class="news-card__add-info">
+      <span class="tag  tag--yellow">Business</span>
+      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
+    </div>
+    <h3 class="h4  news-card__title">
+      <a href="#">@@title</a>
+    </h3>
+    <p class="news-card__descr">@@descr</p>
+  </div>
+</article>

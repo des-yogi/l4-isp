@@ -1,0 +1,76 @@
+.review-card {
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px 0;
+  position: relative;
+  height: 100%;
+  padding: 24px;
+  border-radius: $border-radius--12;
+  backdrop-filter: blur(10px);
+
+  @media (min-width: $screen-md) {
+    padding: 40px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: $border-radius--12;
+    pointer-events: none;
+    z-index: 1;
+    // Универсальная маска для толщины бордера:
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 2px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: inherit;
+    font-weight: 400;
+    color: var(--text-pale-color);
+  }
+
+  &__text {
+
+    @media (min-width: $screen-xxl) {
+      font-size: $font-size;
+    }
+  }
+
+  &__logo {
+    display: flex;
+
+    img {
+      max-height: 60px;
+    }
+  }
+
+  &--dark {
+    background-color: var(--opacity-black-50);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1),
+              0 15px 30px 0 rgba(0, 0, 0, 0.1),
+              0 20px 40px 0 rgba(0, 0, 0, 0.15);
+
+    &::before {
+      background: var(--border-gradient-10);
+    }
+
+    #{$block-name}__logo img {
+      filter: invert(1);
+    }
+  }
+
+  &--light {
+    background-color: var(--opacity-blue-8);
+
+    &::before {
+      background: var(--opacity-blue-8);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.share {
+  display: inline-flex;
+  flex-direction: column;
+
+  $block-name:                &; // #{$block-name}__element
+
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  // &__item {
+
+  // }
+
+  // &__link {
+
+  // }
+}

@@ -1,0 +1,209 @@
+.choices {
+  $block-name:                &; // #{$block-name}__element
+
+  margin-bottom: 16px;
+
+  &[data-type="select-one"] {
+
+    &::after {
+      //display: none;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+      transform: translateY(-50%);
+      margin-top: 0 !important;
+      background-size: 24px;
+      background-position: center;
+      border: none;
+    }
+  }
+
+  &__wrapper {
+    & > #{$block-name} {
+      margin-bottom: 0;
+    }
+  }
+
+  &__inner {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    padding: 8px 16px;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    background-size: 24px;
+    background-position: right 16px center;
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+    border-radius: $border-radius--16 !important;
+    transition: border-color $transition-time;
+  }
+
+  &__list {
+    width: 100%;
+
+    &--single {
+      padding-right: 24px;
+    }
+
+    &--dropdown {
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+
+      &.is-active {
+        //border-radius: 0 0 $border-radius--12 $border-radius--12;
+        border-radius: $border-radius--16;
+      }
+
+      #{$block-name}__input,
+      #{$block-name}__item {
+        padding: 12px 16px !important;
+        //padding-left: 16px !important;
+        //padding-right: 16px !important;
+        font-size: $font-size !important;
+      }
+    }
+  }
+
+
+  &__wrapper--dark {
+
+    #{$block-name} {
+
+      &[data-type="select-one"] {
+
+        &::after {
+          background-image: svg-load('../blocks/field-select/bg-img/select-down.svg', fill=$white);
+        }
+
+        &.is-open {
+
+          &::after {
+            transform: translateY(-50%) scale(1,-1);
+          }
+        }
+      }
+    }
+
+    #{$block-name}:hover,
+    #{$block-name}.is-focused {
+
+      #{$block-name}__inner {
+        border-color: var(--blue-500);
+      }
+    }
+
+    #{$block-name}__inner {
+      color: var(--text-color);
+      background-color: var(--opacity-white-4);
+      //background-image: svg-load('../blocks/field-select/bg-img/select-down.svg', fill=$white);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    #{$block-name}__list {
+      border-color: rgba(255, 255, 255, 0.1);
+
+      &--dropdown {
+        color: var(--text-color);
+        background-color: var(--opacity-black-16);
+
+        &.is-active {
+          border-color: var(--opacity-white-12);
+        }
+
+        #{$block-name}__input {
+          // search elem
+          color: var(--text-color);
+          background-color: var(--opacity-black-16);
+          border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #{$block-name}__item {
+
+          &.is-highlighted {
+            //font-weight: 600;
+            color: var(--blue-500);
+            background: none;
+          }
+
+          &--disabled {
+            color: var(--white) !important;
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper--light {
+
+    #{$block-name} {
+
+      &[data-type="select-one"] {
+
+        &::after {
+          background-image: svg-load('../blocks/field-select/bg-img/select-down.svg', fill=#121721);
+        }
+
+        &.is-open {
+
+          &::after {
+            transform: translateY(-50%) scale(1,-1);
+          }
+        }
+      }
+    }
+
+    #{$block-name}:hover,
+    #{$block-name}.is-focused {
+
+      #{$block-name}__inner {
+        border-color: var(--blue-500);
+      }
+    }
+
+    #{$block-name}__inner {
+      color: var(--text-color);
+      background-color: var(--opacity-white-4);
+      //background-image: svg-load('../blocks/field-select/bg-img/select-down.svg', fill=#121721); // --text-color
+      border-color: var(--blue-150);
+    }
+
+    #{$block-name}__list {
+      border-color: var(--blue-150);
+
+      &--dropdown {
+        color: var(--text-color);
+        background-color: var(--opacity-white-50);
+
+        &.is-active {
+          border-color: var(--blue-300);
+        }
+
+        #{$block-name}__input {
+          // search elem
+          color: var(--text-color);
+          background-color: var(--opacity-white-50);
+          border-color: var(--blue-150);
+        }
+
+        #{$block-name}__item {
+
+          &.is-highlighted {
+            //font-weight: 600;
+            color: var(--blue-500);
+            background: none;
+          }
+
+          &--disabled {
+            color: var(--black) !important;
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}
