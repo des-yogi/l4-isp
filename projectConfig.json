@@ -58,7 +58,8 @@
     "stars": [],
     "mob-nav": [],
     "infowindow-template": [],
-    "share": []
+    "share": [],
+    "social-links": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

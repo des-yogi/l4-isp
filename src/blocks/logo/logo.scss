@@ -25,6 +25,19 @@
     }
   }
 
+  &--footer {
+
+    svg {
+      width: 145px;
+      height: 48px;
+
+      @media (min-width: $screen-md) {
+        width: 195px;
+        height: 65px;
+      }
+    }
+  }
+
   // &--light {}
   // &--dark {}
 }

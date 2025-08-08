@@ -1,9 +1,35 @@
-// В этом файле должны быть стили для БЭМ-блока app-download-links, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .app-download-links {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    margin-bottom: 12px;
+    font-size: $font-size;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__item {
+    //flex: 0 0;
+  }
+
+  &__link {
+    display: inline-flex;
+
+    &:hover,
+    &:focus {
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      transition: transform $transition-time;
+    }
+  }
 }
