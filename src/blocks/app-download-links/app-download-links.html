@@ -1,14 +1,19 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
 @ @include('blocks/app-download-links/app-download-links.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<div class="app-download-links">content</div>
-
 -->
+
+<section class="app-download-links">
+  <h4 class="app-download-links__title">Завантажуй додаток</h4>
+  <ul class="list-nostyled  app-download-links__list">
+    <li class="app-download-links__item">
+      <a href="#" class="app-download-links__link" target="_blank" rel="nofollow noopener">
+        <img src="img/google-play.svg" alt="Google Play logo" width="140" height="41" loading="lazy" title="Get it on Google Play">
+      </a>
+    </li>
+    <li class="app-download-links__item">
+      <a href="#" class="app-download-links__link" target="_blank" rel="nofollow noopener" title="Download on the App Store">
+        <img src="img/app-store.svg" alt="App Store logo" width="128" height="41" loading="lazy">
+      </a>
+    </li>
+  </ul>
+</section>

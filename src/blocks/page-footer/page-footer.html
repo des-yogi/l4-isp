@@ -2,10 +2,145 @@
 @ @include('blocks/page-footer/page-footer.html')
 -->
 
-<footer class="container  page-footer">
+<footer class="container  page-footer"
+        data-theme-dark="page-footer--dark"
+        data-theme-light="page-footer--light">
 
   <div class="page-footer__inner">
+    <div class="row  page-footer__row">
 
+      <div class="page-footer__col-company">
+
+        <div class="page-footer__company">
+          <div class="row  page-footer__row-company">
+
+            <div class="page-footer__col-logo">
+              @@include('../../blocks/logo/logo.html', {
+                "addClass": "logo--footer"
+              })
+            </div>
+
+            <div class="page-footer__col-slogan">
+              <div class="page-footer__slogan">
+                <p>L4 — надійний інтернет-провайдер, що забезпечує швидке та стабільне з'єднання для дому та бізнесу.</p>
+              </div>
+            </div>
+
+            <div class="page-footer__col-app">
+              @@include('../../blocks/app-download-links/app-download-links.html')
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-footer__col-main">
+        <nav class="page-footer__main" aria-label="Додаткова навігація">
+          <div class="row  page-footer__row-main">
+
+            <section class="page-footer__col-nav">
+              <h4 class="h5  page-footer__menu-title">Меню</h4>
+              <ul class="list-nostyled page-footer__nav-list">
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Телебачення</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Послуги</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Акції</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Магазин</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Мапа покриття</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Новини</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Контакти</a>
+                </li>
+              </ul>
+            </section>
+
+            <section class="page-footer__col-nav">
+              <h4 class="h5  page-footer__menu-title">Інтернет</h4>
+              <ul class="list-nostyled page-footer__nav-list">
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Домашній інтернет</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Для бізнесу</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Юридичним особам</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Державні заклади</a>
+                </li>
+              </ul>
+            </section>
+
+            <section class="page-footer__col-nav">
+              <h4 class="h5  page-footer__menu-title">Абоненту</h4>
+              <ul class="list-nostyled page-footer__nav-list">
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Про компанію</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Поповнити рахунок</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Питання і відповіді</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Мобільний додаток</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Вакансії</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Співпраця</a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link">Документи</a>
+                </li>
+              </ul>
+            </section>
+
+            <section class="page-footer__col-nav  page-footer__col-nav--contacts">
+              <div class="page-footer__nav">
+                <h4 class="h5  page-footer__menu-title">Контакти</h4>
+                <ul class="list-nostyled page-footer__nav-list  page-footer__nav-list--contacts">
+                  <li class="page-footer__nav-item">
+                    <a href="tel:+380443844600" class="page-footer__nav-link">(044) 384-46-00</a>
+                  </li>
+                  <li class="page-footer__nav-item">
+                    <a href="tel:+380987866966" class="page-footer__nav-link">(098) 786-69-66</a>
+                  </li>
+                  <li class="page-footer__nav-item">
+                    <a href="tel:+380509831258" class="page-footer__nav-link">(050) 983-12-58</a>
+                  </li>
+                  <li class="page-footer__nav-item">
+                    <a href="tel:+380638200063" class="page-footer__nav-link">(063) 820-00-63</a>
+                  </li>
+                  <li class="page-footer__nav-item">
+                    <a href="mailto:info@l4.ua" class="page-footer__nav-link">info@l4.ua</a>
+                  </li>
+                </ul>
+              </div>
+
+              @@include('../../blocks/social-links/social-links.html')
+            </section>
+
+          </div>
+        </nav>
+      </div>
+
+    </div>
   </div>
 
   @@include('../../blocks/copyrights/copyrights.html')

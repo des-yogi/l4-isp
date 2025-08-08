@@ -1,4 +1,221 @@
 .page-footer {
 
   $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    padding: 16px;
+    border-radius: $border-radius--24;
+
+    @media (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 40px;
+    }
+  }
+
+  &__row {
+    gap: 40px 0;
+  }
+
+  &__col-company {
+    @include col(xs, 12);
+    //@include col(md, 3);
+    @include col(xxl, 3.7);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 40px;
+
+    @media (min-width: $screen-xxl) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+    }
+  }
+
+  &__col-main {
+    @include col(xs, 12);
+    //@include col(md, 12);
+    @include col(xxl, 8.3);
+  }
+
+  &__company {
+    width: 100%;
+
+    .app-download-links__list {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__row-company {
+    gap: 24px 0;
+
+    @media (min-width: $screen-xxl) {
+      display: flex;
+      //flex-wrap: wrap;
+      flex-direction: column;
+      width: auto;
+    }
+  }
+
+  &__col-logo {
+    @include col(xs, 12);
+    @include col(md, 5);
+    @include col(lg, 4);
+    @include col(xl, 3);
+    @include col(xxl, 12);
+  }
+
+  &__col-slogan {
+    @include col(xs, 12);
+    @include col(md, 7);
+    @include col(lg, 4);
+    @include col(xl, 6);
+    @include col(xxl, 12);
+  }
+
+  &__col-app {
+    @include col(xs, 12);
+    @include col(md, 12);
+    @include col(lg, 4);
+    @include col(xl, 3);
+    @include col(xxl, 12);
+  }
+
+  &__slogan {
+    //flex: 1 1;
+    //flex-basis: clamp(295px, 380px, 462px);
+    max-width: 462px;
+    hyphens: none;
+    text-wrap: balance;
+
+    // @media (min-width: $screen-xl) {
+    //   flex-basis: auto;
+    //   max-width: 462px;
+    // }
+
+    // @media (min-width: $screen-xxl) {
+    //   max-width: 372px;
+    // }
+  }
+
+  &__main {
+
+  }
+
+  &__row-main {
+    gap: 24px 0;
+  }
+
+  &__col-nav {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 3);
+
+    &--contacts {
+
+      @media (min-width: $screen-xxl) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0 24px;
+      }
+
+      #{$block-name}__menu-title {
+
+        @media (min-width: $screen-xxl) {
+          flex: 1 1 100%;
+          width: 100%;
+        }
+      }
+
+      .social-links {
+        margin-top: 24px;
+
+        @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
+          justify-content: flex-end;
+        }
+      }
+
+      .social-links__list {
+
+        @media (min-width: $screen-xxl) {
+          flex-direction: column;
+          margin-top: 22px;
+        }
+      }
+    }
+  }
+
+  &__nav {
+
+    @media (min-width: $screen-xxl) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__menu-title {
+    margin-bottom: 24px !important;
+    font-weight: 600;
+  }
+
+  &__nav-list {
+
+    &--contacts {
+
+      #{$block-name}__link {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__nav-item {
+
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__nav-link {
+    display: inline-flex;
+    padding: 2px 0;
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+  &--dark {
+    // #{$block-name}__element
+
+    #{$block-name}__inner {
+      color: var(--white);
+
+      @include gradient-border-mask(
+        2px,
+        $border-radius--24,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+    }
+  }
+
+  &--light {
+    // #{$block-name}__element
+
+    #{$block-name}__inner {
+      color: var(--grey-600);
+
+      @include gradient-border-mask(
+        2px,
+        $border-radius--24,
+        var(--grey-300),
+        var(--grey-100)
+      )
+    }
+  }
 }
