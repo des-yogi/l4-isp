@@ -12,7 +12,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 500;
-  font-family: inherit;
+  font-family: $font-family;
   line-height: $line-height;
   text-align: center;
   text-decoration: none;
@@ -82,6 +82,7 @@
   }
 
   &--light {
+    border-color: transparent;
 
     &--disabled,
     &:disabled {
