@@ -255,7 +255,7 @@
         display: none;
       }
 
-      @media (min-width: $screen-xl) and (max-width: $screen-xxl - 1) {
+      @media (min-width: $screen-xl) and (max-width: 1440px - 1) {
         width: 44px;
         padding: 0 !important;
       }
@@ -265,7 +265,7 @@
       // }
 
       span {
-        @media (min-width: $screen-xl) and (max-width: $screen-xxl - 1) {
+        @media (min-width: $screen-xl) and (max-width: 1440px - 1) {
           @include visibility-hidden;
         }
       }

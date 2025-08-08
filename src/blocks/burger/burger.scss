@@ -18,7 +18,7 @@
   }
 
   > span {
-    display: inline-block;
+    display: inline-flex;
     width: 18px;
     height: $toggler-part-height;
     background: var(--toggler-part-bg-color);
@@ -28,6 +28,7 @@
 
     &::before,
     &::after {
+      display: inline-flex;
       content: '';
       position: absolute;
       left: 0;
