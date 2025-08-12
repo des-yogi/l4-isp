@@ -1,14 +1,234 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
 @ @include('blocks/mob-nav/mob-nav.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<div class="mob-nav">content</div>
-
 -->
+
+<nav id="mobNav"
+     class="mob-nav  offcanvas  offcanvas-top"
+     tabindex="-1"
+     aria-labelledby="mob-navLabel"
+     data-theme-dark="mob-nav--dark"
+     data-theme-light="mob-nav--light"
+>
+
+  <div class="offcanvas-header visually-hidden">
+    <h4>Мвбільне меню</h4>
+  </div>
+
+  <div class="offcanvas-body  mob-nav__body">
+    <div class="mob-nav__search-container">
+      <button id="search-btn"
+              class="search-btn search-btn--light"
+              data-theme-dark="search-btn--dark"
+              data-theme-light="search-btn--light"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal">
+        <span class="visually-hidden">Пошук</span>
+        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#lens"></use></svg>
+      </button>
+
+      <a href="#"
+         class="btn btn--header page-header__wallet-link btn--light"
+         data-theme-dark="btn--dark"
+         data-theme-light="btn--light">
+        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet"></use></svg>
+        <span>Поповнити</span>
+      </a>
+    </div>
+
+    <ul class="mob-nav__service">
+      <li>
+        <a href="#" class="page-header__link  page-header__link--faq" aria-label="FAQ">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+          <span>FAQ</span>
+        </a>
+
+        <a href="#" class="page-header__link  page-header__link--map" aria-label="Мапа покриття">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#map"></use></svg>
+          <span>Мапа покриття</span>
+        </a>
+      </li>
+
+      <li class="dropdown  page-header__phones">
+        <button class="page-header__link  page-header__link--tel  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Contact phones">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+          <span>098-786-69-66</span>
+          <svg class="dropdown-shevron" width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down"></use></svg>
+        </button>
+        <ul class="dropdown-menu  page-header__phones-list"
+            data-theme-dark="page-header__phones-list--dark"
+            data-theme-light="page-header__phones-list--light">
+          <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+          <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+          <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+        </ul>
+      </li>
+
+      <li style="justify-content: space-between;">
+        <a href="#" class="page-header__link  page-header__link--user">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
+          <span>Кабінет</span>
+        </a>
+
+        @@include('../../blocks/messengers/messengers.html')
+      </li>
+    </ul>
+
+    <div class="mob-nav__main">
+      <ul id="mobMenuParent" class="accordion  mob-nav__list">
+        <li class="accordion-item  mob-nav__list-item  mob-nav__list-item--parent  active">
+          <div class="mob-nav__item-wrapper">
+            <a href="#" class="mob-nav__list-link">Інтернет</a>
+            <button class="btn  btn--secondary  btn--icon-only"
+                    type="button"
+                    data-theme-dark="btn--secondary--dark"
+                    data-theme-light="btn--secondary--light"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobMenuCollapse-1"
+                    aria-expanded="false"
+                    aria-controls="mobMenuCollapse-1">
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+            </button>
+          </div>
+          <div id="mobMenuCollapse-1"
+               class="accordion-collapse  collapse  mob-nav__submenu-wrapper"
+               data-bs-parent="#mobMenuParent">
+            <ul class="list-nostyled  mob-nav__submenu">
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Про компанію</a>
+              </li>
+              <li class="mob-nav__submenu-item  active">
+                <a href="#" class="mob-nav__submenu-link">Співпраця</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Вакансії</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Документи</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Питання і відповіді</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Мобільний додаток</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">SpeedTest</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Відгуки</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="mob-nav__list-item">
+          <a href="#" class="mob-nav__list-link">Телебачення</a>
+        </li>
+        <li class="accordion-item  mob-nav__list-item  mob-nav__list-item--parent">
+          <div class="mob-nav__item-wrapper">
+            <a href="#" class="mob-nav__list-link">Послуги</a>
+            <button class="btn  btn--secondary  btn--icon-only"
+                    type="button"
+                    data-theme-dark="btn--secondary--dark"
+                    data-theme-light="btn--secondary--light"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobMenuCollapse-2"
+                    aria-expanded="false"
+                    aria-controls="mobMenuCollapse-2">
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+            </button>
+          </div>
+          <div id="mobMenuCollapse-2"
+               class="accordion-collapse  collapse  mob-nav__submenu-wrapper"
+               data-bs-parent="#mobMenuParent">
+            <ul class="list-nostyled  mob-nav__submenu">
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Про компанію</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Співпраця</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Вакансії</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Документи</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Питання і відповіді</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Мобільний додаток</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">SpeedTest</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Відгуки</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="mob-nav__list-item">
+          <a href="#" class="mob-nav__list-link">
+            <svg width="20" height="20" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#fire"></use></svg>
+            Акції
+          </a>
+        </li>
+        <li class="accordion-item  mob-nav__list-item  mob-nav__list-item--parent">
+          <div class="mob-nav__item-wrapper">
+            <a href="#" class="mob-nav__list-link">Абоненту</a>
+            <button class="btn  btn--secondary  btn--icon-only"
+                    type="button"
+                    data-theme-dark="btn--secondary--dark"
+                    data-theme-light="btn--secondary--light"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobMenuCollapse-3"
+                    aria-expanded="false"
+                    aria-controls="mobMenuCollapse-3">
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+            </button>
+          </div>
+          <div id="mobMenuCollapse-3"
+               class="accordion-collapse  collapse  mob-nav__submenu-wrapper"
+               data-bs-parent="#mobMenuParent">
+            <ul class="list-nostyled  mob-nav__submenu">
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Про компанію</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Співпраця</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Вакансії</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Документи</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Питання і відповіді</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Мобільний додаток</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">SpeedTest</a>
+              </li>
+              <li class="mob-nav__submenu-item">
+                <a href="#" class="mob-nav__submenu-link">Відгуки</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="mob-nav__list-item">
+          <a href="#" class="mob-nav__list-link">Магазин</a>
+        </li>
+        <li class="mob-nav__list-item">
+          <a href="#" class="mob-nav__list-link">Новини</a>
+        </li>
+        <li class="mob-nav__list-item">
+          <a href="#" class="mob-nav__list-link">Контакти</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

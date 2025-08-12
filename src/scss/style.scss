@@ -12,6 +12,7 @@
 @import '../../node_modules/bootstrap/scss/_accordion';
 @import '../../node_modules/bootstrap/scss/_modal';
 @import '../../node_modules/bootstrap/scss/_popover';
+@import '../../node_modules/bootstrap/scss/_offcanvas';
 @import '../../node_modules/swiper/swiper-bundle.css';
 @import '../../node_modules/choices.js/public/assets/styles/choices.min.css';
 @import './src/scss/variables.scss';
@@ -76,4 +77,5 @@
 @import './src/blocks/infowindow-template/infowindow-template.scss';
 @import './src/blocks/share/share.scss';
 @import './src/blocks/social-links/social-links.scss';
+@import './src/blocks/lang-switcher/lang-switcher.scss';
 @import './src/scss/print.scss';

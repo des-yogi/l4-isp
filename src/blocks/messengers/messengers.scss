@@ -13,12 +13,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     text-decoration: none;
     color: var(--text-color);
-    background: transparent;
+    //background: transparent;
     user-select: none;
+    backdrop-filter: blur(10px);
 
     &:hover,
     &:focus {
@@ -27,6 +28,30 @@
 
     &:active {
       color: var(--main-nav-link-active-color);
+    }
+  }
+
+  &--dark {
+
+    #{$block-name}__link {
+      @include gradient-border-mask(
+        2px,
+        22px,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      );
+    }
+  }
+
+  &--light {
+
+    #{$block-name}__link {
+      @include gradient-border-mask(
+        2px,
+        22px,
+        var(--border-gradient-10),
+        var(--gradient-60-50)
+      );
     }
   }
 }

@@ -59,7 +59,8 @@
     "mob-nav": [],
     "infowindow-template": [],
     "share": [],
-    "social-links": []
+    "social-links": [],
+    "lang-switcher": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
@@ -70,6 +71,7 @@
     "../../node_modules/bootstrap/scss/_accordion",
     "../../node_modules/bootstrap/scss/_modal",
     "../../node_modules/bootstrap/scss/_popover",
+    "../../node_modules/bootstrap/scss/_offcanvas",
     "../../node_modules/swiper/swiper-bundle.css",
     "../../node_modules/choices.js/public/assets/styles/choices.min.css",
     "./src/scss/variables.scss",

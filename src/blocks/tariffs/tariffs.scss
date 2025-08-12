@@ -25,6 +25,8 @@
   &__intro {
 
     p {
+      hyphens: none;
+      text-wrap: pretty;
       color: var(--text-pale-color);
     }
   }
