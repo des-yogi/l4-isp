@@ -33,23 +33,26 @@
 
   <div class="page__inner">
 
-    <div class="page__content">
+    <div class="page__content">
 
-      <header id="header" class="page-header">
+      <header id="header"
+              class="page-header"
+              data-theme-dark="page-header--dark"
+              data-theme-light="page-header--light">
 
         <div class="page-header__top">
           <div class="container  page-header__top-content">
 
             <div class="page-header__top-left">
-              <a href="#" class="page-header__link  page-header__link--business">
+              <a href="#" class="page-header__link  page-header__link--business" aria-label="Для бізнесу">
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#briefcase"></use></svg>
                 <span>Для бізнесу</span>
               </a>
-              <a href="#" class="page-header__link  page-header__link--faq">
+              <a href="#" class="page-header__link  page-header__link--faq" aria-label="FAQ">
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
                 <span>FAQ</span>
               </a>
-              <a href="#" class="page-header__link  page-header__link--map">
+              <a href="#" class="page-header__link  page-header__link--map" aria-label="Мапа покриття">
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#map"></use></svg>
                 <span>Мапа покриття</span>
               </a>
@@ -57,8 +60,11 @@
                 <button class="page-header__link  page-header__link--tel  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Contact phones">
                   <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
                   <span>098-786-69-66</span>
+                  <svg class="dropdown-shevron" width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down"></use></svg>
                 </button>
-                <ul class="dropdown-menu  page-header__phones-list" data-theme-dark="page-header__phones-list--dark" data-theme-light="page-header__phones-list--light">
+                <ul class="dropdown-menu  page-header__phones-list"
+                    data-theme-dark="page-header__phones-list--dark"
+                    data-theme-light="page-header__phones-list--light">
                   <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
                   <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
                   <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
@@ -74,27 +80,27 @@
             </div>
 
             <div class="page-header__top-right">
-              <a href="#" class="page-header__link    page-header__link--user">
+              <a href="#" class="page-header__link  page-header__link--user">
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
                 <span>Кабінет</span>
-              </a>
+              </a>
 
-              <ul class="list-nostyled  messengers" aria-label="Контакти у месенджерах">
+              <ul class="list-nostyled  messengers"
+                  data-theme-dark="messengers--dark"
+                  data-theme-light="messengers--light"
+                  aria-label="Контакти у месенджерах">
                 <li class="messengers__item">
-                  <a href="#" class="messengers__link">
-                    <span class="visually-hidden">Telegram</span>
+                  <a href="#" class="messengers__link" aria-label="Telegram">
                     <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tg"></use></svg>
                   </a>
                 </li>
                 <li class="messengers__item">
-                  <a href="#" class="messengers__link">
-                    <span class="visually-hidden">Viber</span>
+                  <a href="#" class="messengers__link" aria-label="Viber">
                     <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#viber"></use></svg>
                   </a>
                 </li>
                 <li class="messengers__item">
-                  <a href="#" class="messengers__link">
-                    <span class="visually-hidden">Facebook Messenger</span>
+                  <a href="#" class="messengers__link" aria-label="Messenger">
                     <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#messenger"></use></svg>
                   </a>
                 </li>
@@ -108,7 +114,7 @@
         <div class="container  page-header__main">
           <div class="page-header__main-content"
                data-theme-dark="page-header__main-content--dark" data-theme-light="page-header__main-content--light"
-               data-badge="Ми в мережі 19 років, 3 місяці та 24 днів">
+               data-badge="Ми в мережі 19 років, 3 місяці та 24 днів">
 
             <a href="index.html" class="logo  logo--header"
                                  data-theme-light="logo--light"
@@ -243,7 +249,7 @@
                  data-theme-light="btn--light">
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet"></use></svg>
                 <span>Поповнити</span>
-              </a>
+              </a>
 
               <button
                 id="toggle-theme"
@@ -270,9 +276,20 @@
                       data-bs-target="#searchModal">
                 <span class="visually-hidden">Пошук</span>
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#lens"></use></svg>
-              </button>
+              </button>
 
-              <button id="menu-toggler" class="burger" data-theme-dark="burger--dark" data-theme-light="burger--light" aria-label="Перемикач меню"><span></span></button>
+              <button id="menuToggler"
+                      class="burger"
+                      data-theme-dark="burger--dark"
+                      data-theme-light="burger--light"
+                      aria-label="Перемикач меню"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#mobNav"
+                      aria-controls="mobNav"
+              >
+                <span></span>
+              </button>
+
 
             </div>
           </div>
@@ -280,8 +297,262 @@
 
       </header>
 
+      <!-- Mob Nav -->
 
-      <main class="main  main--hero">
+      <nav id="mobNav"
+           class="mob-nav  offcanvas  offcanvas-top"
+           tabindex="-1"
+           aria-labelledby="mob-navLabel"
+           data-theme-dark="mob-nav--dark"
+           data-theme-light="mob-nav--light"
+      >
+
+        <div class="offcanvas-header visually-hidden">
+          <h4>Мвбільне меню</h4>
+        </div>
+
+        <div class="offcanvas-body  mob-nav__body">
+          <div class="mob-nav__search-container">
+            <button id="search-btn"
+                    class="search-btn search-btn--light"
+                    data-theme-dark="search-btn--dark"
+                    data-theme-light="search-btn--light"
+                    data-bs-toggle="modal"
+                    data-bs-target="#searchModal">
+              <span class="visually-hidden">Пошук</span>
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#lens"></use></svg>
+            </button>
+
+            <a href="#"
+               class="btn btn--header page-header__wallet-link btn--light"
+               data-theme-dark="btn--dark"
+               data-theme-light="btn--light">
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet"></use></svg>
+              <span>Поповнити</span>
+            </a>
+          </div>
+
+          <ul class="mob-nav__service">
+            <li>
+              <a href="#" class="page-header__link  page-header__link--faq" aria-label="FAQ">
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                <span>FAQ</span>
+              </a>
+
+              <a href="#" class="page-header__link  page-header__link--map" aria-label="Мапа покриття">
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#map"></use></svg>
+                <span>Мапа покриття</span>
+              </a>
+            </li>
+
+            <li class="dropdown  page-header__phones">
+              <button class="page-header__link  page-header__link--tel  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Contact phones">
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+                <span>098-786-69-66</span>
+                <svg class="dropdown-shevron" width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down"></use></svg>
+              </button>
+              <ul class="dropdown-menu  page-header__phones-list"
+                  data-theme-dark="page-header__phones-list--dark"
+                  data-theme-light="page-header__phones-list--light">
+                <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+                <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+                <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+              </ul>
+            </li>
+
+            <li style="justify-content: space-between;">
+              <a href="#" class="page-header__link  page-header__link--user">
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
+                <span>Кабінет</span>
+              </a>
+
+              <ul class="list-nostyled  messengers"
+                  data-theme-dark="messengers--dark"
+                  data-theme-light="messengers--light"
+                  aria-label="Контакти у месенджерах">
+                <li class="messengers__item">
+                  <a href="#" class="messengers__link" aria-label="Telegram">
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tg"></use></svg>
+                  </a>
+                </li>
+                <li class="messengers__item">
+                  <a href="#" class="messengers__link" aria-label="Viber">
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#viber"></use></svg>
+                  </a>
+                </li>
+                <li class="messengers__item">
+                  <a href="#" class="messengers__link" aria-label="Messenger">
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#messenger"></use></svg>
+                  </a>
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+
+          <div class="mob-nav__main">
+            <ul id="mobMenuParent" class="accordion  mob-nav__list">
+              <li class="accordion-item  mob-nav__list-item  mob-nav__list-item--parent  active">
+                <div class="mob-nav__item-wrapper">
+                  <a href="#" class="mob-nav__list-link">Інтернет</a>
+                  <button class="btn  btn--secondary  btn--icon-only"
+                          type="button"
+                          data-theme-dark="btn--secondary--dark"
+                          data-theme-light="btn--secondary--light"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#mobMenuCollapse-1"
+                          aria-expanded="false"
+                          aria-controls="mobMenuCollapse-1">
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                  </button>
+                </div>
+                <div id="mobMenuCollapse-1"
+                     class="accordion-collapse  collapse  mob-nav__submenu-wrapper"
+                     data-bs-parent="#mobMenuParent">
+                  <ul class="list-nostyled  mob-nav__submenu">
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Про компанію</a>
+                    </li>
+                    <li class="mob-nav__submenu-item  active">
+                      <a href="#" class="mob-nav__submenu-link">Співпраця</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Вакансії</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Документи</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Питання і відповіді</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Мобільний додаток</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">SpeedTest</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Відгуки</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mob-nav__list-item">
+                <a href="#" class="mob-nav__list-link">Телебачення</a>
+              </li>
+              <li class="accordion-item  mob-nav__list-item  mob-nav__list-item--parent">
+                <div class="mob-nav__item-wrapper">
+                  <a href="#" class="mob-nav__list-link">Послуги</a>
+                  <button class="btn  btn--secondary  btn--icon-only"
+                          type="button"
+                          data-theme-dark="btn--secondary--dark"
+                          data-theme-light="btn--secondary--light"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#mobMenuCollapse-2"
+                          aria-expanded="false"
+                          aria-controls="mobMenuCollapse-2">
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                  </button>
+                </div>
+                <div id="mobMenuCollapse-2"
+                     class="accordion-collapse  collapse  mob-nav__submenu-wrapper"
+                     data-bs-parent="#mobMenuParent">
+                  <ul class="list-nostyled  mob-nav__submenu">
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Про компанію</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Співпраця</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Вакансії</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Документи</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Питання і відповіді</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Мобільний додаток</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">SpeedTest</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Відгуки</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mob-nav__list-item">
+                <a href="#" class="mob-nav__list-link">
+                  <svg width="20" height="20" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#fire"></use></svg>
+                  Акції
+                </a>
+              </li>
+              <li class="accordion-item  mob-nav__list-item  mob-nav__list-item--parent">
+                <div class="mob-nav__item-wrapper">
+                  <a href="#" class="mob-nav__list-link">Абоненту</a>
+                  <button class="btn  btn--secondary  btn--icon-only"
+                          type="button"
+                          data-theme-dark="btn--secondary--dark"
+                          data-theme-light="btn--secondary--light"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#mobMenuCollapse-3"
+                          aria-expanded="false"
+                          aria-controls="mobMenuCollapse-3">
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                  </button>
+                </div>
+                <div id="mobMenuCollapse-3"
+                     class="accordion-collapse  collapse  mob-nav__submenu-wrapper"
+                     data-bs-parent="#mobMenuParent">
+                  <ul class="list-nostyled  mob-nav__submenu">
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Про компанію</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Співпраця</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Вакансії</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Документи</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Питання і відповіді</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Мобільний додаток</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">SpeedTest</a>
+                    </li>
+                    <li class="mob-nav__submenu-item">
+                      <a href="#" class="mob-nav__submenu-link">Відгуки</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mob-nav__list-item">
+                <a href="#" class="mob-nav__list-link">Магазин</a>
+              </li>
+              <li class="mob-nav__list-item">
+                <a href="#" class="mob-nav__list-link">Новини</a>
+              </li>
+              <li class="mob-nav__list-item">
+                <a href="#" class="mob-nav__list-link">Контакти</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <main class="main  main--hero">
 
         <div class="container  hero">
           <h1 class="h1  hero__title">Миттєвий перехід</h1>
@@ -2732,7 +3003,7 @@
               </div>
             </div>
 
-            <div class="customer-choice__subscription">
+            <div class="customer-choice__subscription">
 
               <article class="newsletter-signup"
                        data-theme-dark="newsletter-signup--dark"
@@ -2971,7 +3242,43 @@
           </div>
         </div>
 
-        <section class="copyrights">content</section>
+        <section class="container  copyrights">
+          <p class="copyrights__owner">
+            <span>© L4 2005-2025. Всі права захищено.</span>
+            <a href="#" class="copyrights__link">Політика конфіденційності.</a>
+            <a href="#" class="copyrights__link">Правила та умови</a>
+          </p>
+
+          <div class="copyrights__service">
+
+            <section class="lang-switcher">
+              <h5 class="visually-hidden">Вибір мови сайту</h5>
+
+              <ul class="lang-switcher__list">
+                <li class="lang-switcher__item  active">
+                  <a href="#" class="lang-switcher__link">Укр</a>
+                </li>
+                <li class="lang-switcher__item">
+                  <a href="#" class="lang-switcher__link">Рус</a>
+                </li>
+              </ul>
+            </section>
+
+            <a href="https://itdoors.com.ua/"  class="copyrights__dev" title="Providex, розробник">
+              <svg xmlns="http://www.w3.org/2000/svg" width="127" height="36" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 127 36" role="img" aria-label="Providex logo" loading="lazy"><defs><linearGradient id="linear-gradient" x1="2.49" y1="-778.76" x2="18.3" y2="-806.31" gradientTransform="translate(0 -780.11) scale(1 -1)" gradientUnits="userSpaceOnUse"><stop offset=".2" stop-color="#f99048"/><stop offset=".33" stop-color="#fa874c"/><stop offset=".54" stop-color="#fb6f56"/><stop offset=".8" stop-color="#fd4767"/><stop offset="1" stop-color="#ff2576"/></linearGradient></defs><g id="text"><path d="m62.48,15.23c-.97-.55-2.22-.83-3.46-.83s-2.49.28-3.46.83c-2.08,1.11-3.32,3.18-3.18,5.4,0,2.22,1.25,4.43,3.18,5.4,1.11.55,2.08.83,3.46.83s2.49-.28,3.46-.83c2.08-1.11,3.32-3.18,3.18-5.4.14-2.22-1.11-4.29-3.18-5.4Zm-1.25,7.89c-.55.55-1.38.83-2.22.83s-1.66-.28-2.22-.83c-.55-.55-.97-1.38-.97-2.49,0-.97.28-1.8.97-2.49.55-.55,1.38-.83,2.22-.83s1.66.28,2.22.83c.55.55.83,1.38.83,2.49.14,1.11-.14,1.94-.83,2.49Z" /><path d="m49.18,14.95c-.69.28-1.25.69-1.66,1.38v-1.66h-3.32v12.18h3.46v-5.68c0-1.11.28-1.94.83-2.49s1.38-.83,2.35-.83h.83v-3.18c-.83-.14-1.66,0-2.49.28Z" /><path d="m39.08,11.77c-.97-.55-2.22-.69-3.6-.69h-6.78v15.65h3.6v-4.29h3.18c1.38,0,2.63-.28,3.6-.69.97-.42,1.8-1.11,2.35-1.94.55-.83.83-1.8.83-3.05.14-2.22-1.11-4.15-3.18-4.98Zm-1.25,6.92c-.55.42-1.38.69-2.49.69h-3.05v-5.4h3.05c.83,0,1.8.14,2.49.69.55.42.83,1.25.83,2.08s-.28,1.52-.83,1.94Z" /><path d="m113.85,20.63c0-1.25-.28-2.35-.83-3.32-.55-.97-1.25-1.66-2.22-2.22-.97-.55-2.08-.69-3.18-.69h-.42c-3.32,0-6.09,2.91-5.95,6.23,0,1.11.28,2.22.83,3.18.55.97,1.38,1.66,2.49,2.22s2.35.83,3.6.83c2.22,0,3.88-.69,4.98-1.94l-1.94-2.08c-.83.83-1.94,1.25-3.18,1.25-.97,0-1.66-.14-2.35-.69-.69-.55-.97-1.11-1.11-1.8h9.14c0-.55.14-.83.14-.97Zm-9.28-1.11c.14-.69.42-1.25.97-1.8.55-.42,1.25-.69,2.08-.69.69,0,1.38.28,1.94.69.55.42.83,1.11.97,1.8h-5.95Z" /><path d="m95.43,15.79c-.83-.88-2.01-1.4-3.46-1.4-1.11,0-2.22.28-3.05.69-.97.55-1.66,1.25-2.22,2.22-.55.97-.83,2.08-.83,3.32s.28,2.35.83,3.32c1.05,1.89,3.1,3.02,5.26,2.91,1.66,0,2.91-.55,3.74-1.52v1.38h3.32V10.1h-3.6v5.69Zm-.55,7.33c-.55.55-1.38.83-2.22.83s-1.66-.28-2.22-.83-.83-1.38-.83-2.49c0-.97.28-1.8.83-2.49.55-.55,1.38-.83,2.22-.83s1.66.28,2.22.83.97,1.38.97,2.49c-.14,1.11-.42,1.94-.97,2.49Z" /><path d="m82.28,9.13c-.69,0-1.25.14-1.52.55l-.14.14c-.83.69-.69,1.94,0,2.63.42.42.97.55,1.52.55.69,0,1.25-.14,1.52-.55.42-.42.55-.97.55-1.52s-.28-.97-.55-1.38c-.28-.28-.83-.42-1.38-.42Z" /><polygon points="72.45 22.84 69.12 14.67 65.52 14.67 70.65 26.72 74.25 26.72 79.37 14.67 76.05 14.67 72.45 22.84" /><rect x="80.48" y="14.67" width="3.46" height="12.05" /><polygon points="122.29 20.63 126.86 14.67 123.12 14.67 120.49 18.13 117.86 14.67 113.85 14.67 118.42 20.63 113.85 26.72 117.58 26.72 120.35 22.98 122.98 26.72 127 26.72 122.29 20.63" /></g><g id="icon"><path d="m20.91,15.65C20.91,7.06,13.71,0,4.98,0H.14v9.55h4.85c3.46,0,6.37,2.77,6.37,6.23s-2.91,6.09-6.37,6.09c2.63,0,4.85,2.08,4.85,4.71v4.02c6.51-1.94,11.08-8.03,11.08-14.95Z" fill="url(#linear-gradient)" /><path d="m9.69,15.65c0-2.63-2.22-4.71-4.85-4.71S.14,13.02.14,15.65s2.22,4.71,4.85,4.71,4.71-2.08,4.71-4.71Zm-4.71,6.23c2.63,0,4.71,2.08,4.71,4.57v4.15c-1.52.55-3.18.69-4.85.69-2.63,0-4.85-2.08-4.85-4.71v9.42h9.69v-9.42c.14-2.63-2.08-4.71-4.71-4.71Z" fill="#4d11e8" /><path d="m4.98,31.29c1.66,0,3.32-.28,4.85-.69v-4.02c0-2.63-2.08-4.71-4.71-4.71h-.14c-2.63,0-4.85,2.08-4.85,4.71s2.22,4.71,4.85,4.71Z" fill="#a612e8" /></g></svg>
+            </a>
+          </div>
+
+          <a href="#"
+             class="btn btn--secondary btn--icon-only  to-top"
+             id="toTop"
+             title="Нагору"
+             data-theme-dark="btn--secondary--dark"
+             data-theme-light="btn--secondary--light">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-up"></use></svg>
+          </a>
+
+        </section>
 
       </footer>
 
@@ -2979,7 +3286,29 @@
 
   </div>
 
-  <!-- InfoWindow Template -->
+  <!-- Search modal -->
+
+  <!-- Search Modal -->
+  <div class="modal fade  search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="searchModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Модал текст...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- InfoWindow Template -->
   <template id="infowindow-custom">
     <div class="infowindow-template  infowindow-template--below" tabindex="-1" aria-labelledby="infowindow-title" aria-hidden="true">
       <!-- aria-modal="true" role="dialog" добавить при открытии -->
@@ -3034,29 +3363,7 @@
   </template>
 
 
-  <!-- Search modal -->
-
-  <!-- Search Modal -->
-  <div class="modal fade  search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="searchModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Модал текст...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
- <script type="module">
+  <script type="module">
     import { DotLottie } from "https://esm.sh/@lottiefiles/dotlottie-web";
 
     const canvases = document.querySelectorAll(".lottie-player");

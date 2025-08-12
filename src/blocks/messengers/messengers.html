@@ -2,22 +2,22 @@
 @ @include('blocks/messengers/messengers.html')
 -->
 
-<ul class="list-nostyled  messengers" aria-label="Контакти у месенджерах">
+<ul class="list-nostyled  messengers"
+    data-theme-dark="messengers--dark"
+    data-theme-light="messengers--light"
+    aria-label="Контакти у месенджерах">
   <li class="messengers__item">
-    <a href="#" class="messengers__link">
-      <span class="visually-hidden">Telegram</span>
+    <a href="#" class="messengers__link" aria-label="Telegram">
       <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tg"></use></svg>
     </a>
   </li>
   <li class="messengers__item">
-    <a href="#" class="messengers__link">
-      <span class="visually-hidden">Viber</span>
+    <a href="#" class="messengers__link" aria-label="Viber">
       <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#viber"></use></svg>
     </a>
   </li>
   <li class="messengers__item">
-    <a href="#" class="messengers__link">
-      <span class="visually-hidden">Facebook Messenger</span>
+    <a href="#" class="messengers__link" aria-label="Messenger">
       <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#messenger"></use></svg>
     </a>
   </li>

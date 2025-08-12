@@ -1,9 +1,340 @@
-// В этом файле должны быть стили для БЭМ-блока mob-nav, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .mob-nav {
+  background-color: var(--bg-color);
+  border-radius: $border-radius--24;
+  backdrop-filter: blur(20px);
 
   $block-name:                &; // #{$block-name}__element
 
+  &.offcanvas-top {
+    top: 98px; //88 + 8
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    height: auto;
+
+    @media (min-width: $screen-md) {
+      top: 136px;
+      right: 40px;
+      left: 40px;
+      bottom: 12px;
+    }
+  }
+
+  &__body {
+
+    //overflow: hidden;
+    overflow-y: auto;
+
+    @media (min-width: $screen-md) {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+
+  &__search-container,
+  &__service {
+    //gap: 16px;
+
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &__search-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__service {
+    display: flex;
+    flex-wrap: wrap;
+    //justify-content: space-between;
+    //gap: 12px;
+    margin-top: 8px;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    & > li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px 24px;
+      position: relative;
+      padding: 4px 0;
+      margin: 0;
+      width: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        right: -14px;
+        left: -14px;
+        height: 1px;
+      }
+    }
+
+    .page-header__link {
+      //background: none !important;
+      //flex: 0 0 auto;
+      width: auto;
+      padding: 10px 0;
+      font-size: 16px;
+      border-radius: $border-radius--24 !important;
+
+      span {
+        display: inline-flex;
+        white-space: nowrap;
+      }
+
+      &--map {
+        flex-direction: row-reverse;
+      }
+    }
+
+    & .dropdown-menu {
+      //max-width: 190px;
+      width: 190px;
+    }
+
+    .messengers {
+      gap: 8px;
+    }
+  }
+
+  &__main {
+    height: calc(100% - 210px);
+    //padding: 10px 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  &__list-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    min-height: 44px;
+    margin: 0;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      right: -14px;
+      left: -14px;
+      height: 1px;
+
+      @media (min-width: $screen-md) {
+        right: -40px;
+        left: -40px;
+      }
+    }
+
+    &::after {
+      bottom: -1px;
+    }
+
+    &::before {
+      top: -1px;
+    }
+
+    &:last-of-type {
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &.active {
+
+      &::after,
+      &::before {
+        background: linear-gradient(to right, transparent, var(--blue-500) 64%, transparent) !important;
+      }
+
+      &:last-of-type {
+
+        &::after {
+          display: block;
+        }
+      }
+
+      #{$block-name}__list-link {
+        color: var(--main-nav-link-hover-color);
+      }
+    }
+
+    &--parent {
+
+    }
+
+    .btn--secondary.btn--icon-only {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  &__item-wrapper {
+    flex: 1 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__list-link,
+  &__submenu-link {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 54px;
+    font-size: $font-size;
+    text-decoration: none;
+    color: inherit;
+
+    @media (min-width: $screen-md) {
+      font-size: $font-size-lg;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--main-nav-link-hover-color);
+    }
+  }
+
+  &__submenu-wrapper {
+    flex: 1 0 100%;
+    position: relative;
+    width: 100%;
+    margin-right: -14px;
+    margin-left: -14px;
+    border-radius: $border-radius--12;
+    will-change: auto;
+
+    @media (min-width: $screen-md) {
+      margin-right: -40px;
+      margin-left: -40px;
+    }
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0 -14px 0 -14px;
+    //   inset: 0;
+    //   z-index: -1;
+    //   border-radius: $border-radius--12;
+
+    //   @media (min-width: $screen-md) {
+    //     right: -40px;
+    //     left: -40px;
+    //   }
+    // }
+  }
+
+  &__submenu {
+    padding-right: 14px;
+    padding-left: 14px;
+
+    @media (min-width: $screen-md) {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+
+  &__submenu-item {
+
+    &.active {
+
+      #{$block-name}__submenu-link {
+        color: var(--main-nav-link-hover-color);
+      }
+    }
+  }
+
+  &__submenu-link {
+    min-height: 44px;
+  }
+
+  // Theme styles
+
+  &--dark {
+    // @include gradient-border-mask(
+    //   2px,
+    //   24px,
+    //   var(--border-gradient-10),
+    //   var(--opacity-black-50)
+    // );
+
+    //background: var(--opacity-black-50);
+    border: 1px solid var(--opacity-white-16);
+
+    #{$block-name}__service {
+
+      & > li {
+
+        &::after {
+          background: linear-gradient(to left, transparent, var(--opacity-white-16));
+        }
+      }
+    }
+
+    #{$block-name}__list-item {
+      &::after {
+        background: linear-gradient(to left, transparent, var(--opacity-white-16));
+      }
+    }
+
+    #{$block-name}__submenu-wrapper {
+      background: var(--blue-950);
+      //border: 1px solid var(--blue-900);
+
+      &::before {
+        background: var(--blue-950);
+      }
+    }
+  }
+
+  &--light {
+    // @include gradient-border-mask(
+    //   2px,
+    //   24px,
+    //   var(--border-gradient-10),
+    //   var(--opacity-white-60)
+    // );
+
+    //background: var(--opacity-white-50);
+    border: 1px solid var(--opacity-black-12);
+
+    #{$block-name}__service {
+
+      & > li {
+
+        &::after {
+          background: linear-gradient(to left, transparent, var(--opacity-black-16));
+        }
+      }
+    }
+
+    #{$block-name}__list-item {
+
+      &::after {
+        background: linear-gradient(to left, transparent, var(--opacity-black-16));
+      }
+    }
+
+    #{$block-name}__submenu-wrapper {
+      background: var(--opacity-blue-8);
+
+      &::before {
+        background: var(--opacity-blue-8);
+      }
+    }
+  }
 }

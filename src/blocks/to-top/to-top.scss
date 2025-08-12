@@ -3,23 +3,35 @@
   $block-name:                &; // #{$block-name}__element
 
   position: fixed;
-  right: 16px;
-  bottom: 32px;
+  right: 12px;
+  bottom: 16px;
   z-index: 10;
-  width: 56px;
-  height: 56px;
-  color: transparent;
-  background-color: $secondary-color;
-  font: 0/0 a;
+  //width: 56px;
+  //height: 56px;
+  //color: transparent;
+  //background-color: $secondary-color;
+  //font: 0/0 a;
   // см. img_to_bg/to-up.svg
   // http://yoksel.github.io/url-encoder/ru/
-  background-size: 30px;
+  //background-size: 30px;
   //background-image: svg-load('../blocks/sprite-svg/svg/chevron-down.svg', fill=$white);
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 2px solid $white;
-  border-radius: $border-radius;
-  transform: rotate(180deg);
+  //background-repeat: no-repeat;
+  //background-position: center;
+  //border: 2px solid $white;
+  //border-radius: $border-radius;
+  //transform: rotate(180deg);
+
+  @media (min-width: $screen-md) {
+    right: 40px;
+  }
+
+  @media (min-width: $screen-xl) {
+    bottom: 24px;
+  }
+
+  // @media (min-width: $screen-xxl) {
+  //   bottom: 26px;
+  // }
 
   .js & {
     opacity: 0;

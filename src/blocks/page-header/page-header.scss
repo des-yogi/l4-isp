@@ -35,7 +35,7 @@
     padding-left: 16px;
 
     @media (min-width: $screen-xxl) {
-      gap: 8px 24px;
+      gap: 8px 4px;
       padding-left: 16px;
     }
   }
@@ -46,8 +46,9 @@
     justify-content: center;
     gap: 0 6px;
     //padding: 0 12px;
-    min-width: 48px;
-    height: 48px;
+    min-width: 44px;
+    height: 44px;
+    padding: 10px;
     font-family: $font-family;
     font-size: inherit;
     text-decoration: none;
@@ -56,6 +57,7 @@
     user-select: none;
     border: none;
     transition: color $transition-time;
+    backdrop-filter: blur(10px);
 
     &:hover,
     &:focus {
@@ -66,14 +68,29 @@
       color: var(--main-nav-link-active-color) !important;
     }
 
+    @media (min-width: $screen-xxl) {
+      font-size: $font-size;
+    }
+
     &--business,
     &--faq,
     &--map {
 
+      @media (max-width: $screen-xxl - 1) {
+        width: 44px;
+        min-width: auto;
+        padding: 0;
+      }
+
+      @media (min-width: $screen-xxl) {
+        padding: 10px 14px 10px 12px;
+      }
+
       span {
 
         @media (max-width: $screen-xxl - 1) {
-          @include visibility-hidden;
+          //@include visibility-hidden;
+          display: none;
         }
       }
     }
@@ -83,8 +100,16 @@
     &--map {
     }
     &--tel {
-    }
+      padding-left: 12px;    }
+
     &--user {
+      padding-left: 12px;
+      padding-right: 14px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
     }
   }
 
@@ -282,6 +307,9 @@
     //gap: 4px;
     padding-top: 8px;
     padding-bottom: 8px;
+    border-radius: $border-radius--12;
+    box-shadow: var(--shadow-blur);
+    border: none;
     backdrop-filter: blur(10px);
 
     li + li {
@@ -320,6 +348,12 @@
     }
 
     &--light {
+      @include gradient-border-mask(
+        2px,
+        12px,
+        var(--grey-300),
+        var(--opacity-white-60)
+      );
 
       #{$block-name}__phones-link {
         color: var(--text-color) !important;
@@ -345,7 +379,7 @@
     transition: transform .5s ease-out;
 
     @media (min-width: $screen-md) {
-      transform: translateY(-40px);
+      transform: translateY(-49px);
     }
 
     // @media (min-width: $screen-xl) {
@@ -356,5 +390,28 @@
   &--slideDown {
     transform: translateY(0);
     transition: transform .5s ease-out;
+  }
+
+  &--dark {
+
+    #{$block-name}__link {
+      @include gradient-border-mask(
+        2px,
+        22px,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      );
+    }
+  }
+
+  &--light {
+    #{$block-name}__link {
+      @include gradient-border-mask(
+        2px,
+        22px,
+        var(--border-gradient-10),
+        var(--gradient-60-50)
+      );
+    }
   }
 }

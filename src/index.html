@@ -51,13 +51,13 @@
 
   </div>
 
-  <!-- InfoWindow Template -->
-  @@include('blocks/infowindow-template/infowindow-template.html')
-
   <!-- Search modal -->
   @@include('blocks/search-modal/search-modal.html')
 
- <script type="module">
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+  <script type="module">
     import { DotLottie } from "https://esm.sh/@lottiefiles/dotlottie-web";
 
     const canvases = document.querySelectorAll(".lottie-player");
