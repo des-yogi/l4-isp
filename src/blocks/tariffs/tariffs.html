@@ -53,34 +53,61 @@
       </div>
 
       <div class="tariffs__select-filters">
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+
+        <div class="field-filter"
+             data-theme-dark="field-filter--dark"
+             data-theme-light="field-filter--light">
+          <div class="field-filter__title">Підключення:</div>
+
+          <div class="field-filter__input-group">
+            <label class="field-filter__name">
+              <input class="field-filter__input" type="radio" name="connect" value="home" checked>
+              <span class="field-filter__name-text">Для дому</span>
+            </label>
+            <label class="field-filter__name">
+              <input class="field-filter__input" type="radio" name="connect" value="business">
+              <span class="field-filter__name-text">Для бізнесу</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-filter"
+             data-theme-dark="field-filter--dark"
+             data-theme-light="field-filter--light">
+          <div class="field-filter__title">Швидкість:</div>
+
+          <div class="field-filter__input-group">
+            <label class="field-filter__name">
+              <input class="field-filter__input" type="radio" name="speed" value="all-speed" checked>
+              <span class="field-filter__name-text">Усі</span>
+            </label>
+            <label class="field-filter__name">
+              <input class="field-filter__input" type="radio" name="speed" value="speed-200">
+              <span class="field-filter__name-text">до 200 Мбіт/с</span>
+            </label>
+            <label class="field-filter__name">
+              <input class="field-filter__input" type="radio" name="speed" value="speed-500">
+              <span class="field-filter__name-text">до 500 Мбіт/с</span>
+            </label>
+            <label class="field-filter__name">
+              <input class="field-filter__input" type="radio" name="speed" value="speed-1000">
+              <span class="field-filter__name-text">до 1 Гбіт/с</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-toggler">
+          <!-- <div class="field-toggler__title">Телебачення:</div> -->
+          <div class="field-toggler__input-wrap">
+            <label class="field-toggler__name">
+              <input class="field-toggler__input" type="checkbox" name="tv" value="tv">
+              <span class="field-toggler__name-text">Телебачення:</span>
+            </label>
+            <!-- <div class="field-toggler__help-text"></div> -->
+          </div>
+        </div>
       </div>
 
-      <!-- <div class="field-toggler">
-        <div class="field-toggler__title">Переключатель-флажок</div>
-        <div class="field-toggler__input-wrap">
-          <label class="field-toggler__name">
-            <input class="field-toggler__input" type="checkbox">
-            <span class="field-toggler__name-text">Использовать</span>
-          </label>
-          <div class="field-toggler__help-text">Графика не используется, всё нарисовано CSS-ом.</div>
-        </div>
-      </div> -->
     </div>
 
     <section class="container  tariffs__slider" data-theme-dark="tariffs__slider--dark" data-theme-light="tariffs__slider--light">

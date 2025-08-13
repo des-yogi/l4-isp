@@ -1,7 +1,6 @@
 .customer-services {
   $block-name:                &; // #{$block-name}__element
 
-  position: relative;
   @include block-margin;
   //overflow: hidden;
 
@@ -41,6 +40,10 @@
 
   &__title {
     margin-top: 0 !important;
+  }
+
+  &__pane {
+    position: relative;
   }
 
   &__ctrl {
