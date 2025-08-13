@@ -57,6 +57,22 @@
     }
   }
 
+  &__select-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 40px;
+    margin-top: 24px;
+
+    @media (min-width: $screen-xl) {
+      justify-content: center;
+    }
+
+    .field-toggler,
+    .field-filter__title {
+      margin-bottom: 0;
+    }
+  }
+
   &__slider {
     display: flex;
     align-items: flex-start;

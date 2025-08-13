@@ -1,21 +1,128 @@
 .hero {
+
   $block-name:                &; // #{$block-name}__element
 
-  height: 492px;
-  padding-top: 88px;
-  color: var(--text-color);
-  background: var(--bg-color);
-  background: var(--blue-200);
-  border-radius: 0 0 24px 24px;
+  &__slider {
+    color: var(--text-color);
+    //background: var(--blue-200);
+    background: var(--bg-color);
+    border-radius: 0 0 24px 24px;
 
-  @media (min-width: $screen-md) {
-    height: 510px;
-    padding-top: calc(50px + 76px);
-    border-radius: 0 0 72px 72px;
+    @media (min-width: $screen-md) {
+      border-radius: 0 0 32px 32px;
+    }
+
+    @media (min-width: $screen-xl) {
+      border-radius: 0 0 72px 72px;
+    }
   }
 
-  @media (min-width: $screen-xl) {
-    height: 720px;
-    padding-top: calc(50px + 86px);
+  &__slide {
+    min-height: 500px;
+    padding-top: 112px; // 88+24
+
+    @media (min-width: $screen-md) {
+      padding-top: 170px; // 126+44
+    }
+
+    @media (min-width: $screen-xl) {
+      min-height: 650px;
+      padding-top: 190px; // 126+64
+    }
+
+    @media (min-width: $screen-xxl) {
+      min-height: 500px;
+      padding-top: 130px; // 126+4
+    }
+
+    .row {
+      gap: 24px 0;
+    }
   }
+
+  &__col-text {
+    @include col(xs, 12);
+    @include col(xl, 5);
+    @include col(xxl, 5);
+
+    @media (min-width: $screen-xl) {
+      padding-bottom: 136px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-bottom: 168px;
+    }
+  }
+
+  &__col-img {
+    @include col(xs, 12);
+    @include col-offset(md, 1);
+    @include col(md, 10);
+    @include col-offset(xl, 0);
+    @include col(xl, 7);
+    @include col-offset(xxl, 1);
+    @include col(xxl, 6);
+  }
+
+  &__col-text,
+  &__col-img {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__text {
+    color: var(--grey-900);
+  }
+
+  &__slide-title {
+    margin-bottom: 24px;
+  }
+
+  &__slide-decr {
+    margin-top: 24px;
+    font-weight: 500;
+
+    & + .btn {
+      margin-top: 40px;
+    }
+  }
+
+  &__img {
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    left: 0;
+    bottom: 24px;
+    //z-index: 1;
+    //width: 205px;
+
+    @media (min-width: $screen-xl) {
+      bottom: 40px;
+    }
+
+    .swiper-controls {
+      max-width: 204px;
+      color: var(--grey-900);
+    }
+  }
+
+  // &__btn-prev,
+  // &__btn-next {
+  // }
+
+  // &__pagination {
+  // }
+
+  // &__btn-next {
+  // }
+
+  // &--dark {}
+
+  // &--light {}
 }

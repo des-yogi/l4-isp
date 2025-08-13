@@ -11,17 +11,23 @@
     left: 12px;
     bottom: 12px;
     height: auto;
+    padding: 14px 0;
 
     @media (min-width: $screen-md) {
       top: 136px;
       right: 40px;
       left: 40px;
       bottom: 12px;
+      padding: 16px 0;
+    }
+
+    & > * {
+      max-width: 100%;
     }
   }
 
   &__body {
-
+    padding: 0 14px;
     //overflow: hidden;
     overflow-y: auto;
 
@@ -144,6 +150,7 @@
     }
 
     &:last-of-type {
+      padding-bottom: 8px;
 
       &::after {
         display: none;
@@ -169,13 +176,24 @@
       }
     }
 
-    &--parent {
-
-    }
+    //&--parent {
+    //}
 
     .btn--secondary.btn--icon-only {
       width: 44px;
       height: 44px;
+
+      svg {
+        will-change: transform;
+        transition: transform $transition-time;
+      }
+
+      &[aria-expanded=true] {
+
+        svg {
+          transform: rotate(-180deg);
+        }
+      }
     }
   }
 

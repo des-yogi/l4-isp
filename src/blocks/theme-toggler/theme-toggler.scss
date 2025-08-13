@@ -10,6 +10,11 @@
   cursor: pointer;
   backdrop-filter: blur(10px);
 
+  &:hover,
+  &:focus {
+    box-shadow: var(--blue-shadow);
+  }
+
   $block-name:                &; // #{$block-name}__element
 
   &__icon {
@@ -38,7 +43,7 @@
       @include gradient-border-mask(
         2px,
         50%,
-        var(--gradient-60-50),
+        var(--border-gradient-10),
         var(--white)
       );
     }

@@ -83,7 +83,7 @@
               <a href="#" class="page-header__link  page-header__link--user">
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
                 <span>Кабінет</span>
-              </a>
+              </a>
 
               <ul class="list-nostyled  messengers"
                   data-theme-dark="messengers--dark"
@@ -114,7 +114,7 @@
         <div class="container  page-header__main">
           <div class="page-header__main-content"
                data-theme-dark="page-header__main-content--dark" data-theme-light="page-header__main-content--light"
-               data-badge="Ми в мережі 19 років, 3 місяці та 24 днів">
+               data-badge="Ми в мережі 19 років, 3 місяці та 24 днів">
 
             <a href="index.html" class="logo  logo--header"
                                  data-theme-light="logo--light"
@@ -249,7 +249,7 @@
                  data-theme-light="btn--light">
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet"></use></svg>
                 <span>Поповнити</span>
-              </a>
+              </a>
 
               <button
                 id="toggle-theme"
@@ -276,7 +276,7 @@
                       data-bs-target="#searchModal">
                 <span class="visually-hidden">Пошук</span>
                 <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#lens"></use></svg>
-              </button>
+              </button>
 
               <button id="menuToggler"
                       class="burger"
@@ -403,7 +403,7 @@
                           data-bs-target="#mobMenuCollapse-1"
                           aria-expanded="false"
                           aria-controls="mobMenuCollapse-1">
-                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
                   </button>
                 </div>
                 <div id="mobMenuCollapse-1"
@@ -451,7 +451,7 @@
                           data-bs-target="#mobMenuCollapse-2"
                           aria-expanded="false"
                           aria-controls="mobMenuCollapse-2">
-                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
                   </button>
                 </div>
                 <div id="mobMenuCollapse-2"
@@ -502,7 +502,7 @@
                           data-bs-target="#mobMenuCollapse-3"
                           aria-expanded="false"
                           aria-controls="mobMenuCollapse-3">
-                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
                   </button>
                 </div>
                 <div id="mobMenuCollapse-3"
@@ -554,22 +554,182 @@
 
       <main class="main  main--hero">
 
-        <div class="container  hero">
-          <h1 class="h1  hero__title">Миттєвий перехід</h1>
-          <p>з іншої мережі за 72 години!</p>
-          <a href="#"
-             class="btn"
-             data-theme-dark="btn--dark"
-             data-theme-light="btn--light">
-            <span>Підключитись</span>
-            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-          </a>
-        </div>
+        <div class="hero" data-theme-dark="hero--dark" data-theme-light="hero--light">
+          <div class="swiper  hero__slider">
+
+            <div class="swiper-wrapper">
+
+              <section class="swiper-slide  container  hero__slide"
+                       style="background-color:hsla(216,100%,91%,1);
+                              background-image:
+                                radial-gradient(at 100% 100%, hsla(181,100%,48%,1) 0px, transparent 50%),
+                                radial-gradient(at 70% 56%, hsla(217,78%,50%,0.82) 0px, transparent 50%),
+                                radial-gradient(at 88% 10%, hsla(232,89%,4%,1) 0px, transparent 50%),
+                                radial-gradient(at 76% 14%, hsla(240,72%,49%,0.7) 0px, transparent 50%);">
+                <div class="row">
+                  <div class="hero__col-text">
+                    <div class="hero__text">
+                      <h2 class="h1  hero__slide-title">Миттєвий перехід</h2>
+                      <div class="hero__slide-decr">
+                        <p>з іншої мережі за 72 години!</p>
+                      </div>
+                      <a href="#"
+                         class="btn"
+                         data-theme-dark="btn--dark"
+                         data-theme-light="btn--light">
+                        <span>Підключитись</span>
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="hero__col-img">
+                    <div class="embed-responsive  embed-responsive--4-3  hero__img">
+                      <picture>
+                        <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
+                        <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
+
+                        <img src="img/hero-img-1.png" alt="Alt" width="1576" height="1160" loading="lazy">
+                        <!-- loading="lazy" для всех кроме первого -->
+                      </picture>
+                      <div class="swiper-lazy-preloader"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="swiper-slide  container  hero__slide"
+                       style="background-color:#99ffe4;
+                              background-image:
+                                radial-gradient(at 75% 77%, hsla(88,64%,60%,1) 0px, transparent 50%),
+                                radial-gradient(at 88% 10%, hsla(133,68%,66%,1) 0px, transparent 50%),
+                                radial-gradient(at 18% 72%, hsla(136,62%,65%,1) 0px, transparent 50%),
+                                radial-gradient(at 59% 32%, hsla(78,81%,71%,1) 0px, transparent 50%),
+                                radial-gradient(at 78% 7%, hsla(95,80%,65%,1) 0px, transparent 50%);">
+                <div class="row">
+                  <div class="hero__col-text">
+                    <div class="hero__text">
+                      <h2 class="h1  hero__slide-title">Миттєвий перехід</h2>
+                      <div class="hero__slide-decr">
+                        <p>з іншої мережі за 72 години!</p>
+                      </div>
+                      <a href="#"
+                         class="btn"
+                         data-theme-dark="btn--dark"
+                         data-theme-light="btn--light">
+                        <span>Підключитись</span>
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="hero__col-img">
+                    <div class="embed-responsive  embed-responsive--4-3  hero__img">
+                      <picture>
+                        <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
+                        <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
+
+                        <img src="img/hero-img-1.png" alt="Alt" width="1576" height="1160" loading="lazy">
+                        <!-- loading="lazy" для всех кроме первого -->
+                      </picture>
+                      <div class="swiper-lazy-preloader"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="swiper-slide  container  hero__slide"
+                       style="background-color:hsla(216,100%,91%,1);
+                              background-image:
+                                radial-gradient(at 100% 100%, hsla(181,100%,48%,1) 0px, transparent 50%),
+                                radial-gradient(at 70% 56%, hsla(217,78%,50%,0.82) 0px, transparent 50%),
+                                radial-gradient(at 88% 10%, hsla(232,89%,4%,1) 0px, transparent 50%),
+                                radial-gradient(at 76% 14%, hsla(240,72%,49%,0.7) 0px, transparent 50%);">
+                <div class="row">
+                  <div class="hero__col-text">
+                    <div class="hero__text">
+                      <h2 class="h1  hero__slide-title">Миттєвий перехід</h2>
+                      <div class="hero__slide-decr">
+                        <p>з іншої мережі за 72 години!</p>
+                      </div>
+                      <a href="#"
+                         class="btn"
+                         data-theme-dark="btn--dark"
+                         data-theme-light="btn--light">
+                        <span>Підключитись</span>
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="hero__col-img">
+                    <div class="embed-responsive  embed-responsive--4-3  hero__img">
+                      <picture>
+                        <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
+                        <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
+
+                        <img src="img/hero-img-1.png" alt="Alt" width="1576" height="1160" loading="lazy">
+                        <!-- loading="lazy" для всех кроме первого -->
+                      </picture>
+                      <div class="swiper-lazy-preloader"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="swiper-slide  container  hero__slide"
+                       style="background-color:#99ffe4;
+                              background-image:
+                                radial-gradient(at 75% 77%, hsla(88,64%,60%,1) 0px, transparent 50%),
+                                radial-gradient(at 88% 10%, hsla(133,68%,66%,1) 0px, transparent 50%),
+                                radial-gradient(at 18% 72%, hsla(136,62%,65%,1) 0px, transparent 50%),
+                                radial-gradient(at 59% 32%, hsla(78,81%,71%,1) 0px, transparent 50%),
+                                radial-gradient(at 78% 7%, hsla(95,80%,65%,1) 0px, transparent 50%);">
+                <div class="row">
+                  <div class="hero__col-text">
+                    <div class="hero__text">
+                      <h2 class="h1  hero__slide-title">Миттєвий перехід</h2>
+                      <div class="hero__slide-decr">
+                        <p>з іншої мережі за 72 години!</p>
+                      </div>
+                      <a href="#"
+                         class="btn"
+                         data-theme-dark="btn--dark"
+                         data-theme-light="btn--light">
+                        <span>Підключитись</span>
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="hero__col-img">
+                    <div class="embed-responsive  embed-responsive--4-3  hero__img">
+                      <picture>
+                        <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
+                        <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
+
+                        <img src="img/hero-img-1.png" alt="Alt" width="1576" height="1160" loading="lazy">
+                        <!-- loading="lazy" для всех кроме первого -->
+                      </picture>
+                      <div class="swiper-lazy-preloader"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+            <div class="container  hero__controls">
+              <div class="swiper-controls">
+                <div class="btn  btn--secondary  btn--secondary--light  swiper-button-prev  hero__btn-prev"></div>
+                <div class="swiper-pagination  hero__pagination"></div>
+                <div class="btn  btn--secondary  btn--secondary--light  swiper-button-next  hero__btn-next"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
         <section class="container  benefits">
           <div class="row  benefits__row">
 
-            <div class="benefits__col-card">
+            <div class="benefits__col-card">
 
               <article class="service-card "
                        data-theme-dark="service-card--dark"
@@ -584,7 +744,7 @@
 
             </div>
 
-            <div class="benefits__col-card">
+            <div class="benefits__col-card">
 
               <article class="service-card "
                        data-theme-dark="service-card--dark"
@@ -603,7 +763,7 @@
               <h2 class="benefits__title">Надшвидкісний інтернет до 1 Гбіт/с</h2>
             </div>
 
-            <div class="benefits__col-card">
+            <div class="benefits__col-card">
 
               <article class="service-card "
                        data-theme-dark="service-card--dark"
@@ -618,7 +778,7 @@
 
             </div>
 
-            <div class="benefits__col-card">
+            <div class="benefits__col-card">
 
               <article class="service-card "
                        data-theme-dark="service-card--dark"
@@ -645,12 +805,14 @@
           <div class="benefits__footer">
             <h4 class="benefits__footer-title">Дізнайтесь про всі переваги підключення</h4>
             <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
-            <button class="btn  btn--glow">
+            <button class="btn  btn--glow"
+                    data-theme-dark="btn--glow--dark"
+                    data-theme-light="btn--glow--light">
               <span>Замовити консультацію</span>
               <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
             </button>
           </div>
-        </section>
+        </section>
 
         <section class="container  tabs  customer-services">
           <nav class="customer-services__nav">
@@ -673,17 +835,18 @@
             </div>
           </nav>
 
-          <div class="customer-services__header">
-            <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
-            <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
-            <p>Ми знаходимо рішення для кожного абонента!</p>
-          </div>
-
           <div class="tab-content  customer-services__content" id="serviceContent">
-            <div class="tab-pane fade show active" id="service-pane-1" role="tabpanel" aria-labelledby="service-1" tabindex="0">
+
+            <div class="customer-services__pane  tab-pane fade show active" id="service-pane-1" role="tabpanel" aria-labelledby="service-1" tabindex="0">
+              <div class="customer-services__header">
+                <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
+                <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
+                <p>Ми знаходимо рішення для кожного абонента!</p>
+              </div>
+
               <div class="row  customer-services__row">
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--solid"
                            data-theme-dark="service-card--dark"
@@ -698,7 +861,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--solid"
                            data-theme-dark="service-card--dark"
@@ -713,7 +876,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--solid"
                            data-theme-dark="service-card--dark"
@@ -728,7 +891,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--clear"
                            data-theme-dark="service-card--dark"
@@ -743,7 +906,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--clear"
                            data-theme-dark="service-card--dark"
@@ -758,7 +921,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--clear"
                            data-theme-dark="service-card--dark"
@@ -774,12 +937,43 @@
                 </div>
 
               </div>
+
+              <div class="customer-services__ctrl">
+                <button class="btn  btn--glow"
+                        data-theme-dark="btn--glow--dark"
+                        data-theme-light="btn--glow--light">
+                  <span>Замовити консультацію</span>
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+                </button>
+
+                <button class="btn"
+                        data-theme-dark="btn--dark"
+                        data-theme-light="btn--light">
+                  <span>Підключитись</span>
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                </button>
+              </div>
+
+              <canvas class="lottie-player  lazy"
+                      data-src="js/FORM.lottie"
+                      data-fit="contain"
+                      data-align=""
+                      width="700"
+                      height="300">
+              </canvas>
             </div>
 
-            <div class="tab-pane fade" id="service-pane-2" role="tabpanel" aria-labelledby="service-2" tabindex="0">
+            <div class="customer-services__pane  tab-pane fade" id="service-pane-2" role="tabpanel" aria-labelledby="service-2" tabindex="0">
+
+              <div class="customer-services__header">
+                <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
+                <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
+                <p>Ми знаходимо рішення для кожного абонента!</p>
+              </div>
+
               <div class="row  customer-services__row">
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--solid"
                            data-theme-dark="service-card--dark"
@@ -794,7 +988,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--solid"
                            data-theme-dark="service-card--dark"
@@ -809,7 +1003,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--solid"
                            data-theme-dark="service-card--dark"
@@ -824,7 +1018,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--clear"
                            data-theme-dark="service-card--dark"
@@ -839,7 +1033,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--clear"
                            data-theme-dark="service-card--dark"
@@ -854,7 +1048,7 @@
 
                 </div>
 
-                <div class="customer-services__col">
+                <div class="customer-services__col">
 
                   <article class="service-card service-card--clear"
                            data-theme-dark="service-card--dark"
@@ -870,36 +1064,81 @@
                 </div>
 
               </div>
+
+              <div class="customer-services__ctrl">
+                <button class="btn  btn--glow">
+                  <span>Замовити консультацію</span>
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+                </button>
+
+                <button class="btn"
+                        data-theme-dark="btn--dark"
+                        data-theme-light="btn--light">
+                  <span>Підключитись</span>
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                </button>
+              </div>
             </div>
 
-            <div class="tab-pane fade" id="service-pane-3" role="tabpanel" aria-labelledby="service-3" tabindex="0">3...</div>
+            <div class="customer-services__pane  tab-pane fade" id="service-pane-3" role="tabpanel" aria-labelledby="service-3" tabindex="0">
+              <div class="customer-services__header">
+                <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
+                <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
+                <p>Ми знаходимо рішення для кожного абонента!</p>
+              </div>
 
-            <div class="tab-pane fade" id="service-pane-4" role="tabpanel" aria-labelledby="service-4" tabindex="0">4...</div>
+              3...
+
+              <div class="customer-services__ctrl">
+                <button class="btn  btn--glow">
+                  <span>Замовити консультацію</span>
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+                </button>
+
+                <button class="btn"
+                        data-theme-dark="btn--dark"
+                        data-theme-light="btn--light">
+                  <span>Підключитись</span>
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                </button>
+              </div>
+
+              <canvas class="lottie-player  lazy"
+                      data-src="js/FORM.lottie"
+                      data-fit="contain"
+                      data-align=""
+                      width="700"
+                      height="300">
+              </canvas>
+            </div>
+
+            <div class="customer-services__pane  tab-pane fade" id="service-pane-4" role="tabpanel" aria-labelledby="service-4" tabindex="0">
+
+              <div class="customer-services__header">
+                <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
+                <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
+                <p>Ми знаходимо рішення для кожного абонента!</p>
+              </div>
+
+              4...
+
+              <div class="customer-services__ctrl">
+                <button class="btn  btn--glow">
+                  <span>Замовити консультацію</span>
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+                </button>
+
+                <button class="btn"
+                        data-theme-dark="btn--dark"
+                        data-theme-light="btn--light">
+                  <span>Підключитись</span>
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div class="customer-services__ctrl">
-            <button class="btn  btn--glow">
-              <span>Замовити консультацію</span>
-              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
-            </button>
-
-            <button class="btn"
-                    data-theme-dark="btn--dark"
-                    data-theme-light="btn--light">
-              <span>Підключитись</span>
-              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-            </button>
-          </div>
-
-          <canvas class="lottie-player  lazy"
-                  data-src="js/FORM.lottie"
-                  data-fit="contain"
-                  data-align=""
-                  width="700"
-                  height="300">
-          </canvas>
-
-        </section>
+        </section>
 
         <article class="tariffs">
 
@@ -952,34 +1191,61 @@
               </div>
 
               <div class="tariffs__select-filters">
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
+
+                <div class="field-filter"
+                     data-theme-dark="field-filter--dark"
+                     data-theme-light="field-filter--light">
+                  <div class="field-filter__title">Підключення:</div>
+
+                  <div class="field-filter__input-group">
+                    <label class="field-filter__name">
+                      <input class="field-filter__input" type="radio" name="connect" value="home" checked>
+                      <span class="field-filter__name-text">Для дому</span>
+                    </label>
+                    <label class="field-filter__name">
+                      <input class="field-filter__input" type="radio" name="connect" value="business">
+                      <span class="field-filter__name-text">Для бізнесу</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field-filter"
+                     data-theme-dark="field-filter--dark"
+                     data-theme-light="field-filter--light">
+                  <div class="field-filter__title">Швидкість:</div>
+
+                  <div class="field-filter__input-group">
+                    <label class="field-filter__name">
+                      <input class="field-filter__input" type="radio" name="speed" value="all-speed" checked>
+                      <span class="field-filter__name-text">Усі</span>
+                    </label>
+                    <label class="field-filter__name">
+                      <input class="field-filter__input" type="radio" name="speed" value="speed-200">
+                      <span class="field-filter__name-text">до 200 Мбіт/с</span>
+                    </label>
+                    <label class="field-filter__name">
+                      <input class="field-filter__input" type="radio" name="speed" value="speed-500">
+                      <span class="field-filter__name-text">до 500 Мбіт/с</span>
+                    </label>
+                    <label class="field-filter__name">
+                      <input class="field-filter__input" type="radio" name="speed" value="speed-1000">
+                      <span class="field-filter__name-text">до 1 Гбіт/с</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field-toggler">
+                  <!-- <div class="field-toggler__title">Телебачення:</div> -->
+                  <div class="field-toggler__input-wrap">
+                    <label class="field-toggler__name">
+                      <input class="field-toggler__input" type="checkbox" name="tv" value="tv">
+                      <span class="field-toggler__name-text">Телебачення:</span>
+                    </label>
+                    <!-- <div class="field-toggler__help-text"></div> -->
+                  </div>
+                </div>
               </div>
 
-              <!-- <div class="field-toggler">
-                <div class="field-toggler__title">Переключатель-флажок</div>
-                <div class="field-toggler__input-wrap">
-                  <label class="field-toggler__name">
-                    <input class="field-toggler__input" type="checkbox">
-                    <span class="field-toggler__name-text">Использовать</span>
-                  </label>
-                  <div class="field-toggler__help-text">Графика не используется, всё нарисовано CSS-ом.</div>
-                </div>
-              </div> -->
             </div>
 
             <section class="container  tariffs__slider" data-theme-dark="tariffs__slider--dark" data-theme-light="tariffs__slider--light">
@@ -1040,7 +1306,7 @@
               <div class="swiper  tariffs__slider-content">
                 <div class="swiper-wrapper">
 
-                  <div class="swiper-slide  tariff-card__wrapper">
+                  <div class="swiper-slide  tariff-card__wrapper">
 
                     <article class="tariff-card"
                              data-theme-dark="tariff-card--dark"
@@ -1159,7 +1425,7 @@
 
                   </div>
 
-                  <div class="swiper-slide  tariff-card__wrapper">
+                  <div class="swiper-slide  tariff-card__wrapper">
 
                     <article class="tariff-card"
                              data-theme-dark="tariff-card--dark"
@@ -1278,7 +1544,7 @@
 
                   </div>
 
-                  <div class="swiper-slide  tariff-card__wrapper">
+                  <div class="swiper-slide  tariff-card__wrapper">
 
                     <article class="tariff-card"
                              data-theme-dark="tariff-card--dark"
@@ -1397,7 +1663,7 @@
 
                   </div>
 
-                  <div class="swiper-slide  tariff-card__wrapper">
+                  <div class="swiper-slide  tariff-card__wrapper">
 
                     <article class="tariff-card"
                              data-theme-dark="tariff-card--dark"
@@ -1516,7 +1782,7 @@
 
                   </div>
 
-                  <div class="swiper-slide  tariff-card__wrapper">
+                  <div class="swiper-slide  tariff-card__wrapper">
 
                     <article class="tariff-card"
                              data-theme-dark="tariff-card--dark"
@@ -1635,7 +1901,7 @@
 
                   </div>
 
-                  <div class="swiper-slide  tariff-card__wrapper">
+                  <div class="swiper-slide  tariff-card__wrapper">
 
                     <article class="tariff-card"
                              data-theme-dark="tariff-card--dark"
@@ -1761,7 +2027,7 @@
 
           </div>
 
-        </article>
+        </article>
 
         <section class="sp-offers">
 
@@ -3249,7 +3515,7 @@
             <a href="#" class="copyrights__link">Правила та умови</a>
           </p>
 
-          <div class="copyrights__service">
+          <div class="copyrights__service">
 
             <section class="lang-switcher">
               <h5 class="visually-hidden">Вибір мови сайту</h5>
@@ -3267,7 +3533,7 @@
             <a href="https://itdoors.com.ua/"  class="copyrights__dev" title="Providex, розробник">
               <svg xmlns="http://www.w3.org/2000/svg" width="127" height="36" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 127 36" role="img" aria-label="Providex logo" loading="lazy"><defs><linearGradient id="linear-gradient" x1="2.49" y1="-778.76" x2="18.3" y2="-806.31" gradientTransform="translate(0 -780.11) scale(1 -1)" gradientUnits="userSpaceOnUse"><stop offset=".2" stop-color="#f99048"/><stop offset=".33" stop-color="#fa874c"/><stop offset=".54" stop-color="#fb6f56"/><stop offset=".8" stop-color="#fd4767"/><stop offset="1" stop-color="#ff2576"/></linearGradient></defs><g id="text"><path d="m62.48,15.23c-.97-.55-2.22-.83-3.46-.83s-2.49.28-3.46.83c-2.08,1.11-3.32,3.18-3.18,5.4,0,2.22,1.25,4.43,3.18,5.4,1.11.55,2.08.83,3.46.83s2.49-.28,3.46-.83c2.08-1.11,3.32-3.18,3.18-5.4.14-2.22-1.11-4.29-3.18-5.4Zm-1.25,7.89c-.55.55-1.38.83-2.22.83s-1.66-.28-2.22-.83c-.55-.55-.97-1.38-.97-2.49,0-.97.28-1.8.97-2.49.55-.55,1.38-.83,2.22-.83s1.66.28,2.22.83c.55.55.83,1.38.83,2.49.14,1.11-.14,1.94-.83,2.49Z" /><path d="m49.18,14.95c-.69.28-1.25.69-1.66,1.38v-1.66h-3.32v12.18h3.46v-5.68c0-1.11.28-1.94.83-2.49s1.38-.83,2.35-.83h.83v-3.18c-.83-.14-1.66,0-2.49.28Z" /><path d="m39.08,11.77c-.97-.55-2.22-.69-3.6-.69h-6.78v15.65h3.6v-4.29h3.18c1.38,0,2.63-.28,3.6-.69.97-.42,1.8-1.11,2.35-1.94.55-.83.83-1.8.83-3.05.14-2.22-1.11-4.15-3.18-4.98Zm-1.25,6.92c-.55.42-1.38.69-2.49.69h-3.05v-5.4h3.05c.83,0,1.8.14,2.49.69.55.42.83,1.25.83,2.08s-.28,1.52-.83,1.94Z" /><path d="m113.85,20.63c0-1.25-.28-2.35-.83-3.32-.55-.97-1.25-1.66-2.22-2.22-.97-.55-2.08-.69-3.18-.69h-.42c-3.32,0-6.09,2.91-5.95,6.23,0,1.11.28,2.22.83,3.18.55.97,1.38,1.66,2.49,2.22s2.35.83,3.6.83c2.22,0,3.88-.69,4.98-1.94l-1.94-2.08c-.83.83-1.94,1.25-3.18,1.25-.97,0-1.66-.14-2.35-.69-.69-.55-.97-1.11-1.11-1.8h9.14c0-.55.14-.83.14-.97Zm-9.28-1.11c.14-.69.42-1.25.97-1.8.55-.42,1.25-.69,2.08-.69.69,0,1.38.28,1.94.69.55.42.83,1.11.97,1.8h-5.95Z" /><path d="m95.43,15.79c-.83-.88-2.01-1.4-3.46-1.4-1.11,0-2.22.28-3.05.69-.97.55-1.66,1.25-2.22,2.22-.55.97-.83,2.08-.83,3.32s.28,2.35.83,3.32c1.05,1.89,3.1,3.02,5.26,2.91,1.66,0,2.91-.55,3.74-1.52v1.38h3.32V10.1h-3.6v5.69Zm-.55,7.33c-.55.55-1.38.83-2.22.83s-1.66-.28-2.22-.83-.83-1.38-.83-2.49c0-.97.28-1.8.83-2.49.55-.55,1.38-.83,2.22-.83s1.66.28,2.22.83.97,1.38.97,2.49c-.14,1.11-.42,1.94-.97,2.49Z" /><path d="m82.28,9.13c-.69,0-1.25.14-1.52.55l-.14.14c-.83.69-.69,1.94,0,2.63.42.42.97.55,1.52.55.69,0,1.25-.14,1.52-.55.42-.42.55-.97.55-1.52s-.28-.97-.55-1.38c-.28-.28-.83-.42-1.38-.42Z" /><polygon points="72.45 22.84 69.12 14.67 65.52 14.67 70.65 26.72 74.25 26.72 79.37 14.67 76.05 14.67 72.45 22.84" /><rect x="80.48" y="14.67" width="3.46" height="12.05" /><polygon points="122.29 20.63 126.86 14.67 123.12 14.67 120.49 18.13 117.86 14.67 113.85 14.67 118.42 20.63 113.85 26.72 117.58 26.72 120.35 22.98 122.98 26.72 127 26.72 122.29 20.63" /></g><g id="icon"><path d="m20.91,15.65C20.91,7.06,13.71,0,4.98,0H.14v9.55h4.85c3.46,0,6.37,2.77,6.37,6.23s-2.91,6.09-6.37,6.09c2.63,0,4.85,2.08,4.85,4.71v4.02c6.51-1.94,11.08-8.03,11.08-14.95Z" fill="url(#linear-gradient)" /><path d="m9.69,15.65c0-2.63-2.22-4.71-4.85-4.71S.14,13.02.14,15.65s2.22,4.71,4.85,4.71,4.71-2.08,4.71-4.71Zm-4.71,6.23c2.63,0,4.71,2.08,4.71,4.57v4.15c-1.52.55-3.18.69-4.85.69-2.63,0-4.85-2.08-4.85-4.71v9.42h9.69v-9.42c.14-2.63-2.08-4.71-4.71-4.71Z" fill="#4d11e8" /><path d="m4.98,31.29c1.66,0,3.32-.28,4.85-.69v-4.02c0-2.63-2.08-4.71-4.71-4.71h-.14c-2.63,0-4.85,2.08-4.85,4.71s2.22,4.71,4.85,4.71Z" fill="#a612e8" /></g></svg>
             </a>
-          </div>
+          </div>
 
           <a href="#"
              class="btn btn--secondary btn--icon-only  to-top"

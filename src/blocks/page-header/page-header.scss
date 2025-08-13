@@ -11,7 +11,7 @@
   }
 
   &__top {
-    background: var(--page-header-top-bg);
+    //background: var(--page-header-top-bg);
 
     @media (max-width: $screen-md - 1) {
       display: none;
@@ -297,10 +297,6 @@
     }
   }
 
-  // &__phones {
-
-  // }
-
   &__phones-list {
     //display: flex !important;
     //flex-direction: column;
@@ -372,6 +368,7 @@
 
   &__phones-link {
     padding: 8px 16px;
+    font-size: $font-size;
   }
 
   &--slideUp {
