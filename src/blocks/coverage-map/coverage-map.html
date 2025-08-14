@@ -2,24 +2,109 @@
 @ @include('blocks/coverage-map/coverage-map.html')
 -->
 
-<section class="coverage-map__wrapper">
+<article class="container  coverage-map__wrapper">
 
-  <div id="map"
+  <div class="coverage-map__row">
+
+    <div class="coverage-map__col-info">
+      <div class="coverage-map__info"
+           data-theme-dark="coverage-map__info--dark"
+           data-theme-light="coverage-map__info--light">
+
+        <header class="coverage-map__header">
+          <h2 class="coverage-map__title">Мапа покриття</h2>
+          <div class="coverage-map__intro">
+            <p>Перевірте доступність підключення та наявність безперебійного живлення за вашою адресою.</p>
+          </div>
+        </header>
+
+        <form class="coverage-map__form" action="#" method="post">
+          <div class="choices__wrapper"
+               data-theme-dark="choices__wrapper--dark"
+               data-theme-light="choices__wrapper--light">
+            <select class="choices"
+                    name="any"
+                    aria-label="Label Text">
+              <option selected disabled>Виберіть область:</option>
+              <option value="value1">Область 1</option>
+              <option value="value2">Область 2</option>
+              <option value="value3">Область 3</option>
+              <option value="value4">Область 4</option>
+            </select>
+            <span class="field-select__help-text error"></span>
+          </div>
+
+          <div class="choices__wrapper"
+               data-theme-dark="choices__wrapper--dark"
+               data-theme-light="choices__wrapper--light">
+            <select class="choices"
+                    name="any"
+                    aria-label="Label Text">
+              <option selected disabled>Населений пункт:</option>
+              <option value="value1">НП 1</option>
+              <option value="value2">НП 2</option>
+              <option value="value3">НП 3</option>
+              <option value="value4">НП 4</option>
+            </select>
+            <span class="field-select__help-text error"></span>
+          </div>
+
+          <div class="choices__wrapper"
+               data-theme-dark="choices__wrapper--dark"
+               data-theme-light="choices__wrapper--light">
+            <select class="choices"
+                    name="any"
+                    aria-label="Label Text">
+              <option selected disabled>Виберіть вулицю:</option>
+              <option value="value1">Вулиця 1</option>
+              <option value="value2">Вулиця 2</option>
+              <option value="value3">Вулиця 3</option>
+              <option value="value4">Вулиця 4</option>
+            </select>
+            <span class="field-select__help-text error"></span>
+          </div>
+
+          <div class="choices__wrapper"
+               data-theme-dark="choices__wrapper--dark"
+               data-theme-light="choices__wrapper--light">
+            <select class="choices"
+                    name="any"
+                    aria-label="Label Text">
+              <option selected disabled>Будинок:</option>
+              <option value="value1">Будинок 1</option>
+              <option value="value2">Будинок 2</option>
+              <option value="value3">Будинок 3</option>
+              <option value="value4">Будинок 4</option>
+            </select>
+            <span class="field-select__help-text error"></span>
+          </div>
+        </form>
+
+        <section class="coverage-map__footer">
+          <h3 class="visually-hidden">Легенда для мапи та інша додаткова інформація</h3>
+          <ul class="list-nostyled  coverage-map__legend">
+            <li class="coverage-map__legend-item">
+              <img src="img/legend-icon-blue.svg" alt="" width="32" height="32" loading="lazy">
+              <span>Доступне з'єднання Інтернету і кабельного ТБ</span>
+            </li>
+            <li class="coverage-map__legend-item">
+              <img src="img/legend-icon-orange.svg" alt="" width="32" height="32" loading="lazy">
+              <span>Доступне з'єднання тільки кабельного ТБ</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+    </div>
+
+    <div class="coverage-map__col-map">
+      <div id="map"
            class="coverage-map"
            data-map-light="1ba02fcecc153be989d2ce78"
            data-map-dark="1ba02fcecc153be9166c94d4">
-
-  </div>
-
-  <div class="container  coverage-map__inner">
-    <div class="coverage-map__info"
-         data-theme-dark="coverage-map__info--dark"
-         data-theme-light="coverage-map__info--light">
-      <h2 class="coverage-map__title">Мапа покриття</h2>
-      <div class="coverage-map__intro">
-        <p>Перевірте доступність підключення та наявність безперебійного живлення за вашою адресою.</p>
       </div>
     </div>
+
   </div>
 
-</section>
+</article>

@@ -16,8 +16,11 @@
     align-items: center;
     gap: 0;
     position: relative;
-    padding-bottom: 4px;
     overflow-x: auto;
+
+    // @media (max-width: $screen-md - 1) {
+    //   padding-bottom: 4px;
+    // }
 
     &::after {
       content: "";
