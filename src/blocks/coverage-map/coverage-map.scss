@@ -1,16 +1,16 @@
 .coverage-map {
   width: 100%;
-  min-height: 1070px;
+  height: 616px;
   background: var(--grey-200);
   border-radius: $border-radius--32;
 
   @media (min-width: $screen-md) {
-    min-height: 1250px;
+    height: 658px;
   }
 
   @media (min-width: $screen-xl) {
-    min-height: 610px;
-    border-radius: $border-radius--72;
+    min-height: 720px;
+    border-radius: $border-radius--72 0 0 $border-radius--72;
   }
 
   @media (min-width: $screen-xxl) {
@@ -22,49 +22,116 @@
   &__wrapper {
     position: relative;
     @include block-margin;
-  }
-
-  &__inner {
-    display: flex;
-    align-items: flex-end;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
 
     @media (min-width: $screen-xl) {
-      align-items: center;
+      padding-right: 0;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-right: 0;
     }
   }
+
+  &__row {
+    @include row(
+      $xs-grid-gutter:  $grid-gutter-width,
+      $sm-grid-gutter:  $grid-gutter-width,
+      $md-grid-gutter:  80px,
+      $lg-grid-gutter:  80px,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    );
+    gap: 40px 0;
+
+    @media (min-width: $screen-xl) {
+      margin-right: 0;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-right: 0;
+    }
+  }
+
+  &__col-info {
+    @include col(xs, 12);
+    @include col(md, 8, $grid-columns, 80px);
+    @include col(lg, 8, $grid-columns, 80px);
+    @include col(xl, 5);
+    @include col(xxl, 4);
+
+    @media (min-width: $screen-xl) {
+      max-width: 510px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      max-width: 517px;
+    }
+  }
+
+  &__col-map {
+    @include col(xs, 12, $grid-columns, 0);
+    @include col(md, 12, $grid-columns, 0);
+    @include col(lg, 12, $grid-columns, 0);
+    @include col(xl, 7);
+    @include col-offset(xxl, 1);
+    @include col(xxl, 7);
+
+    @media (min-width: $screen-xl) {
+      //flex: 1 1 100%;
+      flex-grow: 1;
+      max-width: none;
+      padding-right: 0;
+    }
+
+    @media (min-width: $screen-xxl) {
+      flex-grow: 1;
+      max-width: none;
+      padding-right: 0;
+      margin-left: 136px;
+    }
+  }
+
+  // &__inner {
+  //   display: flex;
+  //   align-items: flex-end;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   pointer-events: none;
+
+  //   @media (min-width: $screen-xl) {
+  //     align-items: center;
+  //   }
+  // }
 
   &__info {
-    max-width: 530px;
-    padding: 24px 16px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 24px;
+    //max-width: 530px;
+    //padding: 24px 16px;
+    //margin-right: auto;
+    //margin-left: auto;
+    //margin-bottom: 24px;
     color: var(--text-color);
-    @include gradient-border-mask(
-      2px,
-      $border-radius--12,
-      var(--border-gradient-10),
-      var(--opacity-black-50)
-    )
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1),
-                0 15px 30px 0 rgba(0, 0, 0, 0.1),
-                0 20px 40px 0 rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(10px);
-    pointer-events: auto;
+    // @include gradient-border-mask(
+    //   2px,
+    //   $border-radius--12,
+    //   var(--border-gradient-10),
+    //   var(--opacity-black-50)
+    // )
+    // box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1),
+    //             0 15px 30px 0 rgba(0, 0, 0, 0.1),
+    //             0 20px 40px 0 rgba(0, 0, 0, 0.15);
+    // backdrop-filter: blur(10px);
+    // pointer-events: auto;
 
-    @media (min-width: $screen-md) {
-      padding: 40px;
-    }
+    // @media (min-width: $screen-md) {
+    //   padding: 40px;
+    // }
 
-    @media (min-width: $screen-xl) {
-      margin-left: 0;
-    }
+    // @media (min-width: $screen-xl) {
+    //   margin-left: 0;
+    // }
   }
 
   &__intro {
@@ -72,6 +139,42 @@
 
     p {
       hyphens: none;
+      text-wrap: balance;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  &__footer {
+    margin-top: 24px;
+  }
+
+  &__legend {
+
+  }
+
+  &__legend-item {
+    display: flex;
+    //flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    & + & {
+      margin-top: 8px;
+    }
+
+    img {
+      flex: 0 0 32px;
+    }
+
+    span {
+      flex: 0 1 auto;
+      text-wrap: balance;
     }
   }
 }
