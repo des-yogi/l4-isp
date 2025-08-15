@@ -24,7 +24,7 @@
   window.addEventListener('scroll', scrollHandler, { passive: true });
 })()*/
 (function () {
-  const HIDE_HEADER_SCROLL = 140;
+  const HIDE_HEADER_SCROLL = 120;
   let new_scroll_position = 0;
   let last_scroll_position;
   const header = document.getElementById('header');
