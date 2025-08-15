@@ -3,15 +3,20 @@
 
   position: relative;
   width: 320px;
-  min-width: 320px;
-  padding: 24px;
-  background: var(--opacity-white-60);
+  //min-width: 320px;
+  //padding: 24px;
+  padding: 0 24px 24px 12px;
+  //background: var(--opacity-white-60);
+  //color: var(--text-color);
+  color: var(--grey-900);
+  background: transparent;
   border-radius: $border-radius;
-  border-top: 2px solid var(--blue-500);
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05),
-              0 4px 4px 0 rgba(0, 0, 0, 0.05),
-              0 10px 10px 0 rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  //border-top: 2px solid var(--blue-500);
+  //background: linear-gradient(to bottom, rgba(39, 125, 255, 0.24) 0%, rgba(39, 125, 255, 0) 48px, transparent);
+  // box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05),
+  //             0 4px 4px 0 rgba(0, 0, 0, 0.05),
+  //             0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  //backdrop-filter: blur(15px);
 
   &::after {
     content: "";
@@ -44,6 +49,7 @@
     gap: 10px;
     align-items: baseline;
     margin: 0 0 16px;
+    font-size: $font-size-lg;
   }
 
   &__street {
@@ -56,21 +62,20 @@
   }
 
   &__close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     position: absolute;
     z-index: 1;
     top: -28px;
-    right: -30px;
-    width: 44px;
-    height: 44px;
-    width: 44px;
-    height: 44px;
+    right: -29px;
+    //width: 44px;
+    //height: 44px;
     //border: none;
-    background: transparent;
-    border-radius: 50%;
-    cursor: pointer;
+    background: rgba($white, 0.8) !important;
+    // border-radius: 50%;
+    // cursor: pointer;
+    //backdrop-filter: blur(20px);
   }
 
   // &__form {
@@ -96,4 +101,38 @@
       transform: translateX(-50%) rotate(180deg);
     }
   }
+
+  .field-text__input {
+    color: var(--grey-900);
+
+    &::placeholder {
+      color: var(--grey-900);
+    }
+  }
+
+  &--dark {
+    // #{$block-name}__element
+    // background: var(--opacity-black-50);
+  }
+
+  &--light {
+    // #{$block-name}__element
+    // background: var(--opacity-white-60);
+  }
+}
+
+.gm-style-iw-d {
+  width: auto;
+  overflow: auto !important;
+}
+
+.gm-style .gm-style-iw-c {
+  border-radius: $border-radius;
+  background: var(--opacity-white-60);
+  backdrop-filter: blur(15px);
+}
+
+.gm-style .gm-style-iw-tc::after {
+  background: var(--opacity-white-60);
+  backdrop-filter: blur(10px);
 }

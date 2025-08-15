@@ -24,7 +24,9 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    height: 50px;
+    min-height: 56px;
+    padding-top: 4px;
+    padding-bottom: 8px;
   }
 
   &__top-left {
@@ -373,10 +375,10 @@
 
   &--slideUp {
     //transform: translateY(-76px);
-    transition: transform .5s ease-out;
+    transition: transform .35s ease-in-out;
 
     @media (min-width: $screen-md) {
-      transform: translateY(-49px);
+      transform: translateY(-48px); // 44+4
     }
 
     // @media (min-width: $screen-xl) {
@@ -386,7 +388,7 @@
 
   &--slideDown {
     transform: translateY(0);
-    transition: transform .5s ease-out;
+    transition: transform .35s ease-in-out;
   }
 
   &--dark {

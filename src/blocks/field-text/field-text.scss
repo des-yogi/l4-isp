@@ -21,14 +21,15 @@
     padding: 15px 16px;
     margin: 0;
     line-height: $line-height;
-    font-size: inherit;
-    font-family: inherit;
+    font-size: $font-size;
+    font-family: $font-family;
     //background-color: #fff;
     color: var(--text-color);
     border: 1px solid transparent;
     border-radius: $border-radius--16 !important;
     appearance: textfield;
     transition: border-color $transition-time;
+    backdrop-filter: blur(10px);
 
     &:focus {
       @include field-focus;
