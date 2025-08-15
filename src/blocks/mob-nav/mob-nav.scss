@@ -142,11 +142,11 @@
     }
 
     &::after {
-      bottom: -1px;
+      bottom: 0;
     }
 
     &::before {
-      top: -1px;
+      top: 0;
     }
 
     &:last-of-type {

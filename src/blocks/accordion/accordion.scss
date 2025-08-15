@@ -1,4 +1,5 @@
 .accordion {
+  font-family: $font-family;
 
   $block-name:                &; // #{$block-name}__element
 
@@ -6,6 +7,7 @@
     justify-content: space-between;
     gap: 0 24px;
     padding: 24px 0;
+    font-family: inherit;
     font-size: $font-size-lg;
     font-weight: 600;
     cursor: pointer;
