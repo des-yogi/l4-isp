@@ -2,6 +2,12 @@
   $block-name:                &; // #{$block-name}__element
 
   @include block-margin;
+  position: relative;
+  //overflow: hidden;
+
+  // @media (min-width: $screen-xxl) {
+  //   overflow: hidden;
+  // }
 
   &__header {
     margin-bottom: 24px;
@@ -224,6 +230,36 @@
 
     @media (max-width: $screen-md - 1) {
       @include visibility-hidden;
+    }
+  }
+
+  // анимация
+  .lottie-player {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    //aspect-ratio: 21 / 9;
+    filter: blur(50px);
+
+    @media (min-width: $screen-md) {
+      bottom: 170px;
+      filter: blur(80px);
+    }
+
+    @media (min-width: $screen-xl) {
+      bottom: -130px;
+      filter: blur(110px);
+    }
+
+    @media (min-width: $screen-xxl) {
+      bottom: -180px;
+      //aspect-ratio: 16 / 10;
+      filter: blur(130px);
     }
   }
 }
