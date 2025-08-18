@@ -99,7 +99,10 @@
   ],
   "copiedCss": [],
   "copiedJs": [
-    "./src/js/libs/*.{js,json,lottie}"
+    "./src/js/libs/lazy-loader.js",
+    "./src/js/libs/*.{js,json,lottie}",
+    "./src/js/libs/lazy-lottie-init.js",
+    "./src/js/libs/lazy-maps-init.js"
   ],
   "dirs": {
     "srcPath": "./src/",
