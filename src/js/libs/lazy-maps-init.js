@@ -1,24 +1,11 @@
-/*
-  lazy-maps-init.js
-
-  В этой версии:
-    * безопасной загрузкой Google Maps (callback шина),
-    * importLibrary-aware detection (maps/marker modules),
-    * создание AdvancedMarkerElement или classic google.maps.Marker как fallback,
-    * клавиатурная доступность для AdvancedMarkerElement (tabindex, role, aria-label) и обработка Enter/Space,
-    * обработка Escape для закрытия InfoWindow и возврата фокуса,
-    * очистка предыдущего экземпляра MarkerClusterer перед созданием нового,
-    * инициализация современного markerclusterer (UMD) с мягкими дефолтами и fallback на legacy,
-    * минимальные логи (console.debug / warn / error) и комментарии в ключевых местах.
-    классические маркеры открываются по click/tap, AdvancedMarkerElement остаётся focusable и управляется клавиатурой.
-*/
-
 (function () {
   // Scripts map async initialization Start
-  const apiKeyLocal = 'AIzaSyBqO-iJGp0LsZjKZrNhIjodnrqgxD7vVWU';
+  //const apiKeyLocal = 'AIzaSyBqO-iJGp0LsZjKZrNhIjodnrqgxD7vVWU';
+  const _mapEl = document.getElementById('map');
+  const _mapApiKey = _mapEl ? _mapEl.getAttribute('data-maps-api-key') : undefined;
 
   (g=>{ var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={ });var d=b.maps||(b.maps={ }),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{ await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${ c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: apiKeyLocal,
+    key: _mapApiKey,
     v: "weekly",
   });
   // Scripts map initialization End
@@ -170,13 +157,16 @@
         d.lng = tryNum(d.lng) ?? tryNum(d.longitude) ?? (d._gmap ? tryNum(d._gmap.longitude) : undefined);
 
         if ((!d.lat || !d.lng) && d._gmap) {
-          if (d._gmap.center) {
-            d.lat = d.lat ?? tryNum(d._gmap.center.latitude) ?? tryNum(d._gmap.center.lat);
-            d.lng = d.lng ?? tryNum(d._gmap.center.longitude) ?? tryNum(d._gmap.center.lng);
-          }
-          if (d._gmap.loc) {
-            d.lat = d.lat ?? tryNum(d._gmap.loc.lat);
-            d.lng = d.lng ?? tryNum(d._gmap.loc.lng);
+          // don't treat 0 as missing — check for undefined explicitly
+          if ((typeof d.lat === 'undefined' || typeof d.lng === 'undefined') && d._gmap) {
+            if (d._gmap.center) {
+              d.lat = d.lat ?? tryNum(d._gmap.center.latitude) ?? tryNum(d._gmap.center.lat);
+              d.lng = d.lng ?? tryNum(d._gmap.center.longitude) ?? tryNum(d._gmap.center.lng);
+            }
+            if (d._gmap.loc) {
+              d.lat = d.lat ?? tryNum(d._gmap.loc.lat);
+              d.lng = d.lng ?? tryNum(d._gmap.loc.lng);
+            }
           }
         }
         d.title = d.title || d.pagetitle || '';
@@ -303,10 +293,12 @@
         if (AdvancedMarkerElement && (map.mapId || mapIdToUse)) {
           try {
             const adv = new AdvancedMarkerElement({
-              position: { lat: parseFloat(g.latitude), lng: parseFloat(g.longitude) },
+              // use normalized coordinates from `location` (normalizeCoverage)
+              position: { lat: Number(location.lat), lng: Number(location.lng) },
               content: markerElement,
               title: (g.street || '') + ' ' + (g.housenumber || '')
             });
+
 
             // click events: Google AdvancedMarkerElement supports addListener
             adv.addListener && adv.addListener('click', ({ domEvent, latLng } = {}) => {
@@ -331,7 +323,8 @@
 
         // fallback to classic marker (image icon)
         const classic = new google.maps.Marker({
-          position: { lat: parseFloat(g.latitude), lng: parseFloat(g.longitude) },
+          // use normalized coordinates from `location` (normalizeCoverage)
+          position: { lat: Number(location.lat), lng: Number(location.lng) },
           map,
           title: (g.street || '') + ' ' + (g.housenumber || ''),
           icon: { url: iconSrc, scaledSize: new google.maps.Size(56, 56) }
@@ -422,88 +415,241 @@
         console.warn('coverage-map: clustering error', e);
       }
 
-        // Обработчик клавиатуры ESC
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && currentInfoWindow) {
-            currentInfoWindow.close();
-            currentInfoWindow = null;
-          }
-          if (e.key === 'Tab' && focusable.length) {
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-            if (e.shiftKey && document.activeElement === first) {
-              last.focus();
-              e.preventDefault();
-            } else if (!e.shiftKey && document.activeElement === last) {
-              first.focus();
-              e.preventDefault();
-            }
-          }
-        });
+      // Обработчик клавиатуры ESC
+      // document.addEventListener('keydown', (e) => {
+      //   if (e.key === 'Escape' && currentInfoWindow) {
+      //     currentInfoWindow.close();
+      //     currentInfoWindow = null;
+      //   }
+      //   if (e.key === 'Tab' && focusable.length) {
+      //     const first = focusable[0];
+      //     const last = focusable[focusable.length - 1];
+      //     if (e.shiftKey && document.activeElement === first) {
+      //       last.focus();
+      //       e.preventDefault();
+      //     } else if (!e.shiftKey && document.activeElement === last) {
+      //       first.focus();
+      //       e.preventDefault();
+      //     }
+      //   }
+      // });
 
-      // InfoWindow handling — now supports focusReturnElement: DOM element to focus when infowindow closes.
+      // Обработчик клавиатуры ESC / Tab (теперь использует currentFocusables)
+      // Переменные состояния должны быть объявлены ДО навешивания обработчика:
       let currentInfoWindow = null;
-      function openInfoWindowForLocation({ map, marker, location, g, InfoWindowCtor, focusReturnElement = null }) {
+      let currentFocusables = [];
+      let currentFocusReturnElement = null;
+
+      // Чистая версия обработчика клавиатуры для ESC / Tab
+      const __coverage_keydown = (e) => {
         try {
-          if (currentInfoWindow && typeof currentInfoWindow.close === 'function') {
-            currentInfoWindow.close();
+          // ESC — закрыть текущее InfoWindow и вернуть фокус инициатору
+          if (e.key === 'Escape' && currentInfoWindow) {
+            try { if (typeof currentInfoWindow.close === 'function') currentInfoWindow.close(); } catch (ignore) {}
             currentInfoWindow = null;
-          }
-
-          const infoData = { backup_power: location.backup_power || '72h', street: g.street || '', housenumber: g.housenumber || '' };
-          const templateEl = document.getElementById('infowindow-custom');
-          const template = templateEl ? templateEl.content.cloneNode(true) : null;
-
-          if (!template) {
-            const div = document.createElement('div');
-            div.textContent = `${infoData.street} ${infoData.housenumber}`;
-            currentInfoWindow = new InfoWindowCtor({ content: div, ariaLabel: `${infoData.street} ${infoData.housenumber}`, disableAutoPan: false });
-            currentInfoWindow.open({ anchor: marker, map, shouldFocus: true });
-            // attempt to focus content, then return
-            setTimeout(() => { try { if (focusReturnElement && focusReturnElement.focus) focusReturnElement.focus(); } catch (e) {} }, 200);
+            try { if (currentFocusReturnElement && typeof currentFocusReturnElement.focus === 'function') currentFocusReturnElement.focus(); } catch (ignore) {}
+            currentFocusables = [];
+            currentFocusReturnElement = null;
             return;
           }
 
+          // Tab — если открыто InfoWindow и в нём есть фокусируемые элементы, зациклить фокус
+          if (e.key === 'Tab' && currentInfoWindow && currentFocusables && currentFocusables.length) {
+            const first = currentFocusables[0];
+            const last = currentFocusables[currentFocusables.length - 1];
+
+            if (e.shiftKey) {
+              // Shift+Tab: если фокус на первом — перейти на последний
+              if (document.activeElement === first) {
+                e.preventDefault();
+                try { last.focus(); } catch (ignore) {}
+              }
+            } else {
+              // Tab: если фокус на последнем — перейти на первый
+              if (document.activeElement === last) {
+                e.preventDefault();
+                try { first.focus(); } catch (ignore) {}
+              }
+            }
+          }
+        } catch (err) {
+          // Не должно ломать страницу — логируем в debug
+          console.debug('coverage-map: key handler error', err);
+        }
+      };
+
+      // Навешивание обработчика (вставить после объявления переменных)
+      document.addEventListener('keydown', __coverage_keydown);
+
+      // При необходимости удалить обработчик при cleanup:
+      // document.removeEventListener('keydown', __coverage_keydown);
+
+      // InfoWindow handling — now supports focusReturnElement: DOM element to focus when infowindow closes.
+      function openInfoWindowForLocation({ map, marker, location, g = {}, InfoWindowCtor, focusReturnElement = null }) {
+        try {
+          // Ensure InfoWindowCtor is available
+          if (!InfoWindowCtor) {
+            InfoWindowCtor = (typeof google !== 'undefined' && google.maps && google.maps.InfoWindow) ? google.maps.InfoWindow : null;
+          }
+          if (!InfoWindowCtor) {
+            console.warn('coverage-map: InfoWindow constructor not found');
+            return null;
+          }
+
+          // Close any existing info window for this map
+          try {
+            if (typeof currentInfoWindow?.close === 'function') {
+              currentInfoWindow.close();
+            }
+          } catch (e) { /* ignore close errors */ }
+          currentInfoWindow = null;
+
+          // store focus-return element for this opening
+          currentFocusReturnElement = focusReturnElement;
+
+          // Prepare basic info data
+          const infoData = {
+            backup_power: (location && location.backup_power) || '72h',
+            street: (g && (g.street || g.Street)) || (location && location.title) || '',
+            housenumber: (g && g.housenumber) || ''
+          };
+
+          // Try to use an inline template with id="infowindow-custom"
+          const templateEl = document.getElementById('infowindow-custom');
+          const template = templateEl ? templateEl.content.cloneNode(true) : null;
+
+          // If no template — use a simple fallback info window
+          if (!template) {
+            const div = document.createElement('div');
+            div.textContent = `${infoData.street} ${infoData.housenumber}`.trim();
+            currentInfoWindow = new InfoWindowCtor({
+              content: div,
+              ariaLabel: `${infoData.street} ${infoData.housenumber}`.trim(),
+              disableAutoPan: false
+            });
+
+            // Open (try modern open signature, fallback to legacy)
+            try {
+              currentInfoWindow.open({ anchor: marker, map, shouldFocus: true });
+            } catch (err) {
+              try { currentInfoWindow.open(map, marker); } catch (err2) { /* ignore */ }
+            }
+
+            // Return focus to the initiator after a short delay
+            setTimeout(() => {
+              try { if (currentFocusReturnElement && typeof currentFocusReturnElement.focus === 'function') currentFocusReturnElement.focus(); } catch (e) {}
+            }, 200);
+
+            return currentInfoWindow;
+          }
+
+          // Populate template fields (non-destructive)
           const mapFields = [
             { selector: '.infowindow-template__backup-time', value: infoData.backup_power },
             { selector: '.infowindow-template__street', value: infoData.street },
             { selector: '.infowindow-template__apartment', value: infoData.housenumber }
           ];
           mapFields.forEach(field => {
-            const elField = template.querySelector(field.selector);
-            if (elField && field.value !== undefined) elField.textContent = field.value;
+            try {
+              const elField = template.querySelector(field.selector);
+              if (elField && typeof field.value !== 'undefined') elField.textContent = field.value;
+            } catch (e) { /* ignore per-field errors */ }
           });
 
-          const phoneInputs = template.querySelectorAll('.phone-mask');
-          if (phoneInputs.length && window.IMask) {
-            phoneInputs.forEach(input => {
-              try { IMask(input, { mask: '+{38} (\\000) 000 00 00', lazy: true }); } catch (e) {}
-            });
+          // Initialize phone masks if IMask available
+          try {
+            const phoneInputs = template.querySelectorAll('.phone-mask');
+            if (phoneInputs.length && window.IMask) {
+              phoneInputs.forEach(input => {
+                try { IMask(input, { mask: '+{38} (\\000) 000 00 00', lazy: true }); } catch (e) {}
+              });
+            }
+          } catch (e) { /* ignore mask errors */ }
+
+          // Collect focusable elements inside template for Tab trapping
+          try {
+            currentFocusables = Array.from(template.querySelectorAll('input, button, a[href], select, textarea, [tabindex]:not([tabindex="-1"])'));
+          } catch (e) {
+            currentFocusables = [];
           }
 
-          const focusable = template.querySelectorAll('input, button, [tabindex]:not([tabindex="-1"])');
-          if (focusable.length) setTimeout(() => { focusable[0].focus(); }, 50);
+          // Focus first focusable element shortly after opening
+          if (currentFocusables.length) {
+            setTimeout(() => {
+              try { currentFocusables[0].focus(); } catch (e) {}
+            }, 50);
+          }
 
-          currentInfoWindow = new InfoWindowCtor({ content: template, ariaLabel: `${infoData.street} ${infoData.housenumber}`, disableAutoPan: false });
-          currentInfoWindow.open && currentInfoWindow.open({ anchor: marker, map, shouldFocus: true });
-
-          // When infowindow closes, return focus to origin element if provided.
-          currentInfoWindow.addListener && currentInfoWindow.addListener('closeclick', () => {
-            try {
-              if (focusReturnElement && typeof focusReturnElement.focus === 'function') {
-                focusReturnElement.focus();
-              }
-            } catch (e) {}
-            currentInfoWindow = null;
+          // Create InfoWindow with template content and open it
+          currentInfoWindow = new InfoWindowCtor({
+            content: template,
+            ariaLabel: `${infoData.street} ${infoData.housenumber}`.trim(),
+            disableAutoPan: false
           });
 
+          try {
+            if (typeof currentInfoWindow.open === 'function') {
+              currentInfoWindow.open({ anchor: marker, map, shouldFocus: true });
+            } else {
+              // legacy fallback
+              currentInfoWindow.open(map, marker);
+            }
+          } catch (err) {
+            // ignore open errors
+          }
+
+          // When infowindow closes, return focus and clear tracked focusables
+          try {
+            if (typeof currentInfoWindow.addListener === 'function') {
+              currentInfoWindow.addListener('closeclick', () => {
+                try {
+                  if (currentFocusReturnElement && typeof currentFocusReturnElement.focus === 'function') {
+                    currentFocusReturnElement.focus();
+                  }
+                } catch (e) {}
+                currentInfoWindow = null;
+                currentFocusables = [];
+                currentFocusReturnElement = null;
+              });
+            }
+          } catch (e) {
+            // ignore listener attach errors
+          }
+
+          return currentInfoWindow;
         } catch (e) {
           console.warn('coverage-map: failed to open info window', e);
+          return null;
         }
       }
 
-      // expose instance for debug
-      el.__coverageMap_instance = { map, markers: createdMarkers, descriptors };
+      // expose instance for debug and provide cleanup helper (remove keydown handler, clear cluster, close infowindow)
+      el.__coverageMap_instance = {
+        map,
+        markers: createdMarkers,
+        descriptors,
+        cleanup: () => {
+          try {
+            // remove markerclusterer if present
+            if (el.__markerClusterInstance) {
+              try {
+                if (typeof el.__markerClusterInstance.clearMarkers === 'function') el.__markerClusterInstance.clearMarkers();
+                if (typeof el.__markerClusterInstance.dispose === 'function') el.__markerClusterInstance.dispose();
+                else if (typeof el.__markerClusterInstance.destroy === 'function') el.__markerClusterInstance.destroy();
+                else if (typeof el.__markerClusterInstance.release === 'function') el.__markerClusterInstance.release();
+              } catch (e) { console.debug('coverage-map: cluster cleanup error', e); }
+              delete el.__markerClusterInstance;
+            }
+            // remove keydown listener
+            if (typeof __coverage_keydown === 'function') {
+              try { document.removeEventListener('keydown', __coverage_keydown); } catch (e) {}
+            }
+            // close info window if open
+            try { if (currentInfoWindow && typeof currentInfoWindow.close === 'function') currentInfoWindow.close(); } catch (e) {}
+          } catch (err) { console.debug('coverage-map: cleanup error', err); }
+        }
+      };
+
       return { map, markers: createdMarkers, descriptors };
     }
 
