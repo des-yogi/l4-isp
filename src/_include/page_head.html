@@ -1,8 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
-
-
-<meta name="description" content="">
+<meta name="description" content="Головная сторінка сайту…">
 <meta name="keywords" content="">
 <meta name="robots" content="index,follow">
 <!-- OpenGraph microdata
@@ -14,8 +12,16 @@
 <meta property="og:locale"        content="uk_UA">
 -->
 <!-- <link rel="canonical" href="https://www.your-domain.com/"> -->
-<!-- <link rel="preload" href="assets/fonts/roboto-v18-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/roboto-v18-cyrillic_latin-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/noto-sans-v7-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin> -->
+<link rel="preload" href="fonts/ibm-plex-sans-v22-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-sans-v22-cyrillic_latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-sans-v22-cyrillic_latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<!-- если используете внешний sprite иконок -->
+<link rel="preload" href="img/sprite-svg.svg" as="image">
 
-<link href="css/style.min.css" rel="stylesheet" media="screen">
+<!-- <link href="css/style.min.css" rel="stylesheet" media="screen"> -->
+<link rel="preload" href="css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
+

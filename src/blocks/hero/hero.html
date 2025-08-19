@@ -36,10 +36,13 @@
                 <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
                 <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
 
-                <img src="img/hero-img-1.png" alt="Alt" width="1576" height="1160" loading="lazy">
+                <img src="img/hero-img-1.png"
+                     alt="Alt" width="1576"
+                     height="1160"
+                     loading="eager"
+                     fetchpriority="high">
                 <!-- loading="lazy" для всех кроме первого -->
               </picture>
-              <div class="swiper-lazy-preloader"></div>
             </div>
           </div>
         </div>
