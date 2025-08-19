@@ -1,43 +1,51 @@
-/*(function(){
-  document.querySelectorAll('.choices').forEach(function(element) {
-    new Choices(element, {
-      searchEnabled: element.tagName === 'SELECT',  // По желанию, разные опции для input/select
-      placeholder: true,
-      shouldSort: false,
-      itemSelectText: ''
-      // Другие настройки
-    });
-  });
-}());*/
-
 (function() {
-  document.querySelectorAll('.choices').forEach(function(element) {
-    // Базовые опции для всех элементов
-    let options = {
-      placeholder: true,
+  // CSS-класс .visually-hidden должен быть в CSS
+  const VISUALLY_HIDDEN_CLASS = 'visually-hidden';
+
+  document.querySelectorAll('select.choices, input.choices').forEach(function(element) {
+    // Надёжно получаем текст имени поля
+    const ariaLabel = element.getAttribute('aria-label') || element.getAttribute('placeholder') || 'Select a value';
+
+    // Убедимся, что у select есть id (нужен для связывания label[for])
+    if (!element.id) {
+      element.id = 'choices-select-' + Math.random().toString(36).slice(2,9);
+    }
+
+    // Ищем реальный <label for="..."> (если есть)
+    let labelEl = document.querySelector('label[for="' + CSS.escape(element.id) + '"]');
+
+    // Если label отсутствует — создаём скрытый, но корректный label с текстом
+    if (!labelEl) {
+      labelEl = document.createElement('label');
+      labelEl.className = 'visually-hidden';
+      labelEl.id = 'choices-label-' + Math.random().toString(36).slice(2,9);
+      labelEl.setAttribute('for', element.id);
+      labelEl.textContent = ariaLabel;
+      labelEl.dataset.choicesLabel = 'true'; // пометка
+      element.parentNode.insertBefore(labelEl, element);
+    } else {
+      // если label найден — убедимся, что у него есть id и текст
+      if (!labelEl.id) labelEl.id = 'choices-label-' + Math.random().toString(36).slice(2,9);
+      if (!labelEl.textContent || !labelEl.textContent.trim()) labelEl.textContent = ariaLabel;
+      labelEl.removeAttribute('aria-hidden');
+    }
+
+    // Формируем опции для Choices и передаём labelId (официальная опция)
+    const options = {
+      placeholderValue: element.getAttribute('placeholder') || '',
       shouldSort: false,
       itemSelectText: '',
-      // Другие настройки
+      searchEnabled: element.tagName === 'SELECT',
+      removeItemButton: element.tagName === 'INPUT',
+      labelId: labelEl.id
     };
 
-    // Уточняем опции для select
-    if(element.tagName === 'SELECT') {
-      options.searchEnabled = false; // или true, если нужен поиск
-      // Можно добавить другие опции для select
+    // допускаем доп. опции из data-атрибутов
+    if (element.dataset && element.dataset.choicesOptions) {
+      try { Object.assign(options, JSON.parse(element.dataset.choicesOptions)); } catch (e) { /* ignore */ }
     }
 
-    // Уточняем опции для input[type="text"]
-    if(element.tagName === 'INPUT') {
-      options.searchEnabled = false; // Обычно не нужен для input
-      options.removeItemButton = true; // Например, чтобы можно было удалять введённые значения (для тегов)
-      // Можно добавить другие опции для input
-    }
-
-    // Дополнительно: кастомные опции через data-атрибуты
-    if(element.dataset.choicesOptions) {
-      Object.assign(options, JSON.parse(element.dataset.choicesOptions));
-    }
-
+    // Инициализируем Choices
     new Choices(element, options);
   });
 })();

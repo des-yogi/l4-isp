@@ -256,7 +256,7 @@
         return btn;
       }
 
-      // create markers
+      // Create markers & icons
       const createdMarkers = descriptors.map((location, idx) => {
         const g = location._gmap || {};
         const iconSrc = (location.coverage_status == 1) ? '/img/ip-tv.svg' : '/img/ip.svg';
@@ -275,7 +275,7 @@
         // we'll create a separate visually-hidden button below.
         markerElement.setAttribute('role', 'button');
         markerElement.setAttribute('tabindex', '0');
-        markerElement.setAttribute('aria-label', location.title || ((g.street || '') + ' ' + (g.housenumber || '') || 'Точка на карте'));
+        markerElement.setAttribute('aria-label', location.title || ((g.street || '') + ' ' + (g.housenumber || '') || 'Точка на мааі'));
         // ensure not hidden for screen readers
         markerElement.setAttribute('aria-hidden', 'false');
 
