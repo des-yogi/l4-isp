@@ -383,14 +383,14 @@ a {
 }
 
 .main {
-  padding-top: 88px;
+  padding-top: 112px; // 88+24
 
   @media (min-width: $screen-md) {
-    padding-top: calc(50px + 76px);
+    padding-top: 222px; //132+90
   }
 
   @media (min-width: $screen-xl) {
-    padding-top: calc(50px + 86px);
+    padding-top: 232px; // 142+90
   }
 
   &--hero {

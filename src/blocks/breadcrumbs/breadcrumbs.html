@@ -1,37 +1,35 @@
 <!--DEV
 @ @include('blocks/breadcrumbs/breadcrumbs.html')
-
 aria-current="page" - для ссылки на текущую страницу
+-->
 
-<nav class="container breadcrumbs" aria-label="Breadcrumb">
+<nav class="container  breadcrumbs" aria-label="Навігація - Хлібні крихти">
 
-  <ol class="list-nostyled breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
 
     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
       <a href="#" itemprop="item" class="breadcrumbs__link">
-       <span itemprop="name">Главная</span>
+       <span itemprop="name">Головна</span>
       </a>
-      <meta itemprop="position" content="1" />
+      <meta itemprop="position" content="1">
     </li>
 
     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
       <a href="#" itemprop="item" class="breadcrumbs__link">
-        <span itemprop="name">Страница 1</span>
+        <span itemprop="name">Дуже довгий текст 1</span>
       </a>
-      <meta itemprop="position" content="2" />
+      <meta itemprop="position" content="2">
     </li>
 
     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
       <span class="breadcrumbs__link" aria-current="page">
-        <span itemprop="name">Страница 2</span>
+        <span itemprop="name">Дуже довгий текст 2</span>
       </span>
-      <meta itemprop="position" content="3" />
+      <meta itemprop="position" content="3">
     </li>
 
   </ol>
 </nav>
--->
-
