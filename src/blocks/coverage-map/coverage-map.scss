@@ -60,6 +60,9 @@
     @include col(xxl, 4);
 
     @media (min-width: $screen-xl) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       max-width: 510px;
     }
 

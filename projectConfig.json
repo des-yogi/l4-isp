@@ -61,7 +61,9 @@
     "share": [],
     "social-links": [],
     "lang-switcher": [],
-    "field-filter": []
+    "field-filter": [],
+    "coverage-links": [],
+    "header": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

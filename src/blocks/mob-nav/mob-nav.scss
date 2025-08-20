@@ -5,6 +5,10 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  @media (min-width: $screen-xl) {
+    display: none;
+  }
+
   &.offcanvas-top {
     top: 98px; //88 + 8
     right: 12px;

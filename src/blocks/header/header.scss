@@ -1,0 +1,26 @@
+.header {
+  $block-name:                &; // #{$block-name}__element
+
+  margin: 24px 0 40px;
+  //@media (min-width: $screen-md) {}
+
+  &__col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    color: var(--text-color);
+  }
+
+  &__intro {
+    text-wrap: balance;
+    color: var(--text-pale-color);
+  }
+}
+
+.header + * {
+  margin-top: 40px !important;
+}

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Home page</title>
+  <title>Покриття</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <meta name="description" content="Головная сторінка сайту…">
@@ -35,7 +35,7 @@
 </head>
 
 <body>
-<noscript>У вас отключен JavaScript. Приносим наши извинения, но это делает затруднительным использование данного сайта.</noscript>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
 
   <div class="page__inner">
 
@@ -556,618 +556,482 @@
 
 
 
-      <main class="main  main--hero">
+      <main class="main">
 
-        <h1 class="visually-hidden">Головная сторінка сайту L4.UA</h1>
+        <nav class="container  breadcrumbs" aria-label="Навігація - Хлібні крихти">
 
-        <div class="hero" data-theme-dark="hero--dark" data-theme-light="hero--light">
-          <div class="swiper  hero__slider">
+          <ol class="breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
 
-            <div class="swiper-wrapper">
+            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+              itemtype="https://schema.org/ListItem">
+              <a href="#" itemprop="item" class="breadcrumbs__link">
+               <span itemprop="name">Головна</span>
+              </a>
+              <meta itemprop="position" content="1">
+            </li>
 
-              <section class="swiper-slide  container  hero__slide"
-                       style="background-color:hsla(216,100%,91%,1);
-                              background-image:
-                                radial-gradient(at 100% 100%, hsla(181,100%,48%,1) 0px, transparent 50%),
-                                radial-gradient(at 70% 56%, hsla(217,78%,50%,0.82) 0px, transparent 50%),
-                                radial-gradient(at 88% 10%, hsla(232,89%,4%,1) 0px, transparent 50%),
-                                radial-gradient(at 76% 14%, hsla(240,72%,49%,0.7) 0px, transparent 50%);">
-                <div class="row">
-                  <div class="hero__col-text">
-                    <div class="hero__text">
-                      <h2 class="h1  hero__slide-title">Миттєвий перехід</h2>
-                      <div class="hero__slide-decr">
-                        <p>з іншої мережі за 72 години!</p>
-                      </div>
-                      <a href="#"
-                         class="btn"
-                         data-theme-dark="btn--dark"
-                         data-theme-light="btn--light">
-                        <span>Підключитись</span>
-                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                      </a>
-                    </div>
+            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+              itemtype="https://schema.org/ListItem">
+              <a href="#" itemprop="item" class="breadcrumbs__link">
+                <span itemprop="name">Дуже довгий текст 1</span>
+              </a>
+              <meta itemprop="position" content="2">
+            </li>
+
+            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+              itemtype="https://schema.org/ListItem">
+              <span class="breadcrumbs__link" aria-current="page">
+                <span itemprop="name">Дуже довгий текст 2</span>
+              </span>
+              <meta itemprop="position" content="3">
+            </li>
+
+          </ol>
+        </nav>
+
+        <header class="container  header">
+          <div class="row  header__row">
+            <div class="header__col">
+              <h1 class="header__title">Оберіть населений пункт</h1>
+              <div class="header__intro">
+                <p>Ми забезпечуємо надійне підключення, професійну технічну підтримку та сучасне обладнання. Наше покриття охоплює всі райони столиці, а підключення можна оформити у зручний для вас час.</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <article class="container  coverage-map__wrapper">
+
+          <div class="coverage-map__row">
+
+            <div class="coverage-map__col-info">
+              <div class="coverage-map__info"
+                   data-theme-dark="coverage-map__info--dark"
+                   data-theme-light="coverage-map__info--light">
+
+                <header class="coverage-map__header">
+                  <h2 class="coverage-map__title">Мапа покриття</h2>
+                  <div class="coverage-map__intro">
+                    <p>Перевірте доступність підключення та наявність безперебійного живлення за вашою адресою.</p>
                   </div>
-                  <div class="hero__col-img">
-                    <div class="embed-responsive  embed-responsive--4-3  hero__img">
-                      <picture>
-                        <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
-                        <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
+                </header>
 
-                        <img src="img/hero-img-1.png"
-                             alt="Alt" width="1576"
-                             height="1160"
-                             loading="eager"
-                             fetchpriority="high">
-                        <!-- loading="lazy" для всех кроме первого -->
-                      </picture>
-                    </div>
+                <form class="coverage-map__form" action="#" method="post">
+                  <div class="choices__wrapper"
+                       data-theme-dark="choices__wrapper--dark"
+                       data-theme-light="choices__wrapper--light">
+                    <select class="choices"
+                            name="any"
+                            aria-label="Виберіть область">
+                      <option selected disabled>Виберіть область:</option>
+                      <option value="value1">Область 1</option>
+                      <option value="value2">Область 2</option>
+                      <option value="value3">Область 3</option>
+                      <option value="value4">Область 4</option>
+                    </select>
+                    <span class="field-select__help-text error"></span>
                   </div>
-                </div>
-              </section>
 
-              <section class="swiper-slide  container  hero__slide"
-                       style="background-color:#99ffe4;
-                              background-image:
-                                radial-gradient(at 75% 77%, hsla(88,64%,60%,1) 0px, transparent 50%),
-                                radial-gradient(at 88% 10%, hsla(133,68%,66%,1) 0px, transparent 50%),
-                                radial-gradient(at 18% 72%, hsla(136,62%,65%,1) 0px, transparent 50%),
-                                radial-gradient(at 59% 32%, hsla(78,81%,71%,1) 0px, transparent 50%),
-                                radial-gradient(at 78% 7%, hsla(95,80%,65%,1) 0px, transparent 50%);">
-                <div class="row">
-                  <div class="hero__col-text">
-                    <div class="hero__text">
-                      <h2 class="h1  hero__slide-title">Миттєвий перехід</h2>
-                      <div class="hero__slide-decr">
-                        <p>з іншої мережі за 72 години!</p>
-                      </div>
-                      <a href="#"
-                         class="btn"
-                         data-theme-dark="btn--dark"
-                         data-theme-light="btn--light">
-                        <span>Підключитись</span>
-                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                      </a>
-                    </div>
+                  <div class="choices__wrapper"
+                       data-theme-dark="choices__wrapper--dark"
+                       data-theme-light="choices__wrapper--light">
+                    <select class="choices"
+                            name="any"
+                            aria-label="Населений пункт">
+                      <option selected disabled>Виберіть населений пункт:</option>
+                      <option value="value1">НП 1</option>
+                      <option value="value2">НП 2</option>
+                      <option value="value3">НП 3</option>
+                      <option value="value4">НП 4</option>
+                    </select>
+                    <span class="field-select__help-text error"></span>
                   </div>
-                  <div class="hero__col-img">
-                    <div class="embed-responsive  embed-responsive--4-3  hero__img">
-                      <picture>
-                        <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
-                        <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
 
-                        <img src="img/hero-img-1.png" alt="Alt" width="1576" height="1160" loading="lazy">
-                        <!-- loading="lazy" для всех кроме первого -->
-                      </picture>
-                      <div class="swiper-lazy-preloader"></div>
-                    </div>
+                  <div class="choices__wrapper"
+                       data-theme-dark="choices__wrapper--dark"
+                       data-theme-light="choices__wrapper--light">
+                    <select class="choices"
+                            name="any"
+                            aria-label="Виберіть вулицю">
+                      <option selected disabled>Виберіть вулицю:</option>
+                      <option value="value1">Вулиця 1</option>
+                      <option value="value2">Вулиця 2</option>
+                      <option value="value3">Вулиця 3</option>
+                      <option value="value4">Вулиця 4</option>
+                    </select>
+                    <span class="field-select__help-text error"></span>
                   </div>
-                </div>
-              </section>
 
-              <section class="swiper-slide  container  hero__slide"
-                       style="background-color:hsla(216,100%,91%,1);
-                              background-image:
-                                radial-gradient(at 100% 100%, hsla(181,100%,48%,1) 0px, transparent 50%),
-                                radial-gradient(at 70% 56%, hsla(217,78%,50%,0.82) 0px, transparent 50%),
-                                radial-gradient(at 88% 10%, hsla(232,89%,4%,1) 0px, transparent 50%),
-                                radial-gradient(at 76% 14%, hsla(240,72%,49%,0.7) 0px, transparent 50%);">
-                <div class="row">
-                  <div class="hero__col-text">
-                    <div class="hero__text">
-                      <h2 class="h1  hero__slide-title">Миттєвий перехід</h2>
-                      <div class="hero__slide-decr">
-                        <p>з іншої мережі за 72 години!</p>
-                      </div>
-                      <a href="#"
-                         class="btn"
-                         data-theme-dark="btn--dark"
-                         data-theme-light="btn--light">
-                        <span>Підключитись</span>
-                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                      </a>
-                    </div>
+                  <div class="choices__wrapper"
+                       data-theme-dark="choices__wrapper--dark"
+                       data-theme-light="choices__wrapper--light">
+                    <select class="choices"
+                            name="any"
+                            aria-label="Виберіть Будинок">
+                      <option selected disabled>Будинок:</option>
+                      <option value="value1">Будинок 1</option>
+                      <option value="value2">Будинок 2</option>
+                      <option value="value3">Будинок 3</option>
+                      <option value="value4">Будинок 4</option>
+                    </select>
+                    <span class="field-select__help-text error"></span>
                   </div>
-                  <div class="hero__col-img">
-                    <div class="embed-responsive  embed-responsive--4-3  hero__img">
-                      <picture>
-                        <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
-                        <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
+                </form>
 
-                        <img src="img/hero-img-1.png" alt="Alt" width="1576" height="1160" loading="lazy">
-                        <!-- loading="lazy" для всех кроме первого -->
-                      </picture>
-                      <div class="swiper-lazy-preloader"></div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="swiper-slide  container  hero__slide"
-                       style="background-color:#99ffe4;
-                              background-image:
-                                radial-gradient(at 75% 77%, hsla(88,64%,60%,1) 0px, transparent 50%),
-                                radial-gradient(at 88% 10%, hsla(133,68%,66%,1) 0px, transparent 50%),
-                                radial-gradient(at 18% 72%, hsla(136,62%,65%,1) 0px, transparent 50%),
-                                radial-gradient(at 59% 32%, hsla(78,81%,71%,1) 0px, transparent 50%),
-                                radial-gradient(at 78% 7%, hsla(95,80%,65%,1) 0px, transparent 50%);">
-                <div class="row">
-                  <div class="hero__col-text">
-                    <div class="hero__text">
-                      <h2 class="h1  hero__slide-title">Миттєвий перехід</h2>
-                      <div class="hero__slide-decr">
-                        <p>з іншої мережі за 72 години!</p>
-                      </div>
-                      <a href="#"
-                         class="btn"
-                         data-theme-dark="btn--dark"
-                         data-theme-light="btn--light">
-                        <span>Підключитись</span>
-                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="hero__col-img">
-                    <div class="embed-responsive  embed-responsive--4-3  hero__img">
-                      <picture>
-                        <source srcset="img/hero-img-1.webp" media="(min-width: 300px)" type="image/webp">
-                        <source srcset="img/hero-img-1.png" media="(min-width: 300px)">
-
-                        <img src="img/hero-img-1.png" alt="Alt" width="1576" height="1160" loading="lazy">
-                        <!-- loading="lazy" для всех кроме первого -->
-                      </picture>
-                      <div class="swiper-lazy-preloader"></div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+                <section class="coverage-map__footer">
+                  <h3 class="visually-hidden">Легенда для мапи та інша додаткова інформація</h3>
+                  <ul class="list-nostyled  coverage-map__legend">
+                    <li class="coverage-map__legend-item">
+                      <img src="img/legend-icon-blue.svg" alt="" width="32" height="32" loading="lazy">
+                      <span>Доступне з'єднання Інтернету і кабельного ТБ</span>
+                    </li>
+                    <li class="coverage-map__legend-item">
+                      <img src="img/legend-icon-orange.svg" alt="" width="32" height="32" loading="lazy">
+                      <span>Доступне з'єднання тільки кабельного ТБ</span>
+                    </li>
+                  </ul>
+                </section>
+              </div>
 
             </div>
 
-            <div class="container  hero__controls">
-              <div class="swiper-controls">
-                <div class="btn  btn--secondary  btn--secondary--light  swiper-button-prev  hero__btn-prev"></div>
-                <div class="swiper-pagination  hero__pagination"></div>
-                <div class="btn  btn--secondary  btn--secondary--light  swiper-button-next  hero__btn-next"></div>
+            <div class="coverage-map__col-map">
+                <!-- data-map-light="1ba02fcecc153be989d2ce78"
+                data-map-dark="1ba02fcecc153be9166c94d4" -->
+              <div id="map"
+                   class="coverage-map"
+                   data-maps-api-key="AIzaSyBqO-iJGp0LsZjKZrNhIjodnrqgxD7vVWU"
+                   data-markers-url=""
+                   data-markercluster="true"
+              >
+                <script type="application/json" class="map-markers">[{"uri":"map\/tychyny-pavla-pr\/9b","id":"71","pagetitle":"9\u0431","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"9\u0431\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4293093\",\"longitude\":\"30.603848\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/11","id":"72","pagetitle":"11","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"11\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43076259999999\",\"longitude\":\"30.6073302\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/5","id":"67","pagetitle":"5","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"5\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4280716\",\"longitude\":\"30.5988107\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/5a","id":"68","pagetitle":"5\u0430","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"5\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.42862539999999\",\"longitude\":\"30.6005389\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/9","id":"69","pagetitle":"9","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"9\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4293054\",\"longitude\":\"30.6038764\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/9a","id":"70","pagetitle":"9\u0430","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"9\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4301699\",\"longitude\":\"30.6009519\"}","sp_object":""},{"uri":"map\/sobornosti\/30a","id":"66","pagetitle":"30\u0430","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0421\u043e\u0431\u043e\u0440\u043d\u043e\u0441\u0442\u0456\",\"housenumber\":\"30\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4397208\",\"longitude\":\"30.6095525\"}","sp_object":"20"},{"uri":"map\/mykolaichuka-ivana\/7","id":"63","pagetitle":"7","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"7\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4314105\",\"longitude\":\"30.5980012\"}","sp_object":""},{"uri":"map\/mykolaichuka-ivana\/7a","id":"64","pagetitle":"7\u0430","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"7\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4319376\",\"longitude\":\"30.5992522\"}","sp_object":""},{"uri":"map\/sobornosti\/30","id":"65","pagetitle":"30","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0421\u043e\u0431\u043e\u0440\u043d\u043e\u0441\u0442\u0456\",\"housenumber\":\"30\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4388283\",\"longitude\":\"30.6101723\"}","sp_object":"20"},{"uri":"map\/buchmy-amvrosiia\/51","id":"59","pagetitle":"5\/1","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"5\/1\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4320893\",\"longitude\":\"30.6058503\"}","sp_object":""},{"uri":"map\/mykolaichuka-ivana\/4","id":"60","pagetitle":"4","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"4\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.433463\",\"longitude\":\"30.6008279\"}","sp_object":""},{"uri":"map\/mykolaichuka-ivana\/5","id":"61","pagetitle":"5","coverage_status":"0","backup_power":"72","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"5\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4308749\",\"longitude\":\"30.5970096\"}","sp_object":""},{"uri":"map\/mykolaichuka-ivana\/51","id":"62","pagetitle":"5\/1","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"5\/1\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4306684\",\"longitude\":\"30.59824069999999\"}","sp_object":""},{"uri":"map\/buchmy-amvrosiia\/1","id":"55","pagetitle":"1","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"1\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43293509999999\",\"longitude\":\"30.6036644\"}","sp_object":""},{"uri":"map\/buchmy-amvrosiia\/3","id":"56","pagetitle":"3","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"3\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4325667\",\"longitude\":\"30.6048208\"}","sp_object":""},{"uri":"map\/buchmy-amvrosiia\/4","id":"57","pagetitle":"4","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"4\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43223709999999\",\"longitude\":\"30.6020364\"}","sp_object":""},{"uri":"map\/buchmy-amvrosiia\/5","id":"58","pagetitle":"5","coverage_status":"0","backup_power":"72","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"5\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4318921\",\"longitude\":\"30.6048734\"}","sp_object":""},{"uri":"map\/berezniakivska\/10","id":"52","pagetitle":"10","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"10\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4338299\",\"longitude\":\"30.6127406\"}","sp_object":""},{"uri":"map\/berezniakivska\/14a","id":"53","pagetitle":"14\u0430","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"14\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43044219999999\",\"longitude\":\"30.6126758\"}","sp_object":""},{"uri":"map\/berezniakivska\/16","id":"54","pagetitle":"16","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"16\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.428454\",\"longitude\":\"30.6129724\"}","sp_object":""},{"uri":"map\/berezniakivska\/4a","id":"50","pagetitle":"4\u0430","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"4\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.434952\",\"longitude\":\"30.610698\"}","sp_object":""},{"uri":"map\/berezniakivska\/6","id":"51","pagetitle":"6","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"6\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43535079999999\",\"longitude\":\"30.6121968\"}","sp_object":""},{"uri":"map\/berezniakivska\/4","id":"49","pagetitle":"4","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"4\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4359383\",\"longitude\":\"30.6115198\"}","sp_object":""},{"uri":"map\/berezniakivska\/2","id":"48","pagetitle":"2","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"2\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\u0423\u043a\u0440\u0430\u0457\u043d\u0430\",\"latitude\":\"50.4366104\",\"longitude\":\"30.6113689\"}","sp_object":""}]</script>
               </div>
             </div>
 
           </div>
-        </div>
-
-        <section class="container  benefits">
-          <div class="row  benefits__row">
-
-            <div class="benefits__col-card">
-
-              <article class="service-card "
-                       data-theme-dark="service-card--dark"
-                       data-theme-light="service-card--light">
-                <div class="service-card__icon">
-                  <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#speed-32"></use></svg>
-                </div>
-                <h3 class="service-card__title">Швидкість</h3>
-                <p class="service-card__text">Можливість одночасно грати онлайн, дивитись улюблені серіали, завантажувати відео.</p>
-                <p class="service-card__slogan">Повна свобода дій!</p>
-              </article>
-
-            </div>
-
-            <div class="benefits__col-card">
-
-              <article class="service-card "
-                       data-theme-dark="service-card--dark"
-                       data-theme-light="service-card--light">
-                <div class="service-card__icon">
-                  <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#video-32"></use></svg>
-                </div>
-                <h3 class="service-card__title">Мережа покриття</h3>
-                <p class="service-card__text">Присутність по всій Київській області та всій Черкаській області. Інтернет без меж навіть в невеликих містах та селах!</p>
-                <p class="service-card__slogan"></p>
-              </article>
-
-            </div>
-
-            <div class="benefits__col-caption">
-              <h2 class="benefits__title">Надшвидкісний інтернет до 1 Гбіт/с</h2>
-            </div>
-
-            <div class="benefits__col-card">
-
-              <article class="service-card "
-                       data-theme-dark="service-card--dark"
-                       data-theme-light="service-card--light">
-                <div class="service-card__icon">
-                  <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#video-32"></use></svg>
-                </div>
-                <h3 class="service-card__title">Стабільність та енергонезалежність</h3>
-                <p class="service-card__text">Якісний оптоволоконний інтернет 24 години на добу 7 днів на тиждень.</p>
-                <p class="service-card__slogan">Без нервів, без затримок, без збоїв.</p>
-              </article>
-
-            </div>
-
-            <div class="benefits__col-card">
-
-              <article class="service-card "
-                       data-theme-dark="service-card--dark"
-                       data-theme-light="service-card--light">
-                <div class="service-card__icon">
-                  <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#gamepad-32"></use></svg>
-                </div>
-                <h3 class="service-card__title">Технічна підтримка</h3>
-                <p class="service-card__text">Оперативна та якісна підтримка абонентів як в дистанційному режимі, так і на виїзді.</p>
-                <p class="service-card__slogan"></p>
-              </article>
-
-            </div>
-
-            <div class="embed-responsive  benefits__img">
-              <picture>
-                <source srcset="img/benefits.webp" type="image/webp">
-                <img src="img/benefits.png" alt="" width="1219" height="695" loading="lazy">
-              </picture>
-            </div>
-          </div>
-
-
-          <div class="benefits__footer">
-            <h4 class="benefits__footer-title">Дізнайтесь про всі переваги підключення</h4>
-            <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
-            <button class="btn  btn--glow"
-                    data-theme-dark="btn--glow--dark"
-                    data-theme-light="btn--glow--light">
-              <span>Замовити консультацію</span>
-              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
-            </button>
-          </div>
-        </section>
-
-        <section class="container  tabs  customer-services">
-          <nav class="customer-services__nav">
-            <div class="nav nav-tabs" id="serviceNav" role="tablist" data-theme-dark="nav--dark" data-theme-light="nav--light">
-              <button class="nav-link active" id="service-1" data-bs-toggle="tab" data-bs-target="#service-pane-1" type="button" role="tab" aria-controls="service-pane-1" aria-selected="true">
-                <span>Домашній інтернет та ТБ</span>
-              </button>
-
-              <button class="nav-link" id="service-2" data-bs-toggle="tab" data-bs-target="#service-pane-2" type="button" role="tab" aria-controls="service-pane-2" aria-selected="false">
-                <span>Для дому та офісу</span>
-              </button>
-
-              <button class="nav-link" id="service-3" data-bs-toggle="tab" data-bs-target="#service-pane-3" type="button" role="tab" aria-controls="service-pane-3" aria-selected="false">
-                <span>Юридичним особам</span>
-              </button>
-
-              <button class="nav-link" id="service-4" data-bs-toggle="tab" data-bs-target="#service-pane-4" type="button" role="tab" aria-controls="service-pane-4" aria-selected="false">
-                <span>Державні заклади</span>
-              </button>
-            </div>
-          </nav>
-
-          <div class="tab-content  customer-services__content" id="serviceContent">
-
-            <div class="customer-services__pane  tab-pane fade show active" id="service-pane-1" role="tabpanel" aria-labelledby="service-1" tabindex="0">
-              <div class="customer-services__header">
-                <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
-                <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
-                <p>Ми знаходимо рішення для кожного абонента!</p>
-              </div>
-
-              <div class="row  customer-services__row">
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--solid"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#speed-32"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">1000 Мбіт/с</h3>
-                    <p class="service-card__text">Космічна швидкість інтернету забезпечить будь-які потреби всіх членів родини</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--solid"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#video-32"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">Цифрове ТБ</h3>
-                    <p class="service-card__text">Бездоганна якість трансляції національних, преміальних та спеціальних каналів</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--solid"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#gamepad-32"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">Онлайн ігри без гальм</h3>
-                    <p class="service-card__text">Грайте у World of Tanks чи інші супер-ігри онлайн.</p>
-                    <p class="service-card__slogan">Найнижчий ping тільки в нашій мережі!</p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--clear"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">18 років досвіду</h3>
-                    <p class="service-card__text">Нас обрали багато сімей. Працюємо надійно і якісно з 2005 року, постійно оновлюючи обладнання</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--clear"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">Цифрове ТБ</h3>
-                    <p class="service-card__text">Зручні тарифи для кожного — для студентів, пенсіонерів, сімей та домашніх офісів. Обирайте</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--clear"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">Акції та знижки</h3>
-                    <p class="service-card__text">Шалені акційні пропозиції! Знижки на підключення та абонплату, реферальна програма, бонуси за друзів та трейд-ін!</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-              </div>
-
-              <div class="customer-services__ctrl">
-                <button class="btn  btn--glow"
-                        data-theme-dark="btn--glow--dark"
-                        data-theme-light="btn--glow--light">
-                  <span>Замовити консультацію</span>
-                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
-                </button>
-
-                <button class="btn"
-                        data-theme-dark="btn--dark"
-                        data-theme-light="btn--light">
-                  <span>Підключитись</span>
-                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                </button>
-              </div>
-
-              <canvas class="lottie-player  lazy"
-                      data-src="js/tab1-ethernet.lottie"
-                      data-fit="cover"
-                      data-align=""
-                      width="1920"
-                      height="1200">
-              </canvas>
-            </div>
-
-            <div class="customer-services__pane  tab-pane fade" id="service-pane-2" role="tabpanel" aria-labelledby="service-2" tabindex="0">
-
-              <div class="customer-services__header">
-                <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
-                <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
-                <p>Ми знаходимо рішення для кожного абонента!</p>
-              </div>
-
-              <div class="row  customer-services__row">
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--solid"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#speed-32"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">1000 Мбіт/с</h3>
-                    <p class="service-card__text">Космічна швидкість інтернету забезпечить будь-які потреби всіх членів родини</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--solid"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#video-32"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">Цифрове ТБ</h3>
-                    <p class="service-card__text">Бездоганна якість трансляції національних, преміальних та спеціальних каналів</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--solid"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#gamepad-32"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">Онлайн ігри без гальм</h3>
-                    <p class="service-card__text">Грайте у World of Tanks чи інші супер-ігри онлайн.</p>
-                    <p class="service-card__slogan">Найнижчий ping тільки в нашій мережі!</p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--clear"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">18 років досвіду</h3>
-                    <p class="service-card__text">Нас обрали багато сімей. Працюємо надійно і якісно з 2005 року, постійно оновлюючи обладнання</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--clear"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">Цифрове ТБ</h3>
-                    <p class="service-card__text">Зручні тарифи для кожного — для студентів, пенсіонерів, сімей та домашніх офісів. Обирайте</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-                <div class="customer-services__col">
-
-                  <article class="service-card service-card--clear"
-                           data-theme-dark="service-card--dark"
-                           data-theme-light="service-card--light">
-                    <div class="service-card__icon">
-                      <svg width="32" height="32" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#"></use></svg>
-                    </div>
-                    <h3 class="service-card__title">Акції та знижки</h3>
-                    <p class="service-card__text">Шалені акційні пропозиції! Знижки на підключення та абонплату, реферальна програма, бонуси за друзів та трейд-ін!</p>
-                    <p class="service-card__slogan"></p>
-                  </article>
-
-                </div>
-
-              </div>
-
-              <div class="customer-services__ctrl">
-                <button class="btn  btn--glow"
-                        data-theme-dark="btn--glow--dark"
-                        data-theme-light="btn--glow--light">
-                  <span>Замовити консультацію</span>
-                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
-                </button>
-
-                <button class="btn"
-                        data-theme-dark="btn--dark"
-                        data-theme-light="btn--light">
-                  <span>Підключитись</span>
-                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                </button>
-              </div>
-
-              <canvas class="lottie-player  lazy"
-                      data-src="js/tab2-business.lottie"
-                      data-fit="cover"
-                      data-align=""
-                      width="700"
-                      height="300">
-              </canvas>
-            </div>
-
-            <div class="customer-services__pane  tab-pane fade" id="service-pane-3" role="tabpanel" aria-labelledby="service-3" tabindex="0">
-              <div class="customer-services__header">
-                <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
-                <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
-                <p>Ми знаходимо рішення для кожного абонента!</p>
-              </div>
-
-              3...
-
-              <div class="customer-services__ctrl">
-                <button class="btn  btn--glow"
-                        data-theme-dark="btn--glow--dark"
-                        data-theme-light="btn--glow--light">
-                  <span>Замовити консультацію</span>
-                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
-                </button>
-
-                <button class="btn"
-                        data-theme-dark="btn--dark"
-                        data-theme-light="btn--light">
-                  <span>Підключитись</span>
-                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                </button>
-              </div>
-
-              <canvas class="lottie-player  lazy"
-                      data-src="js/tab3-state.lottie"
-                      data-fit="contain"
-                      data-align=""
-                      width="700"
-                      height="300">
-              </canvas>
-            </div>
-
-            <div class="customer-services__pane  tab-pane fade" id="service-pane-4" role="tabpanel" aria-labelledby="service-4" tabindex="0">
-
-              <div class="customer-services__header">
-                <h2  class="customer-services__title">Підключимо сьогодні або наступного дня</h2>
-                <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
-                <p>Ми знаходимо рішення для кожного абонента!</p>
-              </div>
-
-              4...
-
-              <div class="customer-services__ctrl">
-                <button class="btn  btn--glow"
-                        data-theme-dark="btn--glow--dark"
-                        data-theme-light="btn--glow--light">
-                  <span>Замовити консультацію</span>
-                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
-                </button>
-
-                <button class="btn"
-                        data-theme-dark="btn--dark"
-                        data-theme-light="btn--light">
-                  <span>Підключитись</span>
-                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                </button>
-              </div>
-
-              <canvas class="lottie-player  lazy"
-                      data-src="js/tab4-legal.lottie"
-                      data-fit="contain"
-                      data-align=""
-                      width="700"
-                      height="300">
-              </canvas>
-            </div>
-          </div>
+
+        </article>
+
+        <section class="container  coverage-links">
+          <h2 class="visually-hidden">Посилання на територіальні групи об'єктів на карті покриття</h2>
+
+          <ul class="coverage-links__list-main">
+
+            <li class="coverage-links__main-item">
+              <span class="h3  coverage-links__main-item-title">Київська область</span>
+
+              <ul class="coverage-links__inner-list">
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Київ</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Черкаси</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Васильків</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Шпол</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Княжа</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Васильків</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Антонівка, Тальнівська ТГ</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Рославичі</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Порадівка, Лисянська громада</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Іванковичі</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="coverage-links__main-item">
+              <span class="h3  coverage-links__main-item-title">Кіровоградська область</span>
+
+              <ul class="coverage-links__inner-list">
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Київ</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Черкаси</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Васильків</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Шпол</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Княжа</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Васильків</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Антонівка, Тальнівська ТГ</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Рославичі</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Порадівка, Лисянська громада</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Іванковичі</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="coverage-links__main-item">
+              <span class="h3  coverage-links__main-item-title">Черкаська область</span>
+
+              <ul class="coverage-links__inner-list">
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Київ</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Черкаси</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Васильків</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">м. Шпол</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Княжа</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Васильків</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+
+                <li class="coverage-links__inner-item">
+                  <a href="#" class="coverage-links__inner-link"
+                              data-theme-dark="coverage-links__inner-link--dark"
+                              data-theme-light="coverage-links__inner-link--light">
+                    <span class="h5  coverage-links__inner-link-text">с. Антонівка, Тальнівська ТГ</span>
+                    <span class="coverage-links__inner-link-icon">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
 
         </section>
 
@@ -2068,823 +1932,6 @@
 
         </article>
 
-        <section class="sp-offers">
-
-          <div class="container  sp-offers__header">
-            <h2 class="sp-offers__title">
-              <img src="img/fire-48.svg" alt="" width="48" height="48" loading="lazy">
-              <span>Акції</span>
-            </h2>
-            <div class="sp-offers__intro">
-              <p>В стислі терміни організовуємо стабільний доступ, що відповідає сучасним стандартам безпеки надання доступу до мережі Інтернет.</p>
-            </div>
-          </div>
-
-          <div class="swiper  sp-offers__slider">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Акція 5+1!</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-1.webp,
-                                      img/image-4x3-1.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-1.jpg"
-                           srcset="img/image-4x3-1.jpg,
-                                   img/image-4x3-1.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Запроси друга</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-2.webp,
-                                      img/image-4x3-2.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-2.jpg"
-                           srcset="img/image-4x3-2.jpg,
-                                   img/image-4x3-2.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Резервний тариф BackUP</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-3.webp,
-                                      img/image-4x3-3.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-3.jpg"
-                           srcset="img/image-4x3-3.jpg,
-                                   img/image-4x3-3.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Комфортний переїзд</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-4.webp,
-                                      img/image-4x3-4.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-4.jpg"
-                           srcset="img/image-4x3-4.jpg,
-                                   img/image-4x3-4.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Акція 5+1!</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-1.webp,
-                                      img/image-4x3-1.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-1.jpg"
-                           srcset="img/image-4x3-1.jpg,
-                                   img/image-4x3-1.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Запроси друга</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-2.webp,
-                                      img/image-4x3-2.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-2.jpg"
-                           srcset="img/image-4x3-2.jpg,
-                                   img/image-4x3-2.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Резервний тариф BackUP</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-3.webp,
-                                      img/image-4x3-3.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-3.jpg"
-                           srcset="img/image-4x3-3.jpg,
-                                   img/image-4x3-3.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Комфортний переїзд</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-4.webp,
-                                      img/image-4x3-4.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-4.jpg"
-                           srcset="img/image-4x3-4.jpg,
-                                   img/image-4x3-4.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Акція 5+1!</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-1.webp,
-                                      img/image-4x3-1.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-1.jpg"
-                           srcset="img/image-4x3-1.jpg,
-                                   img/image-4x3-1.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Запроси друга</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-2.webp,
-                                      img/image-4x3-2.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-2.jpg"
-                           srcset="img/image-4x3-2.jpg,
-                                   img/image-4x3-2.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Резервний тариф BackUP</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-3.webp,
-                                      img/image-4x3-3.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-3.jpg"
-                           srcset="img/image-4x3-3.jpg,
-                                   img/image-4x3-3.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  sp-offers__slide">
-
-                <article class="sp-offer-card">
-                  <h3 class="sp-offer-card__title">
-                    <span>Комфортний переїзд</span>
-                  </h3>
-                  <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
-                    <picture>
-                      <source srcset="img/image-4x3-4.webp,
-                                      img/image-4x3-4.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-4.jpg"
-                           srcset="img/image-4x3-4.jpg,
-                                   img/image-4x3-4.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="287"
-                           loading="lazy">
-                    </picture>
-                    <!-- 382x287, 458x344  2x -->
-                  </a>
-                  <div class="swiper-lazy-preloader"></div>
-                </article>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="container  sp-offers__controls">
-            <div class="swiper-controls">
-              <div class="btn  btn--secondary  swiper-button-prev  sp-offers__btn-prev"
-                   data-theme-dark="btn--secondary--dark"
-                   data-theme-light="btn--secondary--light"></div>
-              <div class="swiper-pagination  sp-offers__pagination"></div>
-              <div class="btn  btn--secondary  swiper-button-next  sp-offers__btn-next"
-                   data-theme-dark="btn--secondary--dark"
-                   data-theme-light="btn--secondary--light"></div>
-            </div>
-
-            <a href="#" class="btn  btn--secondary  sp-offers__all" data-theme-dark="btn--secondary--dark" data-theme-light="btn--secondary--light">
-              <span>Усі акції</span>
-            </a>
-          </div>
-
-        </section>
-
-        <article class="container  coverage-map__wrapper">
-
-          <div class="coverage-map__row">
-
-            <div class="coverage-map__col-info">
-              <div class="coverage-map__info"
-                   data-theme-dark="coverage-map__info--dark"
-                   data-theme-light="coverage-map__info--light">
-
-                <header class="coverage-map__header">
-                  <h2 class="coverage-map__title">Мапа покриття</h2>
-                  <div class="coverage-map__intro">
-                    <p>Перевірте доступність підключення та наявність безперебійного живлення за вашою адресою.</p>
-                  </div>
-                </header>
-
-                <form class="coverage-map__form" action="#" method="post">
-                  <div class="choices__wrapper"
-                       data-theme-dark="choices__wrapper--dark"
-                       data-theme-light="choices__wrapper--light">
-                    <select class="choices"
-                            name="any"
-                            aria-label="Виберіть область">
-                      <option selected disabled>Виберіть область:</option>
-                      <option value="value1">Область 1</option>
-                      <option value="value2">Область 2</option>
-                      <option value="value3">Область 3</option>
-                      <option value="value4">Область 4</option>
-                    </select>
-                    <span class="field-select__help-text error"></span>
-                  </div>
-
-                  <div class="choices__wrapper"
-                       data-theme-dark="choices__wrapper--dark"
-                       data-theme-light="choices__wrapper--light">
-                    <select class="choices"
-                            name="any"
-                            aria-label="Населений пункт">
-                      <option selected disabled>Виберіть населений пункт:</option>
-                      <option value="value1">НП 1</option>
-                      <option value="value2">НП 2</option>
-                      <option value="value3">НП 3</option>
-                      <option value="value4">НП 4</option>
-                    </select>
-                    <span class="field-select__help-text error"></span>
-                  </div>
-
-                  <div class="choices__wrapper"
-                       data-theme-dark="choices__wrapper--dark"
-                       data-theme-light="choices__wrapper--light">
-                    <select class="choices"
-                            name="any"
-                            aria-label="Виберіть вулицю">
-                      <option selected disabled>Виберіть вулицю:</option>
-                      <option value="value1">Вулиця 1</option>
-                      <option value="value2">Вулиця 2</option>
-                      <option value="value3">Вулиця 3</option>
-                      <option value="value4">Вулиця 4</option>
-                    </select>
-                    <span class="field-select__help-text error"></span>
-                  </div>
-
-                  <div class="choices__wrapper"
-                       data-theme-dark="choices__wrapper--dark"
-                       data-theme-light="choices__wrapper--light">
-                    <select class="choices"
-                            name="any"
-                            aria-label="Виберіть Будинок">
-                      <option selected disabled>Будинок:</option>
-                      <option value="value1">Будинок 1</option>
-                      <option value="value2">Будинок 2</option>
-                      <option value="value3">Будинок 3</option>
-                      <option value="value4">Будинок 4</option>
-                    </select>
-                    <span class="field-select__help-text error"></span>
-                  </div>
-                </form>
-
-                <section class="coverage-map__footer">
-                  <h3 class="visually-hidden">Легенда для мапи та інша додаткова інформація</h3>
-                  <ul class="list-nostyled  coverage-map__legend">
-                    <li class="coverage-map__legend-item">
-                      <img src="img/legend-icon-blue.svg" alt="" width="32" height="32" loading="lazy">
-                      <span>Доступне з'єднання Інтернету і кабельного ТБ</span>
-                    </li>
-                    <li class="coverage-map__legend-item">
-                      <img src="img/legend-icon-orange.svg" alt="" width="32" height="32" loading="lazy">
-                      <span>Доступне з'єднання тільки кабельного ТБ</span>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-
-            </div>
-
-            <div class="coverage-map__col-map">
-                <!-- data-map-light="1ba02fcecc153be989d2ce78"
-                data-map-dark="1ba02fcecc153be9166c94d4" -->
-              <div id="map"
-                   class="coverage-map"
-                   data-maps-api-key="AIzaSyBqO-iJGp0LsZjKZrNhIjodnrqgxD7vVWU"
-                   data-markers-url=""
-                   data-markercluster="true"
-              >
-                <script type="application/json" class="map-markers">[{"uri":"map\/tychyny-pavla-pr\/9b","id":"71","pagetitle":"9\u0431","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"9\u0431\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4293093\",\"longitude\":\"30.603848\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/11","id":"72","pagetitle":"11","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"11\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43076259999999\",\"longitude\":\"30.6073302\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/5","id":"67","pagetitle":"5","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"5\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4280716\",\"longitude\":\"30.5988107\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/5a","id":"68","pagetitle":"5\u0430","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"5\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.42862539999999\",\"longitude\":\"30.6005389\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/9","id":"69","pagetitle":"9","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"9\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4293054\",\"longitude\":\"30.6038764\"}","sp_object":""},{"uri":"map\/tychyny-pavla-pr\/9a","id":"70","pagetitle":"9\u0430","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0422\u0438\u0447\u0438\u043d\u0438 \u041f\u0430\u0432\u043b\u0430 \u043f\u0440.\",\"housenumber\":\"9\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4301699\",\"longitude\":\"30.6009519\"}","sp_object":""},{"uri":"map\/sobornosti\/30a","id":"66","pagetitle":"30\u0430","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0421\u043e\u0431\u043e\u0440\u043d\u043e\u0441\u0442\u0456\",\"housenumber\":\"30\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4397208\",\"longitude\":\"30.6095525\"}","sp_object":"20"},{"uri":"map\/mykolaichuka-ivana\/7","id":"63","pagetitle":"7","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"7\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4314105\",\"longitude\":\"30.5980012\"}","sp_object":""},{"uri":"map\/mykolaichuka-ivana\/7a","id":"64","pagetitle":"7\u0430","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"7\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4319376\",\"longitude\":\"30.5992522\"}","sp_object":""},{"uri":"map\/sobornosti\/30","id":"65","pagetitle":"30","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0421\u043e\u0431\u043e\u0440\u043d\u043e\u0441\u0442\u0456\",\"housenumber\":\"30\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4388283\",\"longitude\":\"30.6101723\"}","sp_object":"20"},{"uri":"map\/buchmy-amvrosiia\/51","id":"59","pagetitle":"5\/1","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"5\/1\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4320893\",\"longitude\":\"30.6058503\"}","sp_object":""},{"uri":"map\/mykolaichuka-ivana\/4","id":"60","pagetitle":"4","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"4\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.433463\",\"longitude\":\"30.6008279\"}","sp_object":""},{"uri":"map\/mykolaichuka-ivana\/5","id":"61","pagetitle":"5","coverage_status":"0","backup_power":"72","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"5\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4308749\",\"longitude\":\"30.5970096\"}","sp_object":""},{"uri":"map\/mykolaichuka-ivana\/51","id":"62","pagetitle":"5\/1","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u041c\u0438\u043a\u043e\u043b\u0430\u0439\u0447\u0443\u043a\u0430 \u0406\u0432\u0430\u043d\u0430\",\"housenumber\":\"5\/1\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4306684\",\"longitude\":\"30.59824069999999\"}","sp_object":""},{"uri":"map\/buchmy-amvrosiia\/1","id":"55","pagetitle":"1","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"1\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43293509999999\",\"longitude\":\"30.6036644\"}","sp_object":""},{"uri":"map\/buchmy-amvrosiia\/3","id":"56","pagetitle":"3","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"3\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4325667\",\"longitude\":\"30.6048208\"}","sp_object":""},{"uri":"map\/buchmy-amvrosiia\/4","id":"57","pagetitle":"4","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"4\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43223709999999\",\"longitude\":\"30.6020364\"}","sp_object":""},{"uri":"map\/buchmy-amvrosiia\/5","id":"58","pagetitle":"5","coverage_status":"0","backup_power":"72","gmap":"{\"street\":\"\u0411\u0443\u0447\u043c\u0438 \u0410\u043c\u0432\u0440\u043e\u0441\u0456\u044f\",\"housenumber\":\"5\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4318921\",\"longitude\":\"30.6048734\"}","sp_object":""},{"uri":"map\/berezniakivska\/10","id":"52","pagetitle":"10","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"10\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4338299\",\"longitude\":\"30.6127406\"}","sp_object":""},{"uri":"map\/berezniakivska\/14a","id":"53","pagetitle":"14\u0430","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"14\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43044219999999\",\"longitude\":\"30.6126758\"}","sp_object":""},{"uri":"map\/berezniakivska\/16","id":"54","pagetitle":"16","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"16\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.428454\",\"longitude\":\"30.6129724\"}","sp_object":""},{"uri":"map\/berezniakivska\/4a","id":"50","pagetitle":"4\u0430","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"4\u0430\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.434952\",\"longitude\":\"30.610698\"}","sp_object":""},{"uri":"map\/berezniakivska\/6","id":"51","pagetitle":"6","coverage_status":"1","backup_power":"72","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"6\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.43535079999999\",\"longitude\":\"30.6121968\"}","sp_object":""},{"uri":"map\/berezniakivska\/4","id":"49","pagetitle":"4","coverage_status":"0","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"4\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\",\"latitude\":\"50.4359383\",\"longitude\":\"30.6115198\"}","sp_object":""},{"uri":"map\/berezniakivska\/2","id":"48","pagetitle":"2","coverage_status":"1","backup_power":"24","gmap":"{\"street\":\"\u0411\u0435\u0440\u0435\u0437\u043d\u044f\u043a\u0456\u0432\u0441\u044c\u043a\u0430\",\"housenumber\":\"2\",\"zipcode\":\"\",\"city\":\"\u041a\u0438\u0457\u0432\",\"state\":\"\",\"country\":\"\u0423\u043a\u0440\u0430\u0457\u043d\u0430\",\"latitude\":\"50.4366104\",\"longitude\":\"30.6113689\"}","sp_object":""}]</script>
-              </div>
-            </div>
-
-          </div>
-
-        </article>
-
-        <section class="container  news-slider">
-          <div class="news-slider__header">
-            <h2 class="news-slider__title">Новини</h2>
-            <div class="news-slider__intro"><p></p></div>
-          </div>
-
-          <div class="swiper  news-slider__container">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-10x16-1.webp,
-                                      img/image-10x16-1.webp 2x" type="image/webp">
-                      <img src="img/image-10x16-1.jpg"
-                           srcset="img/image-10x16-1.jpg,
-                                   img/image-10x16-1.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">L4 прискорюється: збільшуємо швидкість без доплат!</a>
-                    </h3>
-                    <p class="news-card__descr">Ми робимо інтернет ще швидшим! Тепер ваш тариф працює на повну потужність — без додаткових витрат</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-4x3-1.webp,
-                                      img/image-4x3-1.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-1.jpg"
-                           srcset="img/image-4x3-1.jpg,
-                                   img/image-4x3-1.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">Приєднання до мережі с. Васильків, Звенигородський район</a>
-                    </h3>
-                    <p class="news-card__descr">L4 розширює покриття! Тепер мешканці села Васильків можуть користуватися швидкісним інтернетом без обмежень.</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-4x3-2.webp,
-                                      img/image-4x3-2.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-2.jpg"
-                           srcset="img/image-4x3-2.jpg,
-                                   img/image-4x3-2.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">Мешканцям с. Вільховець, с. Княжа та с. Гусакове</a>
-                    </h3>
-                    <p class="news-card__descr">Ми працюємо для вас! Незабаром високошвидкісний інтернет стане доступним і у вашій місцевості. Слідкуйте за новинами!</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-4x3-3.webp,
-                                      img/image-4x3-3.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-3.jpg"
-                           srcset="img/image-4x3-3.jpg,
-                                   img/image-4x3-3.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">Припинення дії тарифів на мобільний зв’язок</a>
-                    </h3>
-                    <p class="news-card__descr">Звертаємо увагу, що деякі тарифи на мобільний зв’язок будуть скасовані. Детальна інформація доступна у вашому особистому кабінеті та на сайті.</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-4x3-4.webp,
-                                      img/image-4x3-4.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-4.jpg"
-                           srcset="img/image-4x3-4.jpg,
-                                   img/image-4x3-4.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">Lorem ipsum dolor sit amet consectetur</a>
-                    </h3>
-                    <p class="news-card__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur assumenda architecto earum doloremque optio consectetur aliquid. Numquam molestiae, culpa.</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-10x16-1.webp,
-                                      img/image-10x16-1.webp 2x" type="image/webp">
-                      <img src="img/image-10x16-1.jpg"
-                           srcset="img/image-10x16-1.jpg,
-                                   img/image-10x16-1.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">L4 прискорюється: збільшуємо швидкість без доплат!</a>
-                    </h3>
-                    <p class="news-card__descr">Ми робимо інтернет ще швидшим! Тепер ваш тариф працює на повну потужність — без додаткових витрат</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-4x3-1.webp,
-                                      img/image-4x3-1.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-1.jpg"
-                           srcset="img/image-4x3-1.jpg,
-                                   img/image-4x3-1.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">Приєднання до мережі с. Васильків, Звенигородський район</a>
-                    </h3>
-                    <p class="news-card__descr">L4 розширює покриття! Тепер мешканці села Васильків можуть користуватися швидкісним інтернетом без обмежень.</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-4x3-2.webp,
-                                      img/image-4x3-2.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-2.jpg"
-                           srcset="img/image-4x3-2.jpg,
-                                   img/image-4x3-2.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">Мешканцям с. Вільховець, с. Княжа та с. Гусакове</a>
-                    </h3>
-                    <p class="news-card__descr">Ми працюємо для вас! Незабаром високошвидкісний інтернет стане доступним і у вашій місцевості. Слідкуйте за новинами!</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-4x3-3.webp,
-                                      img/image-4x3-3.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-3.jpg"
-                           srcset="img/image-4x3-3.jpg,
-                                   img/image-4x3-3.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">Припинення дії тарифів на мобільний зв’язок</a>
-                    </h3>
-                    <p class="news-card__descr">Звертаємо увагу, що деякі тарифи на мобільний зв’язок будуть скасовані. Детальна інформація доступна у вашому особистому кабінеті та на сайті.</p>
-                  </div>
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  news-slider__slide">
-
-                <article class="news-card">
-                  <a href="#" class="embed-responsive  embed-responsive--16-10  news-card__img" tabindex="-1">
-                    <picture>
-                      <source srcset="img/image-4x3-4.webp,
-                                      img/image-4x3-4.webp 2x" type="image/webp">
-                      <img src="img/image-4x3-4.jpg"
-                           srcset="img/image-4x3-4.jpg,
-                                   img/image-4x3-4.jpg 2x"
-                           alt='Alt text'
-                           width="382"
-                           height="239"
-                           loading="lazy">
-                    </picture>
-                    <div class="swiper-lazy-preloader"></div>
-                    <!-- image-10x16-1 -->
-                    <!-- 382x239, 458x286  2x -->
-                  </a>
-
-                  <div class="news-card__text">
-                    <div class="news-card__add-info">
-                      <span class="tag  tag--yellow">Business</span>
-                      <time class="news-card__publishedon  publishedon" datetime="2025-12-15">15.12.2025</time>
-                    </div>
-                    <h3 class="h4  news-card__title">
-                      <a href="#">Lorem ipsum dolor sit amet consectetur</a>
-                    </h3>
-                    <p class="news-card__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur assumenda architecto earum doloremque optio consectetur aliquid. Numquam molestiae, culpa.</p>
-                  </div>
-                </article>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="news-slider__controls">
-            <div class="swiper-controls">
-              <div class="btn  btn--secondary  swiper-button-prev  news-slider__btn-prev"
-                   data-theme-dark="btn--secondary--dark"
-                   data-theme-light="btn--secondary--light"></div>
-              <div class="swiper-pagination  news-slider__pagination"></div>
-              <div class="btn  btn--secondary  swiper-button-next  news-slider__btn-next"
-                   data-theme-dark="btn--secondary--dark"
-                   data-theme-light="btn--secondary--light"></div>
-            </div>
-
-            <a href="#" class="btn  btn--secondary  news-slider__all" data-theme-dark="btn--secondary--dark" data-theme-light="btn--secondary--light">
-              <span>Усі новини</span>
-            </a>
-          </div>
-        </section>
-
         <section class="container  connection-form"
                  data-theme-dark="connection-form--dark"
                  data-theme-light="connection-form--light">
@@ -3003,438 +2050,7 @@
             </div>
 
           </div>
-        </section>
-
-        <article class="app-l4"
-                 data-theme-dark="app-l4--dark"
-                 data-theme-light="app-l4--light">
-
-          <div class="container  app-l4__text">
-            <h2 class="app-l4__title">Додаток L4</h2>
-            <p class="app-l4__intro">Отримуй ще більше можливостей у своєму смартфоні:</p>
-            <ul class="app-l4__features-list">
-              <li class="app-l4__features-item"><span>Особистий кабінет абонента</span></li>
-              <li class="app-l4__features-item"><span>Швидке поповнення рахунку</span></li>
-              <li class="app-l4__features-item"><span>Історія платежів та списань</span></li>
-              <li class="app-l4__features-item"><span>Зручне керування TV підписками</span></li>
-              <li class="app-l4__features-item"><span>Зв'язок із службою підтримки</span></li>
-              <li class="app-l4__features-item"><span>Проста зміна тарифу та замовлення послуг</span></li>
-            </ul>
-            <p class="app-l4__cta-text">Завантажуй просто зараз та будь онлайн без зайвих турбот!</p>
-            <ul class="list-nostyled  app-l4__app-list">
-              <li class="app-l4__app-item">
-                <a href="#" class="app-l4__app-link" target="_blank" rel="nofollow noopener">
-                  <span class="visually-hidden">Get it On Google Play</span>
-                  <img src="img/google-play.svg" alt="Google Play logo" width="140" height="41" loading="lazy">
-                </a>
-              </li>
-              <li class="app-l4__app-item">
-                <a href="#" class="app-l4__app-link" target="_blank" rel="nofollow noopener">
-                  <span class="visually-hidden">Download on the App Store</span>
-                  <img src="img/app-store.svg" alt="App Store logo" width="128" height="41" loading="lazy">
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="container  app-l4__bg"
-               data-bg="img/app-l4-bg.png"
-               data-bg-webp="img/app-l4-bg.webp"
-               data-bg-speed="0.5">
-
-            <!-- <div class=""> -->
-              <div class="row">
-                <div class="app-l4__img-bg-col">
-                  <div class="app-l4__img-bg">
-                    <picture>
-                      <source srcset="img/app-l4-img.webp" type="iamge/webp">
-                      <img src="img/app-l4-img.png" alt="Alt" width="1589" height="1060" loading="lazy">
-                    </picture>
-                  </div>
-                </div>
-              </div>
-            <!-- </div> -->
-          </div>
-
-        </article>
-
-        <section class="reviews-slider"
-                 data-theme-dark="reviews-slider--dark"
-                 data-theme-light="reviews-slider--light">
-
-          <div class="container  reviews-slider__header">
-            <h2 class="reviews-slider__title">Що кажуть наші клієнти?</h2>
-            <div class="reviews-slider__intro">
-              <p>Ми відкриті до співпраці з інтеграторами та брендами, щоб разом створювати якісні технологічні рішення. Наша команда забезпечує стабільне підключення, гнучкі умови партнерства та індивідуальний підхід до кожного проєкту.</p>
-              <p><strong>Якщо ви шукаєте надійного партнера для впровадження передових рішень – ми готові до співпраці!</strong></p>
-            </div>
-          </div>
-
-          <div class="swiper  reviews-slider__content">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide  reviews-slider__slide">
-
-                <article class="review-card"
-                         data-theme-dark="review-card--dark"
-                         data-theme-light="review-card--light">
-
-                  <div class="stars" style="--rating: 5;">
-                    <p class="visually-hidden">Rating of this product is 5 out of 5</p>
-                  </div>
-
-                  <h3 class="review-card__title">ПриватБанк</h3>
-
-                  <div class="review-card__text">
-                    <p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>
-                  </div>
-
-                  <div class="review-card__logo">
-                    <img src="img/privat-bank.svg" alt="ПриватБанк лого" loading="lazy">
-                    <div class="swiper-lazy-preloader"></div>
-                  </div>
-
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  reviews-slider__slide">
-
-                <article class="review-card"
-                         data-theme-dark="review-card--dark"
-                         data-theme-light="review-card--light">
-
-                  <div class="stars" style="--rating: 4;">
-                    <p class="visually-hidden">Rating of this product is 4 out of 5</p>
-                  </div>
-
-                  <h3 class="review-card__title">Ясенсвіт</h3>
-
-                  <div class="review-card__text">
-                    <p>Компанія ЯСЕНСВІТ цінує якість у всьому — від продукції до партнерів. Співпраця з L4 дозволяє нам ефективно керувати бізнес-процесами, забезпечуючи безперебійну роботу офісів, логістичних центрів і комунікацій з клієнтами.</p>
-                  </div>
-
-                  <div class="review-card__logo">
-                    <img src="img/yasensvit.svg" alt="ПриватБанк лого" loading="lazy">
-                    <div class="swiper-lazy-preloader"></div>
-                  </div>
-
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  reviews-slider__slide">
-
-                <article class="review-card"
-                         data-theme-dark="review-card--dark"
-                         data-theme-light="review-card--light">
-
-                  <div class="stars" style="--rating: 5;">
-                    <p class="visually-hidden">Rating of this product is 5 out of 5</p>
-                  </div>
-
-                  <h3 class="review-card__title">Justin</h3>
-
-                  <div class="review-card__text">
-                    <p>Для логістичної компанії стабільне з'єднання є критично важливим. Завдяки L4 наші відділення працюють без перебоїв, а система відстеження посилок функціонує без збоїв. Швидкість, надійність та якість обслуговування — ось за що ми цінуємо L4.</p>
-                  </div>
-
-                  <div class="review-card__logo">
-                    <img src="img/justin.svg" alt="ПриватБанк лого" loading="lazy">
-                    <div class="swiper-lazy-preloader"></div>
-                  </div>
-
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  reviews-slider__slide">
-
-                <article class="review-card"
-                         data-theme-dark="review-card--dark"
-                         data-theme-light="review-card--light">
-
-                  <div class="stars" style="--rating: 5;">
-                    <p class="visually-hidden">Rating of this product is 5 out of 5</p>
-                  </div>
-
-                  <h3 class="review-card__title">Sushi Master UA</h3>
-
-                  <div class="review-card__text">
-                    <p>Мережа Sushi Master обирає лише надійних партнерів, адже стабільний інтернет — це запорука бездоганної роботи наших сервісів. Завдяки L4 ми маємо швидке та безперебійне з'єднання, що дозволяє оперативно приймати замовлення та підтримувати якісний сервіс для наших клієнтів.</p>
-                  </div>
-
-                  <div class="review-card__logo">
-                    <img src="img/sushi-master-ua.svg" alt="ПриватБанк лого" loading="lazy">
-                    <div class="swiper-lazy-preloader"></div>
-                  </div>
-
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  reviews-slider__slide">
-
-                <article class="review-card"
-                         data-theme-dark="review-card--dark"
-                         data-theme-light="review-card--light">
-
-                  <div class="stars" style="--rating: 5;">
-                    <p class="visually-hidden">Rating of this product is 5 out of 5</p>
-                  </div>
-
-                  <h3 class="review-card__title">ПриватБанк</h3>
-
-                  <div class="review-card__text">
-                    <p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>
-                  </div>
-
-                  <div class="review-card__logo">
-                    <img src="img/privat-bank.svg" alt="ПриватБанк лого" loading="lazy">
-                    <div class="swiper-lazy-preloader"></div>
-                  </div>
-
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  reviews-slider__slide">
-
-                <article class="review-card"
-                         data-theme-dark="review-card--dark"
-                         data-theme-light="review-card--light">
-
-                  <div class="stars" style="--rating: 5;">
-                    <p class="visually-hidden">Rating of this product is 5 out of 5</p>
-                  </div>
-
-                  <h3 class="review-card__title">Ясенсвіт</h3>
-
-                  <div class="review-card__text">
-                    <p>Компанія ЯСЕНСВІТ цінує якість у всьому — від продукції до партнерів. Співпраця з L4 дозволяє нам ефективно керувати бізнес-процесами, забезпечуючи безперебійну роботу офісів, логістичних центрів і комунікацій з клієнтами.</p>
-                  </div>
-
-                  <div class="review-card__logo">
-                    <img src="img/yasensvit.svg" alt="ПриватБанк лого" loading="lazy">
-                    <div class="swiper-lazy-preloader"></div>
-                  </div>
-
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  reviews-slider__slide">
-
-                <article class="review-card"
-                         data-theme-dark="review-card--dark"
-                         data-theme-light="review-card--light">
-
-                  <div class="stars" style="--rating: 5;">
-                    <p class="visually-hidden">Rating of this product is 5 out of 5</p>
-                  </div>
-
-                  <h3 class="review-card__title">Justin</h3>
-
-                  <div class="review-card__text">
-                    <p>Для логістичної компанії стабільне з'єднання є критично важливим. Завдяки L4 наші відділення працюють без перебоїв, а система відстеження посилок функціонує без збоїв. Швидкість, надійність та якість обслуговування — ось за що ми цінуємо L4.</p>
-                  </div>
-
-                  <div class="review-card__logo">
-                    <img src="img/justin.svg" alt="ПриватБанк лого" loading="lazy">
-                    <div class="swiper-lazy-preloader"></div>
-                  </div>
-
-                </article>
-
-              </div>
-
-              <div class="swiper-slide  reviews-slider__slide">
-
-                <article class="review-card"
-                         data-theme-dark="review-card--dark"
-                         data-theme-light="review-card--light">
-
-                  <div class="stars" style="--rating: 5;">
-                    <p class="visually-hidden">Rating of this product is 5 out of 5</p>
-                  </div>
-
-                  <h3 class="review-card__title">Sushi Master UA</h3>
-
-                  <div class="review-card__text">
-                    <p>Мережа Sushi Master обирає лише надійних партнерів, адже стабільний інтернет — це запорука бездоганної роботи наших сервісів. Завдяки L4 ми маємо швидке та безперебійне з'єднання, що дозволяє оперативно приймати замовлення та підтримувати якісний сервіс для наших клієнтів.</p>
-                  </div>
-
-                  <div class="review-card__logo">
-                    <img src="img/sushi-master-ua.svg" alt="ПриватБанк лого" loading="lazy">
-                    <div class="swiper-lazy-preloader"></div>
-                  </div>
-
-                </article>
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="container  reviews-slider__controls">
-            <div class="swiper-controls">
-              <div class="btn  btn--secondary  swiper-button-prev  reviews-slider__btn-prev"
-                   data-theme-dark="btn--secondary--dark"
-                   data-theme-light="btn--secondary--light"></div>
-              <div class="swiper-pagination  reviews-slider__pagination"></div>
-              <div class="btn  btn--secondary  swiper-button-next  reviews-slider__btn-next"
-                   data-theme-dark="btn--secondary--dark"
-                   data-theme-light="btn--secondary--light"></div>
-            </div>
-
-            <a href="#" class="btn  btn--secondary  reviews-slider__all"
-                        data-theme-dark="btn--secondary--dark"
-                        data-theme-light="btn--secondary--light">
-              <span>Усі відгуки</span>
-            </a>
-          </div>
-        </section>
-
-        <section class="faq"
-                 data-theme-dark="faq--dark"
-                 data-theme-light="faq--light">
-
-          <div class="faq__inner">
-
-            <div class="container">
-              <div class="row  faq__header-row">
-                <div class="faq__header-col">
-                  <div class="faq__header">
-                    <h2 class="faq__title">
-                      Часті питання про інтернет від <span>L4</span>
-                    </h2>
-                    <div class="faq__intro">
-                      <p>Є питання? У нас є відповіді. Перегляньте наш розділ поширених запитань, щоб отримати цінну інформацію про наші процеси, ціни тощо. Прозорість є основою нашої взаємодії з клієнтами.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container  faq__body">
-              <div class="accordion accordion-flush"
-                   id="accordionFaq"
-                   data-theme-dark="accordion--dark"
-                   data-theme-light="accordion--light">
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
-                      <span>Accordion Item #1</span>
-                      <span class="accordion-icon">
-                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
-                      </span>
-                    </button>
-                  </h2>
-                  <div id="collapse-1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the first item’s accordion body.</div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
-                      <span>Accordion Item #2</span>
-                      <span class="accordion-icon">
-                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
-                      </span>
-                    </button>
-                  </h2>
-                  <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-                      <span>Accordion Item #3</span>
-                      <span class="accordion-icon">
-                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
-                      </span>
-                    </button>
-                  </h2>
-                  <div id="collapse-3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </section>
-
-        <article class="container  customer-choice"
-                 data-theme-dark="customer-choice--dark"
-                 data-theme-light="customer-choice--light">
-          <div class="customer-choice__grid">
-
-            <div class="customer-choice__about">
-              <h3 class="customer-choice__title">L4 — надійний інтернет-провайдер для вашого комфорту</h3>
-              <div class="customer-choice__text">
-                <p>L4 — це сучасний інтернет-провайдер, який забезпечує стабільний та швидкісний доступ до мережі в Україні. Ми пропонуємо якісні послуги для дому та бізнесу, гарантуючи безперебійну роботу навіть у складних умовах. Використовуючи передові технології та сучасне обладнання, L4 забезпечує високу швидкість, стабільність з'єднання та вигідні тарифні плани.</p>
-                <h4>Чому варто обрати L4?</h4>
-                <ul class="customer-choice__list">
-                  <li>Оптоволоконний інтернет зі швидкістю до 1 Гбіт/с;</li>
-                  <li>Резервне живлення для безперебійного доступу в екстрених ситуаціях;</li>
-                  <li>Гнучкі тарифні плани для будь-яких потреб – від мінімальних до преміум-пропозицій;</li>
-                  <li>Підключення до системи «Розумний дім» для вашого комфорту;</li>
-                  <li>Телебачення та додаткові сервіси для повного медіа-досвіду;</li>
-                  <li>Якісна технічна підтримка 24/7.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="customer-choice__why-us">
-              <h3 class="customer-choice__why-us-title">L4 — вибір тих, хто цінує якість і швидкість</h3>
-              <div class="customer-choice__text">
-                <p>Ми надаємо вигідні умови підключення для нових абонентів, а також акційні пропозиції для постійних клієнтів. Наші спеціалісти допоможуть підібрати оптимальний тариф та проконсультують з усіх питань.</p>
-                <p><strong>Приєднуйтеся до L4 – вашого надійного інтернет-партнера!</strong></p>
-              </div>
-            </div>
-
-            <div class="customer-choice__subscription">
-
-              <article class="newsletter-signup"
-                       data-theme-dark="newsletter-signup--dark"
-                       data-theme-light="newsletter-signup--light">
-                <div class="newsletter-signup__header">
-                  <h2 class="h4  newsletter-signup__title">Будьте в курсі всіх новин L4!</h2>
-                  <p>Залишайтеся на зв’язку з L4 – інтернетом, що рухається вперед!</p>
-                </div>
-
-                <form class="newsletter-signup__form" action="#" method="post">
-                  <div class="newsletter-signup__input-wrapper">
-                    <label class="field-text"
-                           data-theme-dark="field-text--dark"
-                           data-theme-light="field-text--light">
-                      <!-- <span class="field-text__name">Текст</span> -->
-                      <span class="field-text__input-wrap">
-                        <input class="field-text__input  required" type="email" name="mail" value="" placeholder="Email" autocomplete="email">
-                        <span class="field-text__help-text" data-error="mail"></span>
-                      </span>
-                    </label>
-                    <button class="btn"
-                            data-theme-dark="btn--dark"
-                            data-theme-light="btn--light"
-                            type="submit">
-                      <span>Відправити</span>
-                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                    </button>
-                  </div>
-                </form>
-                <p class="newsletter-signup__warning">Натискаючи «Підписатися», ви підтверджуєте, що погоджуєтеся з <a href="#">положеннями та умовами</a> L4 і <a href="#">політикою конфіденційності</a> використання даних</p>
-              </article>
-
-            </div>
-
-          </div>
-        </article>
+        </section>
 
 
       </main>
@@ -3682,7 +2298,7 @@
 
   </div>
 
-  <!-- Search modal -->
+  <!-- Search modal -->
 
   <!-- Search Modal -->
   <div class="modal fade  search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -3704,7 +2320,7 @@
   </div>
 
 
-  <!-- InfoWindow Template -->
+  <!-- InfoWindow Template -->
   <template id="infowindow-custom">
     <div class="infowindow-template  infowindow-template--light  infowindow-template--below">
          <!-- data-theme-dark="infowindow-template--dark"

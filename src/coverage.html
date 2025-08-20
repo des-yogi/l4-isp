@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Покриття</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        @@include('blocks/header/header.html', {
+          "title": "Оберіть населений пункт",
+          "intro": "<p>Ми забезпечуємо надійне підключення, професійну технічну підтримку та сучасне обладнання. Наше покриття охоплює всі райони столиці, а підключення можна оформити у зручний для вас час.</p>"
+        })
+
+        @@include('blocks/coverage-map/coverage-map.html')
+
+        @@include('blocks/coverage-links/coverage-links.html')
+
+        @@include('blocks/tariffs/tariffs.html')
+
+        @@include('blocks/connection-form/connection-form.html')
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>
