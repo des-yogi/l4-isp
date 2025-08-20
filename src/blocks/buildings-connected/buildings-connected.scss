@@ -1,0 +1,157 @@
+.buildings-connected {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+
+  &__header {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    margin-bottom: 0;
+
+    & + * {
+      margin-top: 8px;
+      color: var(--text-pale-color);
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  &__row {
+    gap: 8px 0;
+  }
+
+  &__col-features {
+    @include col(xs, 12);
+    //@include col(md, 6);
+    @include col(xl, 3);
+  }
+
+  &__col-buildings {
+    @include col(xs, 12);
+    @include col(xl, 9);
+  }
+
+  &__features,
+  &__list {
+    padding: 16px;
+    backdrop-filter: blur(10px);
+
+    @media (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius,
+        var(--grey-300),
+        var(--grey-100)
+      )
+    }
+  }
+
+  &__features {
+
+    @media (min-width: $screen-xxl) {
+      padding: 40px;
+    }
+  }
+
+  &__battery,
+  &__connect-type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--green);
+    }
+  }
+
+  &__battery {
+    margin-bottom: 16px;
+  }
+
+  &__connect-type {
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+
+    &::before {
+      inset: -2px -2px 0 -2px !important;
+    }
+  }
+
+  &__item {
+    flex: 0 0 44px;
+    margin: 0;
+
+    &:last-child {
+
+      #{$block-name}__link span {
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    //padding: 8px;
+    font-size: $font-size;
+    text-decoration: none;
+    color: var(--link-color);
+
+    @media (min-width: $screen-xxl) {
+      font-size: inherit;
+    }
+
+    span {
+      position: relative;
+
+      &::after {
+        display: inline-flex;
+        content: ",";
+        position: absolute;
+        bottom: 0;
+        right: -0.5ch;
+      }
+    }
+  }
+}

@@ -63,7 +63,8 @@
     "lang-switcher": [],
     "field-filter": [],
     "coverage-links": [],
-    "header": []
+    "header": [],
+    "buildings-connected": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
