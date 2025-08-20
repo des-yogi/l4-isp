@@ -64,7 +64,8 @@
     "field-filter": [],
     "coverage-links": [],
     "header": [],
-    "buildings-connected": []
+    "buildings-connected": [],
+    "text-article": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
