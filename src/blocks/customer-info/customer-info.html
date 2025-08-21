@@ -1,0 +1,82 @@
+<!--DEV
+@ @include('blocks/customer-info/customer-info.html')
+-->
+
+<section class="container  customer-info">
+  <h2 class="visually-hidden">Посилання на розділи інформації для абонентів</h2>
+
+  <ul class="row  customer-info__list">
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "Про компанію",
+        "icon": "about-48",
+        "descr": "<p>Дізнайтеся більше про історію, місію та цінності L4 — провайдера, якому довіряють тисячі клієнтів.</p>"
+      })
+    </li>
+
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "Співпраця",
+        "icon": "collab-48",
+        "descr": "<p>Інформація для партнерів: умови співпраці, програми для інтеграторів та брендів.</p>"
+      })
+    </li>
+
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "Вакансії",
+        "icon": "job-48",
+        "descr": "<p>Долучайтеся до команди L4! Перегляньте відкриті вакансії та можливості для кар'єрного зростання.</p>"
+      })
+    </li>
+
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "Мобільний додаток",
+        "icon": "mob-app-48",
+        "descr": "<p>Управляйте послугами L4 зі смартфона: оплата, повідомлення, підтримка — усе в одному додатку.</p>"
+      })
+    </li>
+
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "Блог та новини",
+        "icon": "blog-48",
+        "descr": "<p>Читайте свіжі новини компанії, оновлення мережі, поради та статті про інтернет-технології.</p>"
+      })
+    </li>
+
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "Відгуки",
+        "icon": "review-48",
+        "descr": "<p>Ми цінуємо кожного клієнта та прагнемо постійно покращувати якість наших послуг.</p>"
+      })
+    </li>
+
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "Документи",
+        "icon": "docs-48",
+        "descr": "<p>Ознайомтеся з правилами користування послугами, офіційними умовами та політикою конфіденційності.</p>"
+      })
+    </li>
+
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "FAQ",
+        "icon": "faq-48",
+        "descr": "<p>Відповіді на найчастіші питання про підключення, тарифи, оплату та технічну підтримку.</p>"
+      })
+    </li>
+
+    <li class="customer-info__item">
+      @@include('../../blocks/customer-info-card/customer-info-card.html', {
+        "title": "SpeedTest",
+        "icon": "speedtest-48",
+        "descr": "<p>Перевірте швидкість вашого інтернет-з'єднання за допомогою зручного онлайн-тесту.</p>"
+      })
+    </li>
+  </ul>
+
+</section>
