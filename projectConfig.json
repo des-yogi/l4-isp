@@ -69,7 +69,10 @@
     "faq-slider": [],
     "faq-card": [],
     "customer-info": [],
-    "customer-info-card": []
+    "customer-info-card": [],
+    "add-services": [],
+    "service-mini-card": [],
+    "media-block-ext": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

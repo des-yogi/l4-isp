@@ -1,0 +1,44 @@
+.add-services {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+
+  &__main,
+  &__section-list {
+    gap: 24px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__main-item {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 3);
+    margin: 0;
+  }
+
+  &__section {
+    margin-top: 40px;
+  }
+
+  &__section-title {
+    margin-bottom: 24px;
+
+    @media (min-width: $screen-xxl) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  // &__section-list {
+  //   gap: 24px 0;
+  //   padding-left: 0;
+  //   list-style: none;
+  // }
+
+  &__section-item {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+    margin: 0;
+  }
+}

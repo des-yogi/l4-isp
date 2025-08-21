@@ -94,49 +94,49 @@ h6 {
 h1 {
   margin-top: 0;
   font-size: $font-size--h1;
-  letter-spacing: -1.44px;
+  //letter-spacing: -1.44px;
 
 
   @media (min-width: $screen-md) {
     font-size: $font-size--h1 * 1.2777;
-    letter-spacing: -1.84px;
+    //letter-spacing: -1.84px;
   }
 
   @media (min-width: $screen-xxl) {
     font-size: $font-size--h1 * 1.6666;
-    letter-spacing: -2.4px;
+    letter-spacing: -2px;
   }
 }
 
 .h2,
 h2 {
   font-size: $font-size--h2;
-  letter-spacing: -1.12px;
+  //letter-spacing: -1.12px;
 
   @media (min-width: $screen-md) {
     font-size: $font-size--h2 * 1.3571;
-    letter-spacing: -1.52px;
+    //letter-spacing: -1.52px;
   }
 
   @media (min-width: $screen-xxl) {
     font-size: $font-size--h2 * 1.7142;
-    letter-spacing: -1.92px;
+    //letter-spacing: -1.92px;
   }
 }
 
 .h3,
 h3 {
   font-size: $font-size--h3;
-  letter-spacing: -0.8px;
+  //letter-spacing: -0.8px;
 
   @media (min-width: $screen-md) {
     font-size: $font-size--h3 * 1.25;
-    letter-spacing: -1px;
+    //letter-spacing: -1px;
   }
 
   @media (min-width: $screen-xxl) {
     font-size: $font-size--h3 * 1.5;
-    letter-spacing: -1.2px;
+    //letter-spacing: -1.2px;
   }
 }
 
