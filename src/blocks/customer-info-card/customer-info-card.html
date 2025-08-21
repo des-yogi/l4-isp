@@ -1,0 +1,27 @@
+<!--DEV
+@ @include('blocks/customer-info-card/customer-info-card.html', {
+  "title": "Про компанію",
+  "icon": "about-48",
+  "descr": "<p>Дізнайтеся більше про історію, місію та цінності L4 — провайдера, якому довіряють тисячі клієнтів.</p>"
+})
+-->
+
+<section class="customer-info-card"
+         data-theme-dark="customer-info-card--dark"
+         data-theme-light="customer-info-card--light">
+  <div class="customer-info-card__header">
+    <h3 class="customer-info-card__title">@@title</h3>
+    <svg class="abonent" width="48" height="48" aria-hidden="true">
+      <use xlink:href="#@@icon"></use>
+    </svg>
+  </div>
+  <div class="customer-info-card__text">
+    @@descr
+  </div>
+  <a href="#" class="btn">
+    <span>Детальніше
+      <span class="visually-hidden">: @@title</span>
+    </span>
+    <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+  </a>
+</section>

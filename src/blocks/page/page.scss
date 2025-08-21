@@ -539,6 +539,8 @@ a {
 // background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);
 // background-image: svg-load('../blocks/sprite-svg/svg/phone.svg', fill=$main-color);
 
+// @media (min-width: $screen-md) {}
+
 /*
 .test-col {
   @include col(xs, 12);

@@ -67,7 +67,9 @@
     "buildings-connected": [],
     "text-article": [],
     "faq-slider": [],
-    "faq-card": []
+    "faq-card": [],
+    "customer-info": [],
+    "customer-info-card": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
