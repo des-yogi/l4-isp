@@ -7,10 +7,6 @@
     margin-bottom: 96px;
   }
 
-  @media (min-width: $screen-xxl) {
-    margin-bottom: 128px;
-  }
-
   &__content {
     @include col(xs, 12);
     @include col(md, 10);

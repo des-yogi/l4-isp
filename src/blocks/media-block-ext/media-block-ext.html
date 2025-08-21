@@ -1,0 +1,74 @@
+<!--DEV
+@ @include('blocks/media-block-ext/media-block-ext.html', {
+  "addClass": "",
+  "img": "media-block-1",
+  "title": "Підключення до мережі",
+  "text": "<h4>Підключення до оптичного інтернету GPON / Ethernet</h4><p>Вартість від 0 до 300 грн, в залежності від типу будинку.</p><p>Швидкість до Гбіт/с.</p><p>Термін підключення 1–2 робочі дні.</p><p>Безкоштовне підключення за акціями «5+1» та «Запроси друга»</p>"
+})
+
+"addClass": "media-block-ext--reversed"
+-->
+
+<article class="container  media-block-ext  @@addClass">
+  <!-- media-block-ext--reversed -->
+  <div class="row  media-block-ext__row">
+    <div class="media-block-ext__col-img">
+      <div class="embed-responsive  embed-responsive--4-3  media-block-ext__img">
+        <picture>
+          <source srcset="img/@@img.webp,
+                          img/@@img.webp 2x" media="(min-width: 1900px)" type="image/webp">
+          <source srcset="img/@@img.jpg,
+                          img/@@img.jpg 2x" media="(min-width: 1900px)">
+            <!-- 778x584, 1167x875 2x  -->
+          <source srcset="img/@@img.webp,
+                          img/@@img.webp 2x" media="(min-width: 1366px)" type="image/webp">
+          <source srcset="img/@@img.jpg,
+                          img/@@img.jpg 2x" media="(min-width: 1366px)">
+            <!-- 890x668, 1400x1050 2x  -->
+          <source srcset="img/@@img.webp,
+                          img/@@img.webp 2x" media="(min-width: 1280px)" type="image/webp">
+          <source srcset="img/@@img.jpg,
+                          img/@@img.jpg 2x" media="(min-width: 1280px)">
+            <!-- 588x441, 885x664 2x  -->
+          <source srcset="img/@@img.webp" media="(min-width: 1024px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 1024px)">
+            <!-- 885x664 -->
+          <source srcset="img/@@img.webp" media="(min-width: 768px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 768px)">
+            <!-- 1035x776 -->
+          <source srcset="img/@@img.webp" media="(min-width: 480px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 480px)">
+            <!-- 700x525 -->
+          <source srcset="img/@@img.webp" media="(min-width: 300px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 300px)">
+            <!-- 585x439 -->
+          <img src="img/@@img.jpg" alt="Alt" width="1035" height="776" loading="lazy">
+        </picture>
+      </div>
+    </div>
+
+    <div class="media-block-ext__col-text">
+      <div class="media-block-ext__text">
+        <h2 class="h3  media-block-ext__title">@@title</h2>
+        <div class="media-block-ext__content">
+          @@text
+        </div>
+        <div class="media-block-ext__controls">
+          <a href="#"
+             class="btn"
+             data-theme-dark="btn--dark"
+             data-theme-light="btn--light">
+            <span>Детальніше</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+          </a>
+          <button class="btn btn--glow btn--glow--dark"
+                  data-theme-dark="btn--glow--dark"
+                  data-theme-light="btn--glow--light">
+            <span>Замовити консультацію</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

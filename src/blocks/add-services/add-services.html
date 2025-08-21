@@ -1,0 +1,246 @@
+<!--DEV
+@ @include('blocks/add-services/add-services.html')
+-->
+
+<div class="container  add-services">
+
+  <section>
+    <h2 class="visually-hidden">Безкоштовні послуги</h2>
+    <ul class="row  add-services__main">
+      <li class="add-services__main-item">
+        @@include('../../blocks/service-card/service-card.html', {
+          "addClass": "",
+          "icon": "speed-32",
+          "title": "Виїзд до абонента",
+          "text": "<p>Майстер приїде для діагностики мережі та обладнання у квартирі чи будинку.</p><p>Перевірить сигнал, порадить оптимальне розміщення кабелю.</p>",
+          "slogan": "Безкоштовно 1 раз/міс."
+        })
+      </li>
+
+      <li class="add-services__main-item">
+        @@include('../../blocks/service-card/service-card.html', {
+          "addClass": "",
+          "icon": "speed-32",
+          "title": "Налаштування Wi-Fi",
+          "text": "<p>Майстер приїде для діагностики мережі та обладнання у квартирі чи будинку.</p><p>Додатково активує пароль і захист бездротової мережі.</p>",
+          "slogan": "Безкоштовно 1 раз/міс."
+        })
+      </li>
+
+      <li class="add-services__main-item">
+        @@include('../../blocks/service-card/service-card.html', {
+          "addClass": "",
+          "icon": "speed-32",
+          "title": "Налаштування приставки",
+          "text": "<p>Майстер підключить IPTV-приставку та встановить застосунки для Smart TV.</p><p>Перевірить відтворення каналів і навчить користуватися пультом.</p>",
+          "slogan": "Безкоштовно 1 раз/міс."
+        })
+      </li>
+
+      <li class="add-services__main-item">
+        @@include('../../blocks/service-card/service-card.html', {
+          "addClass": "",
+          "icon": "speed-32",
+          "title": "Ремонт Ethernet-кабелю",
+          "text": "<p>Фахівець усуне пошкодження кабелю чи замінить конектор RJ-45 у квартирі.</p><p>Сигнал відновлюється одразу після перепресування.</p>",
+          "slogan": "Безкоштовно 1 раз/міс."
+        })
+      </li>
+    </ul>
+  </section>
+
+  <section class="add-services__section">
+    <h2 class="h4  add-services__section-title">🏠 Виїзд майстра / Налаштування</h2>
+
+    <ul class="row  add-services__section-list">
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Виклик майстра в квартиру",
+          "text": "<p>Виїзд на об'єкт та діагностика підключення.</p>",
+          "price": "200 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Виклик майстра в приватне домоволодіння",
+          "text": "<p>Виїзд на об'єкт та діагностика підключення.</p>",
+          "price": "250 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Виклик майстра на точний час",
+          "text": "<p>Виїзд на об'єкт у день та час, замовлений абонентом.</p>",
+          "price": "1000 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Налаштування WI-FI роутера",
+          "text": "<p>Налаштування доступу до Інтернету, інтерфейсу Wi-Fi, встановлення захисту бездротового режиму.</p>",
+          "price": "200 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Налаштування медіаприставки",
+          "text": "<p>Налаштування доступу до мережі Інтернет та програми TRINITY.TV/SWEET.TV</p>",
+          "price": "200 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Заміна конектора RJ-45",
+          "text": "<p>Заміна конектора Ethernet-кабелю на стороні абонента.</p>",
+          "price": "від 30 грн."
+        })
+      </li>
+    </ul>
+  </section>
+
+  <section class="add-services__section">
+    <h2 class="h4  add-services__section-title">🛠️ Кабельні роботи / Інсталяції</h2>
+
+    <ul class="row  add-services__section-list">
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Заміна конектора RJ-45",
+          "text": "<p>Заміна конектора Ethernet-кабелю на стороні абонента.</p>",
+          "price": "від 30 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Ремонт Ethernet-кабелю",
+          "text": "<p>Відновлення незначних пошкоджень Ethernet-кабелю.</p>",
+          "price": "100 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Виклик майстра на точний час",
+          "text": "<p>Виїзд на об'єкт у день та час, замовлений абонентом.</p>",
+          "price": "1000 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Ethernet-кабель",
+          "text": "<p>Налаштування доступу до Інтернету, інтерфейсу Wi-Fi, встановлення захисту бездротового режиму.</p>",
+          "price": "200 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Налаштування медіаприставки",
+          "text": "<p>Придбати окремо Ethernet-кабель (без урахування вартості конекторів RJ-45)</p>",
+          "price": "від 8 грн/м"
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Волоконно-оптичний кабель",
+          "text": "<p>Готовий до використання кабель (з конекторами)</p>",
+          "price": "від 800 грн/100 м"
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Абонентський термінал",
+          "text": "<p>Використовується в приміщенні користувача для підключення до мережі PON з одного боку та взаємодії з користувачем з іншого боку.</p>",
+          "price": "600 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Ремонт оптичного кабелю",
+          "text": "<p>Роботи з відновлення пошкодженого оптоволоконного кабелю розраховуються за 1 точку зварювання. Вартість зазначена без урахування витратних матеріалів.</p>",
+          "price": "300 грн/точка"
+        })
+      </li>
+    </ul>
+  </section>
+
+  <section class="add-services__section">
+    <h2 class="h4  add-services__section-title">🌐 IP / Адреси / Зміни / Переїзд</h2>
+
+    <ul class="row  add-services__section-list">
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Заміна конектора RJ-45",
+          "text": "<p>Заміна конектора Ethernet-кабелю на стороні абонента.</p>",
+          "price": "від 30 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Ремонт Ethernet-кабелю",
+          "text": "<p>Відновлення незначних пошкоджень Ethernet-кабелю.</p>",
+          "price": "100 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Виклик майстра на точний час",
+          "text": "<p>Виїзд на об'єкт у день та час, замовлений абонентом.</p>",
+          "price": "1000 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Ethernet-кабель",
+          "text": "<p>Налаштування доступу до Інтернету, інтерфейсу Wi-Fi, встановлення захисту бездротового режиму.</p>",
+          "price": "200 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Налаштування медіаприставки",
+          "text": "<p>Придбати окремо Ethernet-кабель (без урахування вартості конекторів RJ-45)</p>",
+          "price": "від 8 грн/м"
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Волоконно-оптичний кабель",
+          "text": "<p>Готовий до використання кабель (з конекторами)</p>",
+          "price": "від 800 грн/100 м"
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Абонентський термінал",
+          "text": "<p>Використовується в приміщенні користувача для підключення до мережі PON з одного боку та взаємодії з користувачем з іншого боку.</p>",
+          "price": "600 грн."
+        })
+      </li>
+
+      <li class="add-services__section-item">
+        @@include('../../blocks/service-mini-card/service-mini-card.html', {
+          "title": "Ремонт оптичного кабелю",
+          "text": "<p>Роботи з відновлення пошкодженого оптоволоконного кабелю розраховуються за 1 точку зварювання. Вартість зазначена без урахування витратних матеріалів.</p>",
+          "price": "300 грн/точка"
+        })
+      </li>
+    </ul>
+  </section>
+
+</div>

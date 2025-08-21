@@ -1,0 +1,109 @@
+.media-block-ext {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+
+  &__wrapper {
+    @include block-margin;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & > *:nth-child(even) {
+
+      #{$block-name}__row {
+
+        @media (min-width: $screen-lg) {
+          flex-direction: initial;
+        }
+      }
+
+      #{$block-name}__col-img {
+        @include col-offset(xl, 0);
+      }
+
+      #{$block-name}__col-text {
+        @include col-offset(xl, 1);
+      }
+    }
+  }
+
+  &__row {
+    gap: 24px 0;
+
+    @media (min-width: $screen-lg) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__col-img,
+  &__col-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__col-img {
+    @include col(xs, 12);
+    @include col(lg, 6);
+    @include col-offset(xl, 1);
+    @include col(xl, 6);
+  }
+
+  &__col-text {
+    @include col(xs, 12);
+    @include col(lg, 6);
+    @include col(xl, 5);
+  }
+
+  &__img {
+    border-radius: $border-radius--32;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+
+  }
+
+  &__title {
+
+  }
+
+  &__content {
+
+  }
+
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  &--reversed {
+    // #{$block-name}__element
+    #{$block-name}__row {
+
+      @media (min-width: $screen-lg) {
+        flex-direction: initial;
+      }
+    }
+
+    #{$block-name}__col-img {
+      @include col-offset(xl, 0);
+    }
+
+    #{$block-name}__col-text {
+      @include col-offset(xl, 1);
+    }
+  }
+}

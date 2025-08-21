@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Додаткові послуги</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        @@include('blocks/header/header.html', {
+          "title": "Додаткові послуги від L4",
+          "intro": "<p>Відкрийте нові можливості з L4! Наші послуги розроблені для вашої зручності та безпеки, щоб покращити ваше інтернет-з’єднання. Ми пропонуємо: підключення, обслуговування обладнання, оренду техніки, IP-послуги, цифрове телебачення та багато інших рішень для дому та бізнесу.</p>"
+        })
+
+        @@include('blocks/add-services/add-services.html')
+
+        <div class="media-block-ext__wrapper">
+          @@include('blocks/media-block-ext/media-block-ext.html', {
+            "addClass": "",
+            "img": "media-block-1",
+            "title": "Підключення до мережі",
+            "text": "<h4>Підключення до оптичного інтернету (GPON / Ethernet)</h4><p>Вартість: від 0 до 300 грн, в залежності від типу будинку.</p><p>Швидкість: до Гбіт/с.</p><p>Термін підключення: 1–2 робочі дні.</p><p>Безкоштовне підключення за акціями «5+1» та «Запроси друга»</p>"
+          })
+
+          @@include('blocks/media-block-ext/media-block-ext.html', {
+            "addClass": "",
+            "img": "media-block-2",
+            "title": "Які будинки підключаються?",
+            "text": "<ul><li>Новобудови, житлові комплекси, приватні будинки</li><li>Офісні приміщення, комерційна нерухомість</li><li>Заклади освіти, медицини, державні установи</li></ul><h4>Виїзд техніка</h4><p>Додаткові налаштування:</p><ul><li>Перенесення точки доступу Wi-Fi — 100 грн</li><li>Розведення мережі в квартирі — від 150 грн</li><li>Налаштування IPTV, Smart TV — від 100 грн</li></ul>"
+          })
+        </div>
+
+        @@include('blocks/faq/faq.html')
+
+        @@include('blocks/customer-choice/customer-choice.html')
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

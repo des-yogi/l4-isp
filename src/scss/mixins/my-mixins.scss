@@ -63,10 +63,10 @@
     margin-bottom: 96px;
   }
 
-  @media (min-width: $screen-xxl) {
-    margin-top: 128px;
-    margin-bottom: 128px;
-  }
+  // @media (min-width: $screen-xxl) {
+  //   margin-top: 128px;
+  //   margin-bottom: 128px;
+  // }
 }
 
 @mixin gradient-border(

@@ -1,0 +1,22 @@
+<!--DEV
+@ @include('blocks/service-mini-card/service-mini-card.html', {
+  "title": "Виклик майстра в квартиру",
+  "text": "<p>Виїзд на об'єкт та діагностика підключення.</p>",
+  "price": "200 грн."
+})
+-->
+
+<article class="service-mini-card"
+         data-theme-dark="service-mini-card--dark"
+         data-theme-light="service-mini-card--light">
+  <div class="service-mini-card__main">
+    <h3 class="service-mini-card__title">@@title</h3>
+    <div class="service-mini-card__text">
+      @@text
+    </div>
+  </div>
+  <div class="service-mini-card__footer">
+    <p class="service-mini-card__price">@@price</p>
+    <img src="img/check-blue.svg" alt="" width="24" height="24" loading="lazy">
+  </div>
+</article>
