@@ -5,3 +5,4 @@
 * https://des-yogi.github.io/l4-isp/coverage-street
 * https://des-yogi.github.io/l4-isp/text-page
 * https://des-yogi.github.io/l4-isp/faq
+* https://des-yogi.github.io/l4-isp/customer-info
