@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>FAQ</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        @@include('blocks/header/header.html', {
+          "title": "Часті питання",
+          "intro": "<p>Є питання? У нас є відповіді. Перегляньте наш розділ поширених запитань, щоб отримати цінну інформацію про наші процеси, ціни тощо.</p><p>Прозорість є основою нашої взаємодії з клієнтами.</p>"
+        })
+
+        @@include('blocks/faq-slider/faq-slider.html')
+
+        <section class="faq  faq--bgless"
+                 data-theme-dark="faq--dark"
+                 data-theme-light="faq--light"
+                 style="margin-top: 0;">
+
+          <h2 class="visually-hidden">SEO heading</h2>
+
+          <div class="faq__inner">
+            <div class="container  faq__body">
+              <div class="accordion accordion-flush"
+                   id="accordionFaq"
+                   data-theme-dark="accordion--dark"
+                   data-theme-light="accordion--light">
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                      <span>За якою технологією здійснюється підключення?</span>
+                      <span class="accordion-icon">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                    <div class="accordion-body">
+                      <p>Підключення окремих будівель та споруд здійснюється за технологіями GPON або GEPON. Підключення в багатоквартирному будинку здійснюється за технологією Fast Ethernet.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                      <span>Чи надається обладнання в оренду?</span>
+                      <span class="accordion-icon">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                      <span>Чи можна використовувати роутер попереднього провайдера?</span>
+                      <span class="accordion-icon">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="collapse-3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        @@include('blocks/customer-choice/customer-choice.html')
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

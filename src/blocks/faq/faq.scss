@@ -78,4 +78,15 @@
       }
     }
   }
+
+  &--bgless {
+
+    #{$block-name}__body {
+      background: none;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
 }
