@@ -1,0 +1,28 @@
+.faq-card {
+  $block-name:                &; // #{$block-name}__element
+
+  height: 100%;
+  padding: 24px;
+
+  &__text {
+    color: var(--text-pale-color);
+  }
+
+  &--dark {
+    @include gradient-border-mask(
+      2px,
+      $border-radius,
+      var(--border-gradient-10),
+      var(--opacity-black-50)
+    )
+  }
+
+  &--light {
+    @include gradient-border-mask(
+      2px,
+      $border-radius,
+      var(--grey-300),
+      var(--grey-100)
+    )
+  }
+}
