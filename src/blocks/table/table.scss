@@ -38,6 +38,13 @@ table,
     background-color: var(--th-bg-color);
   }
 
+  tbody {
+
+    th {
+      background: none;
+    }
+  }
+
   // tr:has(th + td)  {
 
   //   th {

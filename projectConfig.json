@@ -72,7 +72,9 @@
     "customer-info-card": [],
     "add-services": [],
     "service-mini-card": [],
-    "media-block-ext": []
+    "media-block-ext": [],
+    "news-article": [],
+    "ads-banner": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

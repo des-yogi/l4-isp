@@ -1,0 +1,19 @@
+.ads-banner {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__img {
+    @include gradient-border(
+      1px,
+      $border-radius--12,
+      var(--border-gradient-10),
+      var(--grey-300)
+    )
+
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

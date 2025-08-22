@@ -1,0 +1,141 @@
+.news-article {
+  $block-name:                &; // #{$block-name}__element
+
+  & > .header {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 24px;
+  }
+
+  &__row {
+    gap: 40px 0;
+  }
+
+  &__col-main {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+    @include col(xxl, 7);
+  }
+
+  &__col-aside {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 4);
+    @include col-offset(xxl, 1);
+    @include col(xxl, 4);
+  }
+
+  &__main {
+
+
+  }
+
+  &__main-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__img {
+    margin-bottom: 40px;
+    border-radius: $border-radius--12;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    color: var(--text-pale-color);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    blockquote {
+      color: var(--text-color);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      margin: 1.5em 0;
+      border-radius: $border-radius--12;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content-block {
+
+    & + & {
+      margin-top: 40px;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+
+    @media (min-width: $screen-xl) {
+      position: sticky;
+      top: 150px;
+    }
+  }
+
+  &__nav {
+    padding: 24px;
+
+    @media (max-width: $screen-xl - 1) {
+      display: none;
+    }
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--blue-100),
+        var(--blue-50)
+      )
+    }
+  }
+
+  &__nav-title {
+
+  }
+
+  &__nav-list {
+    color: var(--text-pale-color);
+  }
+
+  &__nav-item {
+
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: inherit;
+  }
+}

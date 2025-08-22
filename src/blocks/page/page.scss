@@ -316,7 +316,7 @@ a {
   }
 
   @media (min-width: $screen-xxl) {
-    $padding-min: 160px; // нужный отступ от краев экрана
+    $padding-min: 40px; // нужный отступ от краев экрана
     $half-screen-xxl: $screen-xxl / 2 - $padding-min;
     // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
     padding-left: calc(50% - #{$half-screen-xxl});
@@ -535,6 +535,12 @@ a {
   display: none;
 }
 
+.publishedon {
+  display: inline-flex;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: var(--text-pale-color);
+}
 
 // background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);
 // background-image: svg-load('../blocks/sprite-svg/svg/phone.svg', fill=$main-color);
@@ -547,4 +553,13 @@ a {
   @include col(md, 6);
   @include col(xl, 4);
 }
+*/
+
+/*
+@include gradient-border-mask(
+  2px,
+  $border-radius--12,
+  var(--border-gradient-10),
+  var(--opacity-black-50)
+)
 */
