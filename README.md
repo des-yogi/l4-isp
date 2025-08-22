@@ -7,3 +7,4 @@
 * https://des-yogi.github.io/l4-isp/faq
 * https://des-yogi.github.io/l4-isp/customer-info
 * https://des-yogi.github.io/l4-isp/add-services
+* https://des-yogi.github.io/l4-isp/news-article
