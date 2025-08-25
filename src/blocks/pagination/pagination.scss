@@ -1,18 +1,14 @@
-$line-height:                 1.375em !default;
-$text-color:                  hsl(0, 0%, 10%) !default;
-$border-color:                hsl(0, 0%, 60%) !default;
-
 .pagination {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 18px;
+  //flex-wrap: wrap;
+  //justify-content: center;
+  margin-top: 40px;
   //margin-bottom: 60px;
 
-  @media (min-width: $screen-md) {
+  //@media (min-width: $screen-md) {
     //justify-content: flex-start;
-    margin-top: 20px;
-  }
+    //margin-top: 20px;
+  //}
 
   $block-name:                &; // #{$block-name}__element
 
@@ -25,6 +21,7 @@ $border-color:                hsl(0, 0%, 60%) !default;
   }
 
   &__item {
+    margin-top: 0;
     margin-right: 0.5em;
 
     &:last-child {
