@@ -83,7 +83,9 @@
     "about-history": [],
     "news": [],
     "job": [],
-    "fundamental-values": []
+    "fundamental-values": [],
+    "mob-app": [],
+    "mob-app-features": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
