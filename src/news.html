@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Новини</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="news">
+
+          @@include('blocks/header/header.html', {
+            "title": "Новини",
+            "intro": "<p>Дізнавайтеся першими про нові тарифи, акції, технічні оновлення та важливі повідомлення. Ми працюємо, щоб ваш інтернет був ще швидшим, стабільнішим та вигіднішим.</p>"
+          })
+
+          <div class="container  news__inner">
+            <div class="row  news__row">
+
+              <div class="news__col-content">
+                <ul class="list-nostyled  news__content">
+                  <li class="news__item">
+                    @@include('blocks/news-card/news-card.html', {
+                      "img": "image-4x3-1",
+                      "title": "L4 прискорюється: збільшуємо швидкість без доплат!",
+                      "descr": "Ми робимо інтернет ще швидшим! Тепер ваш тариф працює на повну потужність — без додаткових витрат"
+                    })
+                  </li>
+
+                  <li class="news__item">
+                    @@include('blocks/news-card/news-card.html', {
+                      "img": "image-4x3-2",
+                      "title": "Приєднання до мережі с. Васильків, Звенигородський район",
+                      "descr": "L4 розширює покриття! Тепер мешканці села Васильків можуть користуватися швидкісним "
+                    })
+                  </li>
+
+                  <li class="news__item">
+                    @@include('blocks/news-card/news-card.html', {
+                      "img": "image-4x3-3",
+                      "title": "Приєднання до мережі с. Васильків, Звенигородський район",
+                      "descr": "L4 розширює покриття! Тепер мешканці села Васильків можуть користуватися швидкісним"
+                    })
+                  </li>
+
+                  <li class="news__item">
+                    @@include('blocks/news-card/news-card.html', {
+                      "img": "image-4x3-4",
+                      "title": "Мешканцям с. Вільховець, с. Княжа та с. Гусакове",
+                      "descr": "Ми працюємо для вас! Незабаром високошвидкісний інтернет стане доступним і у вашій місцевості."
+                    })
+                  </li>
+
+                  <li class="news__item">
+                    @@include('blocks/news-card/news-card.html', {
+                      "img": "image-4x3-1",
+                      "title": "L4 прискорюється: збільшуємо швидкість без доплат!",
+                      "descr": "Ми робимо інтернет ще швидшим! Тепер ваш тариф працює на повну потужність — без додаткових витрат"
+                    })
+                  </li>
+
+                  <li class="news__item">
+                    @@include('blocks/news-card/news-card.html', {
+                      "img": "image-4x3-2",
+                      "title": "Приєднання до мережі с. Васильків, Звенигородський район",
+                      "descr": "L4 розширює покриття! Тепер мешканці села Васильків можуть користуватися швидкісним "
+                    })
+                  </li>
+
+                  <li class="news__item">
+                    @@include('blocks/news-card/news-card.html', {
+                      "img": "image-4x3-3",
+                      "title": "Приєднання до мережі с. Васильків, Звенигородський район",
+                      "descr": "L4 розширює покриття! Тепер мешканці села Васильків можуть користуватися швидкісним"
+                    })
+                  </li>
+
+                  <li class="news__item">
+                    @@include('blocks/news-card/news-card.html', {
+                      "img": "image-4x3-4",
+                      "title": "Мешканцям с. Вільховець, с. Княжа та с. Гусакове",
+                      "descr": "Ми працюємо для вас! Незабаром високошвидкісний інтернет стане доступним і у вашій місцевості."
+                    })
+                  </li>
+                </ul>
+              </div>
+
+              <div class="news__col-aside">
+                <aside class="news__aside">
+                  <article class="newsletter-signup  newsletter-signup--news"
+                           data-theme-dark="newsletter-signup--dark"
+                           data-theme-light="newsletter-signup--light">
+                    <div class="newsletter-signup__header">
+                      <h2 class="h4  newsletter-signup__title">Будьте в курсі всіх новин L4!</h2>
+                      <p>Залишайтеся на зв’язку з L4 – інтернетом, що рухається вперед!</p>
+                    </div>
+
+                    <form class="newsletter-signup__form" action="#" method="post">
+                      <div class="newsletter-signup__input-wrapper">
+                        <label class="field-text"
+                               data-theme-dark="field-text--dark"
+                               data-theme-light="field-text--light">
+                          <!-- <span class="field-text__name">Текст</span> -->
+                          <span class="field-text__input-wrap">
+                            <input class="field-text__input  required" type="email" name="mail" value="" placeholder="Email" autocomplete="email">
+                            <span class="field-text__help-text" data-error="mail"></span>
+                          </span>
+                        </label>
+                        <button class="btn"
+                                data-theme-dark="btn--dark"
+                                data-theme-light="btn--light"
+                                type="submit">
+                          <span>Відправити</span>
+                          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                        </button>
+                      </div>
+                    </form>
+                    <p class="newsletter-signup__warning">Натискаючи «Підписатися», ви підтверджуєте, що погоджуєтеся з <a href="#">положеннями та умовами</a> L4 і <a href="#">політикою конфіденційності</a> використання даних</p>
+                  </article>
+
+                  <section class="social-links"
+                           data-theme-dark="social-links--dark"
+                           data-theme-light="social-links--light"
+                           style="padding-left: 24px;">
+                    <h3 class="h4" style="width: 100%; margin-bottom: 12px;">Слідкуйте за нами в соцмережах</h3>
+
+                    <ul class="social-links__list">
+                      <li class="social-links__item">
+                        <a href="#" class="social-links__link" target="_blank" rel="nofollow noopener">
+                          <span class="visually-hidden">Follow us on X</span>
+                          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#x-line"></use></svg>
+                        </a>
+                      </li>
+                      <li class="social-links__item">
+                        <a href="#" class="social-links__link" target="_blank" rel="nofollow noopener">
+                          <span class="visually-hidden">Follow us on LinkedIn</span>
+                          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#linkedin-line"></use></svg>
+                        </a>
+                      </li>
+                      <li class="social-links__item">
+                        <a href="#" class="social-links__link" target="_blank" rel="nofollow noopener">
+                          <span class="visually-hidden">Follow us on Instagram</span>
+                          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#insta-line"></use></svg>
+                        </a>
+                      </li>
+                      <li class="social-links__item">
+                        <a href="#" class="social-links__link" target="_blank" rel="nofollow noopener">
+                          <span class="visually-hidden">Follow us on Facebook</span>
+                          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#facebook-line"></use></svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </section>
+                </aside>
+              </div>
+
+            </div>
+
+            @@include('blocks/pagination/pagination.html')
+          </div>
+
+        </div>
+
+        @@include('blocks/reviews-slider/reviews-slider.html')
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

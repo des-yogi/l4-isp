@@ -1,10 +1,15 @@
 .social-links {
   display: flex;
+  flex-direction: column;
 
   $block-name:                &; // #{$block-name}__element
 
+  // &__title {
+
+  // }
+
   &__list {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;

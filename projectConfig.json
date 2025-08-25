@@ -80,7 +80,8 @@
     "about-map": [],
     "about-development": [],
     "about-equipment": [],
-    "about-history": []
+    "about-history": [],
+    "news": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
