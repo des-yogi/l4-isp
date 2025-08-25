@@ -1,0 +1,68 @@
+.mob-app-features {
+  $block-name:                &; // #{$block-name}__element
+
+  margin-bottom: 64px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 96px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    gap: 16px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 3);
+    margin: 0;
+  }
+
+  &__item-content {
+    height: 100%;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+
+    ul {
+      list-style-type: disc;
+    }
+
+    & > * {
+      text-wrap: pretty;
+    }
+  }
+
+  // &__item-title {
+
+  // }
+
+  &--dark {
+    // #{$block-name}__element
+
+    #{$block-name}__item-content {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-black-16)
+      )
+    }
+  }
+
+  &--light {
+    #{$block-name}__item-content {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--grey-300),
+        var(--opacity-white-16)
+      )
+    }
+  }
+}
