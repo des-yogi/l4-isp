@@ -1,0 +1,27 @@
+.about {
+
+  $block-name:                &; // #{$block-name}__element
+
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header__intro {
+
+    p {
+      text-wrap: pretty;
+      hyphens: none;
+    }
+  }
+
+  &__achievements {
+    gap: 16px 0;
+  }
+
+  &__achievements-item {
+    @include col(xs, 12);
+    @include col(lg, 6);
+    @include col(xl, 4);
+  }
+}

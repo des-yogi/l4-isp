@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Про нас</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <article class="container  about">
+
+          @@include('blocks/header/header.html', {
+            "title": "Про нас",
+            "intro": "<p>Ми постійно вдосконалюємо якість послуг для наших абонентів. Відтепер швидкість інтернету за вашими тарифами зросте — абсолютно безкоштовно.</p><p>Так, ми вже досить дорослі, адже працюємо з 2005-го. Але крізь роки ми крокуємо з командою об’єднані спільною мрією – швидкісний інтернет для всієї України: наших дідусів і бабусь, наших діток, мам і татусів, солідних бізнесменів і класних компаній! Кожен, хто мріє про класний швидкий інтернет і сучасні телекомунікаційні сервіси – наш любий клієнт!</p><p>Сьогодні власними ресурсами ми будуємо оптоволоконні, ґрунтові, бездротові лінії зв’язку та обслуговуємо інтернет-мережу в Київській і Черкаській областях. Але незабаром радість користуватись TV каналами, сучасними послугами та надшвидким доступом до всесвітньої мережі матимуть все більше регіонів!</p>"
+          })
+
+          <!-- <div class="row  about__content">
+            <div class="header__col">
+
+            </div>
+          </div> -->
+
+          <ul class="list-nostyled  row  about__achievements">
+            <li class="about__achievements-item">
+              @@include('blocks/about-card/about-card.html', {
+                "title": "20+ років досконалості",
+                "text": "<p>Маючи понад п'ять років досвіду в галузі, ми накопичили багатий досвід і знання, що забезпечують послуги найвищого рівня.</p>"
+              })
+            </li>
+            <li class="about__achievements-item">
+              @@include('blocks/about-card/about-card.html', {
+                "title": "Задоволені клієнти",
+                "text": "<p>Наше найбільше досягнення — це задоволення наших клієнтів, чия довіра та відгуки надихають нас постійно вдосконалюватися.</p>"
+              })
+            </li>
+            <li class="about__achievements-item">
+              @@include('blocks/about-card/about-card.html', {
+                "title": "Визнання в галузі",
+                "text": "<p>Ми пишаємося тим, що здобули повагу та визнання від колег і лідерів галузі за нашу постійну якість і професіоналізм.</p>"
+              })
+            </li>
+          </ul>
+
+          @@include('blocks/about-map/about-map.html')
+
+          @@include('blocks/about-development/about-development.html')
+
+          @@include('blocks/about-equipment/about-equipment.html')
+
+          <section class="media-block-ext  media-block-ext--reversed">
+            <!-- media-block-ext--reversed -->
+            <div class="row  media-block-ext__row">
+              <div class="media-block-ext__col-img">
+                <div class="embed-responsive  embed-responsive--4-3  media-block-ext__img">
+                  <picture>
+                    <source srcset="img/about-media.webp,
+                                    img/about-media.webp 2x" media="(min-width: 1900px)" type="image/webp">
+                    <source srcset="img/about-media.jpg,
+                                    img/about-media.jpg 2x" media="(min-width: 1900px)">
+                      <!-- 778x584, 1167x875 2x  -->
+                    <source srcset="img/about-media.webp,
+                                    img/about-media.webp 2x" media="(min-width: 1366px)" type="image/webp">
+                    <source srcset="img/about-media.jpg,
+                                    img/about-media.jpg 2x" media="(min-width: 1366px)">
+                      <!-- 890x668, 1400x1050 2x  -->
+                    <source srcset="img/about-media.webp,
+                                    img/about-media.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                    <source srcset="img/about-media.jpg,
+                                    img/about-media.jpg 2x" media="(min-width: 1280px)">
+                      <!-- 588x441, 885x664 2x  -->
+                    <source srcset="img/about-media.webp" media="(min-width: 1024px)" type="image/webp">
+                    <source srcset="img/about-media.jpg" media="(min-width: 1024px)">
+                      <!-- 885x664 -->
+                    <source srcset="img/about-media.webp" media="(min-width: 768px)" type="image/webp">
+                    <source srcset="img/about-media.jpg" media="(min-width: 768px)">
+                      <!-- 1035x776 -->
+                    <source srcset="img/about-media.webp" media="(min-width: 480px)" type="image/webp">
+                    <source srcset="img/about-media.jpg" media="(min-width: 480px)">
+                      <!-- 700x525 -->
+                    <source srcset="img/about-media.webp" media="(min-width: 300px)" type="image/webp">
+                    <source srcset="img/about-media.jpg" media="(min-width: 300px)">
+                      <!-- 585x439 -->
+                    <img src="img/about-media.jpg" alt="Alt" width="1035" height="776" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+
+              <div class="media-block-ext__col-text">
+                <div class="media-block-ext__text">
+                  <h2 class="media-block-ext__title">Будуємо та розвиваємо мережу з 2005 року</h2>
+                  <div class="media-block-ext__content">
+                    <p>Щороку наші послуги стають більш доступними і досконалими. Сьогодні ми вже не просто надаємо доступ до інтернету, а пропонуємо комплексний сервіс, який отримав високу оцінку користувачів – детальніше читайте у розділі Послуги та пропозиції.</p>
+                    <p class="h5">Ще трохи переваг мережі L4:</p>
+                    <ul>
+                      <li>Широкосмуговий доступ до високошвидкісного інтернету;</li>
+                      <li>Резервовані канали зв’язку до точок обміну трафіком;</li>
+                      <li>Надійна оптоволоконна мережа;</li>
+                      <li>Організація локальної мережі та мережі відеоспостереження;</li>
+                      <li>Зовнішня IP-адреса, яка гарантує надійність;</li>
+                      <li>Інтерактивне цифрове телебачення;</li>
+                      <li>Легкий у користуванні особистий кабінет;</li>
+                      <li>Зручний мобільний додаток;</li>
+                      <li>Професійна та уважна технічна підтримка</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          @@include('blocks/about-history/about-history.html')
+
+        </article>
+
+        @@include('blocks/reviews-slider/reviews-slider.html')
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

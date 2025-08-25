@@ -1,0 +1,84 @@
+.about-development {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+
+  &__row {
+    gap: 24px 0;
+  }
+
+  &__header {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 4);
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__body {
+    @include col(xs, 12);
+    @include col(md, 12);
+    @include col(xl, 8);
+  }
+
+  &__list {
+    gap: 16px 0;
+  }
+
+  &__item {
+    @include col(xs, 12);
+    @include col(md, 6);
+    //@include col(xl, 4);
+  }
+
+  &__card {
+    height: 100%;
+    padding: 24px;
+    box-shadow: var(--big-shadow);
+    backdrop-filter: blur(10px);
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-white-40)
+      )
+    }
+  }
+
+  &__card-icon {
+    width: 64px;
+    height: 64px;
+
+    img {
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+
+  &__card-title {
+    margin: 16px 0;
+  }
+
+  &__card-descr {
+    hyphens: none;
+    text-wrap: pretty;
+  }
+}

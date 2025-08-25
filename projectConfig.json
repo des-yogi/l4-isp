@@ -74,7 +74,13 @@
     "service-mini-card": [],
     "media-block-ext": [],
     "news-article": [],
-    "ads-banner": []
+    "ads-banner": [],
+    "about": [],
+    "about-card": [],
+    "about-map": [],
+    "about-development": [],
+    "about-equipment": [],
+    "about-history": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
