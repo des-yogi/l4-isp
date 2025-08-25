@@ -1,0 +1,45 @@
+.about-map {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 24px;
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 96px;
+  }
+
+  &__img {
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 1280px;
+      margin-left: auto;
+    }
+  }
+
+  &__text {
+
+    //margin-top: -40px;
+    transform: translateY(-40px);
+
+    @media (min-width: $screen-xl) {
+      position: absolute;
+      bottom: 64px;
+      left: 0;
+      transform: none;
+    }
+
+    p {
+      text-wrap: balance;
+    }
+  }
+
+  &__col-text {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+  }
+}

@@ -1,0 +1,40 @@
+.about-card {
+  $block-name:                &; // #{$block-name}__element
+
+  height: 100%;
+  padding: 24px;
+  @include gradient-border-mask(
+    2px,
+    $border-radius--12,
+    var(--blue-500),
+    var(--opacity-blue-20)
+  )
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    color: var(--text-pale-color);
+  }
+
+  // &--dark {
+  // }
+
+  &--light {
+
+    #{$block-name}__title {
+      color: var(--blue-600);
+    }
+
+    #{$block-name}__text {
+      color: var(--blue-900);
+    }
+    // @include gradient-border-mask(
+    //   2px,
+    //   $border-radius--12,
+    //   var(--blue-500),
+    //   var(--opacity-blue-20)
+    // )
+  }
+}
