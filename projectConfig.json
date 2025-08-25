@@ -81,7 +81,9 @@
     "about-development": [],
     "about-equipment": [],
     "about-history": [],
-    "news": []
+    "news": [],
+    "job": [],
+    "fundamental-values": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

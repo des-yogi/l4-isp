@@ -1,0 +1,54 @@
+.fundamental-values {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+
+  &__header {
+    margin-bottom: 40px;
+  }
+
+  &__header-col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+  }
+
+  &__title {
+
+  }
+
+  &__intro {
+
+  }
+
+  &__list {
+    gap: 24px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+    margin: 0;
+
+    .about-card {
+      flex: 1 1 auto;
+      height: auto;
+    }
+  }
+
+  &__img {
+    flex: 0 0 auto;
+    border-radius: $border-radius;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
