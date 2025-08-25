@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Вакансії</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="job">
+
+          @@include('blocks/header/header.html', {
+            "title": "Вакансії",
+            "intro": "<p>Приєднуйтесь до команди одного з найсучасніших інтернет-провайдерів України. Ми шукаємо енергійних, відповідальних і проактивних фахівців, які прагнуть розвиватися у сфері телекомунікацій.</p><h2>Можливості для зростання</h2><p>L4 пропонує різноманітні кар'єрні шляхи в різних відділах, що дозволяє вам розвивати свої навички та займати керівні посади.</p>"
+          })
+
+          <!-- <div class="row  about__content">
+            <div class="header__col">
+
+            </div>
+          </div> -->
+          <div class="container  job__promo">
+            <ul class="list-nostyled  row  about__achievements">
+              <li class="about__achievements-item">
+                @@include('blocks/about-card/about-card.html', {
+                  "title": "Технічний розвиток",
+                  "text": "<p>Отримуйте знання та досвід у сучасних телеком- і ІТ-технологіях. Ми забезпечуємо навчання та підтримку на кожному етапі.</p>"
+                })
+              </li>
+              <li class="about__achievements-item">
+                @@include('blocks/about-card/about-card.html', {
+                  "title": "Професійне навчання",
+                  "text": "<p>Участь у внутрішніх тренінгах, курсах та воркшопах для підвищення кваліфікації та розвитку soft skills.</p>"
+                })
+              </li>
+              <li class="about__achievements-item">
+                @@include('blocks/about-card/about-card.html', {
+                  "title": "Кар'єрне зростання",
+                  "text": "<p>Прозорі умови підвищення, регулярні оцінки ефективності та підтримка ініціатив. Ми ростемо разом із вами.</p>"
+                })
+              </li>
+            </ul>
+
+          </div>
+
+          <section class="faq job__proposition"
+                   data-theme-dark="faq--dark"
+                   data-theme-light="faq--light">
+
+            <div class="faq__inner">
+
+              <div class="container">
+                <div class="row  faq__header-row">
+                  <div class="faq__header-col">
+                    <div class="faq__header">
+                      <h2 class="faq__title">
+                        Актуальні вакансії
+                      </h2>
+                      <!-- <div class="faq__intro">
+                        <p>Є питання? У нас є відповіді. Перегляньте наш розділ поширених запитань, щоб отримати цінну інформацію про наші процеси, ціни тощо. Прозорість є основою нашої взаємодії з клієнтами.</p>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container  faq__body">
+                <div class="accordion accordion-flush"
+                     id="accordionFaq"
+                     data-theme-dark="accordion--dark"
+                     data-theme-light="accordion--light">
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                        <span>Інженер з підключення інтернету</span>
+                        <span class="accordion-icon">
+                          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+                        </span>
+                      </button>
+                    </h2>
+                    <div id="collapse-1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                      <div class="accordion-body">
+                        <p>Обов’язки:</p>
+                        <ul>
+                          <li>Підключення нових абонентів до мережі</li>
+                          <li>Усунення технічних несправностей</li>
+                          <li>Робота з мережевим обладнанням</li>
+                        </ul>
+                        <p>Вимоги:</p>
+                        <ul>
+                          <li>Досвід у сфері телекомунікацій — від 1 року</li>
+                          <li>Вміння працювати з технічною документацією</li>
+                        </ul>
+                        <p>Умови:</p>
+                        <ul><li>Повна зайнятість, службовий транспорт</li></ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                        <span>Оператор технічної підтримки (Віддалено)</span>
+                        <span class="accordion-icon">
+                          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+                        </span>
+                      </button>
+                    </h2>
+                    <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                        <span>Accordion Item #3</span>
+                        <span class="accordion-icon">
+                          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+                        </span>
+                      </button>
+                    </h2>
+                    <div id="collapse-3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the accordion-flush class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          @@include('blocks/fundamental-values/fundamental-values.html')
+
+          @@include('blocks/customer-choice/customer-choice.html')
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

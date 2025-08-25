@@ -1,0 +1,89 @@
+<!--DEV
+@ @include('blocks/fundamental-values/fundamental-values.html')
+-->
+
+<section class="container  fundamental-values">
+  <div class="row  fundamental-values__header">
+    <div class="fundamental-values__header-col">
+      <h2 class="fundamental-values__title">Наші основні цінності</h2>
+      <div class="fundamental-values__intro">
+        <p>У компанії L4 ми віримо, що люди — це головна цінність. Ми будуємо культуру взаємоповаги, інновацій та відкритості.</p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="row  fundamental-values__list">
+    <li class="fundamental-values__item">
+      <div class="embed-responsive  embed-responsive--1-1  fundamental-values__img">
+        <picture>
+          <source srcset="img/fundamental-img-1.webp,
+                          img/fundamental-img-1.webp 2x" media="(min-width: 1440px)" type="image/webp">
+          <source srcset="img/fundamental-img-1.jpg,
+                          img/fundamental-img-1.jpg 2x" media="(min-width: 1440px)">
+          <!-- 518x518, 776x776 2x -->
+          <source srcset="img/fundamental-img-1.webp,
+                          img/fundamental-img-1.webp 2x" media="(min-width: 1366px)" type="image/webp">
+          <source srcset="img/fundamental-img-1.jpg,
+                          img/fundamental-img-1.jpg 2x" media="(min-width: 1366px)">
+          <!-- 440x440, 660x660 2x -->
+          <source srcset="img/fundamental-img-1.webp,
+                          img/fundamental-img-1.webp 2x" media="(min-width: 1280px)" type="image/webp">
+          <source srcset="img/fundamental-img-1.jpg,
+                          img/fundamental-img-1.jpg 2x" media="(min-width: 1280px)">
+          <!-- 384x384, 576x576 2x -->
+          <source srcset="img/fundamental-img-1.webp" media="(min-width: 1024px)" type="image/webp">
+          <source srcset="img/fundamental-img-1.jpg" media="(min-width: 1024px)">
+          <!-- 690x690 -->
+          <source srcset="img/fundamental-img-1.webp" media="(min-width: 768px)" type="image/webp">
+          <source srcset="img/fundamental-img-1.jpg" media="(min-width: 768px)">
+          <!-- 500x500 -->
+          <source srcset="img/fundamental-img-1.webp" media="(min-width: 480px)" type="image/webp">
+          <source srcset="img/fundamental-img-1.jpg" media="(min-width: 480px)">
+          <!-- 684x684 -->
+          <source srcset="img/fundamental-img-1.webp" media="(min-width: 300px)" type="image/webp">
+          <source srcset="img/fundamental-img-1.jpg" media="(min-width: 300px)">
+          <!-- 585x585 -->
+          <img src="img/fundamental-img-1.jpg" alt="Alt" width="520" height="520" loading="lazy">
+        </picture>
+      </div>
+
+      @@include('../../blocks/about-card/about-card.html', {
+        "title": "🤝 Командна робота",
+        "text": "<p>Ми підтримуємо одне одного, ділимось знаннями та досягаємо цілей разом.</p>"
+      })
+    </li>
+
+    <li class="fundamental-values__item">
+      <div class="embed-responsive  embed-responsive--1-1  fundamental-values__img">
+        <picture>
+          <source srcset="img/fundamental-img-2.webp" media="(min-width: 300px)" type="image/webp">
+          <source srcset="img/fundamental-img-2.jpg" media="(min-width: 300px)">
+          <!-- 585x585 -->
+          <img src="img/fundamental-img-2.jpg" alt="Alt" width="520" height="520" loading="lazy">
+        </picture>
+      </div>
+
+      @@include('../../blocks/about-card/about-card.html', {
+        "title": "💡 Інноваційність",
+        "text": "<p>Стимулюємо нові ідеї, шукаємо нестандартні рішення та рухаємо телеком-індустрію вперед.</p>"
+      })
+    </li>
+
+    <li class="fundamental-values__item">
+      <div class="embed-responsive  embed-responsive--1-1  fundamental-values__img">
+        <picture>
+          <source srcset="img/fundamental-img-3.webp" media="(min-width: 300px)" type="image/webp">
+          <source srcset="img/fundamental-img-3.jpg" media="(min-width: 300px)">
+          <!-- 585x585 -->
+          <img src="img/fundamental-img-3.jpg" alt="Alt" width="520" height="520" loading="lazy">
+        </picture>
+      </div>
+
+      @@include('../../blocks/about-card/about-card.html', {
+        "title": "📈 Відповідальність",
+        "text": "<p>Дотримання обіцянок, повага до часу та ресурсів клієнтів — основа нашого сервісу.</p>"
+      })
+    </li>
+
+  </ul>
+</section>
