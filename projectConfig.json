@@ -85,7 +85,13 @@
     "job": [],
     "fundamental-values": [],
     "mob-app": [],
-    "mob-app-features": []
+    "mob-app-features": [],
+    "collaboration": [],
+    "affiliate-network": [],
+    "collab-type": [],
+    "affiliate-programs": [],
+    "reward-system": [],
+    "terms-conditions": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

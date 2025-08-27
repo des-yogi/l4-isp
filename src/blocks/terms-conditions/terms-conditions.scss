@@ -1,0 +1,242 @@
+.terms-conditions {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  &__header-col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+  }
+
+  // &__title {
+
+  // }
+
+  &__intro {
+    color: var(--text-pale-color);
+  }
+
+  &__list {
+    gap: 24px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item-col {
+    @include col(xs, 12);
+    @include col(lg, 4);
+    //@include col(xl, 4);
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px 0;
+    height: 100%;
+    padding: 24px 16px;
+    backdrop-filter: blur(10px);
+
+    @media (min-width: $screen-md) {
+      padding: 24px 48px 24px 24px;
+    }
+
+    &--dark {
+      // #{$block-name}__element
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+      box-shadow: var(--big-shadow);
+    }
+
+    &--light {
+      // #{$block-name}__element
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--grey-300),
+        var(--grey-100)
+      )
+    }
+  }
+
+  &__item-icon {
+    display: block;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+
+    svg {
+      transform: translateX(-10px);
+    }
+  }
+
+  &__item-content {
+
+    *:not(.h4) {
+      color: var(--text-pale-color);
+    }
+
+    ul {
+      list-style-type: initial;
+    }
+  }
+
+  &__benefits {
+    padding: 24px;
+    margin-top: 24px;
+    backdrop-filter: blur(10px);
+
+    &--dark {
+      // #{$block-name}__element
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--green),
+        var(--opacity-black-50)
+      )
+
+      #{$block-name}__benefits-list-item {
+
+        &:nth-child(odd) {
+
+          @media (min-width: $screen-md) {
+            border-color: rgba(255,255,255, 0.12);
+          }
+        }
+
+        &:not(:last-child) {
+
+          &::after {
+
+            @media (max-width: $screen-md - 1) {
+              background: linear-gradient(to right, rgba(255,255,255, 0.03),
+                                                    rgba(255,255,255, 0.12));
+            }
+          }
+        }
+      }
+    }
+
+    &--light {
+      // #{$block-name}__element
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--green),
+        var(--opacity-white-50)
+      )
+
+      #{$block-name}__benefits-list-item {
+
+        &:nth-child(odd) {
+
+          @media (min-width: $screen-md) {
+            border-color: var(--green);
+          }
+        }
+
+        &:not(:last-child) {
+
+          &::after {
+
+            @media (max-width: $screen-md - 1) {
+              background: linear-gradient(to right, rgba(255,255,255, 0.03),
+                                                    var(--green));
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__benefits-inner {
+    display: flex;
+    flex-wrap: wrap;
+    //align-items: flex-start;
+    gap: 0 28px;
+    width: 100%;
+
+    @media (min-width: $screen-md) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__benefits-text {
+    flex: 1 1 auto;
+  }
+
+  &__benefits-title {
+    margin: 16px 0 16px !important;
+    color: var(--green);
+
+    // @media (min-width: $screen-md) {
+    //   margin-top: 16px;
+    // }
+  }
+
+  &__benefits-list {
+    width: 100%;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    color: var(--text-pale-color);
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 0;
+    }
+  }
+
+  &__benefits-list-item {
+    position: relative;
+    margin: 0;
+    padding: 16px 0;
+
+    @media (min-width: $screen-md) {
+      flex: 1 1;
+      flex-basis: calc(50% - 12px);
+      padding: 0 24px;
+    }
+
+    &:nth-child(odd) {
+
+      @media (min-width: $screen-md) {
+        padding-left: 0;
+        border-right: 2px solid rgba(255,255,255, 0.12);
+      }
+    }
+
+    &:nth-child(even) {
+
+      @media (min-width: $screen-md) {
+        padding-right: 0;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+    }
+
+    &:not(:last-child) {
+
+      &::after {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 2px;
+      }
+    }
+  }
+}

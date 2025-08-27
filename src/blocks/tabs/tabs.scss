@@ -1,6 +1,10 @@
 .tabs {
   $block-name:                &; // #{$block-name}__element
 
+  nav {
+    margin-bottom: 24px;
+  }
+
   .nav {
     flex-direction: column;
     position: relative;

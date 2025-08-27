@@ -1,0 +1,153 @@
+<!--DEV
+@ @include('blocks/terms-conditions/terms-conditions.html')
+-->
+
+<section class="container  terms-conditions">
+  <div class="row  terms-conditions__header">
+    <div class="terms-conditions__header-col">
+      <h2 class="terms-conditions__title">Умови та вимоги для партнерів</h2>
+      <div class="terms-conditions__intro">
+        <p>Ознайомтеся з детальними вимогами для кожного рівня партнерства та оберіть найбільш підходящий варіант</p>
+        <p>Ми знаходимо рішення для кожного абонента!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs  terms-conditions__body">
+    <nav class="terms-conditions__nav">
+      <div class="nav nav-tabs" id="termsNav" role="tablist"
+           data-theme-dark="nav--dark"
+           data-theme-light="nav--light">
+
+        <button class="nav-link active" id="terms-1" data-bs-toggle="tab" data-bs-target="#terms-pane-1" type="button" role="tab" aria-controls="terms-pane-1" aria-selected="true">
+          <span>Дистриб'ютор</span>
+        </button>
+
+        <button class="nav-link" id="terms-2" data-bs-toggle="tab" data-bs-target="#terms-pane-2" type="button" role="tab" aria-controls="terms-pane-2" aria-selected="false">
+          <span>Дилер</span>
+        </button>
+
+        <button class="nav-link" id="terms-3" data-bs-toggle="tab" data-bs-target="#terms-pane-3" type="button" role="tab" aria-controls="terms-pane-3" aria-selected="false">
+          <span>Партнер</span>
+        </button>
+
+        <button class="nav-link" id="terms-4" data-bs-toggle="tab" data-bs-target="#terms-pane-4" type="button" role="tab" aria-controls="terms-pane-4" aria-selected="false">
+          <span>Ексклюзив</span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="tab-content  terms-conditions__content" id="termsContent">
+
+      <div class="terms-conditions__pane  tab-pane fade show active" id="terms-pane-1" role="tabpanel" aria-labelledby="terms-1" tabindex="0">
+
+        <ul class="row  terms-conditions__list">
+          <li class="terms-conditions__item-col">
+            <div class="terms-conditions__item"
+                 data-theme-dark="terms-conditions__item--dark"
+                 data-theme-light="terms-conditions__item--light">
+              <span class="terms-conditions__item-icon">
+                <svg class="conditions" width="58" height="90" aria-hidden="true">
+                  <use xlink:href="#docums"></use>
+                </svg>
+              </span>
+
+              <div class="terms-conditions__item-content">
+                <p class="h4">Основні вимоги:</p>
+                <ul>
+                  <li>Юридична особа або ФОП</li>
+                  <li>Досвід роботи в телекомунікаціях 2+ роки</li>
+                  <li>Наявність офісу або точки продажів</li>
+                  <li>Команда від 3-х осіб</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="terms-conditions__item-col">
+            <div class="terms-conditions__item"
+                 data-theme-dark="terms-conditions__item--dark"
+                 data-theme-light="terms-conditions__item--light">
+              <span class="terms-conditions__item-icon">
+                <svg class="conditions" width="61" height="87" aria-hidden="true">
+                  <use xlink:href="#finance"></use>
+                </svg>
+              </span>
+
+              <div class="terms-conditions__item-content">
+                <p class="h4">Фінансові вимоги:</p>
+                <ul>
+                  <li>Обіговий капітал від 100,000 грн</li>
+                  <li>Гарантійний депозит 50,000 грн</li>
+                  <li>Стабільний фінансовий стан</li>
+                  <!-- <li>Команда від 3-х осіб</li> -->
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="terms-conditions__item-col">
+            <div class="terms-conditions__item"
+                 data-theme-dark="terms-conditions__item--dark"
+                 data-theme-light="terms-conditions__item--light">
+              <span class="terms-conditions__item-icon">
+                <svg class="conditions" width="64" height="90" aria-hidden="true">
+                  <use xlink:href="#tech"></use>
+                </svg>
+              </span>
+
+              <div class="terms-conditions__item-content">
+                <p class="h4">Технічні вимоги:</p>
+                <ul>
+                  <li>Технічний персонал з сертифікатами</li>
+                  <li>Обладнання для діагностики</li>
+                  <li>CRM система або готовність до впровадження</li>
+                  <!-- <li>Команда від 3-х осіб</li> -->
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
+        <section class="terms-conditions__benefits"
+                 data-theme-dark="terms-conditions__benefits--dark"
+                 data-theme-light="terms-conditions__benefits--light">
+          <div class="terms-conditions__benefits-inner">
+            <span class="terms-conditions__item-icon">
+              <svg class="conditions" width="68" height="88" aria-hidden="true">
+                <use xlink:href="#crown"></use>
+              </svg>
+            </span>
+
+            <div class="terms-conditions__benefits-text">
+              <h3 class="h5  terms-conditions__benefits-title">Що ви отримуєте на цьому рівні</h3>
+
+              <ul class="terms-conditions__benefits-list">
+                <li class="terms-conditions__benefits-list-item">Ексклюзивна територія (за погодженням)</li>
+                <li class="terms-conditions__benefits-list-item">Пріоритетна технічна підтримка</li>
+                <li class="terms-conditions__benefits-list-item">Участь у розробці продуктів</li>
+                <li class="terms-conditions__benefits-list-item">Спеціальні маркетингові програми</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="terms-conditions__pane  tab-pane fade" id="terms-pane-2" role="tabpanel" aria-labelledby="terms-2" tabindex="0">
+        2...
+      </div>
+
+      <div class="terms-conditions__pane  tab-pane fade" id="terms-pane-3" role="tabpanel" aria-labelledby="terms-3" tabindex="0">
+        3...
+      </div>
+
+      <div class="terms-conditions__pane  tab-pane fade" id="terms-pane-4" role="tabpanel" aria-labelledby="terms-4" tabindex="0">
+        4...
+      </div>
+    </div>
+
+  </div>
+
+</section>
