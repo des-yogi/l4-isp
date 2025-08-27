@@ -90,8 +90,8 @@
     "affiliate-network": [],
     "collab-type": [],
     "affiliate-programs": [],
-    "reward-system": [],
-    "terms-conditions": []
+    "terms-conditions": [],
+    "payment": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

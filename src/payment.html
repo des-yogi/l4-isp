@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Оплата</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="payment">
+
+          @@include('blocks/header/header.html', {
+            "title": "Оплата інтернету від L4",
+            "intro": "<p>Зручні способи поповнення рахунку для абонентів L4.</p><p>Оплатити інтернет L4 можна онлайн, через мобільний додаток, в особистому кабінеті, терміналах або за банківськими реквізитами. Платежі зараховуються миттєво, без комісії у більшості випадків.</p>"
+          })
+
+          <!-- <div class="row  about__content">
+            <div class="header__col">
+
+            </div>
+          </div> -->
+
+          <section class="container  payment__online">
+            <div class="payment__online-header">
+              <h2 class="h3  payment__online-title">Онлайн-способи оплати</h2>
+            </div>
+
+            <ul class="payment__list">
+
+              <li class="payment__list-item"
+                  data-theme-dark="payment__list-item--dark"
+                  data-theme-light="payment__list-item--light">
+
+                <p class="h4  payment__item-title">Через особистий кабінет</p>
+
+                <ol>
+                  <li>Увійдіть в кабінет на <a href="#">cabinet.l4.ua</a></li>
+                  <li>Перейдіть у розділ **"Поповнити рахунок" **</li>
+                  <li>Введіть суму та дані банківської картки</li>
+                  <li> Підтвердіть платіж</li>
+                </ol>
+
+                <p>⏱ Зарахування: миттєве</p>
+                <p>💸 Комісія: 0 грн</p>
+              </li>
+
+              <li class="payment__list-item"
+                  data-theme-dark="payment__list-item--dark"
+                  data-theme-light="payment__list-item--light">
+
+                <p class="h4  payment__item-title">У мобільному додатку L4</p>
+
+                <ol>
+                  <li>Завантажте додаток L4 у App Store або Google Play</li>
+                  <li>Авторизуйтеся зі своїми даними</li>
+                  <li>Натисніть “Поповнити рахунок”</li>
+                  <li>Введіть суму та підтвердіть платіж</li>
+                </ol>
+
+                <p>📱 Додаток зберігає картку для швидких оплат</p>
+                <p>💡 Доступна історія платежів і залишок балансу</p>
+              </li>
+
+              <li class="payment__list-item"
+                  data-theme-dark="payment__list-item--dark"
+                  data-theme-light="payment__list-item--light">
+
+                <p class="h4  payment__item-title">У мобільному додатку L4</p>
+                <p>Підтримуються системи:</p>
+
+                <ul>
+                  <li>Приват24</li>
+                  <li>Monobank</li>
+                  <li>Ощад 24/7</li>
+                  <li>А-Банк, ПУМБ, Sense Bank</li>
+                </ul>
+              </li>
+
+              <li class="payment__list-item"
+                  data-theme-dark="payment__list-item--dark"
+                  data-theme-light="payment__list-item--light">
+
+                <p class="h4  payment__item-title">Платіж у відділенні банку або онлайн</p>
+
+                <ol>
+                  <li>Скопіюйте <a href="#">реквізити</a></li>
+                  <li>Вкажіть у призначенні платежу: логін / номер особового рахунку / адреса</li>
+                  <li>Після оплати зберігайте квитанцію</li>
+                  <!-- <li>Введіть суму та підтвердіть платіж</li> -->
+                </ol>
+
+                <p>🕒 Зарахування: до 3 банківських днів</p>
+                <p>🔍 Уточнюйте реквізити для вашого регіону</p>
+              </li>
+
+              <li class="payment__list-item"
+                  data-theme-dark="payment__list-item--dark"
+                  data-theme-light="payment__list-item--light">
+
+                <p class="h4  payment__item-title">Оплата через термінали</p>
+
+                <div class="payment__item-inner">
+
+                  <div class="payment__item-content-col">
+                    <p class="h5">Які термінали підтримуються:</p>
+                    <ul>
+                      <li>iBox</li>
+                      <li>EasyPay</li>
+                      <li>City24</li>
+                      <li>ПриватБанк (у відділеннях)</li>
+                    </ul>
+                  </div>
+
+                  <div class="payment__item-content-col">
+                    <p class="h5">Як оплатити:</p>
+                    <ol>
+                      <li>У меню терміналу знайдіть “L4.ua”</li>
+                      <li>Введіть номер договору (логін)</li>
+                      <li>Внесіть потрібну суму</li>
+                      <li>Зберігайте чек</li>
+                    </ol>
+
+                    <p>💡 Комісія залежить від терміналу (зазвичай 2–5 грн)</p>
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+          </section>
+
+        </div>
+
+        @@include('blocks/faq/faq.html')
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>
