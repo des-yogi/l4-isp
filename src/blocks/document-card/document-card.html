@@ -1,0 +1,36 @@
+<!--DEV
+@ @include('blocks/document-card/document-card.html', {
+  "icon": "profile-line-48",
+  "title": "Структура власності",
+  "text": "<p>Схема кінцевих бенефіціарних власників та органів управління провайдера L4, подана до НКЕК.</p>"
+})
+-->
+
+<section class="document-card"
+         data-theme-dark="document-card--dark"
+         data-theme-light="document-card--light">
+
+  <div class="document-card__content">
+    <div class="document-card__header">
+      <h2 class="h4  document-card__title">@@title</h2>
+      <span class="document-card__icon">
+        <svg class="document-icon" width="48" height="48" aria-hidden="true">
+          <use xlink:href="#@@icon"></use>
+        </svg>
+      </span>
+    </div>
+    <div class="document-card__body">
+      @@text
+    </div>
+  </div>
+
+  <div class="document-card__footer">
+    <a href="#"
+       class="btn  btn--secondary  btn--icon-only"
+       data-theme-dark="btn--secondary--dark"
+       data-theme-light="btn--secondary--light"
+       aria-label="Скачати @@title">
+      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-top-right"></use></svg>
+   </a>
+  </div>
+</section>

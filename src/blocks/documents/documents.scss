@@ -1,0 +1,42 @@
+.documents {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__row {
+    gap: 24px 0;
+  }
+
+  &__col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xxl, 3);
+  }
+
+  &__section {
+    @include block-margin;
+  }
+
+  &__section-header {
+    margin-bottom: 24px;
+  }
+
+  &__section-header-col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+  }
+
+  &__section-intro {
+    color: var(--text-pale-color);
+
+    * {
+      margin-top: 16px;
+      text-wrap: pretty;
+      hyphens: none;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

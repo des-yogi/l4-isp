@@ -91,7 +91,10 @@
     "collab-type": [],
     "affiliate-programs": [],
     "terms-conditions": [],
-    "payment": []
+    "payment": [],
+    "documents": [],
+    "download-card": [],
+    "document-card": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
