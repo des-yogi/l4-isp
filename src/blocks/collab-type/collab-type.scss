@@ -1,0 +1,380 @@
+.collab-type {
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px 0;
+  @include block-margin;
+
+  &__title {
+    margin: 0;
+  }
+
+  &__item {
+
+    &--blue {
+      // #{$block-name}__element
+      @include gradient-border-mask(
+        2px,
+        $border-radius--24,
+        var(--corner-gradient-blue),
+        transparent
+      )
+
+      #{$block-name}__item-title {
+        color: var(--blue-500);
+      }
+
+      #{$block-name}__benefits-header {
+
+        svg {
+          fill: var(--blue-500);
+        }
+      }
+    }
+
+    &--green {
+      // #{$block-name}__element
+      @include gradient-border-mask(
+        2px,
+        $border-radius--24,
+        var(--corner-gradient-green),
+        transparent
+      )
+
+      #{$block-name}__item-title {
+        color: var(--green);
+      }
+
+      #{$block-name}__benefits-header {
+
+        svg {
+          fill: var(--green);
+        }
+      }
+    }
+
+    &--purple {
+      // #{$block-name}__element
+      @include gradient-border-mask(
+        2px,
+        $border-radius--24,
+        var(--corner-gradient-purple),
+        transparent
+      )
+
+      #{$block-name}__item-title {
+        color: var(--purple);
+      }
+
+      #{$block-name}__benefits-header {
+
+        svg {
+          fill: var(--purple);
+        }
+      }
+    }
+
+    &--orange {
+      // #{$block-name}__element
+      @include gradient-border-mask(
+        2px,
+        $border-radius--24,
+        var(--corner-gradient-orange),
+        transparent
+      )
+
+      #{$block-name}__item-title {
+        color: var(--orange);
+      }
+
+      #{$block-name}__benefits-header {
+
+        svg {
+          fill: var(--orange);
+        }
+      }
+
+      &.collab-type__item--light {
+
+        #{$block-name}__table {
+
+          tr::after {
+            background: rgba(190, 216, 255, 0.8);
+          }
+        }
+      }
+    }
+  }
+
+  &__item-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: relative;
+    gap: 24px 2px;
+    padding: 24px 16px;
+
+    @media (min-width: $screen-md) {
+      padding: 40px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 2px;
+      left: 0;
+      height: 2px;
+      //background: linear-gradient(to right, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.12));
+    }
+
+    &--dark {
+
+      &::after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.12));
+      }
+    }
+
+    &--light {
+
+      &::after {
+        background: rgba(190, 216, 255, 1);
+      }
+    }
+  }
+
+  &__item-icon {
+    flex: 0 0 62px;
+    width: 62px;
+    height: 48px;
+
+    svg {
+      transform: translateX(-10px);
+    }
+  }
+
+  &__item-text {
+    flex: 1 1;
+    flex-basis: clamp(450px, 60%, 100%);
+
+    // p:not(.collab-type__item-title) {
+    //   color: var(--text-pale-color);
+    // }
+
+    * {
+      hyphens: none;
+      text-wrap: pretty;
+    }
+  }
+
+  // &__item-title {
+
+  // }
+
+  &__item-body {
+
+    &--table {
+      //padding: 16px;
+
+      // @media (min-width: $screen-md) {
+      //   padding: 40px;
+      // }
+
+      .table-mobile-scroll {
+        margin: 0;
+      }
+    }
+  }
+
+  &__col-proposal {
+    @include col(xs, 12);
+    //@include col(md, 12);
+    @include col(xl, 4);
+  }
+
+  &__col-benefits {
+    @include col(xs, 12);
+    //@include col(md, 12);
+    @include col(xl, 8);
+  }
+
+  &__proposal,
+  &__benefits {
+    height: 100%;
+    padding: 24px 16px;
+
+    @media (min-width: $screen-md) {
+      padding: 40px;
+    }
+
+    svg + p {
+      margin: 16px 0 0.5em;
+    }
+  }
+
+  &__proposal {
+    position: relative;
+
+    *:not(.h5) {
+      color: var(--text-pale-color);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 2px;
+      left: 0;
+      height: 2px;
+
+      @media (min-width: $screen-xl) {
+        top: 0;
+        bottom: 2px;
+        right: -2px;
+        left: initial;
+        height: auto;
+        width: 2px;
+      }
+    }
+
+    &--dark {
+
+      &::after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.1));
+
+        @media (min-width: $screen-xl) {
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+
+    &--light {
+
+      &::after {
+        background: rgba(190, 216, 255, 1);
+
+        @media (min-width: $screen-xl) {
+          background: rgba(190, 216, 255, 1);
+        }
+      }
+    }
+  }
+
+  // &__benefits {
+
+  // }
+
+  // &__benefits-header {
+
+  // }
+
+  // &__benefits-body {
+
+  // }
+
+  &__benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__benefits-item {
+    flex: 1 1 100%;
+    padding: 16px;
+    margin: 0;
+
+    @media (min-width: $screen-md) {
+      flex: 1 1;
+      flex-basis: calc(50% - 4px);
+    }
+
+    *:not(.h6) {
+      color: var(--text-pale-color);
+    }
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--16,
+        transparent,
+        var(--opacity-black-16)
+      )
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--16,
+        transparent,
+        var(--grey-100)
+      )
+    }
+  }
+
+  &__table {
+
+    tr {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: -2px;
+        left: -2px;
+        height: 2px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.1));
+
+        // @media (min-width: $screen-xl) {
+        //   background: rgba(255, 255, 255, 0.1);
+        // }
+      }
+
+      &:last-child {
+
+        &::after {
+          display: none;
+        }
+      }
+
+      & > *:first-child {
+        padding-left: 16px;
+
+        @media (min-width: $screen-xl) {
+          padding-left: 40px;
+        }
+      }
+
+      & > *:last-child {
+        padding-right: 16px;
+
+        @media (min-width: $screen-xl) {
+          padding-right: 40px;
+        }
+      }
+
+      th {
+        background: none;
+      }
+
+      th,
+      td {
+        padding: 16px 16px 16px 0;
+        text-align: initial !important;
+      }
+    }
+
+    .tag {
+      font-size: $font-size;
+      font-weight: 600;
+
+      @media (min-width: $screen-xxl) {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,150 @@
+.affiliate-network {
+  $block-name:                &; // #{$block-name}__element
+
+  margin-bottom: 64px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 96px;
+  }
+
+  &__header {
+    gap: 16px 0;
+
+    p {
+      text-wrap: pretty;
+      hyphens: none;
+      color: var(--text-pale-color);
+    }
+  }
+
+  &__col-header {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__achievements,
+  &__benefits {
+    gap: 16px 0;
+    padding-left: 0;
+    margin-top: 24px;
+    list-style: none;
+  }
+
+  &__achievement,
+  &__benefit {
+    @include col(xs, 12);
+    @include col(md, 4);
+    //@include col(xl, 8);
+    margin: 0;
+  }
+
+  &__achievement-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 16px 0;
+    height: 100%;
+    padding: 16px;
+    backdrop-filter: blur(10px);
+
+    @media (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    * {
+      flex: 1 0 100%;
+      margin: 0;
+      hyphens: none;
+      text-wrap: pretty;
+    }
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--blue-500),
+        var(--blue-900)
+      )
+      box-shadow: var(--blue-shadow);
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--blue-500),
+        var(--opacity-blue-20)
+      )
+    }
+  }
+
+  &__achievement-title {
+    //flex: 1 0 100%;
+    //margin: 0;
+  }
+
+  &__achievement-card-descr,
+  &__benefit-card-descr {
+    color: var(--text-pale-color);
+  }
+
+  &__benefit-card {
+    display: flex;
+    flex-direction: column;
+    //flex-wrap: wrap;
+    //align-content: flex-start;
+    gap: 16px 0;
+    height: 100%;
+    padding: 16px;
+    backdrop-filter: blur(10px);
+
+    @media (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+      box-shadow: var(--big-shadow);
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--grey-300),
+        var(--grey-100)
+      )
+    }
+  }
+
+  &__benefit-icon {
+    display: block;
+    width: 60px;
+    height: 40px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      //object-fit: contain;
+      //object-position: center top;
+    }
+  }
+
+  &__benefit-card-title,
+  &__benefit-card-descr {
+    margin: 0;
+    hyphens: none;
+    text-wrap: pretty;
+  }
+}

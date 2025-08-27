@@ -12,3 +12,4 @@
 * https://des-yogi.github.io/l4-isp/news
 * https://des-yogi.github.io/l4-isp/job
 * https://des-yogi.github.io/l4-isp/mob-app
+* https://des-yogi.github.io/l4-isp/collaboration
