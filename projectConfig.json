@@ -94,7 +94,8 @@
     "payment": [],
     "documents": [],
     "download-card": [],
-    "document-card": []
+    "document-card": [],
+    "reviews": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

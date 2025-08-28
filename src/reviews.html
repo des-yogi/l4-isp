@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Відгуки</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="reviews">
+
+          @@include('blocks/header/header.html', {
+            "title": "Відгуки",
+            "intro": "<p>Ми цінуємо кожного клієнта та прагнемо постійно покращувати якість наших послуг.</p><p>Залишайте свої враження, пропозиції чи зауваження — кожен відгук допомагає нам ставати кращими.</p>"
+          })
+
+          <!-- <div class="row  about__content">
+            <div class="header__col">
+
+            </div>
+          </div> -->
+          <div class="container  reviews__content">
+            <ul class="list-nostyled  row  reviews__list">
+
+              <li class="reviews__item">
+                @@include('blocks/review-card/review-card.html', {
+                  "rating": "1",
+                  "title": "ПриватБанк",
+                  "text": "<p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>",
+                  "logo": "privat-bank"
+                })
+              </li>
+
+              <li class="reviews__item">
+                @@include('blocks/review-card/review-card.html', {
+                  "rating": "2",
+                  "title": "Sushi Master UA",
+                  "text": "<p>Мережа Sushi Master обирає лише надійних партнерів, адже стабільний інтернет — це запорука бездоганної роботи наших сервісів. Завдяки L4 ми маємо швидке та безперебійне з'єднання, що дозволяє оперативно приймати замовлення та підтримувати якісний сервіс для наших клієнтів.</p>",
+                  "logo": "sushi-master-ua"
+                })
+              </li>
+
+              <li class="reviews__item">
+                @@include('blocks/review-card/review-card.html', {
+                  "rating": "3",
+                  "title": "Ясенсвіт",
+                  "text": "<p>Компанія ЯСЕНСВІТ цінує якість у всьому — від продукції до партнерів. Співпраця з L4 дозволяє нам ефективно керувати бізнес-процесами, забезпечуючи безперебійну роботу офісів, логістичних центрів і комунікацій з клієнтами.</p>",
+                  "logo": "yasensvit"
+                })
+              </li>
+
+              <li class="reviews__item">
+                @@include('blocks/review-card/review-card.html', {
+                  "rating": "4",
+                  "title": "Justin",
+                  "text": "<p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>",
+                  "logo": "justin"
+                })
+              </li>
+
+              <li class="reviews__item">
+                @@include('blocks/review-card/review-card.html', {
+                  "rating": "5",
+                  "title": "ПриватБанк",
+                  "text": "<p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>",
+                  "logo": "privat-bank"
+                })
+              </li>
+
+              <li class="reviews__item">
+                @@include('blocks/review-card/review-card.html', {
+                  "rating": "5",
+                  "title": "Sushi Master UA",
+                  "text": "<p>Мережа Sushi Master обирає лише надійних партнерів, адже стабільний інтернет — це запорука бездоганної роботи наших сервісів. Завдяки L4 ми маємо швидке та безперебійне з'єднання, що дозволяє оперативно приймати замовлення та підтримувати якісний сервіс для наших клієнтів.</p>",
+                  "logo": "sushi-master-ua"
+                })
+              </li>
+
+              <li class="reviews__item">
+                @@include('blocks/review-card/review-card.html', {
+                  "rating": "4",
+                  "title": "Ясенсвіт",
+                  "text": "<p>Компанія ЯСЕНСВІТ цінує якість у всьому — від продукції до партнерів. Співпраця з L4 дозволяє нам ефективно керувати бізнес-процесами, забезпечуючи безперебійну роботу офісів, логістичних центрів і комунікацій з клієнтами.</p>",
+                  "logo": "yasensvit"
+                })
+              </li>
+
+              <li class="reviews__item">
+                @@include('blocks/review-card/review-card.html', {
+                  "rating": "3",
+                  "title": "Justin",
+                  "text": "<p>L4 демонструє професіоналізм у всіх аспектах співпраці – від впровадження сучасних рішень до швидкого реагування на запити. Ми впевнені, що спільна робота сприятиме подальшому розвитку фінансових технологій та покращенню сервісу для наших клієнтів.</p>",
+                  "logo": "justin"
+                })
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>
