@@ -47,6 +47,24 @@
     background: transparent;
     border-bottom: 1px solid transparent;
     transition: all $transition-time;
+
+    &--icon {
+      position: relative;
+      padding-left: 50px; //16+32
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        background-size: 24px;
+        background-position: center;
+        //background-image: ;
+      }
+    }
   }
 
   &__input {
@@ -81,7 +99,29 @@
       }
     }
 
-    #{$block-name}__name-text {}
+    #{$block-name}__name-text--icon {
+
+      &.all {
+
+        &::before {
+          background-image: svg-load('../blocks/sp-offers-grid/bg-img/sp-all.svg', fill=$white);
+        }
+      }
+
+      &.new {
+
+        &::before {
+          background-image: svg-load('../blocks/sp-offers-grid/bg-img/sp-new.svg', fill=$white);
+        }
+      }
+
+      &.existing {
+
+        &::before {
+          background-image: svg-load('../blocks/sp-offers-grid/bg-img/sp-existing.svg', fill=$white);
+        }
+      }
+    }
   }
 
   &--light {
@@ -104,6 +144,30 @@
                                rgba(39, 125, 255, 0.3) 0%,
                                rgba(39, 125, 255, 0) 100%);
         border-color: var(--blue-500) !important;
+      }
+    }
+
+    #{$block-name}__name-text--icon {
+
+      &.all {
+
+        &::before {
+          background-image: svg-load('../blocks/sp-offers-grid/bg-img/sp-all.svg', fill=$main-color);
+        }
+      }
+
+      &.new {
+
+        &::before {
+          background-image: svg-load('../blocks/sp-offers-grid/bg-img/sp-new.svg', fill=$main-color);
+        }
+      }
+
+      &.existing {
+
+        &::before {
+          background-image: svg-load('../blocks/sp-offers-grid/bg-img/sp-existing.svg', fill=$main-color);
+        }
       }
     }
   }

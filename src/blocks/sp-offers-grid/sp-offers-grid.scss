@@ -1,0 +1,37 @@
+.sp-offers-grid {
+  $block-name:                &; // #{$block-name}__element
+
+  margin-bottom: 64px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 96px;
+  }
+
+  &__filters {
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    margin-top: 40px;
+  }
+
+  &__row {
+    gap: 64px 0;
+  }
+
+  &__main-col {
+    @include col(xs, 12);
+    //@include col(md, 6);
+    @include col(xl, 8);
+  }
+
+  &__aside-col {
+    @include col(xs, 12);
+    //@include col(md, 6);
+    @include col(xl, 4);
+  }
+
+  &__aside {
+
+  }
+}

@@ -16,3 +16,4 @@
 * https://des-yogi.github.io/l4-isp/payment
 * https://des-yogi.github.io/l4-isp/documents
 * https://des-yogi.github.io/l4-isp/reviews
+* https://des-yogi.github.io/l4-isp/sp-offers

@@ -1,0 +1,29 @@
+.sp-offers-grid-slider {
+  $block-name:                &; // #{$block-name}__element
+
+  &__container {
+
+  }
+
+  &__slide {
+    // width: 336px !important;
+    // height: 252px !important;
+
+    @media (min-width: $screen-md) {} // 332
+
+    @media (min-width: $screen-lg) {
+      // width: 460px !important;
+      // height: 345px !important;
+    } // 460
+
+    @media (min-width: $screen-xl) {
+      // width: 384px !important;
+      // height: 288px !important;
+    } // 384
+
+    @media (min-width: $screen-xxl) {
+      // width: 517.3333px !important;
+      // height: 388px !important;
+    } // 518
+  }
+}

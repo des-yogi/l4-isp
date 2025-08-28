@@ -1,6 +1,8 @@
 .sp-offer-card {
   $block-name:                &; // #{$block-name}__element
 
+  position: relative;
+
   &__title {
     position: absolute;
     bottom: 12px;
@@ -32,6 +34,41 @@
     img {
       object-fit: cover;
       object-position: center;
+    }
+  }
+
+  &__alert {
+    position: absolute;
+    //z-index: 1;
+    top: 12px;
+    left: 12px;
+    height: 32px;
+    padding: 5px 12px 5px 40px;
+    margin: 0;
+    font-size: $font-size-sm;
+    color: var(--white);
+    border-radius: 16px;
+    background: linear-gradient(to right, var(--red) 32px, rgba($black, 0.7) 32px);
+    backdrop-filter: blur(10px);
+
+    &:empty,
+    &:has(span:empty) {
+      display: none;
+    }
+
+    &::after {
+      //display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-position: center;
+      background-size: 24px;
+      background-repeat: no-repeat;
+      background-image: svg-load('../blocks/sprite-svg/svg/clock.svg', fill=$white);
     }
   }
 }
