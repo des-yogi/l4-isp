@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Акції</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="sp-offers-grid">
+
+          @@include('blocks/header/header.html', {
+            "title": "Акції",
+            "intro": "<p>Дізнавайтеся першими про нові тарифи, акції, технічні оновлення та важливі повідомлення. Ми працюємо, щоб ваш інтернет був ще швидшим, стабільнішим та вигіднішим.</p>"
+          })
+
+          <!-- <div class="row  about__content">
+            <div class="header__col">
+
+            </div>
+          </div> -->
+
+          <section class="container  sp-offers-grid__filters">
+            <h2 class="visually-hidden  sp-offers-grid__filters-title">Фільтрація акційних пропозицій для нових та існуючих абонентів</h2>
+
+            <div class="field-filter"
+                 data-theme-dark="field-filter--dark"
+                 data-theme-light="field-filter--light">
+
+              <div class="field-filter__input-group">
+                <label class="field-filter__name">
+                  <input class="field-filter__input" type="radio" name="offers" value="all" checked="">
+                  <span class="field-filter__name-text  field-filter__name-text--icon  all">Усі акції</span>
+                </label>
+                <label class="field-filter__name">
+                  <input class="field-filter__input" type="radio" name="offers" value="new">
+                  <span class="field-filter__name-text  field-filter__name-text--icon  new">Для нових абонентів</span>
+                </label>
+                <label class="field-filter__name">
+                  <input class="field-filter__input" type="radio" name="offers" value="existing">
+                  <span class="field-filter__name-text  field-filter__name-text--icon  existing">Для існуючих абонентів</span>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <div class="container  sp-offers-grid__container">
+            <div class="row  sp-offers-grid__row">
+
+              <div class="sp-offers-grid__main-col">
+                @@include('blocks/sp-offers-grid-slider/sp-offers-grid-slider.html')
+              </div>
+
+              <div class="sp-offers-grid__aside-col">
+                <aside class="sp-offers-grid__aside">
+                  @@include('blocks/sp-offers-subscription/sp-offers-subscription.html')
+                </aside>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

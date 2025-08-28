@@ -1,0 +1,121 @@
+<!--DEV
+@ @include('blocks/sp-offers-grid-slider/sp-offers-grid-slider.html')
+-->
+
+<section class="sp-offers-grid-slider">
+  <h2 class="visually-hidden">Поточні акційні пропозиції від L4.ua</h2>
+
+  <div class="swiper  sp-offers-grid-slider__container">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-1",
+          "title": "Акція 5+1!"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide">
+        <article class="sp-offer-card">
+          <h3 class="sp-offer-card__title">
+            <span>Резервний тариф 267</span>
+          </h3>
+          <a href="#" class="embed-responsive  embed-responsive--4-3  sp-offer-card__img">
+            <picture>
+              <source srcset="img/image-4x3-3.webp,
+                              img/image-4x3-3.webp 2x" type="image/webp">
+              <img src="img/image-4x3-3.jpg"
+                   srcset="img/image-4x3-3.jpg,
+                           img/image-4x3-3.jpg 2x"
+                   alt='Alt text'
+                   width="382"
+                   height="287"
+                   loading="lazy">
+            </picture>
+            <!-- 382x287, 458x344  2x -->
+            <div class="swiper-lazy-preloader"></div>
+          </a>
+          <p class="sp-offer-card__alert">
+            Завершення через: <span>12</span> днів
+          </p>
+        </article>
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide" data-new="true">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-2",
+          "title": "Запроси друга"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-4",
+          "title": "Комфортний переїзд"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide" data-new="true">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-1",
+          "title": "Акція 5+1!"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide" data-new="true">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-3",
+          "title": "Резервний тариф BackUP"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-2",
+          "title": "Запроси друга"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-4",
+          "title": "Комфортний переїзд"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-1",
+          "title": "Акція 5+1!"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-3",
+          "title": "Резервний тариф BackUP"
+        })
+      </div>
+
+      <div class="swiper-slide  sp-offers-grid-slider__slide">
+        @@include('../../blocks/sp-offer-card/sp-offer-card.html', {
+          "img": "image-4x3-2",
+          "title": "Запроси друга"
+        })
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sp-offers__controls">
+    <div class="swiper-controls">
+      <div class="btn  btn--secondary  swiper-button-prev  sp-offers-grid-slider__btn-prev"
+           data-theme-dark="btn--secondary--dark"
+           data-theme-light="btn--secondary--light"></div>
+      <div class="swiper-pagination  sp-offers-grid-slider__pagination"></div>
+      <div class="btn  btn--secondary  swiper-button-next  sp-offers-grid-slider__btn-next"
+           data-theme-dark="btn--secondary--dark"
+           data-theme-light="btn--secondary--light"></div>
+    </div>
+  </div>
+</section>

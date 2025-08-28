@@ -95,7 +95,10 @@
     "documents": [],
     "download-card": [],
     "document-card": [],
-    "reviews": []
+    "reviews": [],
+    "sp-offers-grid": [],
+    "sp-offers-grid-slider": [],
+    "sp-offers-subscription": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

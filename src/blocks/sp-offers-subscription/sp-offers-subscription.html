@@ -1,0 +1,35 @@
+<!--DEV
+@ @include('blocks/sp-offers-subscription/sp-offers-subscription.html')
+-->
+
+<article class="sp-offers-subscription"
+         data-theme-dark="sp-offers-subscription--dark"
+         data-theme-light="sp-offers-subscription--light">
+
+  <div class="sp-offers-subscription__header">
+    <h3 class="sp-offers-subscription__title">Підписка на акції</h3>
+    <p class="sp-offers-subscription__descr">Залишайтеся на зв’язку з L4 – інтернетом, що рухається вперед!</p>
+  </div>
+
+  <form class="sp-offers-subscription__form" action="#" method="post">
+    <div class="sp-offers-subscription__input-group">
+      <label class="field-text"
+             data-theme-dark="field-text--dark"
+             data-theme-light="field-text--light">
+        <!-- <span class="field-text__name">Текст</span> -->
+        <span class="field-text__input-wrap">
+          <input class="field-text__input  required" type="email" name="mail" value="" placeholder="Email" autocomplete="email">
+          <span class="field-text__help-text" data-error="mail"></span>
+        </span>
+      </label>
+      <button class="btn"
+              data-theme-dark="btn--dark"
+              data-theme-light="btn--light"
+              type="submit">
+        <span>Підписатися</span>
+        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+      </button>
+    </div>
+    <p class="newsletter-signup__warning">Натискаючи «Підписатися», ви підтверджуєте, що погоджуєтеся з <a href="#">положеннями та умовами</a> L4 і <a href="#">політикою конфіденційності</a> використання даних</p>
+  </form>
+</article>
