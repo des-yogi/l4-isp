@@ -1,0 +1,132 @@
+<!--DEV
+@ @include('blocks/contact-form/contact-form.html')
+-->
+
+<article class="container  contact-form">
+  <div class="row  contact-form__header">
+    <div class="contact-form__col">
+      <h2 class="contact-form__title">Давайте зв'яжемося</h2>
+      <div class="contact-form__intro">
+        <p>Ми раді зв’язатися з вами та допомогти з вашими потребами у телекомунікаціях.</p>
+        <p>Використовуйте форму нижче, щоб написати нам. Незалежно від того, чи плануєте ви підключення послуг, корпоративні рішення або маєте запит на підтримку — ми завжди на зв’язку. Не соромтеся звертатися!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row  contact-form__body">
+    <div class="contact-form__col">
+      <form class="contact-form__form" action="#" method="post">
+        <div class="row  contact-form__inner-row">
+
+          <div class="contact-form__inner-col">
+            <label class="field-text"
+                   data-theme-dark="field-text--dark"
+                   data-theme-light="field-text--light">
+              <span class="field-text__name">Ім'я</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input  required" type="text" name="name" value="">
+                <span class="field-text__help-text" data-error="name"></span>
+              </span>
+            </label>
+          </div>
+
+          <div class="contact-form__inner-col">
+            <label class="field-text"
+                   data-theme-dark="field-text--dark"
+                   data-theme-light="field-text--light">
+              <span class="field-text__name">Прізвище</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="text" name="surname" value="">
+                <span class="field-text__help-text" data-error="surname"></span>
+              </span>
+            </label>
+          </div>
+
+          <div class="contact-form__inner-col">
+            <label class="field-text"
+                   data-theme-dark="field-text--dark"
+                   data-theme-light="field-text--light">
+              <span class="field-text__name">Електронна пошта</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="email" name="mail" value="">
+                <span class="field-text__help-text" data-error="mail"></span>
+              </span>
+            </label>
+          </div>
+
+          <div class="contact-form__inner-col">
+            <label class="field-text"
+                   data-theme-dark="field-text--dark"
+                   data-theme-light="field-text--light">
+              <span class="field-text__name">Телефон</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input  required  phone-mask" type="text" inputmode="tel" name="tel" value="" placeholder="+38 (0__) ___ __ __">
+                <span class="field-text__help-text" data-error="tel"></span>
+              </span>
+            </label>
+          </div>
+
+          <div class="contact-form__inner-col">
+            <div class="choices__wrapper"
+               data-theme-dark="choices__wrapper--dark"
+               data-theme-light="choices__wrapper--light">
+              <span class="field-text__name">Тип запиту</span>
+              <select class="choices"
+                      name="query-type"
+                      aria-label="Тип запиту">
+                <option selected disabled>Виберіть тип запиту</option>
+                <option value="value1">Тип 1</option>
+                <option value="value2">Тип 2</option>
+                <option value="value3">Тип 3</option>
+                <option value="value4">Тип 4</option>
+              </select>
+              <span class="field-text__help-text"></span>
+            </div>
+          </div>
+
+          <div class="contact-form__inner-col">
+            <label class="field-text"
+                   data-theme-dark="field-text--dark"
+                   data-theme-light="field-text--light">
+              <span class="field-text__name">Як ви дізналися про нас?</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="text" name="info-source" value="">
+                <span class="field-text__help-text" data-error="info-source"></span>
+              </span>
+            </label>
+          </div>
+
+        </div>
+
+        <label class="field-text"
+               data-theme-dark="field-text--dark"
+               data-theme-light="field-text--light">
+          <span class="field-text__name">Повідомлення</span>
+          <span class="field-text__input-wrap">
+            <textarea class="field-text__input" name="message" rows="4"></textarea>
+            <span class="field-text__help-text" data-error="message"></span>
+          </span>
+        </label>
+
+        <div class="contact-form__footer  field-actions__agreement">
+          <div class="contact-form__text-agreement">
+            <div class="field-checkbox"
+                 data-theme-dark="field-checkbox--dark"
+                 data-theme-light="field-checkbox--light">
+              <label class="field-checkbox__name">
+                <input class="field-checkbox__input" type="checkbox" name="agreement" value="" checked>
+                <span class="field-checkbox__name-text">Я погоджуюсь з <a href="#">Умовами використання</a> та <a href="#">Політикою конфіденційності</a></span>
+              </label>
+            </div>
+          </div>
+          <div class="contact-form__btn-agreement">
+            <button class="btn" type="submit" name="submit-btn">
+              <span>Надіслати ваше повідомлення</span>
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</article>
