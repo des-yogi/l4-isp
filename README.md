@@ -18,3 +18,4 @@
 * https://des-yogi.github.io/l4-isp/reviews
 * https://des-yogi.github.io/l4-isp/sp-offers
 * https://des-yogi.github.io/l4-isp/sp-offer-single
+* https://des-yogi.github.io/l4-isp/contacts

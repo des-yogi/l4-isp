@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', () => {
   const sliderSelector = '.sp-offers-grid-slider__container';
   const wrapper = document.querySelector(`${sliderSelector} .swiper-wrapper`);
+  if (! sliderSelector || !wrapper) return;
 
   // Сохраняем исходные слайды и признак "новый"
   const allSlides = Array.from(wrapper.children).map(el => ({

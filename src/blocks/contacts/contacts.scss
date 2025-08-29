@@ -1,0 +1,112 @@
+.contacts {
+
+  $block-name:                &; // #{$block-name}__element
+
+  // &__content {
+
+  // }
+
+  &__row {
+    gap: 24px 0;
+  }
+
+  &__emails-col,
+  &__tels-col,
+  &__social-col {
+    @include col(xs, 12);
+    //@include col(md, 12);
+  }
+
+  &__emails-col {
+    @include col(xl, 6);
+  }
+
+  &__tels-col {
+    @include col(xl, 3);
+  }
+
+  &__social-col {
+    @include col(xl, 3);
+  }
+
+  &__block {
+    padding: 16px;
+    backdrop-filter: blur(10px);
+
+    @media (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding: 40px;
+    }
+
+    &--email {
+    }
+
+    &--tel,
+    &--social {
+
+      #{$block-name}__list-item {
+
+        @media (min-width: $screen-xl) {
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    // &--social {
+    // }
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--grey-300),
+        var(--grey-100)
+      )
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  &__list-item {
+    flex: 0 0;
+    flex-basis: clamp(160px, 48%, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (max-width: $screen-md - 1) {
+      flex-basis: 100%;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-basis: calc(50% - 12px);
+    }
+
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 0;
+    }
+  }
+
+  // &__list-item-title {
+
+  // }
+}
