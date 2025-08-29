@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Акція</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <article class="container  news-article">
+          @@include('blocks/date-alert/date-alert.html')
+
+          @@include('blocks/header/header.html', {
+            "title": "Резервний тариф BackUP",
+            "intro": "<p>Ми постійно вдосконалюємо якість послуг для наших абонентів. Відтепер швидкість інтернету за вашими тарифами зросте — абсолютно безкоштовно.</p>"
+          })
+
+          <!-- <p class="news-article__main-top" style="margin-top: 24px !important;">
+            <span class="tag  tag--orange">Business</span>
+            <time datetime="2025-12-15" class="publishedon">15.12.2025</time>
+          </p> -->
+
+          <div class="row  news-article__row">
+
+            <div class="news-article__col-main">
+              <div class="news-article__main">
+                <div class="embed-responsive  embed-responsive--4-3  news-article__img">
+                  <picture>
+                    <source srcset="img/article-img.webp,
+                                    img/article-img.webp 2x" media="(min-width: 1440px)" type="image/webp">
+                    <source srcset="img/article-img.jpg,
+                                    img/article-img.jpg 2x" media="(min-width: 1440px)">
+                    <!-- 923x692, 1385x1039 2x -->
+                    <source srcset="img/article-img.webp,
+                                    img/article-img.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                    <source srcset="img/article-img.jpg,
+                                    img/article-img.jpg 2x" media="(min-width: 1280px)">
+                    <!-- 855x641, 1282x962 2x -->
+                    <source srcset="img/article-img.webp,
+                                    img/article-img.webp 2x" media="(min-width: 1024px)" type="image/webp">
+                    <source srcset="img/article-img.jpg,
+                                    img/article-img.jpg 2x" media="(min-width: 1024px)">
+                    <!-- 923x692, 1385x1039 2x -->
+                    <source srcset="img/article-img.webp" media="(min-width: 768px)" type="image/webp">
+                    <source srcset="img/article-img.jpg" media="(min-width: 768px)">
+                    <!-- 855x641 -->
+                    <source srcset="img/article-img.webp" media="(min-width: 480px)" type="image/webp">
+                    <source srcset="img/article-img.jpg" media="(min-width: 480px)">
+                    <!-- 700x525 -->
+                    <source srcset="img/article-img.webp" media="(min-width: 300px)" type="image/webp">
+                    <source srcset="img/article-img.jpg" media="(min-width: 300px)">
+                    <!-- 585x439 -->
+                    <img src="img/article-img.jpg" alt="Alt" width="923" height="575">
+                  </picture>
+                </div>
+
+                <div class="news-article__content">
+
+                  <div id="block-1" class="news-article__content-block">
+                    <h2>Чому ми оновлюємо швидкість саме зараз?</h2>
+                    <p>У 2025 році онлайн-активність користувачів зросла як ніколи: відеоконференції, стрімінг, віддалена робота. Саме тому ми адаптуємо мережу під сучасні навантаження. Більше швидкості — комфортніше користування.</p>
+
+                    <hr>
+                  </div>
+
+                  <div id="block-2" class="news-article__content-block">
+                    <h3>Які тарифи L4 отримали оновлення</h3>
+                    <p>Ми оновлюємо тарифні плани, щоб наші абоненти отримували максимум за ті ж кошти. Збільшення швидкості стосується як базових, так і комбінованих тарифів з телебаченням.</p>
+
+                    <h4>Тарифи, які отримали підвищення:</h4>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Назва тарифу</th>
+                          <th>Було</th>
+                          <th>Стало</th>
+                          <th>Ціна</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>SMART 200</th>
+                          <td>до 200 Мбіт/с</td>
+                          <td>до 300 Мбіт/с</td>
+                          <td>Без змін</td>
+                        </tr>
+                        <tr>
+                          <th>SMART 500</th>
+                          <td>до 500 Мбіт/с</td>
+                          <td>до 700 Мбіт/с</td>
+                          <td>Без змін</td>
+                        </tr>
+                        <tr>
+                          <th>COMBO 200 + ТБ</th>
+                          <td>до 200 Мбіт/с</td>
+                          <td>до 300 Мбіт/с</td>
+                          <td>Без змін</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <blockquote>
+                      <p>Усі зміни вже активовані автоматично. Не потрібно звертатися в підтримку або змінювати налаштування роутера.</p>
+                    </blockquote>
+                  </div>
+
+                  <div id="block-3" class="news-article__content-block">
+                    <h3>Як це вплине на абонентів</h3>
+                    <p>Підвищення швидкості — це не просто маркетинговий хід. Це практична перевага:</p>
+                    <ul>
+                      <li>Відеоконференції без підвисань</li>
+                      <li>Швидке завантаження файлів</li>
+                      <li>Багатокористувацьке використання (ігри, відео, навчання)</li>
+                      <li>Краще покриття в Wi-Fi зонах у квартирі</li>
+                    </ul>
+
+                    <blockquote>
+                      <p>Раніше при роботі з дому Zoom періодично зависав. Після оновлення тарифу відчутно краще — навіть при одночасному користуванні з дітьми.</p>
+                      <p>Андрій, абонент L4 з 2022 року</p>
+                    </blockquote>
+
+                    <h4>Якість залишається незмінною</h4>
+                    <p>Мережа L4 побудована з використанням сучасного GPON-зв'язку, високошвидкісних маршрутизаторів і постійно модернізується нашою технічною командою.</p>
+
+                    <img src="img/media-block-1.jpg" alt="">
+                  </div>
+
+                  <hr>
+
+                  <div id="block-4" class="news-article__content-block">
+                    <h3>Image</h3>
+                    <p>BackUP — це спеціальне рішення від L4 для абонентів, яким потрібен надійний доступ до мережі в будь-якій ситуації, навіть за умов аварійного знеструмлення.</p>
+
+                    <div class="image-container">
+                      <div class="image-1">
+                        <img src="img/image-1.jpg" width="675" height="675" loading="lazy">
+                      </div>
+                      <div class="image-2">
+                        <img src="img/image-2.jpg" width="675" height="675" loading="lazy">
+                      </div>
+                      <div class="image-3">
+                        <img src="img/image-3.jpg" width="1418" height="675" loading="lazy">
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              @@include('blocks/faq/faq.html')
+            </div>
+
+            <div class="news-article__col-aside">
+              <div class="news-article__aside">
+                <section class="news-article__nav"
+                         data-theme-dark="news-article__nav--dark"
+                         data-theme-light="news-article__nav--light">
+                  <h2 class="h4  news-article__nav-title">Розділи</h2>
+                  <ol class="news-article__nav-list">
+                    <li class="news-article__nav-item">
+                      <a href="#block-1" data-scroll-link class="news-article__nav-link">Чому ми оновлюємо швидкість саме зараз</a>
+                    </li>
+                    <li class="news-article__nav-item">
+                      <a href="#block-2" data-scroll-link class="news-article__nav-link">Які тарифи L4 отримали оновлення</a>
+                    </li>
+                    <li class="news-article__nav-item">
+                      <a href="#block-3" data-scroll-link class="news-article__nav-link">Як це вплине на абонентів</a>
+                    </li>
+
+                    <li class="news-article__nav-item">
+                      <a href="#block-4" data-scroll-link class="news-article__nav-link">Images</a>
+                    </li>
+                  </ol>
+                </section>
+
+                @@include('blocks/ads-banner/ads-banner.html')
+
+                @@include('blocks/share/share.html')
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+        @@include('blocks/sp-offers/sp-offers.html')
+
+        @@include('blocks/connection-form/connection-form.html')
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

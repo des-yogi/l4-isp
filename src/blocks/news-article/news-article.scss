@@ -24,12 +24,25 @@
     @include col(xl, 4);
     @include col-offset(xxl, 1);
     @include col(xxl, 4);
+
+    @media (min-width: $screen-xxl) {
+      position: relative;
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -24px;
+        bottom: 0;
+        width: 2px;
+      }
+    }
   }
 
-  &__main {
+  // &__main {
 
-
-  }
+  // }
 
   &__main-top {
     display: flex;
@@ -122,20 +135,75 @@
     }
   }
 
-  &__nav-title {
+  // &__nav-title {
 
-  }
+  // }
 
   &__nav-list {
     color: var(--text-pale-color);
   }
 
-  &__nav-item {
+  // &__nav-item {
 
-  }
+  // }
 
   &__nav-link {
     text-decoration: none;
     color: inherit;
+  }
+
+  .faq {
+    //margin-bottom: ;
+    margin-bottom: 0;
+
+    .faq__body {
+      background: none;
+    }
+
+    .faq__inner > .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .container > .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .faq__header-col {
+      flex-basis: 100%;
+      max-width: none;
+      padding: 0;
+      margin-left: 0;
+    }
+
+    .faq__header {
+      text-align: initial;
+    }
+  }
+}
+
+// -----------------------
+
+.page {
+
+  &[data-theme=dark] {
+
+    .news-article__col-aside::before {
+
+      @media (min-width: $screen-xxl) {
+        background: var(--grey-700);
+      }
+    }
+  }
+
+  &[data-theme=light] {
+
+    .news-article__col-aside::before {
+
+      @media (min-width: $screen-xxl) {
+        background: rgba($main-color, 0.2);
+      }
+    }
   }
 }

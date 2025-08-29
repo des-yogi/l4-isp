@@ -98,7 +98,8 @@
     "reviews": [],
     "sp-offers-grid": [],
     "sp-offers-grid-slider": [],
-    "sp-offers-subscription": []
+    "sp-offers-subscription": [],
+    "date-alert": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
