@@ -103,7 +103,11 @@
     "contacts": [],
     "contact-form": [],
     "page-404": [],
-    "tv-l4": []
+    "tv-l4": [],
+    "product-card": [],
+    "product": [],
+    "product-slider": [],
+    "shop": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
