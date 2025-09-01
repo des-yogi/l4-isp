@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Телебачення від L4</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="tv-l4">
+
+          @@include('blocks/header/header.html', {
+            "title": "Телебачення від L4 <br> Сучасні рішення для перегляду",
+            "intro": "<p>Телебачення від L4 — це якісний цифровий контент у високій якості, який працює на будь-якому пристрої: телевізорі, смартфоні чи комп’юері. Оберіть зручного ТВ-партнера: Sweet.TV, MEGOGO, Lanet.TV.</p>"
+          })
+
+          <div class="container  tv-l4__content  media-block-ext__wrapper">
+            @@include('blocks/media-block-ext/media-block-ext.html', {
+              "addClass": "",
+              "img": "tv-sweet-tv",
+              "title": "Національний онлайн-кінотеатр SWEET.TV",
+              "text": "<p>260+ телеканалів в найкращій якості у записі до 7 днів. 5000 рейтингових фільмів. Онлайн кінотеатр. Каталог кращих фільмів.</p><ul><li>Національне та преміальне ТБ</li><li>Новинки кіно одразу після кінотеатру</li><li>Один тариф для всієї родини</li>"
+            })
+
+            @@include('blocks/media-block-ext/media-block-ext.html', {
+              "addClass": "",
+              "img": "tv-omega-tv",
+              "title": "Цифрове телебачення OMEGA.TV",
+              "text": "<p>Простий, доступний та зрозумілий сервіс цифрового телебачення для всіх членів родини.</p><ul><li>Просто та зручно</li><li>Доступна ціна</li><li>Один тариф для всієї родини</li>"
+            })
+
+            @@include('blocks/media-block-ext/media-block-ext.html', {
+              "addClass": "",
+              "img": "tv-megogo",
+              "title": "Національний онлайн-кінотеатр MEGOGO",
+              "text": "<p>260+ телеканалів в найкращій якості у записі до 7 днів. 5000 рейтингових фільмів. Онлайн кінотеатр. Каталог кращих фільмів.</p><ul><li>Національне та преміальне ТБ</li><li>Новинки кіно одразу після кінотеатру</li><li>Один тариф для всієї родини</li>"
+            })
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

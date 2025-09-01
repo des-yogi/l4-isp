@@ -102,7 +102,8 @@
     "date-alert": [],
     "contacts": [],
     "contact-form": [],
-    "page-404": []
+    "page-404": [],
+    "tv-l4": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
