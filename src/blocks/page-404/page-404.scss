@@ -1,0 +1,152 @@
+.page-404 {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+
+  &__inner {
+    text-align: center;
+
+  }
+
+  // &__text {
+
+  // }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      //display: block;
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: cover;
+    }
+
+    &::before {
+      //left: -115px;
+      //top: 25px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-125%, -95%);
+      width: 243px;
+      height: 116px;
+      background-image: url(../img/cable-404@sm-l.png);
+
+      @supports (background-image: url('../img/cable-404@sm-l.webp')) {
+        background-image: url('../img/cable-404@sm-l.webp');
+      }
+
+      @media (min-width: 560px) {
+        left: 0;
+        transform: translate(0%, -95%);
+      }
+
+      @media (min-width: $screen-md) {
+        left: 50%;
+        transform: translate(-128%, -93%);
+        width: 547px;
+        height: 258px;
+        background-image: url(../img/cable-404@md-l.png);
+
+        @supports (background-image: url(../img/cable-404@md-l.webp)) {
+          background-image: url(../img/cable-404@md-l.webp);
+        }
+      }
+
+      @media (min-width: $screen-xl) {
+        transform: translate(-126%, -93%);
+        width: 780px;
+        height: 369px;
+        background-image: url(../img/cable-404@xl-l.png);
+
+        @supports (background-image: url(../img/cable-404@xl-l.webp)) {
+          background-image: url(../img/cable-404@xl-l.webp);
+        }
+      }
+
+      @media (min-width: $screen-xxl) {
+        transform: translate(-128%, -85%);
+      }
+
+      @media (min-width: 1920px) {
+        left: 0;
+        transform: translate(0%, -82%);
+      }
+    }
+
+    &::after {
+      //right: -110px;
+      //bottom: 72px;
+      right: 50%;
+      bottom: 50%;
+      transform: translate(125%, 110%);
+      width: 233px;
+      height: 52px;
+      background-image: url(../img/cable-404@sm-r.png);
+
+      @supports (background-image: url('../img/cable-404@sm-r.webp')) {
+        background-image: url('../img/cable-404@sm-r.webp');
+      }
+
+      @media (min-width: 560px) {
+        right: 0;
+        transform: translate(0%, 100%);
+      }
+
+      @media (min-width: $screen-md) {
+        right: 50%;
+        transform: translate(128%, 108%);
+        width: 524px;
+        height: 117px;
+        background-image: url(../img/cable-404@md-r.png);
+
+        @supports (background-image: url('../img/cable-404@md-r.webp')) {
+          background-image: url('../img/cable-404@md-r.webp');
+        }
+      }
+
+      @media (min-width: $screen-xl) {
+        transform: translate(133%, 104%);
+        width: 747px;
+        height: 178px;
+        background-image: url(../img/cable-404@xl-r.png);
+
+        @supports (background-image: url('../img/cable-404@xl-r.webp')) {
+          background-image: url('../img/cable-404@xl-r.webp');
+        }
+      }
+
+      @media (min-width: 1920px) {
+        right: 0;
+        transform: translate(0%, 104%);
+      }
+    }
+
+    p {
+      position: relative;
+      z-index: -1;
+      //font-size: 150px;
+      font-size: 190px;
+      font-weight: 600;
+      letter-spacing: -10px;
+      white-space: nowrap;
+      color: var(--blue-500);
+
+      //@media (min-width: 355px) {
+        //font-size: calc(11.875rem + ((1vw - 3.55px) * 50.8475));
+      //}
+
+      @media (min-width: $screen-md) {
+        font-size: 400px;
+      }
+
+      span {
+        color: var(--text-color);
+      }
+    }
+  }
+}
