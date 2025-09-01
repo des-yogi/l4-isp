@@ -1,0 +1,113 @@
+<!--DEV
+@ @include('blocks/product-card/product-card.html', {
+  "title": "Air Mouse G30S",
+  "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+  "tag": 'Знижка 30%',
+  "tagColor": 'tag--orange',
+  "price": '250',
+  "priceOld": ''
+})
+-->
+
+<article class="product-card"
+         data-theme-dark="product-card--dark"
+         data-theme-light="product-card--light">
+
+  <div class="product-card__inner">
+
+    <div class="product-card__front">
+
+      <div class="product-card__front-content">
+        <div class="embed-responsive  embed-responsive--1-1  product-card__img">
+          <picture>
+            <source srcset="img/product-img.webp,
+                            img/product-img.webp 2x" media="(min-width: 1600px)" type="image/webp">
+            <source srcset="img/product-img.png,
+                            img/product-img.png 2x" media="(min-width: 1600px)">
+            <!-- 342x342, 412x412 2x -->
+            <source srcset="img/product-img.webp,
+                            img/product-img.webp 2x" media="(min-width: 1280px)" type="image/webp">
+            <source srcset="img/product-img.png,
+                            img/product-img.png 2x" media="(min-width: 1280px)">
+            <!-- 280x280, 420x420 2x -->
+            <source srcset="img/product-img.webp" media="(min-width: 1024px)" type="image/webp">
+            <source srcset="img/product-img.png" media="(min-width: 1024px)">
+            <!-- 480x480 -->
+            <source srcset="img/product-img.webp" media="(min-width: 768px)" type="image/webp">
+            <source srcset="img/product-img.png" media="(min-width: 768px)">
+            <!-- 435x435 -->
+            <source srcset="img/product-img.webp" media="(min-width: 480px)" type="image/webp">
+            <source srcset="img/product-img.png" media="(min-width: 480px)">
+            <!-- 620x620 -->
+            <source srcset="img/product-img.webp" media="(min-width: 300px)" type="image/webp">
+            <source srcset="img/product-img.png" media="(min-width: 300px)">
+            <!-- 510x510 -->
+            <img src="img/product-img.png" alt="" width="653" height="653" loading="lazy">
+          </picture>
+        </div>
+        <header class="product-card__header">
+          <span class="tag  @@tagColor">@@tag</span>
+          <h2 class="h4  product-card__title">@@title</h2>
+          @@descr
+        </header>
+      </div>
+
+      <div class="product-card__footer">
+        <p class="product-card__price-wrapper">
+          <span class="product-card__price-new">@@price</span>
+          <span class="product-card__price-old">@@priceOld</span>
+          грн.
+        </p>
+
+        <div class="product-card__btn-wrapper">
+          <button class="btn  btn--secondary  btn--icon-only  product-card__more-btn"
+                  aria-label="Додаткова інформація про товар. Натисніть для зміни."
+                  aria-live="polite"
+                  data-theme-dark="btn--secondary--dark"
+                  data-theme-light="btn--secondary--light"
+                  >
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#info"></use></svg>
+          </button>
+
+          <button class="btn"
+                  data-theme-dark="btn--dark"
+                  data-theme-light="btn--light">
+            <span>Купити</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#basket"></use></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card__back">
+      <div class="product-card__back-content">
+        <p class="h4  product-card__title">@@title</p>
+        <p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>
+
+        <ul>
+          <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+          <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+          <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+          <li>4 Зовнішні антени з високим посиленням</li>
+          <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+        </ul>
+
+        <p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>
+      </div>
+
+      <div class="product-card__footer">
+        <button class="btn  btn--secondary  btn--icon-only  product-card__back-btn"
+                aria-label="Повернутися до основної інформації. Натисніть для зміни."
+                aria-live="polite"
+                data-theme-dark="btn--secondary--dark"
+                data-theme-light="btn--secondary--light"
+                >
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#left-lg"></use></svg>
+        </button>
+      </div>
+    </div>
+    <!-- __back -->
+
+  </div>
+
+</article>

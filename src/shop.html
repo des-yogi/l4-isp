@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Магазин</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="shop">
+
+          @@include('blocks/header/header.html', {
+            "title": "Магазин",
+            "intro": "<p>Інтернет-провайдер L4 пропонує сертифіковані роутери, IPTV-приставки, гіроскопічні пульти Air Mouse, а також комплекти безперебійного живлення. Усі пристрої протестовані нашими інженерами та максимально сумісні з мережею L4.</p>"
+          })
+
+          <div class="container  tabs  shop__tabs">
+
+            <nav class="shop__nav">
+              <div class="nav nav-tabs" id="shopNav" role="tablist" data-theme-dark="nav--dark" data-theme-light="nav--light">
+                <button class="nav-link active" id="shop-1" data-bs-toggle="tab" data-bs-target="#shop-pane-1" type="button" role="tab" aria-controls="shop-pane-1" aria-selected="true">
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#box"></use></svg>
+                  <span>Всі пристрої</span>
+                </button>
+
+                <button class="nav-link" id="shop-2" data-bs-toggle="tab" data-bs-target="#shop-pane-2" type="button" role="tab" aria-controls="shop-pane-2" aria-selected="false">
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wifi"></use></svg>
+                  <span>Wi-Fi Роутери</span>
+                </button>
+
+                <button class="nav-link" id="shop-3" data-bs-toggle="tab" data-bs-target="#shop-pane-3" type="button" role="tab" aria-controls="shop-pane-3" aria-selected="false">
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#battery"></use></svg>
+                  <span>MINI UPS Для роутерів</span>
+                </button>
+
+                <button class="nav-link" id="shop-4" data-bs-toggle="tab" data-bs-target="#shop-pane-4" type="button" role="tab" aria-controls="shop-pane-4" aria-selected="false">
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#display"></use></svg>
+                  <span>TV Обладнання</span>
+                </button>
+
+                <button class="nav-link" id="shop-5" data-bs-toggle="tab" data-bs-target="#shop-pane-5" type="button" role="tab" aria-controls="shop-pane-5" aria-selected="false">
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#cable"></use></svg>
+                  <span>Кабель</span>
+                </button>
+
+                <button class="nav-link" id="shop-6" data-bs-toggle="tab" data-bs-target="#shop-pane-6" type="button" role="tab" aria-controls="shop-pane-6" aria-selected="false">
+                  <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#other"></use></svg>
+                  <span>Інше</span>
+                </button>
+              </div>
+            </nav>
+
+            <div class="tab-content  shop__content" id="shopContent">
+
+              <div class="shop__pane  tab-pane fade show active" id="shop-pane-1" role="tabpanel" aria-labelledby="shop-1" tabindex="0">
+                <div class="row  shop__pane-row">
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": '',
+                      "tagColor": '',
+                      "price": '250',
+                      "priceOld": ''
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": 'Знижка 30%',
+                      "tagColor": 'tag--orange',
+                      "price": '250',
+                      "priceOld": '300'
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": 'НОВИНКА',
+                      "tagColor": 'tag--blue',
+                      "price": '250',
+                      "priceOld": ''
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": '',
+                      "tagColor": '',
+                      "price": '250',
+                      "priceOld": ''
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": 'Знижка 30%',
+                      "tagColor": 'tag--orange',
+                      "price": '250',
+                      "priceOld": '300'
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": 'НОВИНКА',
+                      "tagColor": 'tag--blue',
+                      "price": '250',
+                      "priceOld": ''
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": '',
+                      "tagColor": '',
+                      "price": '250',
+                      "priceOld": ''
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": 'Знижка 30%',
+                      "tagColor": 'tag--orange',
+                      "price": '250',
+                      "priceOld": '300'
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": 'НОВИНКА',
+                      "tagColor": 'tag--blue',
+                      "price": '250',
+                      "priceOld": ''
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": '',
+                      "tagColor": '',
+                      "price": '250',
+                      "priceOld": ''
+                    })
+                  </div>
+
+                  <div class="shop__pane-col">
+                    @@include('blocks/product-card/product-card.html', {
+                      "title": "Air Mouse G30S",
+                      "descr": '<p>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</p>',
+                      "tag": 'Знижка 30%',
+                      "tagColor": 'tag--orange',
+                      "price": '250',
+                      "priceOld": '300'
+                    })
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="shop__pane  tab-pane fade" id="shop-pane-2" role="tabpanel" aria-labelledby="shop-2" tabindex="0">
+                2
+              </div>
+
+              <div class="shop__pane  tab-pane fade" id="shop-pane-3" role="tabpanel" aria-labelledby="shop-3" tabindex="0">
+
+                3...
+
+              </div>
+
+              <div class="shop__pane  tab-pane fade" id="shop-pane-4" role="tabpanel" aria-labelledby="shop-4" tabindex="0">
+
+                4...
+
+              </div>
+
+              <div class="shop__pane  tab-pane fade" id="shop-pane-5" role="tabpanel" aria-labelledby="shop-5" tabindex="0">
+
+                5...
+
+              </div>
+
+              <div class="shop__pane  tab-pane fade" id="shop-pane-6" role="tabpanel" aria-labelledby="shop-6" tabindex="0">
+
+                6...
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>
