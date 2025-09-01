@@ -101,7 +101,8 @@
     "sp-offers-subscription": [],
     "date-alert": [],
     "contacts": [],
-    "contact-form": []
+    "contact-form": [],
+    "page-404": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
