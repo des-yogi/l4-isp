@@ -1,9 +1,167 @@
-// В этом файле должны быть стили для БЭМ-блока product, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .product {
-
   $block-name:                &; // #{$block-name}__element
 
+  margin-bottom: 64px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 96px;
+  }
+
+  &__main-row {
+    gap: 24px 0;
+    margin-bottom: 24px;
+  }
+
+  &__text-col {
+    @include col(xs, 12);
+    //@include col(md, 11);
+    @include col(lg, 10);
+    @include col(xl, 8);
+    @include col(xxl, 7);
+  }
+
+  &__slider-col {
+    @include col(xs, 12);
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 0);
+    @include col(xl, 4);
+    @include col(xxl, 5);
+  }
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  &__intro {
+    color: var(--text-pale-color);
+
+    p {
+      text-wrap: pretty;
+      hyphens: none;
+    }
+  }
+
+  &__order {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px 40px;
+  }
+
+  &__price {
+    margin-bottom: 0;
+    font-size: $font-size;
+    font-weight: 500;
+
+    span {
+      margin-right: 6px;
+    }
+  }
+
+  &__sliders-wrapper {
+    max-width: 385px;
+    margin: 0 auto;
+
+    @media (min-width: $screen-xl) {
+      // display: flex;
+      // flex-direction: column;
+      max-width: 100%;
+      margin-right: 0;
+      text-align: center;
+    }
+  }
+
+  &__slider-main {
+
+  }
+
+  &__slide {
+
+  }
+
+  &__slide-img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__controls {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  &__slider-thumb {
+    flex: 0 1 auto;
+    //padding-bottom: 10px;
+  }
+
+  &__slide-thumb {
+    width: 56px;
+    height: 56px;
+    padding: 6px;
+    box-shadow: none !important;
+    //overflow: hidden;
+    opacity: 0.5;
+
+    @media (min-width: $screen-xxl) {
+      width: 72px;
+      height: 72px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      transform: translateY(4px);
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &.swiper-slide-thumb-active {
+      opacity: 1;
+      //outline: 1px solid var(--blue-500);
+      &:not(.btn.btn--secondary--dark) {
+
+        &::before {
+          background: var(--blue-500);
+        }
+      }
+    }
+  }
+
+  &__add-info {
+
+  }
+
+  &__nav {
+
+  }
+
+  &__pane {
+    padding: 16px;
+
+    @media (min-width: $screen-md) {
+      padding: 24px;
+    }
+
+    &--dark {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--border-gradient-10),
+        var(--opacity-black-50)
+      )
+    }
+
+    &--light {
+      @include gradient-border-mask(
+        2px,
+        $border-radius--12,
+        var(--grey-300),
+        var(--grey-100)
+      )
+    }
+  }
 }
