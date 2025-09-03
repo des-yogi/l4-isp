@@ -115,7 +115,9 @@
     "tv-features": [],
     "tv-tariffs": [],
     "home-internet": [],
-    "reason": []
+    "reason": [],
+    "biz-internet": [],
+    "biz-tariffs-slider": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

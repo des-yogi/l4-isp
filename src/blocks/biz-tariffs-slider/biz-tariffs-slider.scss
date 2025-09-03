@@ -1,0 +1,43 @@
+.biz-tariffs-slider {
+  $block-name:                &; // #{$block-name}__element
+
+  @include block-margin;
+  border-bottom: 2px solid transparent;
+
+  &__header {
+    margin-bottom: 40px;
+  }
+
+  &__header-col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__intro {
+
+    &:not(strong) {
+      color: var(--text-pale-color);
+    }
+  }
+
+  &__slider-controls {
+    margin-top: 24px;
+  }
+
+  &--dark {
+    border-bottom-color: var(--opacity-white-12);
+  }
+
+  &--light {
+    border-bottom-color: var(--blue-150);
+
+    .tariffs__slider-content {
+      border-top: 2px solid var(--blue-150);
+    }
+  }
+}
