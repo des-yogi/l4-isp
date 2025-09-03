@@ -30,11 +30,13 @@
           <!-- Для всех карточек бизнес-тарифов обязательно убрать (!)
           aria-labelledby="tariff-…" -->
           @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
-            "title": "Симетричні тарифи"
+            "title": "Симетричні тарифи",
+            "sliderID": "simm"
           })
 
           @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
-            "title": "Асиметричні тарифи"
+            "title": "Асиметричні тарифи",
+            "sliderID": "assim"
           })
 
           @@include('blocks/reason/reason.html', {

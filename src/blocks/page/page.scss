@@ -438,7 +438,7 @@ a {
 
   @media (min-width: $screen-md) {
     justify-content: initial;
-    max-width: auto;
+    max-width: none;
     width: 250px;
   }
 }
