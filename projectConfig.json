@@ -113,7 +113,9 @@
     "tv-card": [],
     "tv-benefits": [],
     "tv-features": [],
-    "tv-tariffs": []
+    "tv-tariffs": [],
+    "home-internet": [],
+    "reason": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

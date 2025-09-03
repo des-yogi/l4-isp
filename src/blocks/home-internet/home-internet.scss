@@ -1,0 +1,26 @@
+.home-internet {
+
+  $block-name:                &; // #{$block-name}__element
+
+  .tariffs__header-col {
+    @include col(md, 10);
+    @include col-offset(xl, 0);
+    @include col(xl, 8);
+
+    & > * {
+      text-align: initial;
+    }
+  }
+
+  .tariffs__select-locations {
+    margin-left: 0;
+  }
+
+  .tariffs__select-filters {
+    justify-content: initial;
+  }
+
+  .tariffs__all {
+    display: none;
+  }
+}
