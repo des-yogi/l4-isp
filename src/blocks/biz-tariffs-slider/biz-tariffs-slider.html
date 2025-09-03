@@ -1,0 +1,89 @@
+<!--DEV
+@ @include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
+  "title": "Симетричні тарифи"
+})
+-->
+
+<section class="biz-tariffs-slider"
+         data-theme-dark="biz-tariffs-slider--dark"
+         data-theme-light="biz-tariffs-slider--light">
+
+  <div class="container  biz-tariffs-slider__header">
+    <div class="row">
+      <div class="biz-tariffs-slider__header-col">
+        <header>
+          <h2 class="biz-tariffs-slider__title">@@title</h2>
+          <div class="biz-tariffs-slider__intro">
+            <p>Підходить для бізнесу, де важливо не лише отримувати, а й передавати великі обсяги даних (відеоконференції, камери спостереження, хмарні сервіси).</p>
+            <p><strong>Гарантовано стабільна робота VPN, VoIP, бекапів, серверів.</strong></p>
+          </div>
+        </header>
+
+        <div class="swiper-controls  biz-tariffs-slider__slider-controls">
+          <div class="btn  btn--secondary  swiper-button-prev  tariffs__btn-prev"
+               data-theme-dark="btn--secondary--dark"
+               data-theme-light="btn--secondary--light"></div>
+          <div class="swiper-pagination  tariffs__pagination"></div>
+          <div class="btn  btn--secondary  swiper-button-next  tariffs__btn-next"
+               data-theme-dark="btn--secondary--dark"
+               data-theme-light="btn--secondary--light"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper  tariffs__slider-content">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide  tariff-card__wrapper">
+        @@include('../../blocks/tariff-card/tariff-card.html', {
+          "title": "СМАРТ 200",
+          "speed": "до 200 Мбіт/с",
+          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+        })
+      </div>
+
+      <div class="swiper-slide  tariff-card__wrapper">
+        @@include('../../blocks/tariff-card/tariff-card.html', {
+          "title": "СМАРТ 300",
+          "speed": "до 300 Мбіт/с",
+          "tvInfo": '326 каналів<a href="#">Перелік каналів</a>',
+        })
+      </div>
+
+      <div class="swiper-slide  tariff-card__wrapper">
+        @@include('../../blocks/tariff-card/tariff-card.html', {
+          "title": "СМАРТ 400",
+          "speed": "до 400 Мбіт/с",
+          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+        })
+      </div>
+
+      <div class="swiper-slide  tariff-card__wrapper">
+        @@include('../../blocks/tariff-card/tariff-card.html', {
+          "title": "СМАРТ 500",
+          "speed": "до 500 Мбіт/с",
+          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+        })
+      </div>
+
+      <div class="swiper-slide  tariff-card__wrapper">
+        @@include('../../blocks/tariff-card/tariff-card.html', {
+          "title": "СМАРТ 600",
+          "speed": "до 600 Мбіт/с",
+          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+        })
+      </div>
+
+      <div class="swiper-slide  tariff-card__wrapper">
+        @@include('../../blocks/tariff-card/tariff-card.html', {
+          "title": "СМАРТ 700",
+          "speed": "до 700 Мбіт/с",
+          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+        })
+      </div>
+
+    </div>
+  </div>
+
+</section>

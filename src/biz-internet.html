@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Інтернет для дому</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="home-internet  biz-internet">
+
+          @@include('blocks/header/header.html', {
+            "title": "Інтернет для дому",
+            "intro": "<p>Підключення до надійного та швидкого домашнього інтернету для квартир і приватних будинків.</p><p>L4 пропонує стабільний інтернет з гігабітною швидкістю, який працює навіть під час відключення електрики. Безкоштовне підключення, легка установка, підтримка 24/7.</p>"
+          })
+
+          <!-- Для всех карточек бизнес-тарифов обязательно убрать (!)
+          aria-labelledby="tariff-…" -->
+          @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
+            "title": "Симетричні тарифи"
+          })
+
+          @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
+            "title": "Асиметричні тарифи"
+          })
+
+          @@include('blocks/reason/reason.html', {
+            "title": "Чому інтернет від L4 — це вибір бізнесу"
+          })
+
+          @@include('blocks/media-block-ext/media-block-ext.html', {
+            "addClass": "",
+            "img": "media-block-1",
+            "title": "Переваги",
+            "text": "<h4>Надійний та швидкісний інтернет для вашого бізнесу</h4><p>Стабільне з'єднання, резервні канали, IP-адреси, цифрове ТБ і сервіс без перерви — для кожного типу підприємства.</p>"
+          })
+
+
+          <div class="container  add-services">
+            <section class="add-services__section">
+              <h2 class="h4  add-services__section-title">Додаткові сервіси</h2>
+
+              <ul class="row  add-services__section-list">
+                <li class="add-services__section-item">
+                  @@include('blocks/service-mini-card/service-mini-card.html', {
+                    "title": "Виклик майстра в квартиру",
+                    "text": "<p>Виїзд на об'єкт та діагностика підключення.</p>",
+                    "price": ""
+                  })
+                </li>
+
+                <li class="add-services__section-item">
+                  @@include('blocks/service-mini-card/service-mini-card.html', {
+                    "title": "Виклик майстра в приватне домоволодіння",
+                    "text": "<p>Виїзд на об'єкт та діагностика підключення.</p>",
+                    "price": ""
+                  })
+                </li>
+
+                <li class="add-services__section-item">
+                  @@include('blocks/service-mini-card/service-mini-card.html', {
+                    "title": "Виклик майстра на точний час",
+                    "text": "<p>Виїзд на об'єкт у день та час, замовлений абонентом.</p>",
+                    "price": ""
+                  })
+                </li>
+
+                <li class="add-services__section-item">
+                  @@include('blocks/service-mini-card/service-mini-card.html', {
+                    "title": "Налаштування WI-FI роутера",
+                    "text": "<p>Налаштування доступу до Інтернету, інтерфейсу Wi-Fi, встановлення захисту бездротового режиму.</p>",
+                    "price": ""
+                  })
+                </li>
+
+                <li class="add-services__section-item">
+                  @@include('blocks/service-mini-card/service-mini-card.html', {
+                    "title": "Налаштування медіаприставки",
+                    "text": "<p>Налаштування доступу до мережі Інтернет та програми TRINITY.TV/SWEET.TV</p>",
+                    "price": ""
+                  })
+                </li>
+
+                <li class="add-services__section-item">
+                  @@include('blocks/service-mini-card/service-mini-card.html', {
+                    "title": "Заміна конектора RJ-45",
+                    "text": "<p>Заміна конектора Ethernet-кабелю на стороні абонента.</p>",
+                    "price": ""
+                  })
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          @@include('blocks/connection-form/connection-form.html')
+
+          @@include('blocks/faq/faq.html')
+
+          @@include('blocks/customer-choice/customer-choice.html')
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>
