@@ -6,8 +6,16 @@
   justify-content: space-between;
   gap: 16px 0;
   height: 100%;
-  padding: 16px;
+  padding: 24px 16px 16px;
   backdrop-filter: blur(10px);
+
+  @media (min-width: $screen-xl) {
+    padding: 24px 20px 20px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    padding: 24px 24px 20px;
+  }
 
   // &__main {
 
