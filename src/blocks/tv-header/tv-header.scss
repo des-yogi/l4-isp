@@ -1,0 +1,54 @@
+.tv-header {
+  $block-name:                &; // #{$block-name}__element
+
+  margin-bottom: 40px;
+
+  &__row {
+    gap: 40px 0;
+  }
+
+  &__text-col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 8);
+  }
+
+  &__logo-col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col-offset(xl, 1);
+    @include col(xl, 3);
+  }
+
+  // &__text {
+
+  // }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__intro {
+
+    * {
+      text-wrap: pretty;
+      hyphens: none;
+      color: var(--text-pale-color);
+    }
+  }
+
+  &__logo {
+    display: flex;
+
+    @media (min-width: $screen-xl) {
+      justify-content: flex-end;
+    }
+
+    svg {
+
+      .megogo {
+        fill: var(--text-color);
+      }
+    }
+  }
+}

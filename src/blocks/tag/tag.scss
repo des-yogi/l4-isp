@@ -60,4 +60,13 @@
     color: var(--grey-900);
     background: var(--orange);
   }
+
+  &--big {
+    height: auto;
+    padding: 4px 12px;
+    font-size: $font-size-lg;
+    font-weight: 500;
+    white-space: nowrap;
+    text-transform: none;
+  }
 }

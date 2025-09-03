@@ -1,0 +1,46 @@
+<!--DEV
+@ @include('blocks/tv-tariffs/tv-tariffs.html', {
+  "addClass": "tv-tariffs--sweet"
+})
+-->
+
+<section class="container  tv-tariffs  @@addClass">
+  <h2 class="visually-hidden">Тарифи на цифрове телебачення SWEET.TV</h2>
+
+  <ul class="tv-tariffs__list">
+    <li class="tv-tariffs__item"
+        data-theme-dark="tv-tariffs__item--dark"
+        data-theme-light="tv-tariffs__item--light">
+      @@include('../../blocks/tv-card/tv-card.html', {
+        "title": "SWEET.TV Мінімальний",
+        "price": "99 грн",
+        "tariffPlan": "Базовий пакет",
+        "channelsNum": "237 каналів"
+      })
+    </li>
+
+    <li class="tv-tariffs__item"
+        data-theme-dark="tv-tariffs__item--dark"
+        data-theme-light="tv-tariffs__item--light">
+      @@include('../../blocks/tv-card/tv-card.html', {
+        "title": "SWEET.TV Середній",
+        "price": "149 грн",
+        "tariffPlan": "Найпопулярніший",
+        "channelsNum": "326 каналів"
+      })
+    </li>
+
+    <li class="tv-tariffs__item"
+        data-theme-dark="tv-tariffs__item--dark"
+        data-theme-light="tv-tariffs__item--light">
+      @@include('../../blocks/tv-card/tv-card.html', {
+        "title": "SWEET.TV Максимальний",
+        "price": "299 грн",
+        "tariffPlan": "Максимум можливостей",
+        "channelsNum": "340 каналів"
+      })
+    </li>
+
+  </ul>
+
+</section>

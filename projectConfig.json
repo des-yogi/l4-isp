@@ -107,7 +107,13 @@
     "product-card": [],
     "product": [],
     "product-slider": [],
-    "shop": []
+    "shop": [],
+    "tv-provider": [],
+    "tv-header": [],
+    "tv-card": [],
+    "tv-benefits": [],
+    "tv-features": [],
+    "tv-tariffs": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

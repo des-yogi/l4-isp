@@ -1,0 +1,111 @@
+<!--DEV
+@ @include('blocks/tv-card/tv-card.html', {
+  "title": "SWEET.TV Мінімальний",
+  "price": "99 грн",
+  "tariffPlan": "Базовий пакет",
+  "channelsNum": "237 каналів"
+})
+-->
+
+<article class="tv-card"
+         data-theme-dark="tv-card--dark"
+         data-theme-light="tv-card--light">
+
+  <div class="tv-card__inner">
+
+    <div class="tv-card__front">
+      <div class="tv-card__front-content">
+        <header class="tv-card__header">
+          <span>Працює без світла</span>
+          <h3 class="tariff-card__title">@@title</h3>
+        </header>
+
+        <ul class="tv-card__opt-list">
+          <li class="tv-card__opt-item">
+            <span class="h4">@@price</span>
+            <span class="tag  tag--big">@@tariffPlan</span>
+          </li>
+
+          <li class="tv-card__opt-item">
+            <span class="h5">
+              @@channelsNum
+              <a href="#">Перелік каналів</a>
+            </span>
+          </li>
+
+          <li class="tv-card__opt-item  tv-card__opt-item--check">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+            <span>Національні канали в HD</span>
+          </li>
+          <li class="tv-card__opt-item  tv-card__opt-item--check">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+            <span>Тематичний контент</span>
+          </li>
+          <li class="tv-card__opt-item  tv-card__opt-item--check">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+            <span>Фільмотека на 788 фільмів та серіалів</span>
+          </li>
+          <li class="tv-card__opt-item  tv-card__opt-item--check">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+            <span>Культові фільми Disney, Universal, Paramount</span>
+          </li>
+          <li class="tv-card__opt-item  tv-card__opt-item--na">
+            <span class="visually-hidden">Недоступно</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+          </li>
+          <li class="tv-card__opt-item  tv-card__opt-item--na">
+            <span class="visually-hidden">Недоступно</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+          </li>
+          <li class="tv-card__opt-item  tv-card__opt-item--na">
+            <span class="visually-hidden">Недоступно</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+          </li>
+        </ul>
+
+        <div class="tv-card__footer">
+          <button class="btn  btn--secondary  btn--icon-only  tv-card__more-btn"
+                  aria-label="Додаткова інформація тариф. Натисніть для зміни."
+                  aria-live="polite"
+                  data-theme-dark="btn--secondary--dark"
+                  data-theme-light="btn--secondary--light"
+                  >
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#info"></use></svg>
+          </button>
+
+          <button class="btn"
+                  data-theme-dark="btn--dark"
+                  data-theme-light="btn--light">
+            <span>Підключитись</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tv-card__back">
+      <div class="tv-card__back-content">
+        <p>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Ipsa magni quis libero ut nam, amet vero quibusdam molestiae sed, ducimus, beatae autem illo repellendus, fuga.</p>
+        <p>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Ipsa magni quis libero ut nam, amet vero quibusdam molestiae sed, ducimus, beatae autem illo repellendus, fuga.</p>
+        <p>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Ipsa magni quis libero ut nam, amet vero quibusdam molestiae sed, ducimus, beatae autem illo repellendus, fuga.</p>
+        <p>Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Ipsa magni quis libero ut nam, amet vero quibusdam molestiae sed, ducimus, beatae autem illo repellendus, fuga.</p>
+
+      </div>
+
+      <div class="tv-card__footer">
+        <button class="btn  btn--secondary  btn--icon-only  tv-card__back-btn"
+                aria-label="Повернутися до основної інформації. Натисніть для зміни."
+                aria-live="polite"
+                data-theme-dark="btn--secondary--dark"
+                data-theme-light="btn--secondary--light"
+                >
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#left-lg"></use></svg>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
