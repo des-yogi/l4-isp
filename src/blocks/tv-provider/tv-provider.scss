@@ -1,0 +1,8 @@
+.tv-provider {
+
+  $block-name:                &; // #{$block-name}__element
+
+  & > .tv-header + * {
+    margin-top: 40px;
+  }
+}

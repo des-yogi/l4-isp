@@ -9,6 +9,7 @@
 * https://des-yogi.github.io/l4-isp/sp-offers
 * https://des-yogi.github.io/l4-isp/sp-offer-single
 * https://des-yogi.github.io/l4-isp/tv-l4
+* https://des-yogi.github.io/l4-isp/tv-provider
 * https://des-yogi.github.io/l4-isp/shop
 * https://des-yogi.github.io/l4-isp/product
 * https://des-yogi.github.io/l4-isp/news

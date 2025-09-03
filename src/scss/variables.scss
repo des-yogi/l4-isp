@@ -39,6 +39,7 @@
   --orange:           #FF5E01;
   --yellow:           #FFBA08;
   --green:            #32BF00;
+  --megogo:           #22C3B1;
 
   // Opacity
   --opacity-white-60: rgba(255, 255, 255, 0.6);
@@ -142,9 +143,13 @@
                                                     rgba(152,16,250,0.5) 5%,
                                                     rgba(190, 216, 255, 1) 13%);
 
-  --corner-gradient-orange: linear-gradient(120deg, rgba(255,94,1,1),
-                                                    rgba(255,94,1,0.5) 5%,
-                                                    rgba(190, 216, 255, 1) 13%);
+   --corner-gradient-orange: linear-gradient(120deg, rgba(255,94,1,1),
+                                                     rgba(255,94,1,0.5) 5%,
+                                                     rgba(190, 216, 255, 1) 13%);
+
+   --corner-gradient-megogo: linear-gradient(120deg, rgba(34,195,177,1),
+                                                     rgba(34,195,177,0.5) 5%,
+                                                     rgba(190, 216, 255, 1) 13%);
 }
 
 [data-theme="dark"] {
@@ -192,6 +197,10 @@
 
   --corner-gradient-orange: linear-gradient(120deg, rgba(255,94,1,1),
                                                     rgba(255,94,1,0.5) 5%,
+                                                    rgba(255,255,255,0.1) 13%);
+
+  --corner-gradient-megogo: linear-gradient(120deg, rgba(34,195,177,1),
+                                                    rgba(34,195,177,0.5) 5%,
                                                     rgba(255,255,255,0.1) 13%);
 }
 

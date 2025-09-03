@@ -114,6 +114,7 @@
       display: flex;
       align-items: center;
       font-size: $font-size-sm;
+      color: var(--text-pale-color);
 
       &::before {
         display: block;
