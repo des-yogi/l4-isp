@@ -558,7 +558,7 @@
 
       <main class="main  main--hero">
 
-        <h1 class="visually-hidden">Головная сторінка сайту L4.UA</h1>
+        <h1 class="visually-hidden">Головная сторінка сайту L4.UA</h1>
 
         <div class="hero" data-theme-dark="hero--dark" data-theme-light="hero--light">
           <div class="swiper  hero__slider">
@@ -579,13 +579,16 @@
                       <div class="hero__slide-decr">
                         <p>з іншої мережі за 72 години!</p>
                       </div>
-                      <a href="#"
-                         class="btn"
-                         data-theme-dark="btn--dark"
-                         data-theme-light="btn--light">
+                      <button class="btn"
+                              type="button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#varyModal"
+                              data-bs-whatever="Підключитись"
+                              data-theme-dark="btn--dark"
+                              data-theme-light="btn--light">
                         <span>Підключитись</span>
                         <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
                   <div class="hero__col-img">
@@ -733,12 +736,12 @@
             </div>
 
           </div>
-        </div>
+        </div>
 
         <section class="container  benefits">
           <div class="row  benefits__row">
 
-            <div class="benefits__col-card">
+            <div class="benefits__col-card">
 
               <article class="service-card "
                        data-theme-dark="service-card--dark"
@@ -755,7 +758,7 @@
 
             </div>
 
-            <div class="benefits__col-card">
+            <div class="benefits__col-card">
 
               <article class="service-card "
                        data-theme-dark="service-card--dark"
@@ -776,7 +779,7 @@
               <h2 class="benefits__title">Надшвидкісний інтернет до 1 Гбіт/с</h2>
             </div>
 
-            <div class="benefits__col-card">
+            <div class="benefits__col-card">
 
               <article class="service-card "
                        data-theme-dark="service-card--dark"
@@ -793,7 +796,7 @@
 
             </div>
 
-            <div class="benefits__col-card">
+            <div class="benefits__col-card">
 
               <article class="service-card "
                        data-theme-dark="service-card--dark"
@@ -823,6 +826,10 @@
             <h4 class="benefits__footer-title">Дізнайтесь про всі переваги підключення</h4>
             <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
             <button class="btn  btn--glow"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#varyModal"
+                    data-bs-whatever="Замовити консультацію"
                     data-theme-dark="btn--glow--dark"
                     data-theme-light="btn--glow--light">
               <span>Замовити консультацію</span>
@@ -3790,29 +3797,138 @@
 
   </div>
 
-  <!-- Search modal -->
+<!-- Search Modal -->
+<div class="modal fade  search-modal"
+     id="searchModal"
+     tabindex="-1"
+     aria-labelledby="searchModalLabel"
+     aria-hidden="true">
 
-  <!-- Search Modal -->
-  <div class="modal fade  search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+  <div class="modal-dialog  modal-dialog-scrollable  modal-dialog-centered">
+    <div class="modal-content"
+         data-theme-dark="modal-content--dark"
+         data-theme-light="modal-content--light">
+      <div class="modal-header">
+        <h4 class="modal-title" id="searchModalLabel">Пошук</h4>
+        <button type="button" class="btn  btn--secondary  btn--icon-only"
+                data-bs-dismiss="modal"
+                aria-label="Закрити"
+                data-theme-dark="btn--secondary--dark"
+                data-theme-light="btn--secondary--light">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
+        </button>
+      </div>
+      <div class="modal-body  search-modal__body">
+        <form id="search-form" class="search-modal__form" action="#" method="post">
+          <label class="field-text"
+             data-theme-dark="field-text--dark"
+             data-theme-light="field-text--light">
+            <!-- <span class="field-text__name">Текст</span> -->
+            <span class="field-text__input-wrap">
+              <input class="field-text__input" type="search" name="search" value="" placeholder="Що ви шукаєте?">
+              <span class="field-text__help-text"></span>
+            </span>
+          </label>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="reset"
+                form="search-form"
+                class="btn  btn--secondary  search-modal__reset-btn"
+                data-theme-dark="btn--secondary--dark"
+                data-theme-light="btn--secondary--light">
+          <span>Скасувати</span>
+        </button>
+        <button form="search-form"
+                type="submit"
+                class="btn  search-modal__submit-btn">
+          <span>Шукати</span>
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Varyable modal -->
+  <div class="modal  fade  vary-modal"
+       id="varyModal"
+       tabindex="-1"
+       aria-labelledby="varyModalLabel"
+       aria-hidden="true">
+
+    <div class="modal-dialog  modal-dialog-scrollable  modal-dialog-centered">
+      <div class="modal-content"
+           data-theme-dark="modal-content--dark"
+           data-theme-light="modal-content--light">
         <div class="modal-header">
-          <h2 class="modal-title fs-5" id="searchModalLabel">Modal title</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h4 class="modal-title" id="varyModalLabel">Пошук</h4>
+          <button type="button" class="btn  btn--secondary  btn--icon-only"
+                  data-bs-dismiss="modal"
+                  aria-label="Закрити"
+                  data-theme-dark="btn--secondary--dark"
+                  data-theme-light="btn--secondary--light">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
+          </button>
         </div>
-        <div class="modal-body">
-          Модал текст...
+        <div class="modal-body  vary-modal__body">
+          <form id="connectForm" class="vary-modal__form" action="#" method="post">
+            <label class="field-text"
+               data-theme-dark="field-text--dark"
+               data-theme-light="field-text--light">
+              <span class="field-text__name">Ім’я</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input  required" type="text" name="name" value="" autocomplete="given-name">
+                <span class="field-text__help-text" data-error="name"></span>
+              </span>
+            </label>
+
+            <label class="field-text"
+               data-theme-dark="field-text--dark"
+               data-theme-light="field-text--light">
+              <span class="field-text__name">Email</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input  required" type="email" name="mail" value="" autocomplete="email">
+                <span class="field-text__help-text" data-error="male"></span>
+              </span>
+            </label>
+
+            <label class="field-text"
+               data-theme-dark="field-text--dark"
+               data-theme-light="field-text--light">
+              <span class="field-text__name">Телефон</span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input  phone-mask  required" type="text" inputmode="tel" name="tel" value="" placeholder="+38 (0__) ___ __ __" autocomplete="tel">
+                <span class="field-text__help-text" data-error="tel"></span>
+              </span>
+            </label>
+
+            <label class="field-text"
+               data-theme-dark="field-text--dark"
+               data-theme-light="field-text--light">
+              <span class="field-text__name">Повідомлення</span>
+              <span class="field-text__input-wrap">
+                <textarea class="field-text__input" name="message" rows="4"></textarea>
+                <span class="field-text__help-text" data-error="message"></span>
+              </span>
+            </label>
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+
+          <button form="connectForm"
+                  type="submit"
+                  class="btn  vary-modal__submit-btn">
+            <span>Шукати</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+          </button>
         </div>
       </div>
     </div>
   </div>
 
 
-  <!-- InfoWindow Template -->
+  <!-- InfoWindow Template -->
   <template id="infowindow-custom">
     <div class="infowindow-template  infowindow-template--light  infowindow-template--below">
          <!-- data-theme-dark="infowindow-template--dark"
@@ -3873,6 +3989,30 @@
     </div>
   </template>
 
+
+  <script>
+    "use strict";
+    document.addEventListener('DOMContentLoaded', function () {
+      const varyModal = document.getElementById('varyModal')
+      if (varyModal) {
+        varyModal.addEventListener('show.bs.modal', event => {
+          // Button that triggered the modal
+          const button = event.relatedTarget
+          // Extract info from data-bs-* attributes
+          const recipient = button.getAttribute('data-bs-whatever')
+          // If necessary, you could initiate an Ajax request here
+          // and then do the updating in a callback.
+
+          // Update the modal's content.
+          const modalTitle = varyModal.querySelector('.modal-title')
+          //const modalBodyInput = varyModal.querySelector('.modal-body input')
+
+          modalTitle.textContent = `${recipient}`
+          //modalBodyInput.value = recipient
+        })
+      }
+    });
+  </script>
 
 
   <!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script> -->

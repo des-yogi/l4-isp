@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Результати пошуку</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="container  search-result">
+          <h1 class="search-result__title">Результати пошуку</h1>
+
+          <div class="row">
+            <div class="search-result__col">
+              <div class="search-result__content">
+
+                <p class="sisea-results  h6  search-result__total">
+                  Всього знайдено 12 входжень для <strong class="simplesearch-highlight">«запит»</strong>
+                </p>
+
+                <ol class="sisea-results-list  search-result__list">
+                  <li class="h5  sisea-result  search-result__list-item">
+                    <a href="#" class="search-result__item-title">Результат 1</a>
+                    <div class="extract  search-result__extract">
+                      <p>…У 2025 році онлайн-активність користувачів зросла як ніколи: відеоконференції, стрімінг, віддалена робота. Саме тому ми адаптуємо мережу під сучасні навантаження. Більше швидкості — комфортніше користування…</p>
+                    </div>
+                  </li>
+
+                  <li class="h5  sisea-result  search-result__list-item">
+                    <a href="#" class="search-result__item-title">Результат 2</a>
+                    <div class="extract  search-result__extract">
+                      <p>…У 2025 році онлайн-активність користувачів зросла як ніколи: відеоконференції, стрімінг, віддалена робота… </p>
+                    </div>
+                  </li>
+
+                  <li class="h5  sisea-result  search-result__list-item">
+                    <a href="#" class="search-result__item-title">Результат 3</a>
+                    <div class="extract  search-result__extract">
+                      <p>…Саме тому ми адаптуємо мережу під сучасні навантаження. Більше швидкості — комфортніше користування…</p>
+                    </div>
+                  </li>
+                </ol>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

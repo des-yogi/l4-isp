@@ -119,7 +119,9 @@
     "biz-internet": [],
     "biz-tariffs-slider": [],
     "legal-internet": [],
-    "government-internet": []
+    "government-internet": [],
+    "search-result": [],
+    "vary-modal": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

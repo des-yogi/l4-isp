@@ -1,3 +1,35 @@
+@@include('../blocks/search-modal/search-modal.html')
+
+@@include('../blocks/vary-modal/vary-modal.html')
+
+<!-- InfoWindow Template -->
+@@include('../blocks/infowindow-template/infowindow-template.html')
+
+<script>
+  "use strict";
+  document.addEventListener('DOMContentLoaded', function () {
+    const varyModal = document.getElementById('varyModal')
+    if (varyModal) {
+      varyModal.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        const recipient = button.getAttribute('data-bs-whatever')
+        // If necessary, you could initiate an Ajax request here
+        // and then do the updating in a callback.
+
+        // Update the modal's content.
+        const modalTitle = varyModal.querySelector('.modal-title')
+        //const modalBodyInput = varyModal.querySelector('.modal-body input')
+
+        modalTitle.textContent = `${recipient}`
+        //modalBodyInput.value = recipient
+      })
+    }
+  });
+</script>
+
+
 <!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script> -->
 <script type="module" src="js/lazy-loader.js"></script>
 <script src="js/lazy-lottie-init.js" defer></script>

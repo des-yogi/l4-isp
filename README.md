@@ -27,4 +27,5 @@
 * https://des-yogi.github.io/l4-isp/faq
 * https://des-yogi.github.io/l4-isp/documents
 * https://des-yogi.github.io/l4-isp/text-page
+* https://des-yogi.github.io/l4-isp/search-result
 * https://des-yogi.github.io/l4-isp/page404
