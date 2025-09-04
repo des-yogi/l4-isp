@@ -3,19 +3,53 @@
 -->
 
 <!-- Search Modal -->
-<div class="modal fade  search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<div class="modal fade  search-modal"
+     id="searchModal"
+     tabindex="-1"
+     aria-labelledby="searchModalLabel"
+     aria-hidden="true">
+
+  <div class="modal-dialog  modal-dialog-scrollable  modal-dialog-centered">
+    <div class="modal-content"
+         data-theme-dark="modal-content--dark"
+         data-theme-light="modal-content--light">
       <div class="modal-header">
-        <h2 class="modal-title fs-5" id="searchModalLabel">Modal title</h2>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="searchModalLabel">Пошук</h4>
+        <button type="button" class="btn  btn--secondary  btn--icon-only"
+                data-bs-dismiss="modal"
+                aria-label="Закрити"
+                data-theme-dark="btn--secondary--dark"
+                data-theme-light="btn--secondary--light">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
+        </button>
       </div>
-      <div class="modal-body">
-        Модал текст...
+      <div class="modal-body  search-modal__body">
+        <form id="search-form" class="search-modal__form" action="#" method="post">
+          <label class="field-text"
+             data-theme-dark="field-text--dark"
+             data-theme-light="field-text--light">
+            <!-- <span class="field-text__name">Текст</span> -->
+            <span class="field-text__input-wrap">
+              <input class="field-text__input" type="search" name="search" value="" placeholder="Що ви шукаєте?">
+              <span class="field-text__help-text"></span>
+            </span>
+          </label>
+        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="reset"
+                form="search-form"
+                class="btn  btn--secondary  search-modal__reset-btn"
+                data-theme-dark="btn--secondary--dark"
+                data-theme-light="btn--secondary--light">
+          <span>Скасувати</span>
+        </button>
+        <button form="search-form"
+                type="submit"
+                class="btn  search-modal__submit-btn">
+          <span>Шукати</span>
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+        </button>
       </div>
     </div>
   </div>
