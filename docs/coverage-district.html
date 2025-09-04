@@ -2729,7 +2729,7 @@
 
   </div>
 
-  <!-- Search modal -->
+  <!-- Search modal -->
 
   <!-- Search Modal -->
   <div class="modal fade  search-modal"
@@ -2844,13 +2844,13 @@
         <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
       </button> -->
     </div>
-  </template>
+  </template>
 
-<!-- Search Modal -->
-<div class="modal fade  search-modal"
-     id="searchModal"
+<!-- Varyable modal -->
+<div class="modal  fade  vary-modal"
+     id="varyModal"
      tabindex="-1"
-     aria-labelledby="searchModalLabel"
+     aria-labelledby="varyModalLabel"
      aria-hidden="true">
 
   <div class="modal-dialog  modal-dialog-scrollable  modal-dialog-centered">
@@ -2858,7 +2858,7 @@
          data-theme-dark="modal-content--dark"
          data-theme-light="modal-content--light">
       <div class="modal-header">
-        <h4 class="modal-title" id="searchModalLabel">Пошук</h4>
+        <h4 class="modal-title" id="varyModalLabel">Пошук</h4>
         <button type="button" class="btn  btn--secondary  btn--icon-only"
                 data-bs-dismiss="modal"
                 aria-label="Закрити"
@@ -2867,30 +2867,54 @@
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
         </button>
       </div>
-      <div class="modal-body  search-modal__body">
-        <form id="search-form" class="search-modal__form" action="#" method="post">
+      <div class="modal-body  vary-modal__body">
+        <form id="connectForm" class="vary-modal__form" action="#" method="post">
           <label class="field-text"
              data-theme-dark="field-text--dark"
              data-theme-light="field-text--light">
-            <!-- <span class="field-text__name">Текст</span> -->
+            <span class="field-text__name">Ім’я</span>
             <span class="field-text__input-wrap">
-              <input class="field-text__input" type="search" name="search" value="" placeholder="Що ви шукаєте?">
-              <span class="field-text__help-text"></span>
+              <input class="field-text__input  required" type="text" name="name" value="" autocomplete="given-name">
+              <span class="field-text__help-text" data-error="name"></span>
+            </span>
+          </label>
+
+          <label class="field-text"
+             data-theme-dark="field-text--dark"
+             data-theme-light="field-text--light">
+            <span class="field-text__name">Email</span>
+            <span class="field-text__input-wrap">
+              <input class="field-text__input  required" type="email" name="mail" value="" autocomplete="email">
+              <span class="field-text__help-text" data-error="male"></span>
+            </span>
+          </label>
+
+          <label class="field-text"
+             data-theme-dark="field-text--dark"
+             data-theme-light="field-text--light">
+            <span class="field-text__name">Телефон</span>
+            <span class="field-text__input-wrap">
+              <input class="field-text__input  phone-mask  required" type="text" inputmode="tel" name="tel" value="" placeholder="+38 (0__) ___ __ __" autocomplete="tel">
+              <span class="field-text__help-text" data-error="tel"></span>
+            </span>
+          </label>
+
+          <label class="field-text"
+             data-theme-dark="field-text--dark"
+             data-theme-light="field-text--light">
+            <span class="field-text__name">Повідомлення</span>
+            <span class="field-text__input-wrap">
+              <textarea class="field-text__input" name="message" rows="4"></textarea>
+              <span class="field-text__help-text" data-error="message"></span>
             </span>
           </label>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="reset"
-                form="search-form"
-                class="btn  btn--secondary  search-modal__reset-btn"
-                data-theme-dark="btn--secondary--dark"
-                data-theme-light="btn--secondary--light">
-          <span>Скасувати</span>
-        </button>
-        <button form="search-form"
+
+        <button form="connectForm"
                 type="submit"
-                class="btn  search-modal__submit-btn">
+                class="btn  vary-modal__submit-btn">
           <span>Шукати</span>
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
         </button>
@@ -2898,145 +2922,6 @@
     </div>
   </div>
 </div>
-
-  <!-- Varyable modal -->
-  <div class="modal  fade  vary-modal"
-       id="varyModal"
-       tabindex="-1"
-       aria-labelledby="varyModalLabel"
-       aria-hidden="true">
-
-    <div class="modal-dialog  modal-dialog-scrollable  modal-dialog-centered">
-      <div class="modal-content"
-           data-theme-dark="modal-content--dark"
-           data-theme-light="modal-content--light">
-        <div class="modal-header">
-          <h4 class="modal-title" id="varyModalLabel">Пошук</h4>
-          <button type="button" class="btn  btn--secondary  btn--icon-only"
-                  data-bs-dismiss="modal"
-                  aria-label="Закрити"
-                  data-theme-dark="btn--secondary--dark"
-                  data-theme-light="btn--secondary--light">
-            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
-          </button>
-        </div>
-        <div class="modal-body  vary-modal__body">
-          <form id="connectForm" class="vary-modal__form" action="#" method="post">
-            <label class="field-text"
-               data-theme-dark="field-text--dark"
-               data-theme-light="field-text--light">
-              <span class="field-text__name">Ім’я</span>
-              <span class="field-text__input-wrap">
-                <input class="field-text__input  required" type="text" name="name" value="" autocomplete="given-name">
-                <span class="field-text__help-text" data-error="name"></span>
-              </span>
-            </label>
-
-            <label class="field-text"
-               data-theme-dark="field-text--dark"
-               data-theme-light="field-text--light">
-              <span class="field-text__name">Email</span>
-              <span class="field-text__input-wrap">
-                <input class="field-text__input  required" type="email" name="mail" value="" autocomplete="email">
-                <span class="field-text__help-text" data-error="male"></span>
-              </span>
-            </label>
-
-            <label class="field-text"
-               data-theme-dark="field-text--dark"
-               data-theme-light="field-text--light">
-              <span class="field-text__name">Телефон</span>
-              <span class="field-text__input-wrap">
-                <input class="field-text__input  phone-mask  required" type="text" inputmode="tel" name="tel" value="" placeholder="+38 (0__) ___ __ __" autocomplete="tel">
-                <span class="field-text__help-text" data-error="tel"></span>
-              </span>
-            </label>
-
-            <label class="field-text"
-               data-theme-dark="field-text--dark"
-               data-theme-light="field-text--light">
-              <span class="field-text__name">Повідомлення</span>
-              <span class="field-text__input-wrap">
-                <textarea class="field-text__input" name="message" rows="4"></textarea>
-                <span class="field-text__help-text" data-error="message"></span>
-              </span>
-            </label>
-          </form>
-        </div>
-        <div class="modal-footer">
-
-          <button form="connectForm"
-                  type="submit"
-                  class="btn  vary-modal__submit-btn">
-            <span>Шукати</span>
-            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- InfoWindow Template -->
-  <template id="infowindow-custom">
-    <div class="infowindow-template  infowindow-template--light  infowindow-template--below">
-         <!-- data-theme-dark="infowindow-template--dark"
-         data-theme-light="infowindow-template--light" -->
-      <!-- aria-modal="true" role="dialog" добавить при открытии -->
-      <div class="infowindow-template__inner">
-        <div class="infowindow-template__power-supply">
-          <span>Безперебійне живлення:</span>
-          <span style="font-weight: 500; color: #277DFF;">
-            <span class="infowindow-template__backup-time">72</span>&thinsp;h
-          </span>
-        </div>
-        <h3 id="infowindow-title" class="infowindow-template__title">
-          <span class="infowindow-template__street">вул. Велика Васильківська,</span>
-          <span class="infowindow-template__apartment">23</span>
-        </h3>
-        <form class="infowindow-template__form" action="#" method="post">
-          <input type="hidden" name="street" value="">
-          <input type="hidden" name="house" value="">
-
-          <div class="infowindow-template__input-group">
-            <label class="field-text  field-text--light"
-                   >
-                   <!-- data-theme-dark="field-text--dark"
-                   data-theme-light="field-text--light" -->
-
-              <span class="visually-hidden">Квартира</span>
-              <span class="field-text__input-wrap">
-                <input class="field-text__input  required" type="text" name="apartment" value="" placeholder="Квартира" aria-required="true" autocomplete="address-level4" autofocus>
-                <span class="field-text__help-text" data-error="apartment"></span>
-              </span>
-            </label>
-
-            <label class="field-text  field-text--light"
-                   >
-                   <!-- data-theme-dark="field-text--dark"
-                   data-theme-light="field-text--light" -->
-              <span class="visually-hidden">Телефон</span>
-              <span class="field-text__input-wrap">
-                <input class="field-text__input  phone-mask  required" type="text" inputmode="tel" name="tel" value="" placeholder="+38 (0__) ___ __ __" aria-required="true" autocomplete="tel">
-                <span class="field-text__help-text" data-error="tel"></span>
-              </span>
-            </label>
-
-            <button class="btn" type="submit" style="width: 100%;">
-              <span>Відправити</span>
-              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-            </button>
-          </div>
-        </form>
-      </div>
-
-  <!--     <button class="btn btn--secondary btn--secondary--light btn--icon-only  infowindow-template__close"
-              type="button"
-              aria-label="Закрити">
-        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
-      </button> -->
-    </div>
-  </template>
 
 
   <script>
