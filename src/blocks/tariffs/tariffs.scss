@@ -3,7 +3,7 @@
 
   @include block-margin;
   position: relative;
-  //overflow: hidden;
+  //overflow: hidden; // не активен, иначе обрежет анимашку
 
   // @media (min-width: $screen-xxl) {
   //   overflow: hidden;
@@ -37,9 +37,35 @@
     }
   }
 
-  // &__slider-wrapper {
+  &__slider-wrapper {
 
-  // }
+    &--short {
+      //overflow: hidden;
+      @include gradient-border-mask(
+        2px,
+        $border-radius--32,
+        var(--corner-gradient-blue-mod),
+        transparent
+      )
+
+      @media (max-width: $screen-xl - 1) {
+        padding-right: 0;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+
+        &::before {
+          border-top-right-radius: 0 !important;
+          border-bottom-right-radius: 0 !important;
+        }
+      }
+
+      // &#{$block-name}__slider-wrapper--dark {
+      // }
+
+      // &#{$block-name}__slider-wrapper--light {
+      // }
+    }
+  }
 
   &__controls {
     position: relative;
@@ -85,17 +111,71 @@
     justify-content: initial;
     padding-right: 0 !important;
 
+    // &:not(.tariffs__slider--short) {
+    //   padding-right: 0 !important;
+    // }
+
+    &--short {
+
+      @media (max-width: $screen-xl - 1) {
+        padding-right: 0 !important;
+      }
+
+      .tariffs__slide-caption,
+      .tariff-card__header {
+        height: 92px;
+      }
+
+      .tariff-card__footer {
+        padding-bottom: 24px;
+      }
+
+      #{$block-name}__slide-header {
+        border-radius: 0;
+
+        &::before {
+          display: none !important;
+        }
+      }
+
+      #{$block-name}__slider-content {
+        border-top-color: transparent;
+      }
+
+      // &#{$block-name}__slider--dark {}
+
+      // #{$block-name}__slider--light {}
+    }
+
+    // &--dark { }
+
     &--light {
 
       #{$block-name}__slide-header {
 
-        @media (min-width: $screen-md) {
+        &::before {
 
-          &::before {
+          background: linear-gradient(135deg,
+                          var(--blue-500),
+                          rgba(39, 125, 255, 0.24) 15%,
+                          var(--blue-150) 50%,
+                          transparent 60%);
+
+          @media (min-width: $screen-md) {
+
             background: linear-gradient(140deg,
-              var(--blue-500), rgba(39, 125, 255, 0.24) 25%, var(--blue-150) 40%, transparent 74%);
+                          var(--blue-500),
+                          rgba(39, 125, 255, 0.24) 25%,
+                          var(--blue-150) 40%,
+                          transparent 74%);
           }
         }
+
+        // @media (min-width: $screen-md) {
+
+        //   &::before {
+        //   }
+        // }
       }
 
       #{$block-name}__header-item {
@@ -113,12 +193,23 @@
 
   &__slide-header {
 
+    @include gradient-border-mask(
+      2px,
+      24px,
+      linear-gradient(130deg, var(--blue-500),
+                              var(--opacity-white-12) 10%,
+                              transparent 100%),
+                              rgba(0, 0, 0, 0)
+    )
+
     @media (min-width: $screen-md) {
       flex: 0 1;
       flex-basis: 330px;
       max-width: 330px;
       min-width: 300px;
       padding-left: 40px;
+      padding-bottom: 24px;
+
       @include gradient-border-mask(
         2px,
         64px,
@@ -128,11 +219,13 @@
     }
 
     &::before {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
 
       @media (min-width: $screen-md) {
         border-top-right-radius: 0;
-        border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+        //border-bottom-left-radius: 0;
       }
     }
   }
@@ -214,6 +307,11 @@
     @media (min-width: $screen-md) {
       flex: 0 1 auto;
     }
+
+    // &--short {
+    //   border-right: 2px solid var(--opacity-white-12);
+    //   border-top-left-radius: 24px;
+    // }
   }
 
   &__slider-controls {
@@ -260,6 +358,21 @@
       bottom: -180px;
       //aspect-ratio: 16 / 10;
       filter: blur(130px);
+    }
+  }
+
+  &--short {
+    //overflow-x: hidden;
+
+    @media (max-width: $screen-xl - 1) {
+      padding-right: 0;
+    }
+
+    .tariffs__header > .row {
+
+      @media (max-width: $screen-xl - 1) {
+        margin-right: 0;
+      }
     }
   }
 }

@@ -118,7 +118,8 @@
     "reason": [],
     "biz-internet": [],
     "biz-tariffs-slider": [],
-    "legal-internet": []
+    "legal-internet": [],
+    "government-internet": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

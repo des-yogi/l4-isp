@@ -135,6 +135,11 @@
                                                   rgba(39,125,255,0.5) 5%,
                                                   rgba(190, 216, 255, 1) 13%);
 
+  --corner-gradient-blue-mod: linear-gradient(105deg, rgba(39,125,255,1),
+                                                      rgba(39,125,255,0.5) 5%,
+                                                      rgba(190, 216, 255, 1) 13%,
+                                                      rgba(190, 216, 255, 0.1) 90%);
+
   --corner-gradient-green: linear-gradient(120deg, rgba(50,191,0,1),
                                                    rgba(50,191,0,0.5) 5%,
                                                    rgba(190, 216, 255, 1) 13%);
@@ -186,6 +191,11 @@
   --corner-gradient-blue: linear-gradient(120deg, rgba(39,125,255,1),
                                                   rgba(39,125,255,0.5) 5%,
                                                   rgba(255,255,255,0.1) 13%);
+
+  --corner-gradient-blue-mod: linear-gradient(105deg, rgba(39,125,255,1),
+                                                      rgba(39,125,255,0.5) 5%,
+                                                      rgba(255,255,255,0.1) 13%,
+                                                      rgba(255,255,255, 0.03));
 
   --corner-gradient-green: linear-gradient(120deg, rgba(50,191,0,1),
                                                    rgba(50,191,0,0.5) 5%,
