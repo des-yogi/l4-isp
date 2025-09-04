@@ -117,7 +117,8 @@
     "home-internet": [],
     "reason": [],
     "biz-internet": [],
-    "biz-tariffs-slider": []
+    "biz-tariffs-slider": [],
+    "legal-internet": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
