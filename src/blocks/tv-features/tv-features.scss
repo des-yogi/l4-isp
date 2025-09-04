@@ -3,11 +3,21 @@
 
   @include block-margin;
 
+  &__title {
+    margin-bottom: 24px;
+  }
+
   &__list {
     padding-left: 0;
     margin: 0;
     list-style: none;
     overflow: hidden;
+    @include gradient-border-mask(
+      2px,
+      $border-radius--24,
+      var(--corner-gradient-blue),
+      transparent
+    )
 
     @media (min-width: $screen-xl) {
       display: flex;
@@ -87,6 +97,7 @@
   }
 
   &__item-icon {
+    color: var(--blue);
 
     svg {
       display: inline-flex;
@@ -106,6 +117,14 @@
     hyphens: none;
     text-wrap: balance;
     color: var(--text-pale-color);
+
+    & > ul {
+      list-style: initial;
+    }
+
+    & > * {
+      text-wrap: pretty;
+    }
   }
 
 
