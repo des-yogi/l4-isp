@@ -138,9 +138,8 @@
     }
   }
 
-  &__header {
-
-  }
+  // &__header {
+  // }
 
   &__header,
   &__footer {
@@ -156,9 +155,8 @@
     flex-basis: clamp(480px, 70%, 100%);
   }
 
-  &__warning {
-
-  }
+  // &__warning {
+  // }
 
   &__header-icon,
   &__footer-icon {
@@ -190,19 +188,15 @@
     }
   }
 
-  &__footer {
+  // &__footer {
+  // }
 
-  }
+  // &__footer-text {
+  // }
 
-  &__footer-text {
+  // &__footer-icon {
+  // }
 
-  }
-
-  &__footer-icon {
-
-  }
-
-  &__tips {
-
-  }
+  // &__tips {
+  // }
 }
