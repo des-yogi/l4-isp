@@ -15,24 +15,71 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
+    gap: 8px;
     list-style: none;
-    margin: 0;
     padding-left: 0;
+    margin: 0;
   }
 
   &__item {
-    margin-top: 0;
-    margin-right: 0.5em;
+    margin: 0;
 
-    &:last-child {
-      margin-right: 0;
+    .btn {
+      background-size: 8px 14px !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
     }
 
     &.active {
 
-      a {
-        color: $main-color;
+      .btn {
+        color: var(--blue-500);
         pointer-events: none;
+
+        &.btn--secondary--dark {
+          background: var(--opacity-white-8);
+        }
+
+        &.btn--secondary--light {
+          background:
+            linear-gradient(180deg, rgba(39, 125, 255, 0.04) 0%,
+                                    rgba(39, 125, 255, 0.04) 100%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%,
+                                    rgba(255, 255, 255, 0.5) 100%);
+          box-shadow: var(--blue-shadow);
+
+          &::before {
+            background: var(--blue-150);
+          }
+        }
+      }
+    }
+
+    &.disabled {
+
+      .btn {
+        background: transparent;
+        box-shadow: none !important;
+        //background-repeat: no-repeat;
+        pointer-events: none;
+
+        &.btn--secondary--dark {
+          color: var(--grey-600) !important;
+          background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=#475569); // --grey-600
+
+          &::before {
+            background: var(--opacity-white-12);
+          }
+        }
+
+        &.btn--secondary--light {
+          color: var(--grey-500) !important;
+          background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=#64748B); // --grey-500
+
+          &::before {
+            background: var(--opacity-black-8);
+          }
+        }
       }
     }
 
@@ -44,6 +91,14 @@
         background-repeat: no-repeat;
         background-position: center;
       }
+
+      .btn--secondary--dark {
+        background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$white);
+      }
+
+      .btn--secondary--light {
+        background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=#121721); // grey-900
+      }
     }
 
     &--prev {
@@ -51,15 +106,14 @@
 
       #{$block-name}__link {
         transform: scale(-1, 1);
-        background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$text-color);
+
+        &::before {
+          transform: scale(-1, -1);
+        }
 
         &:hover,
         &:focus {
-          background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$white);
-        }
-
-        &--disabled {
-          background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$text-muted);
+          background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$main-color);
         }
       }
     }
@@ -68,48 +122,12 @@
       //margin-left: 20px;
 
       #{$block-name}__link {
-        background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$text-color);
 
         &:hover,
         &:focus {
-          background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$white);
-        }
-
-        &--disabled {
-          background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$text-muted);
+          background-image: svg-load('../blocks/pagination/bg-img/right-arrow-icon.svg', fill=$main-color);
         }
       }
-    }
-  }
-
-  &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    color: $text-muted;
-    background-color: $white;
-    border-radius: 0;
-    transition: all 0.2s ease-out;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-      color: $white;
-      background-color: $main-color;
-    }
-
-    &--disabled,
-    &:disabled {
-      //background-color: $light-bg;
-      pointer-events: none;
     }
   }
 }
