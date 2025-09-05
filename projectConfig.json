@@ -121,7 +121,10 @@
     "legal-internet": [],
     "government-internet": [],
     "search-result": [],
-    "vary-modal": []
+    "vary-modal": [],
+    "speed-test": [],
+    "speed-test-warning": [],
+    "speed-test-panel": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

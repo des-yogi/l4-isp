@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="uk" prefix="og: https://ogp.me/ns#"  data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>L4 Speed Test</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас відключений JavaScript. Приносимо свої вибачення, але це ускладнює використання даного сайту.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main">
+
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="speed-test">
+
+          @@include('blocks/header/header.html', {
+            "title": "L4 — Speedtest вашого інтернету",
+            "intro": "<p>Досліджуйте швидкість вашого інтернету за лічені секунди! Наш онлайн-тест дозволяє перевірити швидкість завантаження, віддачі та затримку. Просто відкрийте браузер і дізнайтеся, як швидко працює ваш інтернет.</p>"
+          })
+
+          <section class="container  speed-test__features">
+
+            <div class="row  speed-test__features-header">
+              <div class="speed-test__features-col">
+                <h2 class="speed-test__features-title">Як працює тест швидкості?</h2>
+                <div class="speed-test__features-text">
+                  <p>Сервіс Speedtest автоматично підбирає найближчий сервер L4 для максимально точних результатів.</p>
+                  <p>Ми вимірюємо три ключові показники вашого інтернет-з'єднання:</p>
+                </div>
+              </div>
+            </div>
+
+            <ul class="speed-test__features-list">
+
+              <li class="speed-test__features-item"
+                  data-theme-dark="speed-test__features-item--dark"
+                  data-theme-light="speed-test__features-item--light">
+                <span class="speed-test__features-icon" aria-hidden="true">
+                  <img src="img/download-line-40.svg" alt="">
+                </span>
+                <p class="h5  speed-test__features-item-title">Швидкість завантаження</p>
+                <p class="speed-test__features-item-descr">Швидкість отримання даних з інтернету на ваш пристрій. Важлива для перегляду відео, завантаження файлів та веб-серфінгу.</p>
+              </li>
+
+              <li class="speed-test__features-item"
+                  data-theme-dark="speed-test__features-item--dark"
+                  data-theme-light="speed-test__features-item--light">
+                <span class="speed-test__features-icon" aria-hidden="true">
+                  <img src="img/upload-line-40.svg" alt="">
+                </span>
+                <p class="h5  speed-test__features-item-title">Швидкість віддачі</p>
+                <p class="speed-test__features-item-descr">Швидкість передачі даних з вашого пристрою в інтернет. Критична для відеодзвінків, стрімінгу та завантаження файлів в хмару.</p>
+              </li>
+
+              <li class="speed-test__features-item"
+                  data-theme-dark="speed-test__features-item--dark"
+                  data-theme-light="speed-test__features-item--light">
+                <span class="speed-test__features-icon" aria-hidden="true">
+                  <img src="img/ping-line-40.svg" alt="">
+                </span>
+                <p class="h5  speed-test__features-item-title">Затримка (Ping)</p>
+                <p class="speed-test__features-item-descr">Час, який потрібен для зв'язку між вашим пристроєм і сервером. Особливо важливо для онлайн-ігор та відеоконференцій.</p>
+              </li>
+
+            </ul>
+
+          </section>
+
+          <section class="container  speed-test__widget">
+            <h2 class="visually-hidden">Віджет Speedtest. Перевірте швидкість вашого з'єднання</h2>
+            <p>Speedtedt widget here…</p>
+          </section>
+
+          <section class="container  speed-test__features">
+            <h2 class="h3  speed-test__features-title">Чому важливо перевіряти швидкість інтернету?</h2>
+            <!-- <div class="row  speed-test__features-header">
+              <div class="speed-test__features-col">
+                <div class="speed-test__features-text">
+                  <p></p>
+                </div>
+              </div>
+            </div> -->
+
+            <ul class="speed-test__features-list">
+
+              <li class="speed-test__features-item"
+                  data-theme-dark="speed-test__features-item--dark"
+                  data-theme-light="speed-test__features-item--light">
+                <span class="speed-test__features-icon" aria-hidden="true">
+                  <img src="img/attention-40.svg" alt="" loading="lazy">
+                </span>
+                <p class="h5  speed-test__features-item-title">Повільне завантаження сайтів</p>
+                <p class="speed-test__features-item-descr">Відчуваєте, що сайти завантажуються повільно?</p>
+              </li>
+
+              <li class="speed-test__features-item"
+                  data-theme-dark="speed-test__features-item--dark"
+                  data-theme-light="speed-test__features-item--light">
+                <span class="speed-test__features-icon" aria-hidden="true">
+                  <img src="img/video-lag-40.svg" alt="" loading="lazy">
+                </span>
+                <p class="h5  speed-test__features-item-title">Затримки в відеозв'язку</p>
+                <p class="speed-test__features-item-descr">Затримки під час відеозв'язку або ігор?</p>
+              </li>
+
+              <li class="speed-test__features-item"
+                  data-theme-dark="speed-test__features-item--dark"
+                  data-theme-light="speed-test__features-item--light">
+                <span class="speed-test__features-icon" aria-hidden="true">
+                  <img src="img/tariff-check-40.svg" alt="" loading="lazy">
+                </span>
+                <p class="h5  speed-test__features-item-title">Перевірка тарифу</p>
+                <p class="speed-test__features-item-descr">Перевіряєте, чи відповідає ваша швидкість тарифу?</p>
+              </li>
+
+            </ul>
+
+            @@include('blocks/speed-test-panel/speed-test-panel.html')
+
+          </section>
+
+          @@include('blocks/speed-test-warning/speed-test-warning.html')
+
+          @@include('blocks/faq/faq.html')
+
+          @@include('blocks/customer-choice/customer-choice.html')
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  <!-- Search modal -->
+  @@include('blocks/search-modal/search-modal.html')
+
+  <!-- InfoWindow Template -->
+  @@include('blocks/infowindow-template/infowindow-template.html')
+
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

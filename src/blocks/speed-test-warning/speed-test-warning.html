@@ -1,0 +1,65 @@
+<!--DEV
+@ @include('blocks/speed-test-warning/speed-test-warning.html')
+-->
+
+<section class="container  speed-test-warning">
+
+  <h2 class="visually-hidden">Фактори, що впливають на швидкість вашого підключення</h2>
+  <p class="h3 speed-test-warning__title">Що може вплинути на швидкість?</p>
+
+  <div class="speed-test-warning__inner"
+       data-theme-dark="speed-test-warning__inner--dark"
+       data-theme-light="speed-test-warning__inner--light">
+
+    <div class="speed-test-warning__header">
+      <div class="speed-test-warning__header-text">
+        <p class="h5  speed-test-warning__warning">Важливо:</p>
+        <p>Фактори, які можуть спотворити результати тестування швидкості інтернету.</p>
+      </div>
+      <div class="speed-test-warning__header-icon" aria-hidden="true">
+        <img src="img/device-plus-48.svg" alt="" loading="lazy">
+      </div>
+    </div>
+
+    <ul class="speed-test-warning__list">
+
+      <li class="speed-test-warning__item">
+        <p class="h5">Завантаження на інших пристроях</p>
+        <p>Активні завантаження файлів, відео або оновлення на інших пристроях у мережі можуть значно знижувати швидкість.</p>
+      </li>
+
+      <li class="speed-test-warning__item">
+        <p class="h5">Wi-Fi замість дротового з'єднання</p>
+        <p>Бездротове з'єднання завжди повільніше за дротове через інтерференцію та обмеження технології.</p>
+      </li>
+
+      <li class="speed-test-warning__item">
+        <p class="h5">VPN та антивірусне ПЗ</p>
+        <p>VPN-сервіси та деякі антивірусні програми можуть сповільнювати інтернет-з'єднання через додаткове шифрування.</p>
+      </li>
+
+      <li class="speed-test-warning__item">
+        <p class="h5">Застаріле мережеве обладнання</p>
+        <p>Старі роутери, мережеві карти або кабелі можуть обмежувати максимальну швидкість підключення.</p>
+      </li>
+
+    </ul>
+
+    <div class="speed-test-warning__footer">
+      <div class="speed-test-warning__footer-text">
+        <p class="h5  speed-test-warning__tips">Рекомендації від L4</p>
+        <p>Для найточніших результатів тестування рекомендуємо:</p>
+        <ul>
+          <li>Підключити кабель безпосередньо до комп'ютера</li>
+          <li>Закрити всі фонові програми та завантаження</li>
+          <li>Тимчасово відключити VPN та антивірус</li>
+          <li>Переконатися, що інші пристрої не використовують інтернет</li>
+        </ul>
+      </div>
+      <div class="speed-test-warning__footer-icon">
+        <img src="img/shield-48.svg" alt="" loading="lazy">
+      </div>
+    </div>
+
+  </div>
+</section>
