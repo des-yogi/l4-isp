@@ -1,0 +1,63 @@
+.speed-test-panel {
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 16px;
+  box-shadow: var(--blue-shadow);
+
+  @media (min-width: $screen-md) {
+    padding: 24px;
+  }
+
+  &__icon {
+    flex: 0 0 62px;
+    width: 62px;
+    height: 40px;
+
+    svg {
+      width: 60px;
+      max-width: none;
+    }
+  }
+
+  &__text {
+    flex: 1 1;
+    flex-basis: clamp(480px, 70%, 100%);
+
+    &:empty,
+    &:has(p:empty) {
+      display: none;
+    }
+
+    p {
+      hyphens: none;
+      text-wrap: pretty;
+      color: var(--text-pale-color);
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &--dark {
+    @include gradient-border-mask(
+      2px,
+      $border-radius--12,
+      var(--blue-500),
+      var(--blue-900)
+    )
+  }
+
+  &--light {
+    @include gradient-border-mask(
+      2px,
+      $border-radius--12,
+      var(--blue-500),
+      var(--opacity-blue-20)
+    )
+  }
+}
