@@ -27,9 +27,239 @@
             "intro": "<p>Підключення до надійного та швидкого домашнього інтернету для квартир і приватних будинків.</p><p>L4 пропонує стабільний інтернет з гігабітною швидкістю, який працює навіть під час відключення електрики. Безкоштовне підключення, легка установка, підтримка 24/7.</p>"
           })
 
-          @@include('blocks/tariffs/tariffs.html')
+          <!-- - Тарифы без анимации - -->
+          <article class="tariffs">
+            <div class="container  tariffs__header">
+              <div class="row">
+                <div class="tariffs__header-col">
+                  <h2 class="tariffs__title">Тарифи</h2>
+                  <div class="tariffs__intro">
+                    <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
+                    <p><span>Ми знаходимо рішення для кожного абонента!</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tariffs__slider-wrapper">
+
+              <div class="container  tariffs__controls">
+
+                <div class="tariffs__select-locations">
+                  <div class="choices__wrapper"
+                       data-theme-dark="choices__wrapper--dark"
+                       data-theme-light="choices__wrapper--light">
+                    <select class="choices"
+                            name="any"
+                            aria-label="Виберіть область">
+                      <option selected disabled>Виберіть область:</option>
+                      <option value="value1">Область 1</option>
+                      <option value="value2">Область 2</option>
+                      <option value="value3">Область 3</option>
+                      <option value="value4">Область 4</option>
+                    </select>
+                    <span class="field-select__help-text error"></span>
+                  </div>
+
+                  <div class="choices__wrapper"
+                       data-theme-dark="choices__wrapper--dark"
+                       data-theme-light="choices__wrapper--light">
+                    <select class="choices"
+                            name="any"
+                            aria-label="Виберіть населений пункт">
+                      <option selected disabled>Виберіть населений пункт:</option>
+                      <option value="value1">Місто 1</option>
+                      <option value="value2">Місто 2</option>
+                      <option value="value3">Місто 3</option>
+                      <option value="value4">Місто 4</option>
+                    </select>
+                    <span class="field-select__help-text error"></span>
+                  </div>
+                </div>
+
+                <div class="tariffs__select-filters">
+
+                  <div class="field-filter"
+                       data-theme-dark="field-filter--dark"
+                       data-theme-light="field-filter--light">
+                    <div class="field-filter__title">Підключення:</div>
+
+                    <div class="field-filter__input-group">
+                      <label class="field-filter__name">
+                        <input class="field-filter__input" type="radio" name="connect" value="home" checked>
+                        <span class="field-filter__name-text">Для дому</span>
+                      </label>
+                      <label class="field-filter__name">
+                        <input class="field-filter__input" type="radio" name="connect" value="business">
+                        <span class="field-filter__name-text">Для бізнесу</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="field-filter"
+                       data-theme-dark="field-filter--dark"
+                       data-theme-light="field-filter--light">
+                    <div class="field-filter__title">Швидкість:</div>
+
+                    <div class="field-filter__input-group">
+                      <label class="field-filter__name">
+                        <input class="field-filter__input" type="radio" name="speed" value="all-speed" checked>
+                        <span class="field-filter__name-text">Усі</span>
+                      </label>
+                      <label class="field-filter__name">
+                        <input class="field-filter__input" type="radio" name="speed" value="speed-200">
+                        <span class="field-filter__name-text">до 200 Мбіт/с</span>
+                      </label>
+                      <label class="field-filter__name">
+                        <input class="field-filter__input" type="radio" name="speed" value="speed-500">
+                        <span class="field-filter__name-text">до 500 Мбіт/с</span>
+                      </label>
+                      <label class="field-filter__name">
+                        <input class="field-filter__input" type="radio" name="speed" value="speed-1000">
+                        <span class="field-filter__name-text">до 1 Гбіт/с</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="field-toggler">
+                    <!-- <div class="field-toggler__title">Телебачення:</div> -->
+                    <div class="field-toggler__input-wrap">
+                      <label class="field-toggler__name">
+                        <input class="field-toggler__input" type="checkbox" name="tv" value="tv">
+                        <span class="field-toggler__name-text">Телебачення:</span>
+                      </label>
+                      <!-- <div class="field-toggler__help-text"></div> -->
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <section class="container  tariffs__slider" data-theme-dark="tariffs__slider--dark" data-theme-light="tariffs__slider--light">
+                <h3 class="visually-hidden">Слайдер доступних тарифів</h3>
+
+                <header class="tariffs__slide-header">
+
+                  <h4 class="h5  tariffs__slide-caption  tariffs__slide-caption--header">
+                    <span>Тариф</span>
+                  </h4>
+
+                  <ul class="list-nostyled  tariffs__header-list">
+                    <li class="tariffs__header-item" id="tariff-speed">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#speed"></use></svg>
+                      <span>Швидкість</span>
+                    </li>
+                    <li class="tariffs__header-item" id="tariff-ip">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#ip"></use></svg>
+                      <span>Динамічний білий IP</span>
+                    </li>
+                    <li class="tariffs__header-item" id="tariff-tv">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tv"></use></svg>
+                      <span>Телебачення</span>
+                    </li>
+                    <li class="tariffs__header-item" id="tariff-support">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#support"></use></svg>
+                      <span>Підтримка</span>
+                    </li>
+                    <li class="tariffs__header-item" id="tariff-connect">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#connect"></use></svg>
+                      <span>Підключення</span>
+                    </li>
+                    <li class="tariffs__header-item" id="tariff-service">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#service"></use></svg>
+                      <span>Сервіс</span>
+                    </li>
+                    <li class="tariffs__header-item" id="tariff-price">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet-line"></use></svg>
+                      <span>Ціна</span>
+                    </li>
+                  </ul>
+
+                  <div class="swiper-controls  tariffs__slider-controls">
+                    <div class="btn  btn--secondary  swiper-button-prev  tariffs__btn-prev"
+                         data-theme-dark="btn--secondary--dark"
+                         data-theme-light="btn--secondary--light"></div>
+                    <div class="swiper-pagination  tariffs__pagination"></div>
+                    <div class="btn  btn--secondary  swiper-button-next  tariffs__btn-next"
+                         data-theme-dark="btn--secondary--dark"
+                         data-theme-light="btn--secondary--light"></div>
+                  </div>
+
+                  <a href="#" class="btn  btn--secondary  tariffs__all" data-theme-dark="btn--secondary--dark" data-theme-light="btn--secondary--light">
+                    <span>Усі тарифи</span>
+                  </a>
+                </header>
+
+                <div class="swiper  tariffs__slider-content">
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide  tariff-card__wrapper">
+                      @@include('blocks/tariff-card/tariff-card.html', {
+                        "title": "СМАРТ 200",
+                        "speed": "до 200 Мбіт/с",
+                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                      })
+                    </div>
+
+                    <div class="swiper-slide  tariff-card__wrapper">
+                      @@include('blocks/tariff-card/tariff-card.html', {
+                        "title": "СМАРТ 300",
+                        "speed": "до 300 Мбіт/с",
+                        "tvInfo": '326 каналів<a href="#">Перелік каналів</a>',
+                      })
+                    </div>
+
+                    <div class="swiper-slide  tariff-card__wrapper">
+                      @@include('blocks/tariff-card/tariff-card.html', {
+                        "title": "СМАРТ 400",
+                        "speed": "до 400 Мбіт/с",
+                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                      })
+                    </div>
+
+                    <div class="swiper-slide  tariff-card__wrapper">
+                      @@include('blocks/tariff-card/tariff-card.html', {
+                        "title": "СМАРТ 500",
+                        "speed": "до 500 Мбіт/с",
+                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                      })
+                    </div>
+
+                    <div class="swiper-slide  tariff-card__wrapper">
+                      @@include('blocks/tariff-card/tariff-card.html', {
+                        "title": "СМАРТ 600",
+                        "speed": "до 600 Мбіт/с",
+                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                      })
+                    </div>
+
+                    <div class="swiper-slide  tariff-card__wrapper">
+                      @@include('blocks/tariff-card/tariff-card.html', {
+                        "title": "СМАРТ 700",
+                        "speed": "до 700 Мбіт/с",
+                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                      })
+                    </div>
+
+                  </div>
+                </div>
+
+              </section>
+
+            </div>
+          </article>
 
           <div class="container  add-services">
+
+            <canvas class="lottie-player  lottie-player--tab1  lazy"
+                    data-src="js/tab1-ethernet.lottie"
+                    data-fit="cover"
+                    data-align=""
+                    width="1920"
+                    height="1200"
+                    aria-hidden="true">
+            </canvas>
+
             <section class="add-services__section">
               <h2 class="h4  add-services__section-title">Додаткові сервіси</h2>
 

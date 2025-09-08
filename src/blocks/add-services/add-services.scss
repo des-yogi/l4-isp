@@ -1,6 +1,7 @@
 .add-services {
   $block-name:                &; // #{$block-name}__element
 
+  position: relative;
   @include block-margin;
 
   &__main,
@@ -40,5 +41,42 @@
     @include col(md, 6);
     @include col(xl, 4);
     margin: 0;
+  }
+
+  // Animations settings
+  .lottie-player.lottie-player--tab1 {
+    position: absolute;
+    z-index: -1;
+    //top: 50%;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    //transform: translateY(-50%);
+    filter: blur(40px);
+
+    @media (min-width: $screen-md) {
+      top: 50%;
+      bottom: initial;
+      transform: translateY(-50%);
+      filter: blur(60px);
+    }
+
+    @media (min-width: $screen-lg) {
+      //transform: translateY(-45%);
+      filter: blur(100px);
+    }
+
+    @media (min-width: $screen-xl) {
+      transform: translateY(-45%);
+      //filter: blur(130px);
+    }
+
+    @media (min-width: $screen-xxl) {
+      transform: translateY(-49%);
+      filter: blur(140px);
+    }
   }
 }
