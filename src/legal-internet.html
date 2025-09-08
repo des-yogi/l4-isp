@@ -27,216 +27,221 @@
             "intro": "<p>Надійний інтернет та цифрові рішення для компаній, установ, бізнесу та муніципалітетів.</p><p>Підключення, техпідтримка, персональні умови та професійна мережа — усе для стабільної роботи вашої організації.</p>"
           })
 
-          <article class="tariffs">
 
-            <div class="container  tariffs__header">
-              <div class="row">
-                <div class="tariffs__header-col">
-                  <h2 class="tariffs__title">Тарифи</h2>
-                  <div class="tariffs__intro">
-                    <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
-                    <p><span>Ми знаходимо рішення для кожного абонента!</span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="legal-internet__anim">
 
-            <div class="tariffs__slider-wrapper">
-
-              <section class="container  tariffs__slider" data-theme-dark="tariffs__slider--dark" data-theme-light="tariffs__slider--light">
-                <h3 class="visually-hidden">Слайдер доступних тарифів</h3>
-
-                <header class="tariffs__slide-header">
-
-                  <h4 class="h5  tariffs__slide-caption  tariffs__slide-caption--header">
-                    <span>Тариф</span>
-                  </h4>
-
-                  <ul class="list-nostyled  tariffs__header-list">
-                    <li class="tariffs__header-item" id="tariff-speed">
-                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#speed"></use></svg>
-                      <span>Швидкість</span>
-                    </li>
-                    <li class="tariffs__header-item" id="tariff-ip">
-                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#ip"></use></svg>
-                      <span>Динамічний білий IP</span>
-                    </li>
-                    <li class="tariffs__header-item" id="tariff-tv">
-                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tv"></use></svg>
-                      <span>Телебачення</span>
-                    </li>
-                    <li class="tariffs__header-item" id="tariff-support">
-                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#support"></use></svg>
-                      <span>Підтримка</span>
-                    </li>
-                    <li class="tariffs__header-item" id="tariff-connect">
-                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#connect"></use></svg>
-                      <span>Підключення</span>
-                    </li>
-                    <li class="tariffs__header-item" id="tariff-service">
-                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#service"></use></svg>
-                      <span>Сервіс</span>
-                    </li>
-                    <li class="tariffs__header-item" id="tariff-price">
-                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet-line"></use></svg>
-                      <span>Ціна</span>
-                    </li>
-                  </ul>
-
-                  <div class="swiper-controls  tariffs__slider-controls">
-                    <div class="btn  btn--secondary  swiper-button-prev  tariffs__btn-prev"
-                         data-theme-dark="btn--secondary--dark"
-                         data-theme-light="btn--secondary--light"></div>
-                    <div class="swiper-pagination  tariffs__pagination"></div>
-                    <div class="btn  btn--secondary  swiper-button-next  tariffs__btn-next"
-                         data-theme-dark="btn--secondary--dark"
-                         data-theme-light="btn--secondary--light"></div>
-                  </div>
-
-                  <a href="#" class="btn  btn--secondary  tariffs__all" data-theme-dark="btn--secondary--dark" data-theme-light="btn--secondary--light">
-                    <span>Усі тарифи</span>
-                  </a>
-                </header>
-
-                <div class="swiper  tariffs__slider-content">
-                  <div class="swiper-wrapper">
-
-                    <div class="swiper-slide  tariff-card__wrapper">
-                      @@include('blocks/tariff-card/tariff-card.html', {
-                        "title": "СМАРТ 200",
-                        "speed": "до 200 Мбіт/с",
-                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
-                      })
-                    </div>
-
-                    <div class="swiper-slide  tariff-card__wrapper">
-                      @@include('blocks/tariff-card/tariff-card.html', {
-                        "title": "СМАРТ 300",
-                        "speed": "до 300 Мбіт/с",
-                        "tvInfo": '326 каналів<a href="#">Перелік каналів</a>',
-                      })
-                    </div>
-
-                    <div class="swiper-slide  tariff-card__wrapper">
-                      @@include('blocks/tariff-card/tariff-card.html', {
-                        "title": "СМАРТ 400",
-                        "speed": "до 400 Мбіт/с",
-                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
-                      })
-                    </div>
-
-                    <div class="swiper-slide  tariff-card__wrapper">
-                      @@include('blocks/tariff-card/tariff-card.html', {
-                        "title": "СМАРТ 500",
-                        "speed": "до 500 Мбіт/с",
-                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
-                      })
-                    </div>
-
-                    <div class="swiper-slide  tariff-card__wrapper">
-                      @@include('blocks/tariff-card/tariff-card.html', {
-                        "title": "СМАРТ 600",
-                        "speed": "до 600 Мбіт/с",
-                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
-                      })
-                    </div>
-
-                    <div class="swiper-slide  tariff-card__wrapper">
-                      @@include('blocks/tariff-card/tariff-card.html', {
-                        "title": "СМАРТ 700",
-                        "speed": "до 700 Мбіт/с",
-                        "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
-                      })
-                    </div>
-
-                  </div>
-                </div>
-
-              </section>
-
-            </div>
-
-            <canvas class="lottie-player  lazy"
-                    data-src="js/tariff-ethernet.lottie"
+            <canvas class="lottie-player  lottie-player--legal  lazy"
+                    data-src="js/legal.lottie"
                     data-fit="cover"
                     data-align=""
                     width="1920"
-                    height="1200">
+                    height="1920"
+                    aria-hidden="true">
             </canvas>
 
-          </article>
+            <article class="tariffs">
 
-
-          <section class="container  tv-features"
-                   data-theme-dark="tv-features--dark"
-                   data-theme-light="tv-features--light">
-
-            <h2 class="h3  tv-features__title">Основні послуги для бізнесу та установ</h2>
-
-            <ul class="tv-features__list">
-
-              <li class="tv-features__item">
-                <p class="h5  tv-features__item-title">Високошвидкісний інтернет</p>
-                <div class="tv-features__item-descr">
-                  <ul>
-                    <li>Відеоконференцій (Zoom, Google Meet)</li>
-                    <li>VPN-з'єднань та віддаленої роботи</li>
-                    <li>Хмарних сервісів (Google Workspace, Microsoft 365)</li>
-                    <li>CRM-систем і баз даних</li>
-                  </ul>
+              <div class="container  tariffs__header">
+                <div class="row">
+                  <div class="tariffs__header-col">
+                    <h2 class="tariffs__title">Тарифи</h2>
+                    <div class="tariffs__intro">
+                      <p>Ваш будинок чи квартира знаходиться в зоні нашого обслуговування? Отримайте підключення інтернету за 1-2 дні! Зверніться до нас, якщо інші інтернет-провайдери відмовляють.</p>
+                      <p><span>Ми знаходимо рішення для кожного абонента!</span></p>
+                    </div>
+                  </div>
                 </div>
-              </li>
+              </div>
 
-              <li class="tv-features__item">
-                <p class="h5  tv-features__item-title">Побудова корпоративної мережі</p>
-                <div class="tv-features__item-descr">
-                  <ul>
-                    <li>VPN, VLAN, резервування</li>
-                    <li>Об’єднання офісів, філій, складів</li>
-                    <li>Налаштування Wi-Fi зон для персоналу та відвідувачів</li>
-                  </ul>
-                </div>
-              </li>
+              <div class="tariffs__slider-wrapper">
 
-              <li class="tv-features__item">
-                <p class="h5  tv-features__item-title">IP-телефонія та SIP-лінії</p>
-                <div class="tv-features__item-descr">
-                  <ul>
-                    <li>Багатоканальні номери з голосовим меню</li>
-                    <li>Переадресація дзвінків, запис розмов</li>
-                    <li>Інтеграція з IP-АТС</li>
-                  </ul>
-                </div>
-              </li>
+                <section class="container  tariffs__slider" data-theme-dark="tariffs__slider--dark" data-theme-light="tariffs__slider--light">
+                  <h3 class="visually-hidden">Слайдер доступних тарифів</h3>
 
-              <li class="tv-features__item">
-                <p class="h5  tv-features__item-title">Відеоспостереження / Камери</p>
-                <div class="tv-features__item-descr">
-                  <ul>
-                    <li>Відеоконференцій (Zoom, Google Meet)</li>
-                    <li>VPN-з'єднань та віддаленої роботи</li>
-                    <li>Хмарних сервісів (Google Workspace, Microsoft 365)</li>
-                    <li>CRM-систем і баз даних</li>
-                  </ul>
-                </div>
-              </li>
+                  <header class="tariffs__slide-header">
 
-              <li class="tv-features__item">
-                <p class="h5  tv-features__item-title">Підключення для державного сектору</p>
-                <div class="tv-features__item-descr">
-                  <p>L4 вже обслуговує понад 500 обʼєктів у галузях:</p>
-                  <ul>
-                    <li>Освіта (школи, коледжі, університети)</li>
-                    <li>Медицина (амбулаторії, поліклініки, лікарні)</li>
-                    <li>Адміністрація (ЦНАП, ради, бібліотеки)</li>
-                    <li>Енергетика та інфраструктура</li>
-                  </ul>
-                </div>
-              </li>
+                    <h4 class="h5  tariffs__slide-caption  tariffs__slide-caption--header">
+                      <span>Тариф</span>
+                    </h4>
 
-            </ul>
+                    <ul class="list-nostyled  tariffs__header-list">
+                      <li class="tariffs__header-item" id="tariff-speed">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#speed"></use></svg>
+                        <span>Швидкість</span>
+                      </li>
+                      <li class="tariffs__header-item" id="tariff-ip">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#ip"></use></svg>
+                        <span>Динамічний білий IP</span>
+                      </li>
+                      <li class="tariffs__header-item" id="tariff-tv">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tv"></use></svg>
+                        <span>Телебачення</span>
+                      </li>
+                      <li class="tariffs__header-item" id="tariff-support">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#support"></use></svg>
+                        <span>Підтримка</span>
+                      </li>
+                      <li class="tariffs__header-item" id="tariff-connect">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#connect"></use></svg>
+                        <span>Підключення</span>
+                      </li>
+                      <li class="tariffs__header-item" id="tariff-service">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#service"></use></svg>
+                        <span>Сервіс</span>
+                      </li>
+                      <li class="tariffs__header-item" id="tariff-price">
+                        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet-line"></use></svg>
+                        <span>Ціна</span>
+                      </li>
+                    </ul>
 
-          </section>
+                    <div class="swiper-controls  tariffs__slider-controls">
+                      <div class="btn  btn--secondary  swiper-button-prev  tariffs__btn-prev"
+                           data-theme-dark="btn--secondary--dark"
+                           data-theme-light="btn--secondary--light"></div>
+                      <div class="swiper-pagination  tariffs__pagination"></div>
+                      <div class="btn  btn--secondary  swiper-button-next  tariffs__btn-next"
+                           data-theme-dark="btn--secondary--dark"
+                           data-theme-light="btn--secondary--light"></div>
+                    </div>
+
+                    <a href="#" class="btn  btn--secondary  tariffs__all" data-theme-dark="btn--secondary--dark" data-theme-light="btn--secondary--light">
+                      <span>Усі тарифи</span>
+                    </a>
+                  </header>
+
+                  <div class="swiper  tariffs__slider-content">
+                    <div class="swiper-wrapper">
+
+                      <div class="swiper-slide  tariff-card__wrapper">
+                        @@include('blocks/tariff-card/tariff-card.html', {
+                          "title": "СМАРТ 200",
+                          "speed": "до 200 Мбіт/с",
+                          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                        })
+                      </div>
+
+                      <div class="swiper-slide  tariff-card__wrapper">
+                        @@include('blocks/tariff-card/tariff-card.html', {
+                          "title": "СМАРТ 300",
+                          "speed": "до 300 Мбіт/с",
+                          "tvInfo": '326 каналів<a href="#">Перелік каналів</a>',
+                        })
+                      </div>
+
+                      <div class="swiper-slide  tariff-card__wrapper">
+                        @@include('blocks/tariff-card/tariff-card.html', {
+                          "title": "СМАРТ 400",
+                          "speed": "до 400 Мбіт/с",
+                          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                        })
+                      </div>
+
+                      <div class="swiper-slide  tariff-card__wrapper">
+                        @@include('blocks/tariff-card/tariff-card.html', {
+                          "title": "СМАРТ 500",
+                          "speed": "до 500 Мбіт/с",
+                          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                        })
+                      </div>
+
+                      <div class="swiper-slide  tariff-card__wrapper">
+                        @@include('blocks/tariff-card/tariff-card.html', {
+                          "title": "СМАРТ 600",
+                          "speed": "до 600 Мбіт/с",
+                          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                        })
+                      </div>
+
+                      <div class="swiper-slide  tariff-card__wrapper">
+                        @@include('blocks/tariff-card/tariff-card.html', {
+                          "title": "СМАРТ 700",
+                          "speed": "до 700 Мбіт/с",
+                          "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+                        })
+                      </div>
+
+                    </div>
+                  </div>
+
+                </section>
+
+              </div>
+
+            </article>
+
+            <section class="container  tv-features"
+                     data-theme-dark="tv-features--dark"
+                     data-theme-light="tv-features--light">
+
+              <h2 class="h3  tv-features__title">Основні послуги для бізнесу та установ</h2>
+
+              <ul class="tv-features__list">
+
+                <li class="tv-features__item">
+                  <p class="h5  tv-features__item-title">Високошвидкісний інтернет</p>
+                  <div class="tv-features__item-descr">
+                    <ul>
+                      <li>Відеоконференцій (Zoom, Google Meet)</li>
+                      <li>VPN-з'єднань та віддаленої роботи</li>
+                      <li>Хмарних сервісів (Google Workspace, Microsoft 365)</li>
+                      <li>CRM-систем і баз даних</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="tv-features__item">
+                  <p class="h5  tv-features__item-title">Побудова корпоративної мережі</p>
+                  <div class="tv-features__item-descr">
+                    <ul>
+                      <li>VPN, VLAN, резервування</li>
+                      <li>Об’єднання офісів, філій, складів</li>
+                      <li>Налаштування Wi-Fi зон для персоналу та відвідувачів</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="tv-features__item">
+                  <p class="h5  tv-features__item-title">IP-телефонія та SIP-лінії</p>
+                  <div class="tv-features__item-descr">
+                    <ul>
+                      <li>Багатоканальні номери з голосовим меню</li>
+                      <li>Переадресація дзвінків, запис розмов</li>
+                      <li>Інтеграція з IP-АТС</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="tv-features__item">
+                  <p class="h5  tv-features__item-title">Відеоспостереження / Камери</p>
+                  <div class="tv-features__item-descr">
+                    <ul>
+                      <li>Відеоконференцій (Zoom, Google Meet)</li>
+                      <li>VPN-з'єднань та віддаленої роботи</li>
+                      <li>Хмарних сервісів (Google Workspace, Microsoft 365)</li>
+                      <li>CRM-систем і баз даних</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="tv-features__item">
+                  <p class="h5  tv-features__item-title">Підключення для державного сектору</p>
+                  <div class="tv-features__item-descr">
+                    <p>L4 вже обслуговує понад 500 обʼєктів у галузях:</p>
+                    <ul>
+                      <li>Освіта (школи, коледжі, університети)</li>
+                      <li>Медицина (амбулаторії, поліклініки, лікарні)</li>
+                      <li>Адміністрація (ЦНАП, ради, бібліотеки)</li>
+                      <li>Енергетика та інфраструктура</li>
+                    </ul>
+                  </div>
+                </li>
+
+              </ul>
+
+            </section>
+
+          </div>
 
 
           <div class="media-block-ext__wrapper">

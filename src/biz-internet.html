@@ -29,15 +29,28 @@
 
           <!-- Для всех карточек бизнес-тарифов обязательно убрать (!)
           aria-labelledby="tariff-…" -->
-          @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
-            "title": "Симетричні тарифи",
-            "sliderID": "simm"
-          })
+          <div class="biz-internet__anim">
 
-          @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
-            "title": "Асиметричні тарифи",
-            "sliderID": "assim"
-          })
+            <canvas class="lottie-player  lottie-player--business  lazy"
+                    data-src="js/business.lottie"
+                    data-fit="cover"
+                    data-align=""
+                    width="1920"
+                    height="1920"
+                    aria-hidden="true">
+            </canvas>
+
+            @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
+              "title": "Симетричні тарифи",
+              "sliderID": "simm"
+            })
+
+            @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
+              "title": "Асиметричні тарифи",
+              "sliderID": "assim"
+            })
+
+          </div>
 
           @@include('blocks/reason/reason.html', {
             "title": "Чому інтернет від L4 — це вибір бізнесу"

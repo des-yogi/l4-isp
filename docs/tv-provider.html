@@ -558,7 +558,7 @@
 
 
 
-      <main class="main">
+      <main class="main">
 
         <nav class="container  breadcrumbs" aria-label="Навігація - Хлібні крихти">
 
@@ -593,7 +593,8 @@
 
 
         <div class="tv-provider">
-          <!-- Лого для megogo надо подключать инлайново! -->
+
+          <!-- Лого для megogo надо подключать инлайново! -->
 
           <header class="container  tv-header">
             <div class="row  tv-header__row">
@@ -622,15 +623,16 @@
 
           <!-- Управление цветом в блоках используются
           классы-модификаторы (для каждого свои)…
-          "--sweet", "--omega", "--megogo" -->
+          "--sweet", "--omega", "--megogo" -->
 
           <section class="container  tv-tariffs  tv-tariffs--sweet">
+
             <h2 class="visually-hidden">Тарифи на цифрове телебачення SWEET.TV</h2>
 
             <ul class="tv-tariffs__list">
               <li class="tv-tariffs__item"
                   data-theme-dark="tv-tariffs__item--dark"
-                  data-theme-light="tv-tariffs__item--light">
+                  data-theme-light="tv-tariffs__item--light">
 
                 <article class="tv-card"
                          data-theme-dark="tv-card--dark"
@@ -739,7 +741,7 @@
 
               <li class="tv-tariffs__item"
                   data-theme-dark="tv-tariffs__item--dark"
-                  data-theme-light="tv-tariffs__item--light">
+                  data-theme-light="tv-tariffs__item--light">
 
                 <article class="tv-card"
                          data-theme-dark="tv-card--dark"
@@ -848,7 +850,7 @@
 
               <li class="tv-tariffs__item"
                   data-theme-dark="tv-tariffs__item--dark"
-                  data-theme-light="tv-tariffs__item--light">
+                  data-theme-light="tv-tariffs__item--light">
 
                 <article class="tv-card"
                          data-theme-dark="tv-card--dark"
@@ -957,49 +959,61 @@
 
             </ul>
 
-          </section>
+          </section>
 
-          <section class="container  tv-benefits  tv-benefits--sweet"
-                   data-theme-dark="tv-benefits--dark"
-                   data-theme-light="tv-benefits--light">
+          <div class="tv-benefits__anim-wrapper">
 
-            <h2 class="visually-hidden">Основні переваги</h2>
+            <canvas class="lottie-player  lottie-player--ethernet  lazy"
+                data-src="js/tariff-ethernet.lottie"
+                data-fit="cover"
+                data-align=""
+                width="1920"
+                height="1920"
+                aria-hidden="true">
+            </canvas>
 
-            <ul class="tv-benefits__list">
+            <section class="container  tv-benefits  tv-benefits--sweet"
+                     data-theme-dark="tv-benefits--dark"
+                     data-theme-light="tv-benefits--light">
 
-              <li class="tv-benefits__item">
-                <div class="tv-benefits__item-icon">
-                  <svg width="64" height="64" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#film-library-64"></use>
-                  </svg>
-                </div>
-                <p class="h4  tv-benefits__item-title">Найбільша кінотека</p>
-                <p class="tv-benefits__item-descr">Понад 15000 фільмів та серіалів від світових студій та українських виробників</p>
-              </li>
+              <h2 class="visually-hidden">Основні переваги</h2>
 
-              <li class="tv-benefits__item">
-                <div class="tv-benefits__item-icon">
-                  <svg width="64" height="64" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#offline-64"></use>
-                  </svg>
-                </div>
-                <p class="h4  tv-benefits__item-title">Офлайн перегляд</p>
-                <p class="tv-benefits__item-descr">Понад 15000 фільмів та серіалів від світових студій та українських виробників</p>
-              </li>
+              <ul class="tv-benefits__list">
 
-              <li class="tv-benefits__item">
-                <div class="tv-benefits__item-icon">
-                  <svg width="64" height="64" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ad-free-64"></use>
-                  </svg>
-                </div>
-                <p class="h4  tv-benefits__item-title">Без реклами</p>
-                <p class="tv-benefits__item-descr">Понад 15000 фільмів та серіалів від світових студій та українських виробників</p>
-              </li>
+                <li class="tv-benefits__item">
+                  <div class="tv-benefits__item-icon">
+                    <svg width="64" height="64" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#film-library-64"></use>
+                    </svg>
+                  </div>
+                  <p class="h4  tv-benefits__item-title">Найбільша кінотека</p>
+                  <p class="tv-benefits__item-descr">Понад 15000 фільмів та серіалів від світових студій та українських виробників</p>
+                </li>
 
-            </ul>
+                <li class="tv-benefits__item">
+                  <div class="tv-benefits__item-icon">
+                    <svg width="64" height="64" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#offline-64"></use>
+                    </svg>
+                  </div>
+                  <p class="h4  tv-benefits__item-title">Офлайн перегляд</p>
+                  <p class="tv-benefits__item-descr">Понад 15000 фільмів та серіалів від світових студій та українських виробників</p>
+                </li>
 
-          </section>
+                <li class="tv-benefits__item">
+                  <div class="tv-benefits__item-icon">
+                    <svg width="64" height="64" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ad-free-64"></use>
+                    </svg>
+                  </div>
+                  <p class="h4  tv-benefits__item-title">Без реклами</p>
+                  <p class="tv-benefits__item-descr">Понад 15000 фільмів та серіалів від світових студій та українських виробників</p>
+                </li>
+
+              </ul>
+
+            </section>
+          </div>
 
           <section class="container  tv-features  tv-features--sweet"
                    data-theme-dark="tv-features--dark"
@@ -1140,7 +1154,7 @@
 
         </div>
 
-      </main>
+      </main>
 
       <section class="container  connection-form"
                data-theme-dark="connection-form--dark"
@@ -1573,7 +1587,7 @@
 
   </div>
 
-  <!-- Search modal -->
+  <!-- Search modal -->
 
   <!-- Search Modal -->
   <div class="modal fade  search-modal"
@@ -1629,7 +1643,7 @@
   </div>
 
 
-  <!-- InfoWindow Template -->
+  <!-- InfoWindow Template -->
   <template id="infowindow-custom">
     <div class="infowindow-template  infowindow-template--light  infowindow-template--below">
          <!-- data-theme-dark="infowindow-template--dark"

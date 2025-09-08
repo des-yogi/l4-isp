@@ -32,6 +32,55 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+    // Animations settings
+    .lottie-player.lottie-player--promo {
+      position: absolute;
+      z-index: -1;
+      //top: 14%;
+      bottom: -1%;
+      right: -1%;
+      //left: 0;
+      width: 1920px;
+      height: 1920px;
+      //max-height: 100%;
+      //max-width: 100%;
+      //transform: translateY(-50%);
+      filter: blur(100px);
+
+      @media (min-width: $screen-sm) {
+        //filter: blur(80px);
+      }
+
+      @media (min-width: $screen-md) {
+        //top: 3%;
+        //transform: translateY(-50%);
+        //filter: blur(70px);
+      }
+
+      @media (min-width: $screen-lg) {
+        bottom: 0;
+        right: 0;
+        //width: 100%;
+        //top: 1%;
+        //transform: translateY(-45%);
+        //filter: blur(90px);
+      }
+
+      @media (min-width: $screen-xl) {
+        //top: 0;
+        //transform: translateY(-10%);
+        filter: blur(110px);
+      }
+
+      @media (min-width: $screen-xxl) {
+        //top: 0;
+        //transform: translateY(-18%);
+        filter: blur(150px);
+      }
+    }
   }
 
   &__content {
@@ -588,6 +637,38 @@ a {
 .image-3 {
   grid-area: image-3;
   aspect-ratio: 21 / 10;
+}
+
+// Animations settings
+.lottie-player {
+
+  &--header {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    filter: blur(30px);
+
+    //@media (min-width: $screen-sm) {
+    //  //filter: blur(70px);
+    //}
+
+    @media (min-width: $screen-md) {
+      filter: blur(60px);
+    }
+
+    @media (min-width: $screen-xl) {
+      filter: blur(100px);
+    }
+
+    @media (min-width: $screen-xxl) {
+      filter: blur(140px);
+    }
+  }
 }
 
 // background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);

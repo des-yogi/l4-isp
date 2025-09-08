@@ -1,3 +1,35 @@
 .biz-internet {
   $block-name:                &; // #{$block-name}__element
+
+  &__anim {
+    position: relative;
+
+    // Animations settings
+    .lottie-player.lottie-player--business {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      //bottom: 0%;
+      left: 0;
+      right: 0;
+      width: auto;
+      max-width: 100%;
+      transform: translateY(-50%);
+      filter: blur(70px);
+
+      @media (min-width: $screen-sm) {
+        filter: blur(100px);
+      }
+
+      @media (min-width: $screen-lg) {
+        //transform: translateY(-45%);
+        filter: blur(130px);
+      }
+
+      @media (min-width: $screen-xl) {
+        //transform: translateY(-62%);
+        filter: blur(150px);
+      }
+    }
+  }
 }
