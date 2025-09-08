@@ -1,6 +1,7 @@
 .about-history {
   $block-name:                &; // #{$block-name}__element
 
+  position: relative;
   @include block-margin;
 
   &__title {
@@ -68,5 +69,36 @@
   &__year {
     margin-bottom: 8px;
     color: var(--blue-500);
+  }
+
+  // Animations settings
+  .lottie-player {
+
+    &--ethernet {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      //bottom: 0%;
+      left: 0;
+      right: 0;
+      width: auto;
+      max-width: 100%;
+      transform: translateY(-50%);
+      filter: blur(50px);
+
+      @media (min-width: $screen-sm) {
+        filter: blur(70px);
+      }
+
+      @media (min-width: $screen-lg) {
+        //transform: translateY(-45%);
+        filter: blur(100px);
+      }
+
+      @media (min-width: $screen-xl) {
+        //transform: translateY(-62%);
+        filter: blur(130px);
+      }
+    }
   }
 }

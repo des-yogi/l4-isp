@@ -2,6 +2,7 @@
   $block-name:                &; // #{$block-name}__element
 
   @include block-margin;
+  position: relative;
 
   &__list {
     display: flex;

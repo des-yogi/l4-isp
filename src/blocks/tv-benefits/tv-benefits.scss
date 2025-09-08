@@ -1,14 +1,49 @@
  .tv-benefits {
   $block-name:                &; // #{$block-name}__element
 
-  @include block-margin;
-
   overflow: hidden;
   //backdrop-filter: blur(10px);
 
   &::before {
     inset: 0 -2px 0 -2px !important;
   }
+
+  &__anim-wrapper {
+    position: relative;
+    @include block-margin;
+
+    // Animations settings
+    .lottie-player {
+
+      &--ethernet {
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        //bottom: 0%;
+        left: 0;
+        right: 0;
+        width: auto;
+        max-width: 100%;
+        transform: translateY(-40%);
+        filter: blur(50px);
+
+        @media (min-width: $screen-sm) {
+          filter: blur(70px);
+        }
+
+        @media (min-width: $screen-lg) {
+          transform: translateY(-45%);
+          filter: blur(100px);
+        }
+
+        @media (min-width: $screen-xl) {
+          transform: translateY(-62%);
+          filter: blur(120px);
+        }
+      }
+    }
+  }
+
 
   &__list {
     padding-left: 0;

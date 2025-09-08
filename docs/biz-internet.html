@@ -556,7 +556,7 @@
 
 
 
-      <main class="main">
+      <main class="main">
 
         <nav class="container  breadcrumbs" aria-label="Навігація - Хлібні крихти">
 
@@ -590,7 +590,7 @@
         </nav>
 
 
-        <div class="home-internet  biz-internet">
+        <div class="home-internet  biz-internet">
 
           <header class="container  header">
             <div class="row  header__row">
@@ -605,1507 +605,1520 @@
 
 
           <!-- Для всех карточек бизнес-тарифов обязательно убрать (!)
-          aria-labelledby="tariff-…" -->
+          aria-labelledby="tariff-…" -->
+          <div class="biz-internet__anim">
 
-          <section id="simm" class="biz-tariffs-slider"
-                                   data-theme-dark="biz-tariffs-slider--dark"
-                                   data-theme-light="biz-tariffs-slider--light">
+            <canvas class="lottie-player  lottie-player--business  lazy"
+                    data-src="js/business.lottie"
+                    data-fit="cover"
+                    data-align=""
+                    width="1920"
+                    height="1920"
+                    aria-hidden="true">
+            </canvas>
 
-            <div class="container  biz-tariffs-slider__header">
-              <div class="row">
-                <div class="biz-tariffs-slider__header-col">
-                  <header>
-                    <h2 class="biz-tariffs-slider__title">Симетричні тарифи</h2>
-                    <div class="biz-tariffs-slider__intro">
-                      <p>Підходить для бізнесу, де важливо не лише отримувати, а й передавати великі обсяги даних (відеоконференції, камери спостереження, хмарні сервіси).</p>
-                      <p><strong>Гарантовано стабільна робота VPN, VoIP, бекапів, серверів.</strong></p>
+            <section id="simm" class="biz-tariffs-slider"
+                                     data-theme-dark="biz-tariffs-slider--dark"
+                                     data-theme-light="biz-tariffs-slider--light">
+
+              <div class="container  biz-tariffs-slider__header">
+                <div class="row">
+                  <div class="biz-tariffs-slider__header-col">
+                    <header>
+                      <h2 class="biz-tariffs-slider__title">Симетричні тарифи</h2>
+                      <div class="biz-tariffs-slider__intro">
+                        <p>Підходить для бізнесу, де важливо не лише отримувати, а й передавати великі обсяги даних (відеоконференції, камери спостереження, хмарні сервіси).</p>
+                        <p><strong>Гарантовано стабільна робота VPN, VoIP, бекапів, серверів.</strong></p>
+                      </div>
+                    </header>
+
+                    <div class="swiper-controls  biz-tariffs-slider__slider-controls">
+                      <div class="btn  btn--secondary  swiper-button-prev  tariffs__btn-prev"
+                           data-theme-dark="btn--secondary--dark"
+                           data-theme-light="btn--secondary--light"></div>
+                      <div class="swiper-pagination  tariffs__pagination"></div>
+                      <div class="btn  btn--secondary  swiper-button-next  tariffs__btn-next"
+                           data-theme-dark="btn--secondary--dark"
+                           data-theme-light="btn--secondary--light"></div>
                     </div>
-                  </header>
-
-                  <div class="swiper-controls  biz-tariffs-slider__slider-controls">
-                    <div class="btn  btn--secondary  swiper-button-prev  tariffs__btn-prev"
-                         data-theme-dark="btn--secondary--dark"
-                         data-theme-light="btn--secondary--light"></div>
-                    <div class="swiper-pagination  tariffs__pagination"></div>
-                    <div class="btn  btn--secondary  swiper-button-next  tariffs__btn-next"
-                         data-theme-dark="btn--secondary--dark"
-                         data-theme-light="btn--secondary--light"></div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="swiper  tariffs__slider-content">
-              <div class="swiper-wrapper">
+              <div class="swiper  tariffs__slider-content">
+                <div class="swiper-wrapper">
 
-                <div class="swiper-slide  tariff-card__wrapper">
+                  <div class="swiper-slide  tariff-card__wrapper">
 
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
 
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 200</h4>
-                    </header>
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 200</h4>
+                      </header>
 
-                    <div class="tariff-card__inner">
+                      <div class="tariff-card__inner">
 
-                      <div class="tariff-card__front">
+                        <div class="tariff-card__front">
 
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 200 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 200 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
                               <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
                             </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </article>
+
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 300</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 300 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                326 каналів<a href="#">Перелік каналів</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
                               <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
                             </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
 
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
 
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
                         </div>
                       </div>
+                    </article>
 
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 400</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 400 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                            </button>
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
                         </div>
 
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
 
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
                         </div>
-
                       </div>
-                    </div>
-                  </article>
+                    </article>
+
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 500</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 500 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                            </button>
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </article>
+
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 600</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 600 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                            </button>
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </article>
+
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 700</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 700 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                            </button>
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </article>
+
+                  </div>
 
                 </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 300</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 300 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              326 каналів<a href="#">Перелік каналів</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 400</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 400 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 500</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 500 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 600</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 600 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 700</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 700 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
               </div>
-            </div>
 
-          </section>
+            </section>
 
-          <section id="assim" class="biz-tariffs-slider"
-                                   data-theme-dark="biz-tariffs-slider--dark"
-                                   data-theme-light="biz-tariffs-slider--light">
+            <section id="assim" class="biz-tariffs-slider"
+                                     data-theme-dark="biz-tariffs-slider--dark"
+                                     data-theme-light="biz-tariffs-slider--light">
 
-            <div class="container  biz-tariffs-slider__header">
-              <div class="row">
-                <div class="biz-tariffs-slider__header-col">
-                  <header>
-                    <h2 class="biz-tariffs-slider__title">Асиметричні тарифи</h2>
-                    <div class="biz-tariffs-slider__intro">
-                      <p>Підходить для бізнесу, де важливо не лише отримувати, а й передавати великі обсяги даних (відеоконференції, камери спостереження, хмарні сервіси).</p>
-                      <p><strong>Гарантовано стабільна робота VPN, VoIP, бекапів, серверів.</strong></p>
+              <div class="container  biz-tariffs-slider__header">
+                <div class="row">
+                  <div class="biz-tariffs-slider__header-col">
+                    <header>
+                      <h2 class="biz-tariffs-slider__title">Асиметричні тарифи</h2>
+                      <div class="biz-tariffs-slider__intro">
+                        <p>Підходить для бізнесу, де важливо не лише отримувати, а й передавати великі обсяги даних (відеоконференції, камери спостереження, хмарні сервіси).</p>
+                        <p><strong>Гарантовано стабільна робота VPN, VoIP, бекапів, серверів.</strong></p>
+                      </div>
+                    </header>
+
+                    <div class="swiper-controls  biz-tariffs-slider__slider-controls">
+                      <div class="btn  btn--secondary  swiper-button-prev  tariffs__btn-prev"
+                           data-theme-dark="btn--secondary--dark"
+                           data-theme-light="btn--secondary--light"></div>
+                      <div class="swiper-pagination  tariffs__pagination"></div>
+                      <div class="btn  btn--secondary  swiper-button-next  tariffs__btn-next"
+                           data-theme-dark="btn--secondary--dark"
+                           data-theme-light="btn--secondary--light"></div>
                     </div>
-                  </header>
-
-                  <div class="swiper-controls  biz-tariffs-slider__slider-controls">
-                    <div class="btn  btn--secondary  swiper-button-prev  tariffs__btn-prev"
-                         data-theme-dark="btn--secondary--dark"
-                         data-theme-light="btn--secondary--light"></div>
-                    <div class="swiper-pagination  tariffs__pagination"></div>
-                    <div class="btn  btn--secondary  swiper-button-next  tariffs__btn-next"
-                         data-theme-dark="btn--secondary--dark"
-                         data-theme-light="btn--secondary--light"></div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="swiper  tariffs__slider-content">
-              <div class="swiper-wrapper">
+              <div class="swiper  tariffs__slider-content">
+                <div class="swiper-wrapper">
 
-                <div class="swiper-slide  tariff-card__wrapper">
+                  <div class="swiper-slide  tariff-card__wrapper">
 
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
 
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 200</h4>
-                    </header>
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 200</h4>
+                      </header>
 
-                    <div class="tariff-card__inner">
+                      <div class="tariff-card__inner">
 
-                      <div class="tariff-card__front">
+                        <div class="tariff-card__front">
 
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 200 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 200 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
                               <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
                             </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </article>
+
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 300</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 300 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                326 каналів<a href="#">Перелік каналів</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
                               <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
                             </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
 
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
 
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
                         </div>
                       </div>
+                    </article>
 
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 400</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 400 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                            </button>
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
                         </div>
 
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
 
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
                         </div>
-
                       </div>
-                    </div>
-                  </article>
+                    </article>
+
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 500</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 500 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                            </button>
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </article>
+
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 600</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 600 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                            </button>
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </article>
+
+                  </div>
+
+                  <div class="swiper-slide  tariff-card__wrapper">
+
+                    <article class="tariff-card"
+                             data-theme-dark="tariff-card--dark"
+                             data-theme-light="tariff-card--light">
+
+                      <header class="tariff-card__header">
+                        <span>Працює без світла</span>
+                        <h4 class="h5  tariff-card__title">СМАРТ 700</h4>
+                      </header>
+
+                      <div class="tariff-card__inner">
+
+                        <div class="tariff-card__front">
+
+                          <ul class="list-nostyled  tariff-card__opt-list">
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-speed">
+                              до 700 Мбіт/с
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-ip">
+                              <span class="visually-hidden">Недоступно</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-tv">
+                                <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-support">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
+                              <a href="#">Детальніше</a>
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-connect">
+                              1 грн&thinsp;*
+                              <button class="faq-btn" data-bs-toggle="popover"
+                                      data-bs-title="Popover title"
+                                      data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
+                                      data-bs-trigger="focus"
+                                      aria-label="Додаткова інформація">
+                                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                              </button>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              Безоплатний сервіс
+                              <a href="#">Детальніше</a>
+                            </li>
+                            <li class="tariff-card__opt-item"
+                                aria-labelledby="tariff-service">
+                              <strong style="font-size: 24px; font-weight: 600;">
+                                199 грн
+                              </strong>
+                              <a href="#">Більше про тариф</a>
+                            </li>
+                          </ul>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
+                                    aria-label="Додаткова інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light"
+                                    >
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+                            </button>
+
+                            <button class="btn"
+                                    data-theme-dark="btn--dark"
+                                    data-theme-light="btn--light">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="tariff-card__back">
+                          <div class="tariff-card__back-content">
+                            <ol>
+                              <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
+                              <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
+                              <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
+                              <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
+                              <li>4 Зовнішні антени з високим посиленням</li>
+                              <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
+                              <li>І ще багато всього цікавого…</li>
+                            </ol>
+                          </div>
+
+                          <div class="tariff-card__footer">
+                            <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
+                                    aria-label="Основна інформація про тариф. Натисніть для зміни."
+                                    aria-live="polite"
+                                    data-theme-dark="btn--secondary--dark"
+                                    data-theme-light="btn--secondary--light">
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+
+                            <button class="btn">
+                              <span>Підключитись</span>
+                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </article>
+
+                  </div>
 
                 </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 300</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 300 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              326 каналів<a href="#">Перелік каналів</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 400</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 400 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 500</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 500 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 600</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 600 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
-                <div class="swiper-slide  tariff-card__wrapper">
-
-                  <article class="tariff-card"
-                           data-theme-dark="tariff-card--dark"
-                           data-theme-light="tariff-card--light">
-
-                    <header class="tariff-card__header">
-                      <span>Працює без світла</span>
-                      <h4 class="h5  tariff-card__title">СМАРТ 700</h4>
-                    </header>
-
-                    <div class="tariff-card__inner">
-
-                      <div class="tariff-card__front">
-
-                        <ul class="list-nostyled  tariff-card__opt-list">
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-speed">
-                            до 700 Мбіт/с
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-ip">
-                            <span class="visually-hidden">Недоступно</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-tv">
-                              <span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-support">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
-                            <a href="#">Детальніше</a>
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-connect">
-                            1 грн&thinsp;*
-                            <button class="faq-btn" data-bs-toggle="popover"
-                                    data-bs-title="Popover title"
-                                    data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
-                                    data-bs-trigger="focus"
-                                    aria-label="Додаткова інформація">
-                              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                            </button>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            Безоплатний сервіс
-                            <a href="#">Детальніше</a>
-                          </li>
-                          <li class="tariff-card__opt-item"
-                              aria-labelledby="tariff-service">
-                            <strong style="font-size: 24px; font-weight: 600;">
-                              199 грн
-                            </strong>
-                            <a href="#">Більше про тариф</a>
-                          </li>
-                        </ul>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__more-btn"
-                                  aria-label="Додаткова інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light"
-                                  >
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-                          </button>
-
-                          <button class="btn"
-                                  data-theme-dark="btn--dark"
-                                  data-theme-light="btn--light">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-                      </div>
-
-                      <div class="tariff-card__back">
-                        <div class="tariff-card__back-content">
-                          <ol>
-                            <li>Бездротова гіроскопічна мишка-пульт із мікрофоном та підсвічуванням — для Smart TV, Android-приставок і ПК.</li>
-                            <li>Швидкість до 300 Мбіт/с на 2,4 ГГц</li>
-                            <li>Швидкість до 867 Мбіт/с на 5 ГГц</li>
-                            <li>Гігабітні порти - швидке підключення пристроїв по кабелю, в тому числі ігрових консолей, приставок IPTV і Smart TV.</li>
-                            <li>4 Зовнішні антени з високим посиленням</li>
-                            <li>Зручний веб-інтерфейс дозволить зробити налаштування за пару хвилин</li>
-                            <li>І ще багато всього цікавого…</li>
-                          </ol>
-                        </div>
-
-                        <div class="tariff-card__footer">
-                          <button class="btn  btn--secondary  btn--icon-only  tariff-card__back-btn"
-                                  aria-label="Основна інформація про тариф. Натисніть для зміни."
-                                  aria-live="polite"
-                                  data-theme-dark="btn--secondary--dark"
-                                  data-theme-light="btn--secondary--light">
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-
-                          <button class="btn">
-                            <span>Підключитись</span>
-                            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
-                          </button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </article>
-
-                </div>
-
               </div>
-            </div>
 
-          </section>
+            </section>
+
+
+          </div>
 
           <section class="container  reason">
             <h2 class="h4  reason__title">Чому інтернет від L4 — це вибір бізнесу</h2>
@@ -2219,7 +2232,7 @@
               <h2 class="h4  add-services__section-title">Додаткові сервіси</h2>
 
               <ul class="row  add-services__section-list">
-                <li class="add-services__section-item">
+                <li class="add-services__section-item">
 
                   <article class="service-mini-card"
                            data-theme-dark="service-mini-card--dark"
@@ -2238,7 +2251,7 @@
 
                 </li>
 
-                <li class="add-services__section-item">
+                <li class="add-services__section-item">
 
                   <article class="service-mini-card"
                            data-theme-dark="service-mini-card--dark"
@@ -2257,7 +2270,7 @@
 
                 </li>
 
-                <li class="add-services__section-item">
+                <li class="add-services__section-item">
 
                   <article class="service-mini-card"
                            data-theme-dark="service-mini-card--dark"
@@ -2276,7 +2289,7 @@
 
                 </li>
 
-                <li class="add-services__section-item">
+                <li class="add-services__section-item">
 
                   <article class="service-mini-card"
                            data-theme-dark="service-mini-card--dark"
@@ -2295,7 +2308,7 @@
 
                 </li>
 
-                <li class="add-services__section-item">
+                <li class="add-services__section-item">
 
                   <article class="service-mini-card"
                            data-theme-dark="service-mini-card--dark"
@@ -2314,7 +2327,7 @@
 
                 </li>
 
-                <li class="add-services__section-item">
+                <li class="add-services__section-item">
 
                   <article class="service-mini-card"
                            data-theme-dark="service-mini-card--dark"
@@ -2334,7 +2347,7 @@
                 </li>
               </ul>
             </section>
-          </div>
+          </div>
 
           <section class="container  connection-form"
                    data-theme-dark="connection-form--dark"
@@ -2845,7 +2858,7 @@
 
   </div>
 
-  <!-- Search modal -->
+  <!-- Search modal -->
 
   <!-- Search Modal -->
   <div class="modal fade  search-modal"
@@ -2901,7 +2914,7 @@
   </div>
 
 
-  <!-- InfoWindow Template -->
+  <!-- InfoWindow Template -->
   <template id="infowindow-custom">
     <div class="infowindow-template  infowindow-template--light  infowindow-template--below">
          <!-- data-theme-dark="infowindow-template--dark"
