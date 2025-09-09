@@ -37,7 +37,7 @@
     &:not(:last-child)::after {
       content: '\\'; // U+276F, HTML-код &#10095; CSS-код  \276F - Прававя угловая скобка
       display: inline-flex;
-      margin-left: 8px;
+      margin-left: 9px;
       font-weight: 500;
       color: inherit;
     }
@@ -68,6 +68,81 @@
 
     &:active {
       color: var(--main-nav-link-active-color);
+    }
+
+    &--home {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      transform: translateY(3px);
+
+      &::after {
+        //display: inline-flex;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+        transition: background $transition-time;
+      }
+    }
+  }
+
+  &--dark {
+    // #{$block-name}__element
+
+    #{$block-name}__link--home {
+
+      &::after {
+        background-image: svg-load('../blocks/breadcrumbs/bg-img/home.svg', fill=$white);
+      }
+
+      &:hover,
+      &:focus {
+
+        &::after {
+          background-image: svg-load('../blocks/breadcrumbs/bg-img/home.svg', fill=#5297FF); // blue-400
+        }
+      }
+
+      &:active {
+
+        &::after {
+          background-image: svg-load('../blocks/breadcrumbs/bg-img/home.svg', fill=#7DB1FF); // blue-300
+        }
+      }
+    }
+  }
+
+  &--light {
+    // #{$block-name}__element
+
+    #{$block-name}__link--home {
+
+      &::after {
+        background-image: svg-load('../blocks/breadcrumbs/bg-img/home.svg', fill=#121721); // grey-900
+      }
+
+      &:hover,
+      &:focus {
+
+        &::after {
+          background-image: svg-load('../blocks/breadcrumbs/bg-img/home.svg', fill=$main-color); // blue-500
+        }
+      }
+
+      &:active {
+
+        &::after {
+          background-image: svg-load('../blocks/breadcrumbs/bg-img/home.svg', fill=#1F64CC); // blue-600
+        }
+      }
     }
   }
 }
