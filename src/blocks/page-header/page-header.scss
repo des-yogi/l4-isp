@@ -74,6 +74,15 @@
       font-size: $font-size;
     }
 
+    svg {
+      width: 24px;
+      height: 24px;
+
+      @media (max-width: $screen-xxl - 1) {
+        transform: translateX(1px);
+      }
+    }
+
     &--business,
     &--faq,
     &--map {
@@ -91,27 +100,24 @@
       span {
 
         @media (max-width: $screen-xxl - 1) {
-          //@include visibility-hidden;
-          display: none;
+          @include visibility-hidden;
+          //display: none;
         }
       }
     }
 
-    &--faq {
-    }
-    &--map {
-    }
+    // &--faq {
+    // }
+    // &--map {
+    // }
+
     &--tel {
-      padding-left: 12px;    }
+      padding-left: 12px;
+    }
 
     &--user {
       padding-left: 12px;
       padding-right: 14px;
-    }
-
-    svg {
-      width: 24px;
-      height: 24px;
     }
   }
 

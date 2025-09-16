@@ -1,6 +1,7 @@
 @mixin visibility-hidden {
   position: absolute;
   overflow: hidden;
+  z-index: -1;
   clip: rect(0 0 0 0);
   height: 1px;
   width: 1px;
