@@ -27,13 +27,17 @@
         transform: rotate(-180deg);
       }
     }
+
+    & > span:not(.accordion-icon) {
+      flex: 1 1 auto;
+    }
   }
 
   .accordion-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-basis: 56px;
+    flex: 0 0 56px;
     position: relative;
     width: 56px;
     height: 56px;

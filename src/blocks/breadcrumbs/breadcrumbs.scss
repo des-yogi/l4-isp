@@ -89,7 +89,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 20px;
-        transition: background $transition-time;
+        transition: background $transition-time ease;
       }
     }
   }

@@ -595,7 +595,7 @@ a {
 .image-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto;
   gap: 16px 16px;
   grid-template-areas:
     "image-1 image-2"
@@ -611,6 +611,7 @@ a {
 .image-2,
 .image-3 {
   overflow: hidden;
+  border-radius: $border-radius--12;
 
   & > img {
     width: 100%;
