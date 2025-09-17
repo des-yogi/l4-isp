@@ -18,7 +18,7 @@
     <div class="product-card__front">
 
       <div class="product-card__front-content">
-        <div class="embed-responsive  embed-responsive--1-1  product-card__img">
+        <a href="#" class="embed-responsive  embed-responsive--1-1  product-card__img" tabindex="-1">
           <picture>
             <source srcset="img/product-img.webp,
                             img/product-img.webp 2x" media="(min-width: 1600px)" type="image/webp">
@@ -44,10 +44,12 @@
             <!-- 510x510 -->
             <img src="img/product-img.png" alt="" width="653" height="653" loading="lazy">
           </picture>
-        </div>
+        </a>
         <header class="product-card__header">
           <span class="tag  @@tagColor">@@tag</span>
-          <h2 class="h4  product-card__title">@@title</h2>
+          <h2 class="h4  product-card__title">
+            <a href="#">@@title</a>
+          </h2>
           @@descr
         </header>
       </div>
