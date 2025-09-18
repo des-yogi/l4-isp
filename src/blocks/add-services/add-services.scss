@@ -39,7 +39,7 @@
   &__section-item {
     @include col(xs, 12);
     @include col(md, 6);
-    @include col(xl, 4);
+    @include col(xxl, 3);
     margin: 0;
   }
 
