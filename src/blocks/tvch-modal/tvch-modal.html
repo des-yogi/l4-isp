@@ -1,0 +1,273 @@
+<!--DEV
+@ @include('blocks/tvch-modal/tvch-modal.html')
+-->
+
+<!-- TV Channels Modal -->
+  <div class="modal fade  tvch-modal"
+       id="channelsModal" tabindex="-1"
+       aria-labelledby="channelsModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered  modal-dialog-scrollable  tvch-modal__dialog">
+
+      <div class="modal-content  tvch-modal__content"
+           data-theme-dark="modal-content--dark"
+           data-theme-light="modal-content--light">
+
+        <div class="modal-header  tvch-modal__header">
+          <div class="tvch-modal__header-inner">
+            <div class="tvch-modal__header-text">
+              <h3 class="modal-title  tvch-modal__title" id="channelsModalLabel">
+                Список каналів
+              </h3>
+              <p class="tvch-modal__hint" role="alert">
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#info"></use></svg>
+                <span>Список каналів може відрізнятися в залежності від вашого регіону...</span>
+              </p>
+            </div>
+
+            <button type="button"
+                    class="btn  btn--secondary btn--icon-only  tvch-modal__close"
+                    data-theme-dark="btn--secondary--dark"
+                    data-theme-light="btn--secondary--light"
+                    data-bs-dismiss="modal"
+                    aria-label="Закрити">
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
+            </button>
+          </div>
+
+          <div class="tvch-modal__search">
+            <label class="field-text"
+             data-theme-dark="field-text--dark"
+             data-theme-light="field-text--light">
+              <span class="visually-hidden">Пошук</span>
+              <span class="field-text__input-wrap">
+                <input id="searchInput" class="field-text__input  tvch-modal__search-input" type="search" placeholder="Пошук каналів">
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-body  tvch-modal__body">
+          <div id="cardsContainer" class="tvch-modal__cards-container">
+
+            <section class="tvch-modal__section" aria-label="Спорт">
+              <h4 class="h5 tvch-modal__section-title">
+                Спорт
+                <span class="tvch-modal__count">(6)</span>
+              </h4>
+              <ul class="tvch-modal__cards">
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Канал 1+1 HD">
+                  <img src="img/1-1.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Канал 1+1 HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Інтер">
+                  <img src="img/inter.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Інтер</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="ICTV HD">
+                  <img src="img/ictv.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">ICTV HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="СТБ HD">
+                  <img src="img/stb.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">СТБ HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Новий канал HD">
+                  <img src="img/novy.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Новий канал HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="ТрансМІСІЯ">
+                  <img src="img/trans.jpg" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">ТрансМІСІЯ</p>
+                </li>
+              </ul>
+            </section>
+
+            <section class="tvch-modal__section" aria-label="Інформаційно-розважальні">
+              <h4 class="h5 tvch-modal__section-title">
+                Інформаційно-розважальні
+                <span class="tvch-modal__count">(45)</span>
+              </h4>
+              <ul class="tvch-modal__cards">
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Канал 1+1 HD">
+                  <img src="img/1-1.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Канал 1+1 HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Інтер">
+                  <img src="img/inter.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Інтер</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="ICTV HD">
+                  <img src="img/ictv.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">ICTV HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="СТБ HD">
+                  <img src="img/stb.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">СТБ HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Новий канал HD">
+                  <img src="img/novy.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Новий канал HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="ТрансМІСІЯ">
+                  <img src="img/trans.jpg" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">ТрансМІСІЯ</p>
+                </li>
+
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Канал 1+1 HD">
+                  <img src="img/1-1.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Канал 1+1 HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Інтер">
+                  <img src="img/inter.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Інтер</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="ICTV HD">
+                  <img src="img/ictv.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">ICTV HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="СТБ HD">
+                  <img src="img/stb.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">СТБ HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Новий канал HD">
+                  <img src="img/novy.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Новий канал HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="ТрансМІСІЯ">
+                  <img src="img/trans.jpg" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">ТрансМІСІЯ</p>
+                </li>
+
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Канал 1+1 HD">
+                  <img src="img/1-1.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Канал 1+1 HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Інтер">
+                  <img src="img/inter.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Інтер</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="ICTV HD">
+                  <img src="img/ictv.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">ICTV HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="СТБ HD">
+                  <img src="img/stb.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">СТБ HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="Новий канал HD">
+                  <img src="img/novy.png" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">Новий канал HD</p>
+                </li>
+                <li class="tvch-modal__card"
+                    data-theme-dark="tvch-modal__card--dark"
+                    data-theme-light="tvch-modal__card--light"
+                    tabindex="0"
+                    data-name="ТрансМІСІЯ">
+                  <img src="img/trans.jpg" alt="" width="156" height="120" loading="lazy">
+                  <p class="tvch-modal__card-name">ТрансМІСІЯ</p>
+                </li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+
+        <div class="modal-footer  tvch-modal__footer">
+          <!-- <button type="button" class="btn btn-secondary  tvch-modal__btn-close" data-bs-dismiss="modal">Закрити</button> -->
+        </div>
+      </div>
+    </div>
+  </div>

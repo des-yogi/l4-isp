@@ -124,7 +124,8 @@
     "vary-modal": [],
     "speed-test": [],
     "speed-test-warning": [],
-    "speed-test-panel": []
+    "speed-test-panel": [],
+    "tvch-modal": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
