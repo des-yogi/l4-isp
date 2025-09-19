@@ -1,20 +1,27 @@
 /*!
- tvch-search-scroll.js
- Поиск по .tvch-modal__card и прокрутка внутри .tvch-modal__body (search находится в header).
- Поддержка динамики: MutationObserver, modalEl.tvch.reindex(), modalEl.tvch.reindexFromJson(),
- и событие 'tvch:data-ready'. Подключать после bootstrap.bundle и после HTML.
+ tvch-filter.js (trimmed: no built-in "no-results" markup)
+ Фильтрация карточек внутри .tvch-modal по подстроке (case-insensitive).
+ - Скрывает несоответствующие карточки с анимацией "сжатия"
+ - Подсвечивает совпадающую подстроку в .tvch-modal__card-name через <mark>
+ - Обновляет счётчик в заголовке секции (.tvch-modal__count)
+ - Показывает/скрывает внешний блок "ничего не найдено" .tvch-modal__no-results
+ - Не создает никаких DOM-элементов для "no-results" — ожидает, что вы добавите и стилизуете его в шаблоне
 */
+(function () {
 
-document.addEventListener('DOMContentLoaded', function () {
-  const DEBOUNCE_MS = 120;
-  const USER_SCROLL_BLOCK_MS = 350;
+  // Настройки
   const ROOT_BLOCK = '.tvch-modal';
-  const CARD_SELECTOR = '.tvch-modal__card';
-  const SCROLL_CONTAINER_SELECTOR = '.tvch-modal__body'; // modal-body скроллится (modal-dialog-scrollable)
-  const CARDS_WRAPPER_SELECTOR = '.tvch-modal__cards-container';
   const SEARCH_INPUT_SELECTOR = '.tvch-modal__search-input';
+  const CARD_SELECTOR = '.tvch-modal__card';
   const CARD_NAME_SELECTOR = '.tvch-modal__card-name';
+  const SECTION_SELECTOR = '.tvch-modal__section';
+  const SECTION_COUNT_SELECTOR = '.tvch-modal__count';
+  const CARDS_WRAPPER_SELECTOR = '.tvch-modal__cards-container';
+  const SCROLL_CONTAINER_SELECTOR = '.tvch-modal__body';
+  const HIDE_ANIM_MS = 260; // длительность анимации скрытия/появления (ms)
+  const DEBOUNCE_MS = 120;
 
+  // Helpers
   function debounce(fn, wait) {
     let t = null;
     return function (...args) {
@@ -22,70 +29,164 @@ document.addEventListener('DOMContentLoaded', function () {
       t = setTimeout(() => fn.apply(this, args), wait);
     };
   }
-
   function escapeHtml(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  // Collapse / expand animation for arbitrary element
+  function collapse(el, ms) {
+    if (!el || el._isHidden) return;
+    el._isHidden = true;
+    if (!el._origDisplay) el._origDisplay = getComputedStyle(el).display === 'none' ? 'block' : getComputedStyle(el).display;
+
+    const style = el.style;
+    style.boxSizing = 'border-box';
+    const computed = getComputedStyle(el);
+    const height = el.offsetHeight;
+    const paddingTop = computed.paddingTop;
+    const paddingBottom = computed.paddingBottom;
+    const marginTop = computed.marginTop;
+    const marginBottom = computed.marginBottom;
+
+    style.height = height + 'px';
+    style.paddingTop = paddingTop;
+    style.paddingBottom = paddingBottom;
+    style.marginTop = marginTop;
+    style.marginBottom = marginBottom;
+    style.opacity = '1';
+    style.overflow = 'hidden';
+    style.transition = `height ${ms}ms ease, padding ${ms}ms ease, margin ${ms}ms ease, opacity ${ms}ms ease`;
+
+    requestAnimationFrame(() => {
+      style.height = '0px';
+      style.paddingTop = '0px';
+      style.paddingBottom = '0px';
+      style.marginTop = '0px';
+      style.marginBottom = '0px';
+      style.opacity = '0';
+    });
+
+    setTimeout(() => {
+      style.display = 'none';
+      style.removeProperty('height');
+      style.removeProperty('padding-top');
+      style.removeProperty('padding-bottom');
+      style.removeProperty('margin-top');
+      style.removeProperty('margin-bottom');
+      style.removeProperty('opacity');
+      style.removeProperty('overflow');
+      style.removeProperty('transition');
+    }, ms + 20);
+  }
+
+  function expand(el, ms) {
+    if (!el || !el._isHidden) return;
+    el._isHidden = false;
+    const style = el.style;
+    style.display = el._origDisplay || '';
+    if (style.display === '' && getComputedStyle(el).display === 'none') {
+      style.display = 'block';
+    }
+    style.boxSizing = 'border-box';
+    style.overflow = 'hidden';
+    style.height = '0px';
+    style.paddingTop = '0px';
+    style.paddingBottom = '0px';
+    style.marginTop = '0px';
+    style.marginBottom = '0px';
+    style.opacity = '0';
+
+    requestAnimationFrame(() => {
+      style.removeProperty('height');
+      style.removeProperty('padding-top');
+      style.removeProperty('padding-bottom');
+      style.removeProperty('margin-top');
+      style.removeProperty('margin-bottom');
+      style.removeProperty('opacity');
+
+      const computed = getComputedStyle(el);
+      const targetHeight = el.offsetHeight;
+      const paddingTop = computed.paddingTop;
+      const paddingBottom = computed.paddingBottom;
+      const marginTop = computed.marginTop;
+      const marginBottom = computed.marginBottom;
+
+      style.height = '0px';
+      style.paddingTop = '0px';
+      style.paddingBottom = '0px';
+      style.marginTop = '0px';
+      style.marginBottom = '0px';
+      style.opacity = '0';
+      style.transition = `height ${ms}ms ease, padding ${ms}ms ease, margin ${ms}ms ease, opacity ${ms}ms ease`;
+
+      requestAnimationFrame(() => {
+        style.height = targetHeight + 'px';
+        style.paddingTop = paddingTop;
+        style.paddingBottom = paddingBottom;
+        style.marginTop = marginTop;
+        style.marginBottom = marginBottom;
+        style.opacity = '1';
+      });
+
+      setTimeout(() => {
+        style.removeProperty('height');
+        style.removeProperty('padding-top');
+        style.removeProperty('padding-bottom');
+        style.removeProperty('margin-top');
+        style.removeProperty('margin-bottom');
+        style.removeProperty('opacity');
+        style.removeProperty('overflow');
+        style.removeProperty('transition');
+      }, ms + 20);
+    });
+  }
+
+  // MAIN
   const modals = Array.from(document.querySelectorAll(ROOT_BLOCK));
   if (!modals.length) return;
 
-  modals.forEach(initModal);
-
-  function initModal(modalEl) {
+  modals.forEach(modalEl => {
     const searchInput = modalEl.querySelector(SEARCH_INPUT_SELECTOR);
-    const scrollContainer = modalEl.querySelector(SCROLL_CONTAINER_SELECTOR);
-    const cardsWrapper = modalEl.querySelector(CARDS_WRAPPER_SELECTOR) || scrollContainer;
+    const cardsWrapper = modalEl.querySelector(CARDS_WRAPPER_SELECTOR) || modalEl.querySelector(SCROLL_CONTAINER_SELECTOR) || modalEl;
+    if (!searchInput || !cardsWrapper) return;
 
-    if (!searchInput || !scrollContainer) return;
+    // find user-provided no-results block (do not create it)
+    const noResultsEl = modalEl.querySelector('.tvch-modal__no-results');
 
-    let cards = [];
-    let lastQuery = '';
-    let lastMatchedEl = null;
-    let userIsScrolling = false;
-    let scrollTimer = null;
-    let mo = null;
-
-    // aria-live region (скрытый) — для скринридеров
-    let liveRegion = modalEl.querySelector('.tvch-modal__live');
-    if (!liveRegion) {
-      liveRegion = document.createElement('div');
-      liveRegion.className = 'tvch-modal__live';
-      liveRegion.setAttribute('aria-live', 'polite');
-      liveRegion.setAttribute('aria-atomic', 'true');
-      Object.assign(liveRegion.style, { position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' });
-      modalEl.appendChild(liveRegion);
-    }
-
-    // --- Indexing ---
+    // Build index of cards grouped by section
+    const sections = []; // { el: sectionEl, cardsEl: ul, cards: [cardObj], countNode }
     function buildIndex() {
-      const els = Array.from(modalEl.querySelectorAll(CARD_SELECTOR));
-      cards = els.map(el => {
-        const nameNode = el.querySelector(CARD_NAME_SELECTOR) || el;
-        const raw = (el.dataset.name || nameNode.textContent || '').trim();
-        return { el, nameNode, originalName: raw, nameLower: raw.toLowerCase() };
+      sections.length = 0;
+      const sectionEls = Array.from(cardsWrapper.querySelectorAll(SECTION_SELECTOR));
+      sectionEls.forEach(sec => {
+        const cardsList = sec.querySelectorAll('.tvch-modal__cards > .tvch-modal__card, .tvch-modal__cards li.tvch-modal__card, .tvch-modal__cards .tvch-modal__card');
+        const arr = Array.from(cardsList).map(cardEl => {
+          const nameNode = cardEl.querySelector(CARD_NAME_SELECTOR) || cardEl;
+          const raw = (cardEl.dataset.name || (nameNode.textContent || '')).trim();
+          if (!cardEl._origName) cardEl._origName = raw;
+          if (!cardEl._origDisplay) cardEl._origDisplay = getComputedStyle(cardEl).display === 'none' ? 'block' : getComputedStyle(cardEl).display;
+          return {
+            el: cardEl,
+            nameNode: nameNode,
+            originalName: raw,
+            nameLower: raw.toLowerCase()
+          };
+        });
+        const countNode = sec.querySelector(SECTION_COUNT_SELECTOR);
+        sections.push({
+          el: sec,
+          cardsEl: sec.querySelector('.tvch-modal__cards'),
+          cards: arr,
+          countNode
+        });
       });
-      return cards.length;
     }
 
-    function reindex() {
-      const n = buildIndex();
-      lastMatchedEl = null;
-      lastQuery = '';
-      liveRegion.textContent = '';
-      return n;
-    }
+    buildIndex();
 
-    // --- Highlighting ---
-    function clearHighlights() {
-      cards.forEach(({ el, nameNode, originalName }) => {
-        el.classList.remove('tvch-modal__card--match');
-        if (nameNode && nameNode.textContent !== undefined) nameNode.textContent = originalName;
-      });
-    }
-
-    function highlightMatch(nameNode, query) {
-      if (!query) return;
+    // Apply highlight for a card's nameNode
+    function highlightName(nameNode, query) {
+      if (!nameNode) return;
       const raw = nameNode.textContent || '';
       const qi = raw.toLowerCase().indexOf(query.toLowerCase());
       if (qi === -1) return;
@@ -95,129 +196,109 @@ document.addEventListener('DOMContentLoaded', function () {
       nameNode.innerHTML = `${escapeHtml(before)}<mark>${escapeHtml(match)}</mark>${escapeHtml(after)}`;
     }
 
-    // --- Scroll handling ---
-    scrollContainer.addEventListener('scroll', () => {
-      userIsScrolling = true;
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(() => { userIsScrolling = false; }, USER_SCROLL_BLOCK_MS);
-    }, { passive: true });
+    function restoreName(nameNode, original) {
+      if (!nameNode) return;
+      nameNode.textContent = original;
+    }
 
-    const doSearch = debounce(() => {
+    function updateSectionCounts() {
+      sections.forEach(sec => {
+        const visible = sec.cards.filter(c => !c.el._isHidden).length;
+        if (sec.countNode) {
+          sec.countNode.textContent = `(${visible})`;
+        }
+        if (visible === 0) {
+          if (!sec.el._isHidden) collapse(sec.el, HIDE_ANIM_MS);
+        } else {
+          if (sec.el._isHidden) expand(sec.el, HIDE_ANIM_MS);
+        }
+      });
+    }
+
+    // Perform filtering (main)
+    const doFilter = debounce(() => {
       const q = (searchInput.value || '').trim();
-      if (q === lastQuery) return;
-      lastQuery = q;
-
-      clearHighlights();
-      lastMatchedEl = null;
-
       if (!q) {
-        liveRegion.textContent = '';
+        sections.forEach(sec => {
+          sec.cards.forEach(c => {
+            restoreName(c.nameNode, c.originalName);
+            if (c.el._isHidden) expand(c.el, HIDE_ANIM_MS);
+            c.el.removeAttribute('aria-hidden');
+            c.el.tabIndex = 0;
+          });
+        });
+        sections.forEach(sec => {
+          if (!sec._origCount) sec._origCount = sec.cards.length;
+          if (sec.countNode) sec.countNode.textContent = `(${sec._origCount})`;
+          if (sec.el._isHidden) expand(sec.el, HIDE_ANIM_MS);
+        });
+        // hide user-provided no-results (if present) by removing show-class
+        if (noResultsEl) noResultsEl.classList.remove('tvch-modal__no-results--show');
         return;
       }
 
       const qLower = q.toLowerCase();
-      const found = cards.find(c => c.nameLower.includes(qLower));
+      let totalVisible = 0;
+      sections.forEach(sec => {
+        sec.cards.forEach(c => {
+          const matches = c.nameLower.includes(qLower);
+          if (matches) {
+            restoreName(c.nameNode, c.originalName);
+            highlightName(c.nameNode, q);
+            if (c.el._isHidden) expand(c.el, HIDE_ANIM_MS);
+            c.el.removeAttribute('aria-hidden');
+            c.el.tabIndex = 0;
+            totalVisible++;
+          } else {
+            if (!c.el._isHidden) collapse(c.el, HIDE_ANIM_MS);
+            c.el.setAttribute('aria-hidden', 'true');
+            c.el.tabIndex = -1;
+          }
+        });
+      });
 
-      if (!found) {
-        liveRegion.textContent = 'Ничего не найдено';
-        return;
-      }
+      updateSectionCounts();
 
-      found.el.classList.add('tvch-modal__card--match');
-      highlightMatch(found.nameNode, q);
-      lastMatchedEl = found.el;
-      liveRegion.textContent = `Найдено: ${found.originalName}`;
-
-      if (userIsScrolling) return;
-
-      // Гарантированно проскроллить внутри modal-body:
-      // Используем scrollIntoView; если не сработает корректно, делаем ручной расчет относительно scrollContainer.
-      try {
-        found.el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
-      } catch (err) {
-        try {
-          const parentRect = scrollContainer.getBoundingClientRect();
-          const elRect = found.el.getBoundingClientRect();
-          const offset = (elRect.top - parentRect.top) - (scrollContainer.clientHeight / 2) + (found.el.clientHeight / 2);
-          scrollContainer.scrollTop += offset;
-        } catch (_) { /* silent */ }
+      // toggle user-provided no-results element (toggle a class; you style it)
+      if (noResultsEl) {
+        if (totalVisible === 0) {
+          noResultsEl.classList.add('tvch-modal__no-results--show');
+          // optional: scroll modal-body to top so the no-results block is visible
+          try {
+            const scrollContainer = modalEl.querySelector(SCROLL_CONTAINER_SELECTOR);
+            if (scrollContainer) scrollContainer.scrollTop = 0;
+          } catch (e) { /* silent */ }
+        } else {
+          noResultsEl.classList.remove('tvch-modal__no-results--show');
+        }
       }
     }, DEBOUNCE_MS);
 
-    // input listeners
-    searchInput.addEventListener('input', doSearch);
+    // Listen input
+    searchInput.addEventListener('input', doFilter);
     searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' && lastMatchedEl) {
-        lastMatchedEl.focus();
-        lastMatchedEl.click();
-      } else if (e.key === 'Escape') {
+      if (e.key === 'Escape') {
         searchInput.value = '';
-        doSearch();
+        doFilter();
       }
     });
 
-    // --- MutationObserver: авто-реиндексация при изменениях в wrapper ---
-    function startObserver() {
-      if (!cardsWrapper) return;
-      if (mo) mo.disconnect();
-      mo = new MutationObserver(debounce(() => { buildIndex(); }, 150));
-      mo.observe(cardsWrapper, { childList: true, subtree: true });
-    }
-
-    // --- waitForCards: ждём карточки (если асинхронно рендерятся) ---
-    function waitForCards(timeoutMs = 3000) {
-      return new Promise(resolve => {
-        const exist = modalEl.querySelectorAll(CARD_SELECTOR);
-        if (exist && exist.length > 0) { buildIndex(); resolve(true); return; }
-
-        let done = false;
-        const onDataReady = () => { if (done) return; done = true; buildIndex(); cleanup(); resolve(true); };
-        const timer = setTimeout(() => { if (done) return; done = true; buildIndex(); cleanup(); resolve(false); }, timeoutMs);
-        function cleanup() { clearTimeout(timer); modalEl.removeEventListener('tvch:data-ready', onDataReady); }
-
-        modalEl.addEventListener('tvch:data-ready', onDataReady);
-        const tmp = new MutationObserver(() => {
-          if (done) return;
-          const now = modalEl.querySelectorAll(CARD_SELECTOR);
-          if (now && now.length > 0) onDataReady();
-        });
-        tmp.observe(cardsWrapper, { childList: true, subtree: true });
-      });
-    }
-
-    // Bootstrap hooks
-    modalEl.addEventListener('shown.bs.modal', () => {
-      startObserver();
-      waitForCards(4000).then(found => {
-        setTimeout(() => { try { searchInput.focus(); } catch (e) {} }, 30);
-        if (found && searchInput && searchInput.value.trim()) doSearch();
-      });
-    });
-
-    modalEl.addEventListener('hidden.bs.modal', () => {
-      clearHighlights();
-      lastQuery = '';
-      lastMatchedEl = null;
-      liveRegion.textContent = '';
-      if (mo) { mo.disconnect(); mo = null; }
-    });
-
-    // Public API
+    // Public API: reindex (in case server regenerates DOM)
     modalEl.tvch = modalEl.tvch || {};
-    modalEl.tvch.reindex = function () { return reindex(); };
-    modalEl.tvch.reindexFromJson = function (jsonArray, renderFn) {
-      if (typeof renderFn === 'function') {
-        renderFn(jsonArray, cardsWrapper);
-        const cnt = reindex();
-        modalEl.dispatchEvent(new CustomEvent('tvch:data-ready', { detail: { count: cnt } }));
-        return cnt;
-      } else {
-        modalEl.dispatchEvent(new CustomEvent('tvch:data-ready', { detail: { raw: jsonArray } }));
-        return 'dispatched';
-      }
+    modalEl.tvch.reindex = function () {
+      buildIndex();
+      sections.forEach(sec => { sec._origCount = sec.cards.length; });
+      // ensure user-provided no-results is hidden after reindex
+      if (noResultsEl) noResultsEl.classList.remove('tvch-modal__no-results--show');
+      return sections.reduce((sum, s) => sum + s.cards.length, 0);
     };
 
-    // initial index
-    buildIndex();
-  } // initModal
-});
+    // store original counts
+    sections.forEach(sec => { sec._origCount = sec.cards.length; });
+
+    // ensure user-provided no-results is hidden initially
+    if (noResultsEl) noResultsEl.classList.remove('tvch-modal__no-results--show');
+
+  }); // end modals.forEach
+
+})();
