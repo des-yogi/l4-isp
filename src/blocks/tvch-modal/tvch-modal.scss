@@ -211,4 +211,25 @@
       padding: 20px;
     }
   }
+
+  &__no-results {
+    display: none;
+
+    img {
+      display: block;
+      width: 200px;
+      height: 200px;
+    }
+
+    &--show {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+
+  &__no-results-text {
+    text-align: center;
+  }
 }
