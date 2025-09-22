@@ -232,4 +232,14 @@
   &__no-results-text {
     text-align: center;
   }
+
+  &__loader {
+    display: none;
+    position: relative;
+    min-height: 150px;
+
+    &--show {
+      display: block;
+    }
+  }
 }
