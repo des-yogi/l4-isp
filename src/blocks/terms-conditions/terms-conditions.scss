@@ -32,6 +32,11 @@
     @include col(lg, 4);
     //@include col(xl, 4);
     margin: 0;
+
+    &:last-child {
+      @include col(xs, 12);
+      @include col(lg, 12);
+    }
   }
 
   &__item {
@@ -91,18 +96,21 @@
   }
 
   &__benefits {
-    padding: 24px;
-    margin-top: 24px;
+    //width: 100%;
+    //margin-top: 24px;
     backdrop-filter: blur(10px);
 
     &--dark {
       // #{$block-name}__element
-      @include gradient-border-mask(
-        2px,
-        $border-radius--12,
-        var(--green),
-        var(--opacity-black-50)
-      )
+
+      #{$block-name}__benefits-inner {
+        @include gradient-border-mask(
+          2px,
+          $border-radius--12,
+          var(--green),
+          var(--opacity-black-50)
+        )
+      }
 
       #{$block-name}__benefits-list-item {
 
@@ -128,12 +136,14 @@
 
     &--light {
       // #{$block-name}__element
-      @include gradient-border-mask(
-        2px,
-        $border-radius--12,
-        var(--green),
-        var(--opacity-white-50)
-      )
+      #{$block-name}__benefits-inner {
+        @include gradient-border-mask(
+          2px,
+          $border-radius--12,
+          var(--green),
+          var(--opacity-white-50)
+        )
+      }
 
       #{$block-name}__benefits-list-item {
 
@@ -164,6 +174,7 @@
     //align-items: flex-start;
     gap: 0 28px;
     width: 100%;
+    padding: 24px;
 
     @media (min-width: $screen-md) {
       flex-wrap: nowrap;
