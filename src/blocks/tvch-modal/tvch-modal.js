@@ -1,15 +1,15 @@
 /*!
  tvch-filter-with-loader.js
- tvch-filter.js + preloader support
  - Фильтрация карточек внутри .tvch-modal по подстроке (case-insensitive).
  - Анимация скрытия/появления карточек, подсветка <mark>, обновление счётчиков.
  - Авто-реиндексация через MutationObserver (ловит innerHTML/replaceChild).
  - Управление прелоадером: ищет .tvch-modal__loader в DOM и toggles класс .tvch-modal__loader--show
- - Улучшенная логика no-results: немедленный показ при недавнем вводе пользователем,
-   отложенный показ при DOM-источниках; защита от циклических срабатываний Observer <-> UI.
- - При закрытии модалки очищает поле поиска и сбрасывает состояние фильтра/но-резалт.
+ - Устойчивая логика no-results: immediate при user-input, delayed для DOM/таймаутов.
+ - Защита от циклических срабатываний observer <-> UI; минимизация DOM-мутаций при сортировке
+ - При закрытии модалки очищается поле поиска и сбрасывается состояние.
 */
 (function () {
+  'use strict';
 
   // ============ SETTINGS ============
   const ROOT_BLOCK = '.tvch-modal';
@@ -23,6 +23,7 @@
   const LOADER_SELECTOR = '.tvch-modal__loader';
   const LOADER_SHOW_CLASS = 'tvch-modal__loader--show';
   const NO_RESULTS_SHOW_CLASS = 'tvch-modal__no-results--show';
+
   const HIDE_ANIM_MS = 260;
   const DEBOUNCE_MS = 120;
   const SORT_ON_REINDEX = true;
@@ -42,7 +43,7 @@
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
-  // collapse/expand (unchanged)
+  // collapse/expand animations
   function collapse(el, ms) {
     if (!el || el._isHidden) return;
     el._isHidden = true;
@@ -156,13 +157,14 @@
     const searchInput = modalEl.querySelector(SEARCH_INPUT_SELECTOR);
     if (!searchInput) return;
 
+    // state flags
     let suppressObserver = false;
     let lastUserInputTs = 0;
 
     const LOCALE = (navigator.languages && navigator.languages[0]) || navigator.language || 'uk';
     const collatorOpts = { sensitivity: 'base', numeric: true };
 
-    // loader helpers
+    // ============ Loader helpers ============
     function showLoader() {
       if (!loaderEl) return;
       loaderEl.classList.add(LOADER_SHOW_CLASS);
@@ -181,7 +183,7 @@
       loaderFallbackTimer = null;
     }
 
-    // immediate toggle for no-results with observer suppression
+    // ============ no-results control ============
     function toggleNoResultsImmediate(show) {
       if (!noResultsEl) return;
       const has = noResultsEl.classList.contains(NO_RESULTS_SHOW_CLASS);
@@ -198,19 +200,17 @@
           noResultsEl.setAttribute('aria-hidden', 'true');
         }
       } finally {
-        // keep suppression slightly longer than observer debounce to avoid races
         setTimeout(() => { suppressObserver = false; }, Math.max(DEBOUNCE_MS, NO_RESULTS_STABLE_MS) + 80);
       }
     }
 
-    // scheduler: show/hide no-results with stable-delay for DOM-driven cases
     function scheduleNoResults(show, meta = {}) {
       if (!noResultsEl) return;
       if (noResultsTimer) {
         clearTimeout(noResultsTimer);
         noResultsTimer = null;
       }
-      const recentUser = (Date.now() - lastUserInputTs) < USER_IMMEDIATE_MS || meta && meta.source === 'user';
+      const recentUser = (Date.now() - lastUserInputTs) < USER_IMMEDIATE_MS || (meta && meta.source === 'user');
       if (show) {
         if (recentUser) {
           toggleNoResultsImmediate(true);
@@ -222,11 +222,12 @@
           noResultsTimer = null;
         }, NO_RESULTS_STABLE_MS);
       } else {
+        // hide immediately and cancel pending
         toggleNoResultsImmediate(false);
       }
     }
 
-    // read cards
+    // ============ Read cards and find wrapper ============
     function readCardsFromContainer(cardsEl) {
       const list = cardsEl.querySelectorAll(CARD_SELECTOR);
       return Array.from(list).map(cardEl => {
@@ -242,21 +243,46 @@
         };
       });
     }
-
     function findCardsWrapper() {
       return modalEl.querySelector(CARDS_WRAPPER_SELECTOR) || modalEl.querySelector(SCROLL_CONTAINER_SELECTOR) || modalEl;
     }
 
+    // ============ buildIndex (with safe reattach) ============
     function buildIndex() {
       sections.length = 0;
       cardsWrapper = findCardsWrapper();
       const sectionEls = Array.from(cardsWrapper.querySelectorAll(SECTION_SELECTOR));
+
+      // helper: minimal-reorder attach using DocumentFragment and suppression
+      function sortAndAttach(container, arr) {
+        if (!SORT_ON_REINDEX) return;
+        // quick check: if current order equals desired, skip heavy DOM ops
+        let needsReorder = false;
+        for (let i = 0; i < arr.length; i++) {
+          if (container.children[i] !== arr[i].el) {
+            needsReorder = true;
+            break;
+          }
+        }
+        if (!needsReorder) return;
+
+        // perform one-fragment reattach under suppression
+        suppressObserver = true;
+        try {
+          const frag = document.createDocumentFragment();
+          arr.forEach(c => frag.appendChild(c.el));
+          container.appendChild(frag);
+        } finally {
+          setTimeout(() => { suppressObserver = false; }, Math.max(DEBOUNCE_MS, 180));
+        }
+      }
+
       if (sectionEls.length === 0) {
         const directCardsContainer = cardsWrapper.querySelector('.tvch-modal__cards') || cardsWrapper;
         const arr = readCardsFromContainer(directCardsContainer);
         if (SORT_ON_REINDEX) {
           arr.sort((a, b) => a.originalName.localeCompare(b.originalName, LOCALE, collatorOpts));
-          arr.forEach(c => directCardsContainer.appendChild(c.el));
+          sortAndAttach(directCardsContainer, arr);
         }
         sections.push({
           el: null,
@@ -271,7 +297,7 @@
           const arr = readCardsFromContainer(cardsListContainer);
           if (SORT_ON_REINDEX) {
             arr.sort((a, b) => a.originalName.localeCompare(b.originalName, LOCALE, collatorOpts));
-            arr.forEach(c => cardsListContainer.appendChild(c.el));
+            sortAndAttach(cardsListContainer, arr);
           }
           const countNode = sec.querySelector(SECTION_COUNT_SELECTOR);
           sections.push({
@@ -292,7 +318,7 @@
       }
     }
 
-    // highlighting
+    // ============ highlighting / restore ============
     function highlightName(nameNode, query) {
       if (!nameNode) return;
       const raw = nameNode.textContent || '';
@@ -322,7 +348,7 @@
       });
     }
 
-    // core filter (actual implementation)
+    // ============ filter logic ============
     function performFilter() {
       const q = (searchInput.value || '').trim();
       if (!q) {
@@ -380,7 +406,6 @@
         }
       }
     }
-
     const doFilter = debounce(performFilter, DEBOUNCE_MS);
 
     // ============ MutationObservers ============
@@ -407,6 +432,7 @@
           sections.forEach(sec => { sec._origCount = sec.cards.length; });
           doFilter();
         }, 150));
+
         moParent = new MutationObserver(debounce((mutations) => {
           if (suppressObserver) return;
           const stillHasWrapper = modalEl.contains(cardsWrapper);
@@ -423,6 +449,7 @@
         moCards = null;
         moParent = null;
       }
+
       if (moCards && cardsWrapper) {
         try { moCards.observe(cardsWrapper, { childList: true, subtree: true }); } catch (e) {}
       }
@@ -460,6 +487,7 @@
       }
     });
 
+    // show/hide modal events
     modalEl.addEventListener('shown.bs.modal', () => {
       buildIndex();
       sections.forEach(sec => { sec._origCount = sec.cards.length; });
@@ -474,22 +502,16 @@
       setTimeout(() => doFilter(), 60);
     });
 
-    // --- CHANGES: on hidden, clear input and fully reset filter/no-results state ---
     modalEl.addEventListener('hidden.bs.modal', () => {
       stopObservers();
       hideLoader();
-      // clear any pending no-results timer
       if (noResultsTimer) { clearTimeout(noResultsTimer); noResultsTimer = null; }
       // clear search field so reopened modal starts clean
-      try {
-        searchInput.value = '';
-      } catch (e) {}
+      try { searchInput.value = ''; } catch (e) {}
       // reset last user input timestamp (prevents immediate no-results)
       lastUserInputTs = 0;
       // run immediate filter to restore full list & hide no-results
-      try {
-        performFilter();
-      } catch (e) {}
+      try { performFilter(); } catch (e) {}
     });
 
     // Public API
@@ -506,4 +528,5 @@
     // ensure no-results hidden initially
     scheduleNoResults(false);
   });
+
 })();
