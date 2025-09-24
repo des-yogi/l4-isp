@@ -17,9 +17,17 @@
         margin-left: auto;
       }
     }
+
+    &.modal-dialog-scrollable {
+
+      // @media (min-width: $screen-md) {
+      //   height: calc(100% - 80px);
+      // }
+    }
   }
 
   &__content {
+    height: 100%;
     backdrop-filter: blur(37px);
 
     &--dark {

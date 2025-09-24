@@ -78,6 +78,14 @@
     //backdrop-filter: blur(20px);
   }
 
+  &__btn-go {
+    color: var(--grey-900);
+
+    & > svg {
+      fill: currentColor !important;
+    }
+  }
+
   // &__form {
 
   // }
