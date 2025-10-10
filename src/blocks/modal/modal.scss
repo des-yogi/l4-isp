@@ -64,7 +64,7 @@
   //border: 1px solid rgba(0, 0, 0, 0.2);
   //border-radius: $border-radius--12;
   outline: 0;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(37px);
 
   &--dark {
     @include gradient-border-mask(
@@ -80,7 +80,7 @@
       2px,
       $border-radius--12,
       var(--opacity-white-60),
-      var(--opacity-white-40)
+      var(--opacity-white-50)
     )
   }
 }

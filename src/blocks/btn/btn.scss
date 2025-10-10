@@ -41,6 +41,7 @@
   }
 
   svg {
+    flex: 0 0 24px;
     width: 24px;
     height: 24px;
     transition: fill 0.1s ease-in-out;
@@ -107,6 +108,23 @@
   &--icon-only {
     width: 56px;
     padding: 0;
+  }
+
+  &--sm {
+    height: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: $font-size-sm;
+    line-height: 1;
+    border-radius: $border-radius !important;
+
+    @media (min-width: $screen-md) {
+      height: 42px;
+    }
+
+    &::before {
+      border-radius: $border-radius !important;
+    }
   }
 
   &--glow {

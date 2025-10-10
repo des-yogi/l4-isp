@@ -186,13 +186,29 @@
     &:not(:last-child) {
       margin-bottom: 12px;
     }
+
+    &.active {
+
+      #{$block-name}__nav-link {
+        color: var(--main-nav-link-hover-color);
+      }
+    }
   }
 
   &__nav-link {
     display: inline-flex;
     padding: 2px 0;
     text-decoration: none;
-    color: inherit;
+    color: var(--main-nav-link-color);
+
+    &:hover,
+    &:focus {
+      color: var(--main-nav-link-hover-color);
+    }
+
+    &:active {
+      color: var(--main-nav-link-active-color);
+    }
   }
 
 

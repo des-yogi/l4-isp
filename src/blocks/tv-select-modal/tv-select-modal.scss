@@ -1,0 +1,57 @@
+.tv-select-modal {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__body {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  &__provider {
+
+    & + & {
+      margin-top: 24px;
+
+      // @media (min-width: $screen-md) {
+      //   margin-top: 24px;
+      // }
+    }
+  }
+
+  &__provider-title {
+    margin-bottom: 12px;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: var(--text-pale-color);
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 180px;
+
+    @media (min-width: $screen-sm) {
+      gap: 8px 40px;
+    }
+
+    & + & {
+      margin-top: 12px;
+    }
+
+    .field-radio {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    padding: 4px 0;
+    color: var(--card-link-color);
+
+    @media (max-width: $screen-sm - 1) {
+      margin-left: 32px;
+    }
+  }
+}

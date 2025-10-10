@@ -42,6 +42,8 @@
   --megogo:           #22C3B1;
 
   // Opacity
+  --opacity-white-80: rgba(255, 255, 255, 0.8);
+  --opacity-white-70: rgba(255, 255, 255, 0.7);
   --opacity-white-60: rgba(255, 255, 255, 0.6);
   --opacity-white-50: rgba(255, 255, 255, 0.5);
   --opacity-white-40: rgba(255, 255, 255, 0.4);
@@ -53,9 +55,11 @@
 
   --opacity-black-50: rgba(0, 0, 0, 0.5);
   --opacity-black-40: rgba(0, 0, 0, 0.4);
+  --opacity-black-30: rgba(0, 0, 0, 0.3);
   --opacity-black-16: rgba(0, 0, 0, 0.16);
   --opacity-black-12: rgba(0, 0, 0, 0.12);
   --opacity-black-8:  rgba(0, 0, 0, 0.08);
+  --opacity-black-4:  rgba(0, 0, 0, 0.04);
 
   --opacity-blue-40:  rgba(39, 125, 255, 0.4);
   --opacity-blue-30:  rgba(39, 125, 255, 0.3);
@@ -115,6 +119,9 @@
   --toggler-part-bg-color: var(--grey-900);
   --page-header-top-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0) 100%);
 
+  --radio-bg-color: var(--white);
+  --radio-border-color: var(--opacity-black-40);
+
   --th-color: var(--text-color);
   --th-bg-color: var(--opacity-blue-20);
 
@@ -171,6 +178,9 @@
 
   --toggler-part-bg-color: var(--white);
   --page-header-top-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 100%);
+
+  --radio-bg-color: var(--grey-700);
+  --radio-border-color: var(--grey-700);
 
   --th-color: var(--text-color);
   --th-bg-color: var(--opacity-blue-20);

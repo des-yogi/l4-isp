@@ -102,6 +102,18 @@
       box-shadow: 0 0 0 3px rgba(39, 125, 255, 0.7);
     }
 
+    #{$block-name}.is-disabled {
+
+      &::after {
+        background-image: svg-load('../blocks/field-select/bg-img/select-down.svg', fill=$gray-dark);
+      }
+
+      #{$block-name}__inner {
+        color: var(--opacity-white-50);
+        background: var(--opacity-black-16);
+      }
+    }
+
     #{$block-name}__inner {
       color: var(--text-color);
       background-color: var(--opacity-white-4);
@@ -173,6 +185,18 @@
 
     #{$block-name}.is-focused {
       box-shadow: 0 0 0 3px rgba(39, 125, 255, 0.7);
+    }
+
+    #{$block-name}.is-disabled {
+
+      &::after {
+        background-image: svg-load('../blocks/field-select/bg-img/select-down.svg', fill=$gray-lighten);
+      }
+
+      #{$block-name}__inner {
+        color: var(--opacity-black-50);
+        background: var(--opacity-black-4);
+      }
     }
 
     #{$block-name}__inner {

@@ -8,12 +8,10 @@
     <div class="swiper-wrapper">
 
       <section class="swiper-slide  container  hero__slide"
-               style="background-color:hsla(216,100%,91%,1);
+               style="background-color: hsla(229,0%,100%,0);
                       background-image:
-                        radial-gradient(at 100% 100%, hsla(181,100%,48%,1) 0px, transparent 50%),
-                        radial-gradient(at 70% 56%, hsla(217,78%,50%,0.82) 0px, transparent 50%),
-                        radial-gradient(at 88% 10%, hsla(232,89%,4%,1) 0px, transparent 50%),
-                        radial-gradient(at 76% 14%, hsla(240,72%,49%,0.7) 0px, transparent 50%);">
+                      radial-gradient(at 0% 0%, hsla(240,54%,46%,1) 0px, transparent 50%),
+                      radial-gradient(at 100% 100%, hsla(274,100%,59%,1) 0px, transparent 50%);">
         <div class="row">
           <div class="hero__col-text">
             <div class="hero__text">
@@ -171,9 +169,15 @@
 
     <div class="container  hero__controls">
       <div class="swiper-controls">
-        <div class="btn  btn--secondary  btn--secondary--light  swiper-button-prev  hero__btn-prev"></div>
+        <div class="btn  btn--secondary  swiper-button-prev  hero__btn-prev"
+             data-theme-light="btn--secondary--light"
+             data-theme-dark="btn--secondary--dark"
+        ></div>
         <div class="swiper-pagination  hero__pagination"></div>
-        <div class="btn  btn--secondary  btn--secondary--light  swiper-button-next  hero__btn-next"></div>
+        <div class="btn  btn--secondary  swiper-button-next  hero__btn-next"
+             data-theme-light="btn--secondary--light"
+             data-theme-dark="btn--secondary--dark"
+        ></div>
       </div>
     </div>
 

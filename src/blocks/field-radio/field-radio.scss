@@ -43,23 +43,38 @@
     &:hover {
 
       #{$block-name}__name-text {
-        color: $link-color--hover;
+
+        &::before {
+          border-color: var(--blue-600);
+        }
+
+        // &::after {
+        //   opacity: 1;
+        //   background-color: var(--blue-600);
+        // }
       }
     }
   }
 
   &__name-text {
-    color: $title-color;
+    color: var(--text-color);
+    line-height: 24px;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0;
+      top: -2px;
       left: 0;
-      width: 22px;
-      height: 22px;
-      border: 1px solid $border-color;
+      width: 24px;
+      height: 24px;
+      background-color: var(--radio-bg-color);
+      border: 1px solid var(--radio-border-color);
       border-radius: 50%;
+
+      @at-root input:checked ~ & {
+        background-color: var(--blue-500);
+        border-color: var(--blue-500);
+      }
     }
 
     @at-root input:focus ~ &::before {
@@ -69,13 +84,13 @@
     &::after {
       content: '';
       position: absolute;
-      top: 5px;
-      left: 5px;
+      top: 4px;
+      left: 6px;
       width: 12px;
       height: 12px;
       opacity: 0;
       border-radius: 50%;
-      background-color: $border-color;
+      background-color: var(--bg-color);
       transition: opacity $transition-time;
 
       @at-root input:checked ~ & {

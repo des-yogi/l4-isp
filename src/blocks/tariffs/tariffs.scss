@@ -233,12 +233,12 @@
   &__slide-caption {
     display: flex;
     align-items: flex-end;
-    height: 80px;
+    height: 82px;
     padding: 16px 16px 16px 2px;
     margin-bottom: 0;
 
     @media (min-width: $screen-md) {
-      height: 106px;
+      height: 108px;
     }
 
     &--header {
@@ -281,6 +281,13 @@
       justify-content: initial;
       height: 56px;
       padding-right: 24px;
+    }
+
+    &:last-child {
+
+      &::after {
+        display: none;
+      }
     }
 
     svg {

@@ -71,7 +71,7 @@
   }
 
   &__text {
-    color: var(--grey-900);
+    color: var(--text-color);
   }
 
   &__slide-title {
@@ -108,7 +108,7 @@
 
     .swiper-controls {
       max-width: 204px;
-      color: var(--grey-900);
+      //color: var(--grey-900);
     }
   }
 

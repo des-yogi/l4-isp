@@ -1,0 +1,198 @@
+<!--DEV
+@ @include('blocks/tv-select-modal/tv-select-modal.html')
+-->
+
+<div class="modal  fade  tv-select-modal"
+     id="tvSelectModal"
+     tabindex="-1"
+     aria-labelledby="tvSelectModalLabel"
+     aria-hidden="true">
+
+  <div class="modal-dialog  modal-dialog-scrollable  modal-dialog-centered">
+    <div class="modal-content"
+         data-theme-dark="modal-content--dark"
+         data-theme-light="modal-content--light">
+      <div class="modal-header">
+        <h4 class="h3  modal-title  tv-select-modal__title" id="tvSelectModalLabel">
+          Оберіть TV тариф
+         </h4>
+        <button type="button" class="btn  btn--secondary  btn--icon-only"
+                data-bs-dismiss="modal"
+                aria-label="Закрити"
+                data-theme-dark="btn--secondary--dark"
+                data-theme-light="btn--secondary--light">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close-line"></use></svg>
+        </button>
+      </div>
+
+      <div class="modal-body  tv-select-modal__body">
+        <section class="tv-select-modal__provider">
+          <h5 class="p  tv-select-modal__provider-title">SWEET.TV</h5>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="sweet-min" checked>
+                <span class="field-radio__name-text">Мінімальний 237 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="sweet-med">
+                <span class="field-radio__name-text">Середній 326 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="sweet-max">
+                <span class="field-radio__name-text">Максимальний 340 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+        </section>
+
+        <section class="tv-select-modal__provider">
+          <h5 class="p  tv-select-modal__provider-title">Omega TV</h5>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="omega-min" checked>
+                <span class="field-radio__name-text">Мінімальний 237 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="omega-med">
+                <span class="field-radio__name-text">Середній 326 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="omega-max">
+                <span class="field-radio__name-text">Максимальний 340 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+        </section>
+
+        <section class="tv-select-modal__provider">
+          <h5 class="p  tv-select-modal__provider-title">MEGOGO</h5>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="megogo-min" checked>
+                <span class="field-radio__name-text">Мінімальний 237 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="megogo-med">
+                <span class="field-radio__name-text">Середній 326 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+
+          <div class="tv-select-modal__input-wrapper">
+            <div class="field-radio">
+              <label class="field-radio__name">
+                <input class="field-radio__input" type="radio" name="package" value="megogo-max">
+                <span class="field-radio__name-text">Максимальний 340 каналів</span>
+              </label>
+            </div>
+
+            <a href="javascript:void(0)"
+               data-bs-toggle="modal"
+               data-bs-target="#channelsModal"
+               role="button" class="tv-select-modal__link">
+              Перелік каналів
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="modal-footer  tv-select-modal__footer">
+
+        <button type="button"
+                class="btn  tv-select-modal__set-btn"
+                style="width: 100%;">
+          <span>Обрати</span>
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
