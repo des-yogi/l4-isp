@@ -15,6 +15,16 @@
       flipElem.classList.toggle('tariff-card__inner--backfaced');
     };
 
+    const setBtnText = (button) => {
+      const lang = getCurrentLang();
+      const text = {
+        uk: 'Oберить пакет IPTV',
+        en: 'Select an IPTV package',
+        ru: 'Выберите пакет IPTV',
+      };
+      button.textContent = text[lang] || text['uk'];
+    }
+
     const addIptvHandler = () => {
       addIptv.style.display = 'none';
       chanSelect.style.display = 'flex';
@@ -24,7 +34,12 @@
     const removeIptvHandler = () => {
       addIptv.style.display = 'flex';
       chanSelect.style.display = 'none';
+      setBtnText(chanSelect.querySelector('.tariff-card__sel-btn>span'));
       addIptv.addEventListener('click', addIptvHandler);
+
+      // ✅ ОТПРАВЛЯЕМ СОБЫТИЕ для сброса цены и данных
+      console.log('🔄 Отправка события iptv-reset для карточки:', card);
+      card.dispatchEvent(new CustomEvent('iptv-reset'));
     }
 
     if (moreBtn && returnBtn) {
@@ -40,6 +55,4 @@
       closeChanSelectBtn.addEventListener('click', removeIptvHandler);
     }
   }
-
-
 }());

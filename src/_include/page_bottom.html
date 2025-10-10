@@ -7,24 +7,85 @@
 
 <script>
   "use strict";
+  /**
+   * Универсальная функция для определения текущего языка сайта.
+   * Возвращает двухбуквенный код языка ('ru', 'en', ...).
+   *
+   * @param {Object} options
+   * @param {string[]} [options.supportedLangs] - Массив поддерживаемых языков, например: ['ru', 'en', 'fr']
+   * @param {string} [options.defaultLang] - Язык по умолчанию, если не найден (например, 'en')
+   * @returns {string} Код языка
+   */
   document.addEventListener('DOMContentLoaded', function () {
-    const varyModal = document.getElementById('varyModal')
+    window.getCurrentLang = function(options = {}) {
+      const { supportedLangs = ['uk', 'ru', 'en'], defaultLang = 'uk' } = options;
+      // 1. Получаем из <html lang="">
+      let lang = document.documentElement.lang;
+      if (lang) {
+        lang = lang.toLowerCase().slice(0, 2);
+        if (!supportedLangs.length || supportedLangs.includes(lang)) {
+          return lang;
+        }
+      }
+      // 2. Получаем из URL: /ru/, /en/, /fr/...
+      const pathMatch = window.location.pathname.match(/^\/([a-z]{2})(\/|$)/i);
+      if (pathMatch) {
+        lang = pathMatch[1].toLowerCase();
+        if (!supportedLangs.length || supportedLangs.includes(lang)) {
+          return lang;
+        }
+      }
+      // 3. Возвращаем дефолтный язык
+      return defaultLang;
+    }
+  });
+</script>
+
+<script>
+  "use strict";
+  document.addEventListener('DOMContentLoaded', function () {
+    const varyModal = document.getElementById('varyModal');
+
     if (varyModal) {
       varyModal.addEventListener('show.bs.modal', event => {
-        // Button that triggered the modal
-        const button = event.relatedTarget
-        // Extract info from data-bs-* attributes
-        const recipient = button.getAttribute('data-bs-whatever')
-        // If necessary, you could initiate an Ajax request here
-        // and then do the updating in a callback.
+        // Кнопка, которая открыла модалку
+        const button = event.relatedTarget;
 
-        // Update the modal's content.
-        const modalTitle = varyModal.querySelector('.modal-title')
-        //const modalBodyInput = varyModal.querySelector('.modal-body input')
+        // Находим карточку тарифа (одна на обе кнопки)
+        const tariffCard = button.closest('.tariff-card');
 
-        modalTitle.textContent = `${recipient}`
-        //modalBodyInput.value = recipient
-      })
+        // Получаем название тарифа
+        const tariffName = button.getAttribute('data-bs-whatever');
+
+        // Элементы модалки
+        const modalTitle = varyModal.querySelector('.modal-title');
+        const ipTariffInput = varyModal.querySelector('#ipTariff');
+        const tvTariffInput = varyModal.querySelector('#tvTariff');
+
+        // Устанавливаем название тарифа
+        modalTitle.textContent = tariffName || 'Підключити тариф';
+        ipTariffInput.value = tariffName || '';
+
+        // Проверяем, выбран ли IPTV-пакет в КАРТОЧКЕ (не в кнопке!)
+        if (tariffCard && tariffCard.dataset.selectedIptv) {
+          // IPTV выбран — берём из карточки
+          tvTariffInput.value = tariffCard.dataset.selectedIptv;
+        } else {
+          // IPTV не выбран
+          tvTariffInput.value = 'Без IPTV';
+        }
+
+        const priceElement = tariffCard?.querySelector('.tariff-card__opt-item--price strong');
+        if (priceElement) {
+          const totalPriceInput = varyModal.querySelector('#totalPrice');
+          totalPriceInput.value = priceElement.textContent.trim();
+        }
+
+        /*console.log('Дані форми:', {
+          тариф: ipTariffInput.value,
+          iptv: tvTariffInput.value
+        });*/
+      });
     }
   });
 </script>

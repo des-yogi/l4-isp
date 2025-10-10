@@ -9,7 +9,8 @@
 <article class="tariff-card"
          data-theme-dark="tariff-card--dark"
          data-theme-light="tariff-card--light"
-         style="background-image: url('img/tariff-card-bg.png')">
+         style="background-image: url('img/tariff-card-bg.png')"
+>
 
   <header class="tariff-card__header">
     <div class="tariff-card__header-text">
@@ -107,7 +108,7 @@
           Безоплатний сервіс
           <a href="#">Детальніше</a>
         </li>
-        <li class="tariff-card__opt-item"
+        <li class="tariff-card__opt-item  tariff-card__opt-item--price"
             aria-labelledby="tariff-service">
           <strong style="font-size: 24px; font-weight: 600;">
             199 грн
@@ -161,7 +162,13 @@
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
         </button>
 
-        <button class="btn">
+        <button class="btn"
+                data-theme-dark="btn--dark"
+                data-theme-light="btn--light"
+                data-bs-toggle="modal"
+                data-bs-target="#varyModal"
+                data-bs-whatever="Підключити @@title"
+          >
           <span>Підключитись</span>
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
         </button>
