@@ -15,7 +15,7 @@
          data-theme-dark="modal-content--dark"
          data-theme-light="modal-content--light">
       <div class="modal-header">
-        <h4 class="modal-title" id="varyModalLabel">Пошук</h4>
+        <h4 class="modal-title" id="varyModalLabel">Заголовок</h4>
         <button type="button" class="btn  btn--secondary  btn--icon-only"
                 data-bs-dismiss="modal"
                 aria-label="Закрити"
@@ -26,6 +26,11 @@
       </div>
       <div class="modal-body  vary-modal__body">
         <form id="connectForm" class="vary-modal__form" action="#" method="post">
+
+          <input id="ipTariff" type="hidden" name="ip-tariff" value="">
+          <input id="tvTariff" type="hidden" name="tv-tariff" value="">
+          <input id="totalPrice" type="hidden" name="total-price" value="">
+
           <label class="field-text"
              data-theme-dark="field-text--dark"
              data-theme-light="field-text--light">
@@ -72,7 +77,7 @@
         <button form="connectForm"
                 type="submit"
                 class="btn  vary-modal__submit-btn">
-          <span>Шукати</span>
+          <span>Надіслати</span>
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
         </button>
       </div>
