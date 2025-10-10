@@ -5,8 +5,8 @@
  - Авто-реиндексация через MutationObserver (ловит innerHTML/replaceChild).
  - Управление прелоадером: ищет .tvch-modal__loader в DOM и toggles класс .tvch-modal__loader--show
  - Устойчивая логика no-results: immediate при user-input, delayed для DOM/таймаутов.
- - Защита от циклических срабатываний observer <-> UI; минимизация DOM-мутаций при сортировке
- - При закрытии модалки очищается поле поиска и сбрасывается состояние.
+ - Защита от циклических срабатываний observer <-> UI; минимизация DOM-мутаций при сортировке.
+ - Адаптация к «лишним обёрткам» от сервера: ищем карточки по всему контейнеру и группируем по ближайшему контейнеру карточек.
 */
 (function () {
   'use strict';
@@ -147,7 +147,7 @@
 
   modals.forEach(modalEl => {
     let cardsWrapper = null;
-    let sections = [];
+    let sections = []; // { el: sectionEl|null, cardsEl: containerEl, cards: [{el,nameNode,originalName,nameLower}], countNode, _origCount }
     let moCards = null;
     let moParent = null;
     let loaderEl = modalEl.querySelector(LOADER_SELECTOR);
@@ -228,90 +228,84 @@
     }
 
     // ============ Read cards and find wrapper ============
-    function readCardsFromContainer(cardsEl) {
-      const list = cardsEl.querySelectorAll(CARD_SELECTOR);
-      return Array.from(list).map(cardEl => {
-        const nameNode = cardEl.querySelector(CARD_NAME_SELECTOR) || cardEl;
-        const raw = (cardEl.dataset.name || (nameNode.textContent || '')).trim();
-        if (!cardEl._origName) cardEl._origName = raw;
-        if (!cardEl._origDisplay) cardEl._origDisplay = getComputedStyle(cardEl).display === 'none' ? 'block' : getComputedStyle(cardEl).display;
-        return {
-          el: cardEl,
-          nameNode,
-          originalName: raw,
-          nameLower: raw.toLowerCase()
-        };
-      });
+    function readCardObject(cardEl) {
+      const nameNode = cardEl.querySelector(CARD_NAME_SELECTOR) || cardEl;
+      const raw = (cardEl.dataset.name || (nameNode.textContent || '')).trim();
+      if (!cardEl._origName) cardEl._origName = raw;
+      if (!cardEl._origDisplay) cardEl._origDisplay = getComputedStyle(cardEl).display === 'none' ? 'block' : getComputedStyle(cardEl).display;
+      return {
+        el: cardEl,
+        nameNode,
+        originalName: raw,
+        nameLower: raw.toLowerCase()
+      };
     }
     function findCardsWrapper() {
       return modalEl.querySelector(CARDS_WRAPPER_SELECTOR) || modalEl.querySelector(SCROLL_CONTAINER_SELECTOR) || modalEl;
     }
 
-    // ============ buildIndex (with safe reattach) ============
+    // ============ buildIndex (robust for extra wrappers) ============
     function buildIndex() {
       sections.length = 0;
       cardsWrapper = findCardsWrapper();
-      const sectionEls = Array.from(cardsWrapper.querySelectorAll(SECTION_SELECTOR));
 
-      // helper: minimal-reorder attach using DocumentFragment and suppression
-      function sortAndAttach(container, arr) {
-        if (!SORT_ON_REINDEX) return;
-        // quick check: if current order equals desired, skip heavy DOM ops
-        let needsReorder = false;
-        for (let i = 0; i < arr.length; i++) {
-          if (container.children[i] !== arr[i].el) {
-            needsReorder = true;
-            break;
+      // find all card elements anywhere inside wrapper (this handles extra nested wrappers)
+      const allCardEls = Array.from(cardsWrapper.querySelectorAll(CARD_SELECTOR));
+
+      // group cards by their nearest "cards container" (prefer element with class tvch-modal__cards, else parentElement)
+      const containerMap = new Map(); // containerEl -> array of cardObjs
+      allCardEls.forEach(cardEl => {
+        const cardsContainerEl = cardEl.closest('.tvch-modal__cards') || cardEl.parentElement || cardsWrapper;
+        if (!containerMap.has(cardsContainerEl)) containerMap.set(cardsContainerEl, []);
+        containerMap.get(cardsContainerEl).push(readCardObject(cardEl));
+      });
+
+      // Build sections array from grouped containers; try to map container -> its section ancestor (if any)
+      containerMap.forEach((cardObjs, containerEl) => {
+        const sectionEl = containerEl.closest(SECTION_SELECTOR) || null;
+        // sort & minimal-reorder per container
+        if (SORT_ON_REINDEX && cardObjs.length > 1) {
+          cardObjs.sort((a, b) => a.originalName.localeCompare(b.originalName, LOCALE, collatorOpts));
+          // reattach only if order differs: use DocumentFragment and short suppression
+          let needsReorder = false;
+          for (let i = 0; i < cardObjs.length; i++) {
+            if (containerEl.children[i] !== cardObjs[i].el) { needsReorder = true; break; }
+          }
+          if (needsReorder) {
+            suppressObserver = true;
+            try {
+              const frag = document.createDocumentFragment();
+              cardObjs.forEach(c => frag.appendChild(c.el));
+              containerEl.appendChild(frag);
+            } finally {
+              setTimeout(() => { suppressObserver = false; }, Math.max(DEBOUNCE_MS, 180));
+            }
           }
         }
-        if (!needsReorder) return;
+        const countNode = sectionEl ? sectionEl.querySelector(SECTION_COUNT_SELECTOR) : null;
+        sections.push({
+          el: sectionEl,
+          cardsEl: containerEl,
+          cards: cardObjs,
+          countNode,
+          _origCount: cardObjs.length
+        });
+      });
 
-        // perform one-fragment reattach under suppression
-        suppressObserver = true;
-        try {
-          const frag = document.createDocumentFragment();
-          arr.forEach(c => frag.appendChild(c.el));
-          container.appendChild(frag);
-        } finally {
-          setTimeout(() => { suppressObserver = false; }, Math.max(DEBOUNCE_MS, 180));
-        }
-      }
-
-      if (sectionEls.length === 0) {
-        const directCardsContainer = cardsWrapper.querySelector('.tvch-modal__cards') || cardsWrapper;
-        const arr = readCardsFromContainer(directCardsContainer);
-        if (SORT_ON_REINDEX) {
-          arr.sort((a, b) => a.originalName.localeCompare(b.originalName, LOCALE, collatorOpts));
-          sortAndAttach(directCardsContainer, arr);
-        }
+      // If no containers found (empty), still push a default one (so filtering logic is consistent)
+      if (sections.length === 0) {
+        const defaultContainer = cardsWrapper.querySelector('.tvch-modal__cards') || cardsWrapper;
         sections.push({
           el: null,
-          cardsEl: directCardsContainer,
-          cards: arr,
+          cardsEl: defaultContainer,
+          cards: [],
           countNode: null,
-          _origCount: arr.length
-        });
-      } else {
-        sectionEls.forEach(sec => {
-          const cardsListContainer = sec.querySelector('.tvch-modal__cards') || sec;
-          const arr = readCardsFromContainer(cardsListContainer);
-          if (SORT_ON_REINDEX) {
-            arr.sort((a, b) => a.originalName.localeCompare(b.originalName, LOCALE, collatorOpts));
-            sortAndAttach(cardsListContainer, arr);
-          }
-          const countNode = sec.querySelector(SECTION_COUNT_SELECTOR);
-          sections.push({
-            el: sec,
-            cardsEl: cardsListContainer,
-            cards: arr,
-            countNode,
-            _origCount: arr.length
-          });
+          _origCount: 0
         });
       }
 
       // If we have found cards, hide loader and ensure no-results hidden
-      const totalCards = sections.reduce((s, sec) => s + sec.cards.length, 0);
+      const totalCards = Array.from(cardsWrapper.querySelectorAll(CARD_SELECTOR)).length;
       if (totalCards > 0) {
         hideLoader();
         scheduleNoResults(false);
@@ -351,6 +345,11 @@
     // ============ filter logic ============
     function performFilter() {
       const q = (searchInput.value || '').trim();
+      // ensure sections reflect current DOM before filtering
+      // (do not call full buildIndex too often; but a light re-read may be useful)
+      // We'll rely on MutationObserver to rebuild index; but ensure sections not empty
+      if (!sections || sections.length === 0) buildIndex();
+
       if (!q) {
         sections.forEach(sec => {
           sec.cards.forEach(c => {
@@ -369,6 +368,7 @@
 
       const qLower = q.toLowerCase();
       let totalVisible = 0;
+
       sections.forEach(sec => {
         sec.cards.forEach(c => {
           const matches = c.nameLower.includes(qLower);
@@ -386,6 +386,12 @@
           }
         });
       });
+
+      // As an extra safety (in case server moved cards into other wrappers), compute visible cards by DOM query
+      try {
+        const visibleCardsDOM = Array.from(cardsWrapper.querySelectorAll(CARD_SELECTOR)).filter(el => el.offsetParent !== null || (getComputedStyle(el).display !== 'none' && el.getAttribute('aria-hidden') !== 'true'));
+        if (visibleCardsDOM.length !== totalVisible) totalVisible = visibleCardsDOM.length;
+      } catch (e) { /* ignore */ }
 
       updateSectionCounts();
 
@@ -428,11 +434,13 @@
           });
           if (purelyUi) return;
 
+          // rebuild index and re-run filter
           buildIndex();
           sections.forEach(sec => { sec._origCount = sec.cards.length; });
           doFilter();
         }, 150));
 
+        // observe modal root to detect replacement of wrapper
         moParent = new MutationObserver(debounce((mutations) => {
           if (suppressObserver) return;
           const stillHasWrapper = modalEl.contains(cardsWrapper);
@@ -492,7 +500,7 @@
       buildIndex();
       sections.forEach(sec => { sec._origCount = sec.cards.length; });
       startObservers();
-      const totalCardsNow = sections.reduce((s, sec) => s + sec.cards.length, 0);
+      const totalCardsNow = Array.from(findCardsWrapper().querySelectorAll(CARD_SELECTOR)).length;
       if (totalCardsNow === 0) {
         showLoader();
       } else {

@@ -125,7 +125,8 @@
     "speed-test": [],
     "speed-test-warning": [],
     "speed-test-panel": [],
-    "tvch-modal": []
+    "tvch-modal": [],
+    "tv-select-modal": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

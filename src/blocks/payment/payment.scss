@@ -153,4 +153,12 @@
       flex: 1 1 auto;
     }
   }
+
+  &__warning {
+    margin-top: 40px;
+
+    li::marker {
+      color: var(--blue-500);
+    }
+  }
 }

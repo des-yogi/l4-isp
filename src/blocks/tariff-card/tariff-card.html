@@ -8,11 +8,18 @@
 
 <article class="tariff-card"
          data-theme-dark="tariff-card--dark"
-         data-theme-light="tariff-card--light">
+         data-theme-light="tariff-card--light"
+         style="background-image: url('img/tariff-card-bg.png')">
 
   <header class="tariff-card__header">
-    <span>Працює без світла</span>
-    <h4 class="h5  tariff-card__title">@@title</h4>
+    <div class="tariff-card__header-text">
+      <span>Працює без світла</span>
+      <h4 class="h5  tariff-card__title">@@title</h4>
+    </div>
+
+    <div class="tariff-card__header-img">
+      <img src="img/backup-shield.svg" alt="" width="60" height="70" loading="lazy">
+    </div>
   </header>
 
   <div class="tariff-card__inner">
@@ -29,15 +36,54 @@
           <span class="visually-hidden">Недоступно</span>
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
         </li>
-        <li class="tariff-card__opt-item"
-            aria-labelledby="tariff-tv">
-            @@tvInfo
+        <li class="tariff-card__opt-item  tariff-card__opt-item--tv"
+            aria-labelledby="tariff-tv"><!-- @@tvInfo -->
+
+          <button class="btn  btn--secondary  btn--sm  tariff-card__iptv-btn"
+                  type="button"
+                  data-theme-dark="btn--secondary--dark"
+                  data-theme-light="btn--secondary--light">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#iptv-plus"></use></svg>
+            <span>Додати IPTV</span>
+          </button>
+
+          <div class="tariff-card__form-wrapper">
+            <button class="faq-btn"
+                    aria-label="Перелік ТБ каналів"
+                    title="Перелік ТБ каналів"
+                    data-bs-toggle="modal"
+                    data-bs-target="#channelsModal"
+              >
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tv-list"></use></svg>
+            </button>
+
+            <button class="btn  btn--sm  btn--secondary  tariff-card__sel-btn"
+                    type="button"
+                    data-theme-dark="btn--secondary--dark"
+                    data-theme-light="btn--secondary--light"
+                    data-bs-toggle="modal"
+                    data-bs-target="#tvSelectModal"
+            >
+              <span>Oберить пакет IPTV</span>
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down-lg"></use></svg>
+            </button>
+
+            <button class="faq-btn  faq-btn--close"
+                    type="button"
+                    aria-label="Скасувати вибір ТБ"
+                    title="Скасувати вибір ТБ">
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+            </button>
+
+          </div>
+
         </li>
         <li class="tariff-card__opt-item"
             aria-labelledby="tariff-support">
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#check-blue"></use></svg>
           <a href="#">Детальніше</a>
-          <button class="faq-btn" data-bs-toggle="popover"
+          <button class="faq-btn"
+                  data-bs-toggle="popover"
                   data-bs-title="Popover title"
                   data-bs-content="And here’s some amazing content. It’s very engaging. Right?"
                   data-bs-trigger="focus"
@@ -82,7 +128,11 @@
 
         <button class="btn"
                 data-theme-dark="btn--dark"
-                data-theme-light="btn--light">
+                data-theme-light="btn--light"
+                data-bs-toggle="modal"
+                data-bs-target="#varyModal"
+                data-bs-whatever="Підключити @@title"
+          >
           <span>Підключитись</span>
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#right-lg"></use></svg>
         </button>

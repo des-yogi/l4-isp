@@ -100,6 +100,21 @@
       &--map {
         flex-direction: row-reverse;
       }
+
+      &--map,
+      &--faq {
+
+        & > span {
+
+          @media (max-width: $screen-md - 1) {
+            position: static;
+            height: auto;
+            width: auto;
+            margin: 0;
+            clip: none;
+          }
+        }
+      }
     }
 
     & .dropdown-menu {
@@ -180,8 +195,16 @@
       }
     }
 
-    //&--parent {
-    //}
+    &--parent {
+
+      &:has(li.active) {
+
+        &::after,
+        &::before {
+          background: linear-gradient(to right, transparent, var(--blue-500) 64%, transparent) !important;
+        }
+      }
+    }
 
     .btn--secondary.btn--icon-only {
       width: 44px;
