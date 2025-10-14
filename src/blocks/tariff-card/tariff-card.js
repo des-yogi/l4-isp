@@ -27,7 +27,23 @@
 
     const addIptvHandler = () => {
       addIptv.style.display = 'none';
-      chanSelect.style.display = 'flex';
+      chanSelect.style.display = 'flex';  // ← Показываем родителя
+
+      // Сохраняем базовую цену
+      if (!card.dataset.basePrice) {
+        const priceElement = card.querySelector('.tariff-card__opt-item--price strong');
+        if (priceElement) {
+          const currentPrice = priceElement.textContent.trim().replace(/\D+/g, '');
+          card.dataset.basePrice = currentPrice;
+        }
+      }
+
+      // ✅ Кликаем по кнопке (она теперь видима)
+      const selectBtn = chanSelect.querySelector('.tariff-card__sel-btn');
+      if (selectBtn) {
+        selectBtn.click();  // Должно сработать без setTimeout
+      }
+
       addIptv.removeEventListener('click', addIptvHandler);
     }
 
@@ -37,8 +53,8 @@
       setBtnText(chanSelect.querySelector('.tariff-card__sel-btn>span'));
       addIptv.addEventListener('click', addIptvHandler);
 
-      // ✅ ОТПРАВЛЯЕМ СОБЫТИЕ для сброса цены и данных
-      console.log('🔄 Отправка события iptv-reset для карточки:', card);
+      // ОТПРАВЛЯЕМ СОБЫТИЕ для сброса цены и данных
+      console.log('🔄 Відправка події iptv-reset для картки');
       card.dispatchEvent(new CustomEvent('iptv-reset'));
     }
 
