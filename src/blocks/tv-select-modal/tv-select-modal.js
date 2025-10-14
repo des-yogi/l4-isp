@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let currentTriggerButton = null;
 
-  // === ОТКРЫТИЕ МОДАЛКИ ===
+  // === ОТКРЫТИЕ МОДАЛКИ ВЫБОРА IPTV ===
   tvSelectModal.addEventListener('shown.bs.modal', event => {
     currentTriggerButton = event.relatedTarget;
   });
@@ -30,12 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
             let tariffCard = currentTriggerButton.closest('.tariff-card');
 
             if (tariffCard) {
-              const priceElement = tariffCard.querySelector('.tariff-card__opt-list li:last-child strong');
+              const priceElement = tariffCard.querySelector('.tariff-card__opt-item--price strong');
 
               if (priceElement) {
+                // Базовая цена ДОЛЖНА быть уже сохранена
                 if (!tariffCard.dataset.basePrice) {
                   const currentPrice = priceElement.textContent.trim().replace(/\D+/g, '');
                   tariffCard.dataset.basePrice = currentPrice;
+                  console.log('⚠️ Базова ціна НЕ була збережена раніше, зберігаємо зараз:', currentPrice);
                 }
 
                 const basePrice = parseInt(tariffCard.dataset.basePrice) || 0;
@@ -48,10 +50,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 tariffCard.dataset.selectedIptv = `${packageName}: ${inputText}`;
                 tariffCard.dataset.iptvValue = input.value;
 
-                console.log('Сохранены данные IPTV:', {
-                  selectedIptv: tariffCard.dataset.selectedIptv,
-                  iptvValue: tariffCard.dataset.iptvValue
+                console.log('✅ IPTV вибрано:', {
+                  пакет: tariffCard.dataset.selectedIptv,
+                  базова_ціна: basePrice,
+                  ціна_IPTV: tvPrice,
+                  загальна_ціна: totalPrice
                 });
+
+                // ✅ НОВОЕ: Обновляем форму подключения, если она открыта
+                updateVaryModalIfOpen(tariffCard);
               }
             }
           }
@@ -65,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // === СЛУШАЕМ СОБЫТИЕ СБРОСА ===
   document.querySelectorAll('.tariff-card').forEach(card => {
     card.addEventListener('iptv-reset', () => {
-      const priceElement = card.querySelector('.tariff-card__opt-list li:last-child strong');
+      const priceElement = card.querySelector('.tariff-card__opt-item--price strong');
 
       if (priceElement && card.dataset.basePrice) {
         const basePrice = parseInt(card.dataset.basePrice);
@@ -73,12 +80,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
         card.dataset.currentTvPrice = '0';
 
-        // ✅ ВАЖНО: удаляем данные об IPTV полностью
+        // Удаляем данные об IPTV
         delete card.dataset.selectedIptv;
         delete card.dataset.iptvValue;
 
-        console.log('✅ Цена и IPTV сброшены, dataset очищен:', card.dataset);
+        console.log('🔄 IPTV скинуто, ціна повернута до базової:', basePrice);
+
+        // ✅ НОВОЕ: Обновляем форму подключения, если она открыта
+        updateVaryModalIfOpen(card);
       }
     });
   });
+
+  // ✅ НОВАЯ ФУНКЦИЯ: Обновление формы, если она открыта
+  function updateVaryModalIfOpen(tariffCard) {
+    const varyModal = document.getElementById('varyModal');
+
+    // Проверяем, открыта ли форма
+    if (varyModal && varyModal.classList.contains('show')) {
+      const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
+      const tvTariffInput = varyModal.querySelector('#tvTariff');
+      const totalPriceInput = varyModal.querySelector('#totalPrice');
+      const priceElement = tariffCard.querySelector('.tariff-card__opt-item--price strong');
+
+      console.log('🔄 Оновлюємо форму підключення (вона відкрита)');
+
+      // Обновляем IPTV
+      if (tariffCard.dataset.selectedIptv) {
+        tvTariffInput.value = tariffCard.dataset.selectedIptv;
+        modalSubtitle.textContent = tariffCard.dataset.selectedIptv;
+        modalSubtitle.style.display = '';
+      } else {
+        tvTariffInput.value = 'Без IPTV';
+        modalSubtitle.textContent = '';
+        modalSubtitle.style.display = 'none';
+      }
+
+      // Обновляем цену
+      if (priceElement && totalPriceInput) {
+        const price = priceElement.textContent.trim();
+        totalPriceInput.value = price;
+      }
+
+      console.log('✅ Форма оновлена:', {
+        iptv: tvTariffInput.value,
+        ціна: totalPriceInput.value
+      });
+    }
+  }
 });

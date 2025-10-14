@@ -1193,7 +1193,10 @@
          data-theme-dark="modal-content--dark"
          data-theme-light="modal-content--light">
       <div class="modal-header">
-        <h4 class="modal-title" id="varyModalLabel">Заголовок</h4>
+        <h4 class="modal-title" id="varyModalLabel">
+          <span class="vary-modal__title">Заголовок</span>
+          <span class="vary-modal__subtitle">SWEET.TV: Мінімальний 237 каналів</span>
+        </h4>
         <button type="button" class="btn  btn--secondary  btn--icon-only"
                 data-bs-dismiss="modal"
                 aria-label="Закрити"
@@ -1589,7 +1592,7 @@
             <div class="tv-select-modal__input-wrapper">
               <div class="field-radio">
                 <label class="field-radio__name">
-                  <input class="field-radio__input" type="radio" name="package" value="sweet-min" data-price="99">
+                  <input class="field-radio__input" type="radio" name="package" value="sweet.tv-min" data-price="99">
                   <span class="field-radio__name-text">Мінімальний 237 каналів</span>
                 </label>
               </div>
@@ -1605,7 +1608,7 @@
             <div class="tv-select-modal__input-wrapper">
               <div class="field-radio">
                 <label class="field-radio__name">
-                  <input class="field-radio__input" type="radio" name="package" value="sweet-med" data-price="149">
+                  <input class="field-radio__input" type="radio" name="package" value="sweet.tv-med" data-price="149">
                   <span class="field-radio__name-text">Середній 326 каналів</span>
                 </label>
               </div>
@@ -1621,7 +1624,7 @@
             <div class="tv-select-modal__input-wrapper">
               <div class="field-radio">
                 <label class="field-radio__name">
-                  <input class="field-radio__input" type="radio" name="package" value="sweet-max" data-price="199">
+                  <input class="field-radio__input" type="radio" name="package" value="sweet.tv-max" data-price="199">
                   <span class="field-radio__name-text">Максимальний 340 каналів</span>
                 </label>
               </div>
@@ -1798,43 +1801,82 @@
 
       if (varyModal) {
         varyModal.addEventListener('show.bs.modal', event => {
-          // Кнопка, которая открыла модалку
           const button = event.relatedTarget;
 
-          // Находим карточку тарифа (одна на обе кнопки)
-          const tariffCard = button.closest('.tariff-card');
-
-          // Получаем название тарифа
-          const tariffName = button.getAttribute('data-bs-whatever');
+          // ✅ ОПРЕДЕЛЯЕМ КОНТЕКСТ: это тариф или общая форма?
+          const tariffCard = button ? button.closest('.tariff-card') : null;
 
           // Элементы модалки
-          const modalTitle = varyModal.querySelector('.modal-title');
+          const modalTitle = varyModal.querySelector('.vary-modal__title');
+          const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
           const ipTariffInput = varyModal.querySelector('#ipTariff');
           const tvTariffInput = varyModal.querySelector('#tvTariff');
+          const totalPriceInput = varyModal.querySelector('#totalPrice');
 
-          // Устанавливаем название тарифа
-          modalTitle.textContent = tariffName || 'Підключити тариф';
-          ipTariffInput.value = tariffName || '';
+          // Получаем заголовок из кнопки
+          const tariffName = button ? button.getAttribute('data-bs-whatever') : '';
 
-          // Проверяем, выбран ли IPTV-пакет в КАРТОЧКЕ (не в кнопке!)
-          if (tariffCard && tariffCard.dataset.selectedIptv) {
-            // IPTV выбран — берём из карточки
-            tvTariffInput.value = tariffCard.dataset.selectedIptv;
-          } else {
-            // IPTV не выбран
-            tvTariffInput.value = 'Без IPTV';
+          // === СЦЕНАРИЙ 1: ТАРИФНАЯ КАРТОЧКА ===
+          if (tariffCard) {
+            console.log('🎯 Тарифний сценарій');
+
+            // Заголовок
+            modalTitle.textContent = tariffName || 'Підключити тариф';
+
+            // Заполняем поле с названием тарифа
+            ipTariffInput.value = tariffName || '';
+
+            // ✅ ЗАПОЛНЯЕМ ЦЕНУ из карточки
+            const priceElement = tariffCard.querySelector('.tariff-card__opt-item--price strong');
+            if (priceElement && totalPriceInput) {
+              const price = priceElement.textContent.trim();
+              totalPriceInput.value = price;
+              console.log('💰 Ціна:', price);
+            }
+
+            // Проверяем, выбран ли IPTV-пакет
+            if (tariffCard.dataset.selectedIptv) {
+              // IPTV выбран
+              tvTariffInput.value = tariffCard.dataset.selectedIptv;
+              modalSubtitle.textContent = tariffCard.dataset.selectedIptv;
+              modalSubtitle.style.display = ''; // Показываем подзаголовок
+
+              console.log('✅ IPTV знайдено:', tariffCard.dataset.selectedIptv);
+            } else {
+              // IPTV не выбран
+              tvTariffInput.value = 'Без IPTV';
+              modalSubtitle.textContent = '';
+              modalSubtitle.style.display = 'none'; // Скрываем подзаголовок
+
+              console.log('⚠️ IPTV не вибрано');
+            }
+
+            console.log('📝 Дані форми (тариф):', {
+              тариф: ipTariffInput.value,
+              iptv: tvTariffInput.value,
+              ціна: totalPriceInput.value
+            });
           }
+          // === СЦЕНАРИЙ 2: ОБЩАЯ ФОРМА (консультация и т.п.) ===
+          else {
+            console.log('📞 Загальний сценарій (консультація)');
 
-          const priceElement = tariffCard?.querySelector('.tariff-card__opt-item--price strong');
-          if (priceElement) {
-            const totalPriceInput = varyModal.querySelector('#totalPrice');
-            totalPriceInput.value = priceElement.textContent.trim();
+            // Заголовок (может быть "Замовити консультацію" и т.п.)
+            modalTitle.textContent = tariffName || 'Замовити консультацію';
+
+            // ✅ ОЧИЩАЕМ все тарифные поля
+            ipTariffInput.value = '';
+            tvTariffInput.value = '';
+            if (totalPriceInput) {
+              totalPriceInput.value = '';
+            }
+
+            // Скрываем подзаголовок
+            modalSubtitle.textContent = '';
+            modalSubtitle.style.display = 'none';
+
+            console.log('📝 Дані форми (консультація): тарифні поля очищені');
           }
-
-          /*console.log('Дані форми:', {
-            тариф: ipTariffInput.value,
-            iptv: tvTariffInput.value
-          });*/
         });
       }
     });
@@ -1845,7 +1887,7 @@
   <script type="module" src="js/lazy-loader.js"></script>
   <script src="js/lazy-lottie-init.js" defer></script>
   <script src="js/lazy-maps-init.js" defer></script>
-  <script src="js/script.min.js"></script>
+  <script src="js/script.min.js" defer></script>
 
 
 </body>
