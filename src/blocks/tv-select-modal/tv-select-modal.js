@@ -128,4 +128,54 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   }
+
+  // === ОБРАБОТКА ЗАКРЫТИЯ МОДАЛКИ БЕЗ ВЫБОРА ===
+  const tvModal = document.getElementById('tvSelectModal');
+
+  if (tvModal) {
+    tvModal.addEventListener('hidden.bs.modal', function () {
+      console.log('🚪 Модалка закрита');
+
+      // Находим карточку, для которой открывали модалку
+      const currentCard = document.querySelector('.tariff-card[data-modal-opened="true"]');
+
+      if (!currentCard) {
+        console.log('⚠️ Карточка не знайдена або модалка відкрита не з картки');
+        return;
+      }
+
+      // Проверяем, был ли выбран пакет
+      const packageSelected = currentCard.dataset.selectedIptv;
+
+      if (!packageSelected) {
+        console.log('❌ Пакет не обрано, повертаємо картку до початкового стану');
+
+        // Отправляем событие сброса
+        currentCard.dispatchEvent(new CustomEvent('iptv-reset'));
+
+        // ✅ Отправляем событие восстановления UI
+        currentCard.dispatchEvent(new CustomEvent('iptv-ui-reset'));
+
+        // Скрываем блок контролов
+        const formWrapper = currentCard.querySelector('.tariff-card__form-wrapper');
+        if (formWrapper) {
+          formWrapper.style.display = 'none';
+        }
+
+        // ✅ Показываем кнопку "Додати IPTV" обратно
+        const addIptvBtn = currentCard.querySelector('.tariff-card__iptv-btn');
+        if (addIptvBtn) {
+          addIptvBtn.style.display = 'flex';
+          console.log('👁️ Кнопка "Додати IPTV" знову видима');
+        }
+
+        console.log('✅ Картка повернута до початкового стану');
+      } else {
+        console.log('✅ Пакет обрано:', packageSelected);
+      }
+
+      // Убираем флаг "модалка была открыта"
+      delete currentCard.dataset.modalOpened;
+    });
+  }
 });
