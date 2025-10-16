@@ -40,7 +40,7 @@
 
       // Помечаем, что модалка открыта для этой карточки
       card.dataset.modalOpened = 'true';
-      console.log('🏷️ Позначено: модалка відкрита для картки');
+      //console.log('🏷️ Позначено: модалка відкрита для картки');
 
       // Кликаем по кнопке (она теперь видима)
       const selectBtn = chanSelect.querySelector('.tariff-card__sel-btn');
@@ -58,13 +58,13 @@
       addIptv.addEventListener('click', addIptvHandler);
 
       // ОТПРАВЛЯЕМ СОБЫТИЕ для сброса цены и данных
-      console.log('🔄 Відправка події iptv-reset для картки');
+      //console.log('🔄 Відправка події iptv-reset для картки');
       card.dispatchEvent(new CustomEvent('iptv-reset'));
     }
 
     // ✅ НОВОЕ: Слушаем событие восстановления UI
     card.addEventListener('iptv-ui-reset', () => {
-      console.log('🔄 Відновлення UI картки');
+      //console.log('🔄 Відновлення UI картки');
       addIptv.style.display = 'flex';
       chanSelect.style.display = 'none';
       setBtnText(chanSelect.querySelector('.tariff-card__sel-btn>span'));
@@ -72,7 +72,7 @@
       // Возвращаем обработчик клика
       addIptv.removeEventListener('click', addIptvHandler); // Удаляем старый (если есть)
       addIptv.addEventListener('click', addIptvHandler); // Добавляем новый
-      console.log('✅ Обробник кліку повернуто');
+      //console.log('✅ Обробник кліку повернуто');
     });
 
     if (moreBtn && returnBtn) {
