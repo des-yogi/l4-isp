@@ -204,3 +204,10 @@
     max-width: 800px;
   }
 }
+
+@media (min-width: 1280px) {
+
+  .modal-dialog {
+    max-width: 560px;
+  }
+}

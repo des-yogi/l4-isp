@@ -1,5 +1,6 @@
+let tariffsSwiper = null; // Глобальная переменная
 document.addEventListener('DOMContentLoaded', function () {
-  const tariffs = new Swiper('.tariffs__slider-content', {
+  tariffsSwiper = new Swiper('.tariffs__slider-content', {
     speed: 400,
     spaceBetween: 0,
     slidesPerView: 'auto',

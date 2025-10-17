@@ -1796,7 +1796,7 @@
 </div>
 
 
-  <!-- TV-channels modal -->
+  <!-- TV-channels modal -->
 
   <!-- TV Channels Modal -->
   <div class="modal fade  tvch-modal"
@@ -2307,7 +2307,7 @@
      * @param {string} [options.defaultLang] - Язык по умолчанию, если не найден (например, 'en')
      * @returns {string} Код языка
      */
-    document.addEventListener('DOMContentLoaded', function () {
+    (function(){
       window.getCurrentLang = function(options = {}) {
         const { supportedLangs = ['uk', 'ru', 'en'], defaultLang = 'uk' } = options;
         // 1. Получаем из <html lang="">
@@ -2329,12 +2329,12 @@
         // 3. Возвращаем дефолтный язык
         return defaultLang;
       }
-    });
+    }());
   </script>
 
   <script>
     "use strict";
-    document.addEventListener('DOMContentLoaded', function () {
+    (function(){
       const varyModal = document.getElementById('varyModal');
 
       if (varyModal) {
@@ -2417,7 +2417,7 @@
           }
         });
       }
-    });
+    }());
   </script>
 
 

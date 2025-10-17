@@ -15,6 +15,24 @@
     @media (min-width: $screen-xl) {
       border-radius: 0 0 72px 72px;
     }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 0 0 24px 24px;
+      border-bottom: 2px solid rgba(39, 125, 255, 0.07);
+
+      @media (min-width: $screen-md) {
+        border-radius: 0 0 32px 32px;
+      }
+
+      @media (min-width: $screen-xl) {
+        border-radius: 0 0 72px 72px;
+      }
+    }
   }
 
   &__slide {
@@ -37,6 +55,12 @@
 
     .row {
       gap: 24px 0;
+
+      @media (max-width: $screen-xl - 1) {
+        //flex-direction: column;
+        //justify-content: space-between;
+        height: 100%;
+      }
     }
   }
 
@@ -44,6 +68,10 @@
     @include col(xs, 12);
     @include col(xl, 5);
     @include col(xxl, 5);
+
+    @media (max-width: $screen-xl - 1) {
+      align-self: flex-start;
+    }
 
     @media (min-width: $screen-xl) {
       padding-bottom: 136px;
@@ -62,6 +90,10 @@
     @include col(xl, 7);
     @include col-offset(xxl, 1);
     @include col(xxl, 6);
+
+    @media (max-width: $screen-xl - 1) {
+      align-self: flex-end;
+    }
   }
 
   &__col-text,

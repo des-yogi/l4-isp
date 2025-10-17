@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+(function(){
   const tvSelectModal = document.getElementById('tvSelectModal');
   const modalInstance = new bootstrap.Modal(tvSelectModal);
   const setChannelBtn = tvSelectModal.querySelector('.tv-select-modal__set-btn');
@@ -220,4 +220,4 @@ document.addEventListener('DOMContentLoaded', function () {
       delete currentCard.dataset.modalOpened;
     });
   }
-});
+}());
