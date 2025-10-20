@@ -538,3 +538,79 @@
   });
 
 })();
+
+(function () {
+  const modal = document.getElementById('channelsModal');
+  if (!modal) return;
+
+  // Поддерживаем несколько вариантов селекторов заголовка
+  const titleSelectors = [
+    '#channelsModalLabel',
+    '.channels-modal__title',
+    '.modal-title',
+    '.tv-channels-modal__title'
+  ];
+
+  function findTitleEl() {
+    for (let s of titleSelectors) {
+      const el = modal.querySelector(s);
+      if (el) return el;
+    }
+    return null;
+  }
+
+  function formatHeader(packageName) {
+    const defaultText = 'Список каналів';
+    if (!packageName) return defaultText;
+    // Формат можно поменять: здесь будет "PACKAGE • Список каналів"
+    return packageName + ' • ' + defaultText;
+  }
+
+  function getPackageNameFromTrigger(trigger) {
+    if (!trigger) return '';
+    // Найдём ближайший элемент с data-bs-whatever начиная с trigger
+    const holder = trigger.closest('[data-bs-whatever]') || trigger;
+    return holder.getAttribute('data-bs-whatever') || holder.dataset.bsWhatever || '';
+  }
+
+  // Основной обработчик показа модалки
+  modal.addEventListener('show.bs.modal', (e) => {
+    const titleEl = findTitleEl();
+    if (!titleEl) return;
+
+    let packageName = '';
+
+    // 1) Если модалка вызвана через data-bs-toggle, bootstrap даст relatedTarget
+    if (e.relatedTarget) {
+      packageName = getPackageNameFromTrigger(e.relatedTarget);
+    }
+
+    // 2) Fallback: если вы используете глобальную переменную currentTriggerButton (как в других частях проекта)
+    if (!packageName && window.currentTriggerButton) {
+      packageName = getPackageNameFromTrigger(window.currentTriggerButton);
+    }
+
+    // 3) Fallback: если модалка была подготовлена заранее (например, программный вызов поставил значение на самой модалке)
+    if (!packageName) {
+      packageName = modal.getAttribute('data-bs-whatever') || modal.dataset.bsWhatever || '';
+    }
+
+    packageName = (packageName || '').toString().trim();
+
+    // Устанавливаем заголовок
+    titleEl.textContent = formatHeader(packageName);
+  });
+
+  // При закрытии можно вернуть стандартный заголовок (опционально)
+  modal.addEventListener('hidden.bs.modal', () => {
+    const titleEl = findTitleEl();
+    if (!titleEl) return;
+    titleEl.textContent = formatHeader('');
+    // Очистим временные data на модалке (если выставляли перед show программно)
+    modal.removeAttribute('data-bs-whatever');
+    delete modal.dataset.bsWhatever;
+  });
+
+  // Экспорт для отладки/вызова извне (необязательно)
+  window.initChannelsModalHeader = function () { /* noop: скрипт сам подключён */ };
+})();

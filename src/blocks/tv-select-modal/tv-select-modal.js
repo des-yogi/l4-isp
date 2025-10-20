@@ -17,52 +17,45 @@
 
       radioInputs.forEach((input) => {
         if (input.checked) {
-          //console.log('🔍 Проверяем выбранный инпут:', input);
-          //console.log('🔍 Value:', input.value);
-          //console.log('🔍 Price:', input.dataset.price);
-
           // Получаем название пакета
           const inputText = input.nextElementSibling.textContent.trim();
           let packageName = input.value.split('-')[0].toUpperCase();
           const tvPrice = parseInt(input.dataset.price) || 0;
 
-          //console.log('📦 Пакет:', packageName, inputText);
-          //console.log('💰 Цена:', tvPrice);
-
           // Ищем родительский блок .tv-select-modal__input-wrapper
           const inputWrapper = input.closest('.tv-select-modal__input-wrapper');
-          //console.log('🔍 Родитель .tv-select-modal__input-wrapper:', inputWrapper);
 
           if (inputWrapper) {
             // Ищем ссылку "Перелік каналів" внутри этого блока
             const channelLink = inputWrapper.querySelector('.tv-select-modal__link[onclick]');
-            //console.log('🔍 Ссылка с onclick:', channelLink);
 
             const onclickAttr = channelLink ? channelLink.getAttribute('onclick') : '';
-            //console.log(onclickAttr ? '✅ onclick найден:' : '⚠️ onclick отсутствует:', onclickAttr);
+            // NEW: получаем значение data-bs-whatever (если есть)
+            const bsWhateverValue = channelLink
+              ? (channelLink.getAttribute('data-bs-whatever') || channelLink.dataset.bsWhatever || '').toString().trim()
+              : '';
 
             // Находим карточку тарифа
             if (currentTriggerButton) {
               const tariffCard = currentTriggerButton.closest('.tariff-card');
-              //console.log('🔍 Карточка тарифа:', tariffCard);
 
               if (tariffCard) {
-                // ✅ ВАЖНО: Сохраняем данные о выбранном пакете
+                // ✅ Сохраняем данные о выбранном пакете
                 tariffCard.dataset.selectedIptv = `${packageName}: ${inputText}`;
                 tariffCard.dataset.iptvValue = input.value;
                 tariffCard.dataset.channelOnclick = onclickAttr; // Сохраняем onclick
 
-                /*console.log('✅ Данные сохранены в dataset:', {
-                  selectedIptv: tariffCard.dataset.selectedIptv,
-                  iptvValue: tariffCard.dataset.iptvValue,
-                  channelOnclick: tariffCard.dataset.channelOnclick
-                });*/
+                // NEW: сохраняем value data-bs-whatever в dataset карточки (или удаляем если пусто)
+                if (bsWhateverValue) {
+                  tariffCard.dataset.channelWhatever = bsWhateverValue;
+                } else {
+                  delete tariffCard.dataset.channelWhatever;
+                }
 
                 // Обновляем текст в кнопке селектора
                 const buttonSpan = currentTriggerButton.querySelector('span');
                 if (buttonSpan) {
                   buttonSpan.textContent = `${packageName}: ${inputText}`;
-                  //console.log('✅ Текст кнопки обновлён:', buttonSpan.textContent);
                 }
 
                 // Обновляем цену
@@ -72,34 +65,47 @@
                   const newPrice = basePrice + tvPrice;
                   priceElement.textContent = `${newPrice} грн`;
                   tariffCard.dataset.currentTvPrice = tvPrice.toString();
-
-                  /*console.log('✅ Цена обновлена:', {
-                    базовая: basePrice,
-                    IPTV: tvPrice,
-                    итого: newPrice
-                  });*/
                 }
 
-                // Находим кнопку в карточке
-                const tvListBtn = tariffCard.querySelector('.faq-btn--tv-list');
-                //console.log('🔍 Кнопка .faq-btn--tv-list:', tvListBtn);
+                // Находим все элементы в карточке, которые могут открывать модалку каналов
+                // (текстовая кнопка, иконка и т.д.)
+                const channelTargets = tariffCard.querySelectorAll(
+                  '[data-bs-toggle="modal"][data-bs-target="#channelsModal"], .faq-btn--tv-list'
+                );
 
-                if (tvListBtn) {
-                  if (onclickAttr) {
-                    // Копируем onclick
-                    tvListBtn.setAttribute('onclick', onclickAttr);
-                    tvListBtn.style.opacity = '1';
-                    tvListBtn.style.pointerEvents = 'auto';
-                    //console.log('✅ onclick скопирован на кнопку и кнопка активирована');
-                  } else {
-                    // Если onclick нет — деактивируем кнопку
-                    tvListBtn.removeAttribute('onclick');
-                    tvListBtn.style.opacity = '0.5';
-                    tvListBtn.style.pointerEvents = 'none';
-                    //console.log('⚠️ onclick отсутствует, кнопка деактивирована');
-                  }
+                if (channelTargets && channelTargets.length > 0) {
+                  channelTargets.forEach((t) => {
+                    // 1) onclick
+                    if (onclickAttr) {
+                      t.setAttribute('onclick', onclickAttr);
+                      t.style.opacity = '1';
+                      t.style.pointerEvents = 'auto';
+                    } else {
+                      // если onclick отсутствует — деактивируем
+                      t.removeAttribute('onclick');
+                      t.style.opacity = '0.5';
+                      t.style.pointerEvents = 'none';
+                    }
+
+                    // 2) data-bs-whatever копируем (или удаляем если отсутствует/пустой)
+                    if (bsWhateverValue) {
+                      t.setAttribute('data-bs-whatever', bsWhateverValue);
+                      try { t.dataset.bsWhatever = bsWhateverValue; } catch (e) {}
+                    } else {
+                      if (t.hasAttribute('data-bs-whatever')) {
+                        t.removeAttribute('data-bs-whatever');
+                        try { delete t.dataset.bsWhatever; } catch (e) {}
+                      }
+                    }
+
+                    // 3) на всякий случай синхронизируем title/aria-label
+                    const aria = channelLink ? channelLink.getAttribute('aria-label') : null;
+                    if (aria) t.setAttribute('aria-label', aria);
+                    const title = channelLink ? channelLink.getAttribute('title') : null;
+                    if (title) t.setAttribute('title', title);
+                  });
                 } else {
-                  console.error('❌ Кнопка .faq-btn--tv-list не найдена в карточке');
+                  console.error('❌ Кнопки открытия списка каналов не найдены в карточке');
                 }
               }
             }
@@ -126,15 +132,16 @@
         delete card.dataset.selectedIptv;
         delete card.dataset.iptvValue;
 
-        //console.log('🔄 IPTV скинуто, ціна повернута до базової:', basePrice);
+        // НЕ удаляем channelOnclick автоматически (как раньше), но удалим значение channelWhatever, т.к. пакет сброшен
+        delete card.dataset.channelWhatever;
 
-        // ✅ НОВОЕ: Обновляем форму подключения, если она открыта
+        // Обновляем форму подключения, если она открыта
         updateVaryModalIfOpen(card);
       }
     });
   });
 
-  // ✅ НОВАЯ ФУНКЦИЯ: Обновление формы, если она открыта
+  // Функция обновления формы, если она открыта
   function updateVaryModalIfOpen(tariffCard) {
     const varyModal = document.getElementById('varyModal');
 
@@ -144,8 +151,6 @@
       const tvTariffInput = varyModal.querySelector('#tvTariff');
       const totalPriceInput = varyModal.querySelector('#totalPrice');
       const priceElement = tariffCard.querySelector('.tariff-card__opt-item--price strong');
-
-      //console.log('🔄 Оновлюємо форму підключення (вона відкрита)');
 
       // Обновляем IPTV
       if (tariffCard.dataset.selectedIptv) {
@@ -163,11 +168,6 @@
         const price = priceElement.textContent.trim();
         totalPriceInput.value = price;
       }
-
-      /*console.log('✅ Форма оновлена:', {
-        iptv: tvTariffInput.value,
-        ціна: totalPriceInput.value
-      });*/
     }
   }
 
@@ -176,13 +176,10 @@
 
   if (tvModal) {
     tvModal.addEventListener('hidden.bs.modal', function () {
-      //console.log('🚪 Модалка закрита');
-
       // Находим карточку, для которой открывали модалку
       const currentCard = document.querySelector('.tariff-card[data-modal-opened="true"]');
 
       if (!currentCard) {
-        //console.log('⚠️ Карточка не знайдена або модалка відкрита не з картки');
         return;
       }
 
@@ -190,12 +187,10 @@
       const packageSelected = currentCard.dataset.selectedIptv;
 
       if (!packageSelected) {
-        //console.log('❌ Пакет не обрано, повертаємо картку до початкового стану');
-
         // Отправляем событие сброса
         currentCard.dispatchEvent(new CustomEvent('iptv-reset'));
 
-        // ✅ Отправляем событие восстановления UI
+        // Отправляем событие восстановления UI
         currentCard.dispatchEvent(new CustomEvent('iptv-ui-reset'));
 
         // Скрываем блок контролов
@@ -204,16 +199,11 @@
           formWrapper.style.display = 'none';
         }
 
-        // ✅ Показываем кнопку "Додати IPTV" обратно
+        // Показываем кнопку "Додати IPTV" обратно
         const addIptvBtn = currentCard.querySelector('.tariff-card__iptv-btn');
         if (addIptvBtn) {
           addIptvBtn.style.display = 'flex';
-          //console.log('👁️ Кнопка "Додати IPTV" знову видима');
         }
-
-        //console.log('✅ Картка повернута до початкового стану');
-      } else {
-        //console.log('✅ Пакет обрано:', packageSelected);
       }
 
       // Убираем флаг "модалка была открыта"
