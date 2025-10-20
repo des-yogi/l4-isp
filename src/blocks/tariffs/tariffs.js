@@ -1,5 +1,5 @@
 let tariffsSwiper = null; // Глобальная переменная
-document.addEventListener('DOMContentLoaded', function () {
+(function() {
   tariffsSwiper = new Swiper('.tariffs__slider-content', {
     speed: 400,
     spaceBetween: 0,
@@ -13,5 +13,4 @@ document.addEventListener('DOMContentLoaded', function () {
       type: 'fraction',
     }
   });
-});
-
+})();
