@@ -62,8 +62,18 @@
                   <li> Підтвердіть платіж</li>
                 </ol>
 
-                <p>⏱ Зарахування: миттєве</p>
-                <p>💸 Комісія: 0 грн</p>
+                <div class="payment__ctrl-wrapper">
+                  <div>
+                    <p>⏱ Зарахування: миттєве</p>
+                    <p>💸 Комісія: 0 грн</p>
+                  </div>
+                  <a href="#"
+                     class="btn  btn--secondary"
+                     data-theme-dark="btn--secondary--dark"
+                     data-theme-light="btn--secondary--light">
+                    <span>Перейти в кабінет</span>
+                  </a>
+                </div>
               </li>
 
               <li class="payment__list-item"
@@ -111,8 +121,34 @@
                   <!-- <li>Введіть суму та підтвердіть платіж</li> -->
                 </ol>
 
-                <p>🕒 Зарахування: до 3 банківських днів</p>
-                <p>🔍 Уточнюйте реквізити для вашого регіону</p>
+                <ul class="payment__details">
+                  <li class="payment__details-data">
+                    <button class="btn  btn--secondary  btn--icon-only"
+                            data-theme-dark="btn--secondary--dark"
+                            data-theme-light="btn--secondary--light"
+                            data-copy="UA773052990000026004040106048"
+                            aria-label="Копіювати IBAN">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#copy"></use></svg>
+                    </button>
+                    <p class="payment__details-text">IBAN
+                      <span>UA773052990000026004040106048</span>
+                    </p>
+                  </li>
+                  <li class="payment__details-data">
+                    <button class="btn  btn--secondary  btn--icon-only"
+                            data-theme-dark="btn--secondary--dark"
+                            data-theme-light="btn--secondary--light"
+                            data-copy="33909258"
+                            aria-label="Копіювати ЄДРПОУ">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#copy"></use></svg>
+                    </button>
+                    <p class="payment__details-text">ЄДРПОУ
+                      <span>33909258</span>
+                    </p>
+                  </li>
+                </ul>
+                <!-- <p>🕒 Зарахування: до 3 банківських днів</p>
+                <p>🔍 Уточнюйте реквізити для вашого регіону</p> -->
               </li>
 
               <li class="payment__list-item"
