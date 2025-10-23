@@ -99,7 +99,7 @@
   &--light {
 
     #{$block-name}__input {
-      background-color: var(--opacity-white-40); // было 50
+      background-color: var(--opacity-white-50); // было 50
       border-color: var(--blue-150);
 
       &:hover,

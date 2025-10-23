@@ -566,7 +566,7 @@
 
 
 
-      <main class="main">
+      <main class="main">
 
         <nav class="container  breadcrumbs"
              data-theme-dark="breadcrumbs--dark"
@@ -603,7 +603,7 @@
         </nav>
 
 
-        <div class="payment">
+        <div class="payment">
 
           <header class="container  header">
             <div class="row  header__row">
@@ -643,8 +643,18 @@
                   <li> Підтвердіть платіж</li>
                 </ol>
 
-                <p>⏱ Зарахування: миттєве</p>
-                <p>💸 Комісія: 0 грн</p>
+                <div class="payment__ctrl-wrapper">
+                  <div>
+                    <p>⏱ Зарахування: миттєве</p>
+                    <p>💸 Комісія: 0 грн</p>
+                  </div>
+                  <a href="#"
+                     class="btn  btn--secondary"
+                     data-theme-dark="btn--secondary--dark"
+                     data-theme-light="btn--secondary--light">
+                    <span>Перейти в кабінет</span>
+                  </a>
+                </div>
               </li>
 
               <li class="payment__list-item"
@@ -692,8 +702,34 @@
                   <!-- <li>Введіть суму та підтвердіть платіж</li> -->
                 </ol>
 
-                <p>🕒 Зарахування: до 3 банківських днів</p>
-                <p>🔍 Уточнюйте реквізити для вашого регіону</p>
+                <ul class="payment__details">
+                  <li class="payment__details-data">
+                    <button class="btn  btn--secondary  btn--icon-only"
+                            data-theme-dark="btn--secondary--dark"
+                            data-theme-light="btn--secondary--light"
+                            data-copy="UA773052990000026004040106048"
+                            aria-label="Копіювати IBAN">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#copy"></use></svg>
+                    </button>
+                    <p class="payment__details-text">IBAN
+                      <span>UA773052990000026004040106048</span>
+                    </p>
+                  </li>
+                  <li class="payment__details-data">
+                    <button class="btn  btn--secondary  btn--icon-only"
+                            data-theme-dark="btn--secondary--dark"
+                            data-theme-light="btn--secondary--light"
+                            data-copy="33909258"
+                            aria-label="Копіювати ЄДРПОУ">
+                      <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#copy"></use></svg>
+                    </button>
+                    <p class="payment__details-text">ЄДРПОУ
+                      <span>33909258</span>
+                    </p>
+                  </li>
+                </ul>
+                <!-- <p>🕒 Зарахування: до 3 банківських днів</p>
+                <p>🔍 Уточнюйте реквізити для вашого регіону</p> -->
               </li>
 
               <li class="payment__list-item"
@@ -740,7 +776,7 @@
             </div>
           </section>
 
-        </div>
+        </div>
 
         <section class="faq"
                  data-theme-dark="faq--dark"
@@ -821,7 +857,7 @@
 
     </div>
 
-    <div class="page__footer-wrapper">
+    <div class="page__footer-wrapper">
 
       <footer class="container  page-footer"
               data-theme-dark="page-footer--dark"
@@ -1062,7 +1098,7 @@
 
   </div>
 
-  <!-- Search modal -->
+  <!-- Search modal -->
 
   <!-- Search Modal -->
   <div class="modal fade  search-modal"
@@ -1118,7 +1154,7 @@
   </div>
 
 
-  <!-- InfoWindow Template -->
+  <!-- InfoWindow Template -->
   <template id="infowindow-custom">
     <div class="infowindow-template  infowindow-template--light  infowindow-template--below">
          <!-- data-theme-dark="infowindow-template--dark"
