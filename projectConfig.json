@@ -127,7 +127,8 @@
     "speed-test-panel": [],
     "tvch-modal": [],
     "tv-select-modal": [],
-    "field-file": []
+    "field-file": [],
+    "tariff-alert": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
