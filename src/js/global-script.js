@@ -86,7 +86,7 @@ window.addEventListener('resize', () => {
 
 })();
 
-(function () {
+/*(function () {
   const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
   const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
       container: 'body',
@@ -105,6 +105,103 @@ window.addEventListener('resize', () => {
         };
       }
     }))
+})();*/
+
+(function () {
+  const selector = '[data-bs-toggle="popover"]';
+
+  function isVisible(el) {
+    return !!el && (el.offsetParent !== null || el.getClientRects().length > 0);
+  }
+
+  function createPopover(el) {
+    if (!el || el.__bs_popover_inited) return;
+    el.__bs_popover_inited = true;
+
+    new bootstrap.Popover(el, {
+      container: 'body',
+      trigger: el.getAttribute('data-bs-trigger') || 'click focus',
+      popperConfig(defaultConfig) {
+        return {
+          ...defaultConfig,
+          modifiers: [
+            ...defaultConfig.modifiers,
+            { name: 'offset', options: { offset: [8, 8] } }
+          ]
+        };
+      }
+    });
+  }
+
+  // Инициализировать видимые сразу
+  function initVisible() {
+    document.querySelectorAll(selector).forEach(el => {
+      if (isVisible(el)) createPopover(el);
+    });
+  }
+
+  // Вспомогательная функция: получить первый Element из события (без ошибок)
+  function eventTargetElement(e) {
+    // Попытка использовать composedPath (работает в Shadow DOM и для некоторых сложных случаев)
+    if (typeof e.composedPath === 'function') {
+      const path = e.composedPath();
+      for (const node of path) {
+        if (node instanceof Element) return node;
+      }
+    }
+
+    // fallback: если target — элемент, возвращаем; если текстовый узел — возвращаем parentElement
+    let t = e.target;
+    if (t instanceof Element) return t;
+    if (t && t.nodeType === 3) { // текстовый узел
+      return t.parentElement;
+    }
+    // поднимаемся по parentNode, пока не найдём Element или не дойдём до корня
+    while (t && t.parentNode) {
+      t = t.parentNode;
+      if (t instanceof Element) return t;
+    }
+    return null;
+  }
+
+  // Делегированная инициализация: безопасно ищем элемент и вызываем createPopover
+  ['click', 'focusin'].forEach(evt =>
+    document.addEventListener(evt, function (e) {
+      const targetEl = eventTargetElement(e);
+      if (!targetEl) return;
+      // Вызов closest только если функция доступна
+      const el = (typeof targetEl.closest === 'function') ? targetEl.closest(selector) : null;
+      if (!el) return;
+      if (!el.__bs_popover_inited) createPopover(el);
+      // Не вызываем .show() вручную — даём Bootstrap'у обработать событие штатно
+    }, true)
+  );
+
+  // Наблюдатель за динамическим добавлением/изменением
+  const mo = new MutationObserver(mutations => {
+    for (const m of mutations) {
+      if (m.type === 'childList') {
+        m.addedNodes.forEach(node => {
+          if (node.nodeType !== 1) return;
+          if (node.matches && node.matches(selector) && isVisible(node)) createPopover(node);
+          if (node.querySelectorAll) {
+            node.querySelectorAll(selector).forEach(el => { if (isVisible(el)) createPopover(el); });
+          }
+        });
+      } else if (m.type === 'attributes') {
+        const t = m.target;
+        if (t.matches && t.matches(selector) && isVisible(t)) createPopover(t);
+      }
+    }
+  });
+  mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden'] });
+
+  // Запуск при загрузке
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVisible);
+  } else {
+    initVisible();
+  }
 })();
 
 (function(){
