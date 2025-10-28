@@ -23,8 +23,8 @@
         <div class="home-internet  biz-internet">
 
           @@include('blocks/header/header.html', {
-            "title": "Інтернет для дому",
-            "intro": "<p>Підключення до надійного та швидкого домашнього інтернету для квартир і приватних будинків.</p><p>L4 пропонує стабільний інтернет з гігабітною швидкістю, який працює навіть під час відключення електрики. Безкоштовне підключення, легка установка, підтримка 24/7.</p>"
+            "title": "Інтернет для бізнесу від L4",
+            "intro": "<p>Надійний, швидкісний та безпечний інтернет для компаній будь-якого масштабу.</p><p>L4 пропонує інтернет-послуги, які відповідають потребам малого бізнесу, середніх компаній і великих корпоративних структур. Ми забезпечуємо стабільне з’єднання, швидке підключення, пріоритетну техпідтримку та можливість індивідуального налаштування мережі.</p>"
           })
 
           <!-- Для всех карточек бизнес-тарифов обязательно убрать (!)
@@ -40,15 +40,71 @@
                     aria-hidden="true">
             </canvas>
 
-            @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
-              "title": "Симетричні тарифи",
-              "sliderID": "simm"
-            })
+            <div class="tabs  biz-internet__tabs-wrapper">
 
-            @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
-              "title": "Асиметричні тарифи",
-              "sliderID": "assim"
-            })
+              <nav class="container  biz-internet__nav">
+                <div class="nav nav-tabs"
+                     id="bizInternetNav"
+                     role="tablist"
+                     data-theme-dark="nav--dark"
+                     data-theme-light="nav--light">
+
+                  <button class="nav-link active"
+                          id="bizInternet-1"
+                          data-bs-toggle="tab"
+                          data-bs-target="#bizInternet-pane-1"
+                          type="button"
+                          role="tab"
+                          aria-controls="bizInternet-pane-1"
+                          aria-selected="true">
+                    <span>Симетричні тарифи</span>
+                  </button>
+
+                  <button class="nav-link"
+                          id="bizInternet-2"
+                          data-bs-toggle="tab"
+                          data-bs-target="#bizInternet-pane-2"
+                          type="button"
+                          role="tab"
+                          aria-controls="bizInternet-pane-2"
+                          aria-selected="false">
+                    <span>Асиметричні тарифи</span>
+                  </button>
+
+                </div>
+              </nav>
+
+              <div class="tab-content  biz-internet__content" id="bizInternetContent">
+
+                <div class="biz-internet__pane  tab-pane fade show active"
+                     id="bizInternet-pane-1"
+                     role="tabpanel"
+                     aria-labelledby="bizInternet-1"
+                     tabindex="0">
+
+                  @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
+                    "title": "Симетричні тарифи",
+                    "sliderID": "simm"
+                  })
+
+                </div>
+
+                <div class="biz-internet__pane  tab-pane fade"
+                     id="bizInternet-pane-2"
+                     role="tabpanel"
+                     aria-labelledby="bizInternet-2"
+                     tabindex="0">
+
+                  @@include('blocks/biz-tariffs-slider/biz-tariffs-slider.html', {
+                    "title": "Асиметричні тарифи",
+                    "sliderID": "assim"
+                  })
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 

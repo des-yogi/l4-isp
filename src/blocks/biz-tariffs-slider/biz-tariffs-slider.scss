@@ -1,7 +1,7 @@
 .biz-tariffs-slider {
   $block-name:                &; // #{$block-name}__element
 
-  @include block-margin;
+  //@include block-margin;
   border-bottom: 2px solid transparent;
 
   &__header {

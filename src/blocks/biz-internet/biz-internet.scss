@@ -32,4 +32,31 @@
       }
     }
   }
+
+  &__tabs-wrapper {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 64px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 64px;
+      margin-bottom: 96px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 16px;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+
+    p {
+      color: var(--text-pale-color);
+    }
+
+    p + p {
+      font-weight: 500;
+    }
+  }
 }
