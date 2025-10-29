@@ -4,8 +4,6 @@
 
   display: inline-flex;
   align-items: center;
-  //max-width: 195px;
-  //max-height: 65px;
 
   &:hover,
   &:focus {
@@ -16,14 +14,14 @@
   }
 
   svg {
-    width: 133px;
-    height: 44px;
+    width: 133px !important;
+    height: 44px !important;
     fill: var(--text-color);
     transition: fill $transition-time;
 
     @media (min-width: $screen-xl) {
-      width: 169px;
-      height: 56px;
+      width: 169px !important;
+      height: 56px !important;
     }
   }
 
@@ -34,8 +32,8 @@
       height: 48px;
 
       @media (min-width: $screen-md) {
-        width: 195px;
-        height: 65px;
+        width: 195px !important;
+        height: 65px !important;
       }
     }
   }
