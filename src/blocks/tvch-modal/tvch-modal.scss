@@ -181,11 +181,17 @@
     }
 
     &--dark {
+      // @include gradient-border-mask(
+      //   2px,
+      //   $border-radius--12,
+      //   var(--border-gradient-10),
+      //   transparent
+      // )
       @include gradient-border-mask(
         2px,
         $border-radius--12,
-        var(--border-gradient-10),
-        transparent
+        var(--grey-300),
+        var(--white)
       )
     }
 
@@ -206,6 +212,7 @@
     margin: 0;
     hyphens: none;
     text-align: center;
+    color: var(--grey-900);
   }
 
   &__footer {
