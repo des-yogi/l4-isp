@@ -199,23 +199,4 @@
   });
 })();
 
-(function () {
-  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
-      container: 'body',
-      popperConfig: function (defaultConfig) {
-        return {
-          ...defaultConfig,
-          modifiers: [
-            ...defaultConfig.modifiers,
-            {
-              name: 'offset',
-              options: {
-                offset: [8, 8],
-              }
-            }
-          ]
-        };
-      }
-    }))
-})();
+
