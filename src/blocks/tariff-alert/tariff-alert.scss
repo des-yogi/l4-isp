@@ -46,8 +46,11 @@
       )
     }
 
-    svg {
-      fill: var(--white);
+    #{$block-name}__icon {
+
+      svg {
+        fill: var(--white);
+      }
     }
   }
 
@@ -63,8 +66,11 @@
       )
     }
 
-    svg {
-      fill: var(--blue-500);
+    #{$block-name}__icon {
+
+      svg {
+        fill: var(--blue-500);
+      }
     }
   }
 }
