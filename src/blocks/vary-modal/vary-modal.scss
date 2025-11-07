@@ -13,4 +13,11 @@
       display: none;
     }
   }
+
+  .field-text {
+
+    &.is-hidden {
+      display: none;
+    }
+  }
 }

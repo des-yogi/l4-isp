@@ -45,87 +45,200 @@
   "use strict";
   (function(){
     const varyModal = document.getElementById('varyModal');
+    if (!varyModal) return;
 
-    if (varyModal) {
-      varyModal.addEventListener('show.bs.modal', event => {
-        const button = event.relatedTarget;
+    // Поле «Адреса»
+    const addressInput = varyModal.querySelector('input[name="address"]');
+    const addressLabel = addressInput ? addressInput.closest('label.field-text') : null;
 
-        // ✅ ОПРЕДЕЛЯЕМ КОНТЕКСТ: это тариф или общая форма?
-        const tariffCard = button ? button.closest('.tariff-card') : null;
+    // Фиксируем последний клик по триггеру модалки (в capture, чтобы обойти слайдеры и вложенные элементы)
+    document.addEventListener('click', function (ev) {
+      const el = ev.target && ev.target.closest && ev.target.closest(
+        '[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'
+      );
+      if (el) window.varyModalLastTrigger = el;
+    }, { capture: true });
 
-        // Элементы модалки
-        const modalTitle = varyModal.querySelector('.vary-modal__title');
-        const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
-        const ipTariffInput = varyModal.querySelector('#ipTariff');
-        const tvTariffInput = varyModal.querySelector('#tvTariff');
-        const totalPriceInput = varyModal.querySelector('#totalPrice');
+    document.addEventListener('touchstart', function (ev) {
+      const el = ev.target && ev.target.closest && ev.target.closest(
+        '[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'
+      );
+      if (el) window.varyModalLastTrigger = el;
+    }, { capture: true, passive: true });
 
-        // Получаем заголовок из кнопки
-        const tariffName = button ? button.getAttribute('data-bs-whatever') : '';
+    // Нормализация текста
+    function norm(s) {
+      return String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    }
 
-        // === СЦЕНАРИЙ 1: ТАРИФНАЯ КАРТОЧКА ===
-        if (tariffCard) {
-          console.log('🎯 Тарифний сценарій');
+    // Проверка: текст относится к действию «подключение»
+    function isConnectText(text) {
+      const s = norm(text);
+      if (!s) return false;
+      // Базовые корни для укр/рус (при необходимости добавите варианты)
+      return (
+        /підключ/.test(s) || // підключити/підключитись/підключення
+        /подключ/.test(s) || // подключить/подключение
+        /\bconnect/.test(s)  // на случай англ. «connect»
+      );
+    }
 
-          // Заголовок
-          modalTitle.textContent = tariffName || 'Підключити тариф';
+    // Проверка: элемент-триггер «подключательный»?
+    // Без обязательных data-атрибутов — опираемся на тексты.
+    function isConnectActionFromElement(el) {
+      if (!el) return false;
 
-          // Заполняем поле с названием тарифа
-          ipTariffInput.value = tariffName || '';
+      // Собираем набор возможных текстов
+      const texts = [];
+      texts.push(el.getAttribute && el.getAttribute('data-bs-whatever'));
+      texts.push(el.getAttribute && el.getAttribute('aria-label'));
+      texts.push(el.getAttribute && el.getAttribute('title'));
+      texts.push(el.textContent);
 
-          // ✅ ЗАПОЛНЯЕМ ЦЕНУ из карточки
-          const priceElement = tariffCard.querySelector('.tariff-card__opt-item--price strong');
-          if (priceElement && totalPriceInput) {
-            const price = priceElement.textContent.trim();
-            totalPriceInput.value = price;
-            console.log('💰 Ціна:', price);
-          }
-
-          // Проверяем, выбран ли IPTV-пакет
-          if (tariffCard.dataset.selectedIptv) {
-            // IPTV выбран
-            tvTariffInput.value = tariffCard.dataset.selectedIptv;
-            modalSubtitle.textContent = tariffCard.dataset.selectedIptv;
-            modalSubtitle.style.display = ''; // Показываем подзаголовок
-
-            console.log('✅ IPTV знайдено:', tariffCard.dataset.selectedIptv);
-          } else {
-            // IPTV не выбран
-            tvTariffInput.value = 'Без IPTV';
-            modalSubtitle.textContent = '';
-            modalSubtitle.style.display = 'none'; // Скрываем подзаголовок
-
-            console.log('⚠️ IPTV не вибрано');
-          }
-
-          console.log('📝 Дані форми (тариф):', {
-            тариф: ipTariffInput.value,
-            iptv: tvTariffInput.value,
-            ціна: totalPriceInput.value
-          });
+      // Поиск ближайшего «контента» в пределах слайда/hero-секции
+      try {
+        const container = el.closest('.swiper-slide, .hero, .hero__slide, .hero_slide, .hero__item, .promo, .banner, section');
+        if (container) {
+          const header = container.querySelector('h1,h2,h3,.hero_slide__title,.hero_slide_title,.title,.section-title');
+          if (header) texts.push(header.textContent);
         }
-        // === СЦЕНАРИЙ 2: ОБЩАЯ ФОРМА (консультация и т.п.) ===
-        else {
-          console.log('📞 Загальний сценарій (консультація)');
+      } catch (e) {}
 
-          // Заголовок (может быть "Замовити консультацію" и т.п.)
-          modalTitle.textContent = tariffName || 'Замовити консультацію';
+      return texts.some(t => isConnectText(t));
+    }
 
-          // ✅ ОЧИЩАЕМ все тарифные поля
-          ipTariffInput.value = '';
-          tvTariffInput.value = '';
-          if (totalPriceInput) {
-            totalPriceInput.value = '';
-          }
+    // Показ/скрытие поля «Адреса»
+    function setAddressVisibility(show, opts) {
+      opts = opts || {};
+      const allowFocus = typeof opts.allowFocus === 'boolean' ? opts.allowFocus : false;
+      if (!addressLabel || !addressInput) return;
 
-          // Скрываем подзаголовок
+      if (show) {
+        addressLabel.classList.remove('is-hidden');
+        addressLabel.removeAttribute('aria-hidden');
+        addressInput.removeAttribute('aria-hidden');
+        if (allowFocus) {
+          setTimeout(() => { try { addressInput.focus(); } catch (e) {} }, 50);
+        }
+      } else {
+        addressLabel.classList.add('is-hidden');
+        addressLabel.setAttribute('aria-hidden', 'true');
+        addressInput.setAttribute('aria-hidden', 'true');
+        try { addressInput.value = ''; } catch (e) {}
+      }
+    }
+
+    // Надёжно находим триггер открытия
+    function resolveTrigger(event) {
+      let btn = event.relatedTarget || window.varyModalLastTrigger || document.activeElement || null;
+
+      // Если фокус на вложенном/неподходящем узле — поднимаемся к реальному триггеру
+      if (btn && btn.matches && !btn.matches('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]')) {
+        if (btn.closest) {
+          btn = btn.closest('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]');
+        }
+      }
+
+      if (!btn) {
+        // Фолбэк: берём первый видимый триггер на странице
+        const all = Array
+          .from(document.querySelectorAll('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'))
+          .filter(el => el.offsetParent !== null);
+        if (all.length) btn = all[0];
+      }
+      return btn || null;
+    }
+
+    // Заполнение полей для тарифного сценария (кнопка внутри .tariff-card)
+    function fillTariffScenario(tariffCard, button, titleFromBtn) {
+      const modalTitle = varyModal.querySelector('.vary-modal__title');
+      const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
+      const ipTariffInput = varyModal.querySelector('#ipTariff');
+      const tvTariffInput = varyModal.querySelector('#tvTariff');
+      const totalPriceInput = varyModal.querySelector('#totalPrice');
+
+      modalTitle.textContent = titleFromBtn || 'Підключити тариф';
+      if (ipTariffInput) ipTariffInput.value = titleFromBtn || '';
+
+      // Цена — из карточки (поддержим альтернативные селекторы на всякий случай)
+      const priceEl = tariffCard.querySelector('.tariff-card__opt-item--price strong, .tariff-card__price strong, [data-role="price"]');
+      if (priceEl && totalPriceInput) {
+        totalPriceInput.value = priceEl.textContent.trim();
+      }
+
+      // IPTV
+      if (tariffCard.dataset.selectedIptv) {
+        if (tvTariffInput) tvTariffInput.value = tariffCard.dataset.selectedIptv;
+        if (modalSubtitle) {
+          modalSubtitle.textContent = tariffCard.dataset.selectedIptv;
+          modalSubtitle.style.display = '';
+        }
+      } else {
+        if (tvTariffInput) tvTariffInput.value = 'Без IPTV';
+        if (modalSubtitle) {
           modalSubtitle.textContent = '';
           modalSubtitle.style.display = 'none';
-
-          console.log('📝 Дані форми (консультація): тарифні поля очищені');
         }
-      });
+      }
+
+      // Показ «Адреса», если триггер/текст указывает на подключение
+      const shouldShowAddress = isConnectActionFromElement(button) || isConnectText(titleFromBtn);
+      setAddressVisibility(shouldShowAddress, { allowFocus: false });
     }
+
+    // Заполнение полей для общего сценария (не .tariff-card)
+    function fillGeneralScenario(button, titleFromBtn) {
+      const modalTitle = varyModal.querySelector('.vary-modal__title');
+      const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
+      const ipTariffInput = varyModal.querySelector('#ipTariff');
+      const tvTariffInput = varyModal.querySelector('#tvTariff');
+      const totalPriceInput = varyModal.querySelector('#totalPrice');
+
+      modalTitle.textContent = titleFromBtn || 'Замовити консультацію';
+
+      // Очищаем «тарифные» поля
+      if (ipTariffInput) ipTariffInput.value = '';
+      if (tvTariffInput) tvTariffInput.value = '';
+      if (totalPriceInput) totalPriceInput.value = '';
+
+      if (modalSubtitle) {
+        modalSubtitle.textContent = '';
+        modalSubtitle.style.display = 'none';
+      }
+
+      // В общем сценарии тоже показываем адрес, если тексты указывают на «подключение»
+      const shouldShowAddress = isConnectActionFromElement(button) || isConnectText(titleFromBtn);
+      setAddressVisibility(shouldShowAddress, { allowFocus: false });
+    }
+
+    // Открытие модалки: основной сценарий
+    varyModal.addEventListener('show.bs.modal', event => {
+      const button = resolveTrigger(event);
+      const tariffCard = button ? (button.closest && button.closest('.tariff-card')) : null;
+
+      const titleFromBtn =
+        (button && (
+          button.getAttribute('data-bs-whatever') ||
+          button.getAttribute('aria-label') ||
+          button.getAttribute('title') ||
+          button.textContent
+        )) || '';
+
+      if (tariffCard) {
+        // Тарифная карточка
+        fillTariffScenario(tariffCard, button, titleFromBtn);
+      } else {
+        // Общая форма (Hero, баннеры и др.)
+        fillGeneralScenario(button, titleFromBtn);
+      }
+    });
+
+    // При закрытии — гарантированно скрываем и очищаем «Адреса»
+    varyModal.addEventListener('hidden.bs.modal', () => {
+      setAddressVisibility(false);
+      try { window.varyModalLastTrigger = null; } catch (e) {}
+    });
+
   }());
 </script>
 

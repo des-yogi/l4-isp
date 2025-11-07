@@ -53,7 +53,7 @@
 
     &--dropdown {
       z-index: 1000;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(20px);
 
       &.is-active {
         //border-radius: 0 0 $border-radius--12 $border-radius--12;
@@ -70,6 +70,10 @@
     }
   }
 
+  .choices__list--dropdown,
+  .choices__list[aria-expanded] {
+    z-index: 1000;
+  }
 
   &__wrapper--dark {
 

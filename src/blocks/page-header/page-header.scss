@@ -46,7 +46,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0 6px;
+    //gap: 0 6px; // дает ненеужное смещение в варианте без текста
     //padding: 0 12px;
     min-width: 44px;
     height: 44px;
@@ -78,9 +78,9 @@
       width: 24px;
       height: 24px;
 
-      @media (max-width: $screen-xxl - 1) {
-        transform: translateX(1px);
-      }
+      // @media (max-width: $screen-xxl - 1) {
+      //   transform: translateX(-1px);
+      // }
     }
 
     &--business,
@@ -98,9 +98,11 @@
       }
 
       span {
+        margin-left: 6px;
 
         @media (max-width: $screen-xxl - 1) {
           @include visibility-hidden;
+          position: absolute !important;
           //display: none;
         }
       }
@@ -113,11 +115,19 @@
 
     &--tel {
       padding-left: 12px;
+
+      span {
+        margin-left: 6px;
+      }
     }
 
     &--user {
       padding-left: 12px;
       padding-right: 14px;
+
+      span {
+        margin-left: 6px;
+      }
     }
   }
 
