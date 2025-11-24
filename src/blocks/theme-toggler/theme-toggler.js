@@ -1,13 +1,4 @@
 (function() {
- /**
- * Theme toggler accessibility enhancer
- *
- * - НЕ переключает классы и темы!
- * - Обеспечивает корректные aria-label и aria-pressed для кнопки.
- * - Работает независимо от основного скрипта темизации.
- * - Использовать совместно с основным скриптом, который управляет классами.
- */
-
   const block = 'theme-toggler';
   const btn = document.querySelector(`.${block}`);
   if (!btn) return;

@@ -32,8 +32,8 @@
 
   &__body {
     padding: 0 14px;
-    //overflow: hidden;
-    overflow-y: auto;
+    //overflow-y: auto !important;
+    overflow-x: hidden;
 
     @media (min-width: $screen-md) {
       padding-right: 40px;
@@ -107,11 +107,11 @@
         & > span {
 
           @media (max-width: $screen-md - 1) {
-            position: static;
+            position: static !important;
             height: auto;
             width: auto;
-            margin: 0;
-            clip: none;
+            margin: 0 6px;
+            clip: auto;
           }
         }
       }
@@ -160,12 +160,12 @@
       }
     }
 
-    &::after {
-      bottom: 0;
+    &::before {
+      top: -1px;
     }
 
-    &::before {
-      top: 0;
+    &::after {
+      bottom: 0;
     }
 
     &:last-of-type {
@@ -221,6 +221,10 @@
           transform: rotate(-180deg);
         }
       }
+    }
+
+    &.accordion-item:not(:last-child) {
+      border-bottom: none;
     }
   }
 
