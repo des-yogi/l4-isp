@@ -118,7 +118,7 @@
   }
 
   // Feedback: set temporary class and aria-label, announce in live region
-  function giveFeedback(button, messageKey, value = '') {
+  /*function giveFeedback(button, messageKey, value = '') {
     const live = ensureLiveRegion();
     // Save original aria-label if not saved
     if (!button.dataset._origAria) {
@@ -159,6 +159,107 @@
       // clear live region
       live.textContent = '';
     }, COPY_TIMEOUT_MS);
+  }*/
+    // Feedback: set temporary class and aria-label, announce in live region
+  function giveFeedback(button, messageKey, value = '') {
+    const live = ensureLiveRegion();
+    // Сохраняем исходный aria-label
+    if (!button.dataset._origAria) {
+      button.dataset._origAria = button.getAttribute('aria-label') || '';
+    }
+
+    // Определяем финальное сообщение для aria/live region
+    let finalMessage;
+    if (messageKey === 'copied' && value) {
+      finalMessage = t('copiedWithValue', { value });
+    } else if (messageKey === 'notFound') {
+      finalMessage = t('notFound');
+    } else if (messageKey === 'failed') {
+      finalMessage = t('failed');
+    } else if (messageKey === 'copied') {
+      finalMessage = t('copied');
+    } else {
+      finalMessage = t(messageKey);
+    }
+
+    // === Текущий фидбэк на кнопке (как было) ===
+    button.classList.add('copied');
+    button.setAttribute('aria-label', finalMessage);
+    live.textContent = finalMessage;
+
+    clearTimeout(button._copyTimeout);
+    button._copyTimeout = setTimeout(() => {
+      button.classList.remove('copied');
+      if (button.dataset._origAria !== undefined) {
+        button.setAttribute('aria-label', button.dataset._origAria);
+      }
+      live.textContent = '';
+    }, COPY_TIMEOUT_MS);
+
+    // === SweetAlert2 (без падений, если его нет) ===
+    // Проверяем, что глобальный объект есть и у него есть метод fire
+    if (!window.Swal || typeof window.Swal.fire !== 'function') {
+      return; // SweetAlert2 недоступен – просто выходим
+    }
+
+    const lang = getCurrentLangWrapper() || 'uk';
+
+    let title = '';
+    let text = '';
+    let icon = 'success';
+
+    if (messageKey === 'copied') {
+      // Без вывода конкретного значения
+      if (lang === 'uk') {
+        title = 'Скопійовано!';
+        text = 'Дані скопійовано до буфера обміну.';
+      } else if (lang === 'ru') {
+        title = 'Скопировано!';
+        text = 'Данные скопированы в буфер обмена.';
+      } else {
+        title = 'Copied!';
+        text = 'Data has been copied to the clipboard.';
+      }
+      icon = 'success';
+    } else if (messageKey === 'notFound') {
+      if (lang === 'uk') {
+        title = 'Помилка';
+        text = 'Значення для копіювання не знайдено.';
+      } else if (lang === 'ru') {
+        title = 'Ошибка';
+        text = 'Значение для копирования не найдено.';
+      } else {
+        title = 'Error';
+        text = 'Value to copy was not found.';
+      }
+      icon = 'error';
+    } else if (messageKey === 'failed') {
+      if (lang === 'uk') {
+        title = 'Не вдалося скопіювати';
+        text = 'Спробуйте скопіювати дані вручну.';
+      } else if (lang === 'ru') {
+        title = 'Не удалось скопировать';
+        text = 'Попробуйте скопировать данные вручную.';
+      } else {
+        title = 'Copy failed';
+        text = 'Please try copying the data manually.';
+      }
+      icon = 'error';
+    } else {
+      // На всякий случай – если передадут что-то иное
+      return;
+    }
+
+    window.Swal.fire({
+      icon,
+      title,
+      text,
+      toast: true,          // компактный тост
+      position: 'top-end',  // можно поменять под дизайн
+      showConfirmButton: false,
+      timer: 2500,
+      timerProgressBar: true,
+    });
   }
 
   // Main click handler (delegation)
