@@ -1455,7 +1455,7 @@
       </div>
 
     </div>
-  </template>
+  </template>
 
 <!-- Varyable modal -->
 <div class="modal  fade  vary-modal"
@@ -1487,6 +1487,7 @@
           <input id="ipTariff" type="hidden" name="ip-tariff" value="">
           <input id="tvTariff" type="hidden" name="tv-tariff" value="">
           <input id="totalPrice" type="hidden" name="total-price" value="">
+          <input id="ipStatus" type="hidden" name="ipStatus" value="">
 
           <label class="field-text"
              data-theme-dark="field-text--dark"
@@ -2094,204 +2095,242 @@
   </script>
 
   <script>
-    "use strict";
-    (function(){
-      const varyModal = document.getElementById('varyModal');
-      if (!varyModal) return;
+  "use strict";
+  (function(){
+    const varyModal = document.getElementById('varyModal');
+    if (!varyModal) return;
 
-      // Поле «Адреса»
-      const addressInput = varyModal.querySelector('input[name="address"]');
-      const addressLabel = addressInput ? addressInput.closest('label.field-text') : null;
+    // Поле «Адреса»
+    const addressInput = varyModal.querySelector('input[name="address"]');
+    const addressLabel = addressInput ? addressInput.closest('label.field-text') : null;
 
-      // Фиксируем последний клик по триггеру модалки (в capture, чтобы обойти слайдеры и вложенные элементы)
-      document.addEventListener('click', function (ev) {
-        const el = ev.target && ev.target.closest && ev.target.closest(
-          '[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'
-        );
-        if (el) window.varyModalLastTrigger = el;
-      }, { capture: true });
+    // Поле статуса белого IP (hidden)
+    const ipStatusInput = varyModal.querySelector('#ipStatus');
 
-      document.addEventListener('touchstart', function (ev) {
-        const el = ev.target && ev.target.closest && ev.target.closest(
-          '[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'
-        );
-        if (el) window.varyModalLastTrigger = el;
-      }, { capture: true, passive: true });
+    // Фиксируем последний клик по триггеру модалки (в capture, чтобы обойти слайдеры и вложенные элементы)
+    document.addEventListener('click', function (ev) {
+      const el = ev.target && ev.target.closest && ev.target.closest(
+        '[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'
+      );
+      if (el) window.varyModalLastTrigger = el;
+    }, { capture: true });
 
-      // Нормализация текста
-      function norm(s) {
-        return String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    document.addEventListener('touchstart', function (ev) {
+      const el = ev.target && ev.target.closest && ev.target.closest(
+        '[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'
+      );
+      if (el) window.varyModalLastTrigger = el;
+    }, { capture: true, passive: true });
+
+    // Нормализация текста
+    function norm(s) {
+      return String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    }
+
+    // Проверка: текст относится к действию «подключение»
+    function isConnectText(text) {
+      const s = norm(text);
+      if (!s) return false;
+      // Базовые корни для укр/рус (при необходимости добавите варианты)
+      return (
+        /підключ/.test(s) || // підключити/підключитись/підключення
+        /подключ/.test(s) || // подключить/подключение
+        /\bconnect/.test(s)  // на случай англ. «connect»
+      );
+    }
+
+    // Проверка: элемент-триггер «подключательный»?
+    // Без обязательных data-атрибутов — опираемся на тексты.
+    function isConnectActionFromElement(el) {
+      if (!el) return false;
+
+      // Собираем набор возможных текстов
+      const texts = [];
+      texts.push(el.getAttribute && el.getAttribute('data-bs-whatever'));
+      texts.push(el.getAttribute && el.getAttribute('aria-label'));
+      texts.push(el.getAttribute && el.getAttribute('title'));
+      texts.push(el.textContent);
+
+      // Поиск ближайшего «контента» в пределах слайда/hero-секции
+      try {
+        const container = el.closest('.swiper-slide, .hero, .hero__slide, .hero_slide, .hero__item, .promo, .banner, section');
+        if (container) {
+          const header = container.querySelector('h1,h2,h3,.hero_slide__title,.hero_slide_title,.title,.section-title');
+          if (header) texts.push(header.textContent);
+        }
+      } catch (e) {}
+
+      return texts.some(t => isConnectText(t));
+    }
+
+    // Показ/скрытие поля «Адреса»
+    function setAddressVisibility(show, opts) {
+      opts = opts || {};
+      const allowFocus = typeof opts.allowFocus === 'boolean' ? opts.allowFocus : false;
+      if (!addressLabel || !addressInput) return;
+
+      if (show) {
+        addressLabel.classList.remove('is-hidden');
+        addressLabel.removeAttribute('aria-hidden');
+        addressInput.removeAttribute('aria-hidden');
+        if (allowFocus) {
+          setTimeout(() => { try { addressInput.focus(); } catch (e) {} }, 50);
+        }
+      } else {
+        addressLabel.classList.add('is-hidden');
+        addressLabel.setAttribute('aria-hidden', 'true');
+        addressInput.setAttribute('aria-hidden', 'true');
+        try { addressInput.value = ''; } catch (e) {}
+      }
+    }
+
+    // Статус белого IP для карточки тарифа
+    function getIpStatus(tariffCard) {
+      if (!tariffCard) return '';
+
+      const mode = (tariffCard.dataset.ipMode || '').toLowerCase();
+      const checkbox = tariffCard.querySelector('input.field-toggler__input[data-ip-cost]');
+
+      if (mode === 'off') {
+        return 'Білий IP відсутній';
       }
 
-      // Проверка: текст относится к действию «подключение»
-      function isConnectText(text) {
-        const s = norm(text);
-        if (!s) return false;
-        // Базовые корни для укр/рус (при необходимости добавите варианты)
-        return (
-          /підключ/.test(s) || // підключити/підключитись/підключення
-          /подключ/.test(s) || // подключить/подключение
-          /\bconnect/.test(s)  // на случай англ. «connect»
-        );
+      if (mode === 'on') {
+        return 'Білий IP увімкнено';
       }
 
-      // Проверка: элемент-триггер «подключательный»?
-      // Без обязательных data-атрибутов — опираемся на тексты.
-      function isConnectActionFromElement(el) {
-        if (!el) return false;
-
-        // Собираем набор возможных текстов
-        const texts = [];
-        texts.push(el.getAttribute && el.getAttribute('data-bs-whatever'));
-        texts.push(el.getAttribute && el.getAttribute('aria-label'));
-        texts.push(el.getAttribute && el.getAttribute('title'));
-        texts.push(el.textContent);
-
-        // Поиск ближайшего «контента» в пределах слайда/hero-секции
-        try {
-          const container = el.closest('.swiper-slide, .hero, .hero__slide, .hero_slide, .hero__item, .promo, .banner, section');
-          if (container) {
-            const header = container.querySelector('h1,h2,h3,.hero_slide__title,.hero_slide_title,.title,.section-title');
-            if (header) texts.push(header.textContent);
-          }
-        } catch (e) {}
-
-        return texts.some(t => isConnectText(t));
+      if (mode === 'optional') {
+        const isOn = checkbox && checkbox.checked;
+        return isOn ? 'Білий IP увімкнено' : 'Білий IP відсутній';
       }
 
-      // Показ/скрытие поля «Адреса»
-      function setAddressVisibility(show, opts) {
-        opts = opts || {};
-        const allowFocus = typeof opts.allowFocus === 'boolean' ? opts.allowFocus : false;
-        if (!addressLabel || !addressInput) return;
+      // Если режима нет или пустой — трактуем как "off" (IP нет)
+      return 'Білий IP відсутній';
+    }
 
-        if (show) {
-          addressLabel.classList.remove('is-hidden');
-          addressLabel.removeAttribute('aria-hidden');
-          addressInput.removeAttribute('aria-hidden');
-          if (allowFocus) {
-            setTimeout(() => { try { addressInput.focus(); } catch (e) {} }, 50);
-          }
-        } else {
-          addressLabel.classList.add('is-hidden');
-          addressLabel.setAttribute('aria-hidden', 'true');
-          addressInput.setAttribute('aria-hidden', 'true');
-          try { addressInput.value = ''; } catch (e) {}
+    // Надёжно находим триггер открытия
+    function resolveTrigger(event) {
+      let btn = event.relatedTarget || window.varyModalLastTrigger || document.activeElement || null;
+
+      // Если фокус на вложенном/неподходящем узле — поднимаемся к реальному триггеру
+      if (btn && btn.matches && !btn.matches('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]')) {
+        if (btn.closest) {
+          btn = btn.closest('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]');
         }
       }
 
-      // Надёжно находим триггер открытия
-      function resolveTrigger(event) {
-        let btn = event.relatedTarget || window.varyModalLastTrigger || document.activeElement || null;
+      if (!btn) {
+        // Фолбэк: берём первый видимый триггер на странице
+        const all = Array
+          .from(document.querySelectorAll('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'))
+          .filter(el => el.offsetParent !== null);
+        if (all.length) btn = all[0];
+      }
+      return btn || null;
+    }
 
-        // Если фокус на вложенном/неподходящем узле — поднимаемся к реальному триггеру
-        if (btn && btn.matches && !btn.matches('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]')) {
-          if (btn.closest) {
-            btn = btn.closest('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]');
-          }
-        }
+    // Заполнение полей для тарифного сценария (кнопка внутри .tariff-card)
+    function fillTariffScenario(tariffCard, button, titleFromBtn) {
+      const modalTitle = varyModal.querySelector('.vary-modal__title');
+      const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
+      const ipTariffInput = varyModal.querySelector('#ipTariff');
+      const tvTariffInput = varyModal.querySelector('#tvTariff');
+      const totalPriceInput = varyModal.querySelector('#totalPrice');
 
-        if (!btn) {
-          // Фолбэк: берём первый видимый триггер на странице
-          const all = Array
-            .from(document.querySelectorAll('[data-bs-target="#varyModal"], [data-bs-toggle="modal"][data-bs-target="#varyModal"]'))
-            .filter(el => el.offsetParent !== null);
-          if (all.length) btn = all[0];
-        }
-        return btn || null;
+      modalTitle.textContent = titleFromBtn || 'Підключити тариф';
+      if (ipTariffInput) ipTariffInput.value = titleFromBtn || '';
+
+      // Цена — из карточки (поддержим альтернативные селекторы на всякий случай)
+      const priceEl = tariffCard.querySelector('.tariff-card__opt-item--price strong, .tariff-card__price strong, [data-role="price"]');
+      if (priceEl && totalPriceInput) {
+        totalPriceInput.value = priceEl.textContent.trim();
       }
 
-      // Заполнение полей для тарифного сценария (кнопка внутри .tariff-card)
-      function fillTariffScenario(tariffCard, button, titleFromBtn) {
-        const modalTitle = varyModal.querySelector('.vary-modal__title');
-        const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
-        const ipTariffInput = varyModal.querySelector('#ipTariff');
-        const tvTariffInput = varyModal.querySelector('#tvTariff');
-        const totalPriceInput = varyModal.querySelector('#totalPrice');
-
-        modalTitle.textContent = titleFromBtn || 'Підключити тариф';
-        if (ipTariffInput) ipTariffInput.value = titleFromBtn || '';
-
-        // Цена — из карточки (поддержим альтернативные селекторы на всякий случай)
-        const priceEl = tariffCard.querySelector('.tariff-card__opt-item--price strong, .tariff-card__price strong, [data-role="price"]');
-        if (priceEl && totalPriceInput) {
-          totalPriceInput.value = priceEl.textContent.trim();
+      // IPTV
+      if (tariffCard.dataset.selectedIptv) {
+        if (tvTariffInput) tvTariffInput.value = tariffCard.dataset.selectedIptv;
+        if (modalSubtitle) {
+          modalSubtitle.textContent = tariffCard.dataset.selectedIptv;
+          modalSubtitle.style.display = '';
         }
-
-        // IPTV
-        if (tariffCard.dataset.selectedIptv) {
-          if (tvTariffInput) tvTariffInput.value = tariffCard.dataset.selectedIptv;
-          if (modalSubtitle) {
-            modalSubtitle.textContent = tariffCard.dataset.selectedIptv;
-            modalSubtitle.style.display = '';
-          }
-        } else {
-          if (tvTariffInput) tvTariffInput.value = 'Без IPTV';
-          if (modalSubtitle) {
-            modalSubtitle.textContent = '';
-            modalSubtitle.style.display = 'none';
-          }
-        }
-
-        // Показ «Адреса», если триггер/текст указывает на подключение
-        const shouldShowAddress = isConnectActionFromElement(button) || isConnectText(titleFromBtn);
-        setAddressVisibility(shouldShowAddress, { allowFocus: false });
-      }
-
-      // Заполнение полей для общего сценария (не .tariff-card)
-      function fillGeneralScenario(button, titleFromBtn) {
-        const modalTitle = varyModal.querySelector('.vary-modal__title');
-        const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
-        const ipTariffInput = varyModal.querySelector('#ipTariff');
-        const tvTariffInput = varyModal.querySelector('#tvTariff');
-        const totalPriceInput = varyModal.querySelector('#totalPrice');
-
-        modalTitle.textContent = titleFromBtn || 'Замовити консультацію';
-
-        // Очищаем «тарифные» поля
-        if (ipTariffInput) ipTariffInput.value = '';
-        if (tvTariffInput) tvTariffInput.value = '';
-        if (totalPriceInput) totalPriceInput.value = '';
-
+      } else {
+        if (tvTariffInput) tvTariffInput.value = 'Без IPTV';
         if (modalSubtitle) {
           modalSubtitle.textContent = '';
           modalSubtitle.style.display = 'none';
         }
-
-        // В общем сценарии тоже показываем адрес, если тексты указывают на «подключение»
-        const shouldShowAddress = isConnectActionFromElement(button) || isConnectText(titleFromBtn);
-        setAddressVisibility(shouldShowAddress, { allowFocus: false });
       }
 
-      // Открытие модалки: основной сценарий
-      varyModal.addEventListener('show.bs.modal', event => {
-        const button = resolveTrigger(event);
-        const tariffCard = button ? (button.closest && button.closest('.tariff-card')) : null;
+      // Показ «Адреса», если триггер/текст указывает на подключение
+      const shouldShowAddress = isConnectActionFromElement(button) || isConnectText(titleFromBtn);
+      setAddressVisibility(shouldShowAddress, { allowFocus: false });
 
-        const titleFromBtn =
-          (button && (
-            button.getAttribute('data-bs-whatever') ||
-            button.getAttribute('aria-label') ||
-            button.getAttribute('title') ||
-            button.textContent
-          )) || '';
+      // Статус белого IP — по согласованным правилам
+      if (ipStatusInput) {
+        ipStatusInput.value = getIpStatus(tariffCard);
+      }
+    }
 
-        if (tariffCard) {
-          // Тарифная карточка
-          fillTariffScenario(tariffCard, button, titleFromBtn);
-        } else {
-          // Общая форма (Hero, баннеры и др.)
-          fillGeneralScenario(button, titleFromBtn);
-        }
-      });
+    // Заполнение полей для общего сценария (не .tariff-card)
+    function fillGeneralScenario(button, titleFromBtn) {
+      const modalTitle = varyModal.querySelector('.vary-modal__title');
+      const modalSubtitle = varyModal.querySelector('.vary-modal__subtitle');
+      const ipTariffInput = varyModal.querySelector('#ipTariff');
+      const tvTariffInput = varyModal.querySelector('#tvTariff');
+      const totalPriceInput = varyModal.querySelector('#totalPrice');
 
-      // При закрытии — гарантированно скрываем и очищаем «Адреса»
-      varyModal.addEventListener('hidden.bs.modal', () => {
-        setAddressVisibility(false);
-        try { window.varyModalLastTrigger = null; } catch (e) {}
-      });
+      modalTitle.textContent = titleFromBtn || 'Замовити консультацію';
 
-    }());
+      // Очищаем «тарифные» поля
+      if (ipTariffInput) ipTariffInput.value = '';
+      if (tvTariffInput) tvTariffInput.value = '';
+      if (totalPriceInput) totalPriceInput.value = '';
+
+      if (modalSubtitle) {
+        modalSubtitle.textContent = '';
+        modalSubtitle.style.display = 'none';
+      }
+
+      // В общем сценарии тоже показываем адрес, если тексты указывают на «подключение»
+      const shouldShowAddress = isConnectActionFromElement(button) || isConnectText(titleFromBtn);
+      setAddressVisibility(shouldShowAddress, { allowFocus: false });
+
+      // В общем сценарии ipStatus всегда пустой (по ТЗ)
+      if (ipStatusInput) {
+        ipStatusInput.value = '';
+      }
+    }
+
+    // Открытие модалки: основной сценарий
+    varyModal.addEventListener('show.bs.modal', event => {
+      const button = resolveTrigger(event);
+      const tariffCard = button ? (button.closest && button.closest('.tariff-card')) : null;
+
+      const titleFromBtn =
+        (button && (
+          button.getAttribute('data-bs-whatever') ||
+          button.getAttribute('aria-label') ||
+          button.getAttribute('title') ||
+          button.textContent
+        )) || '';
+
+      if (tariffCard) {
+        // Тарифная карточка
+        fillTariffScenario(tariffCard, button, titleFromBtn);
+      } else {
+        // Общая форма (Hero, баннеры и др.)
+        fillGeneralScenario(button, titleFromBtn);
+      }
+    });
+
+    // При закрытии — гарантированно скрываем и очищаем «Адреса»
+    varyModal.addEventListener('hidden.bs.modal', () => {
+      setAddressVisibility(false);
+      try { window.varyModalLastTrigger = null; } catch (e) {}
+      if (ipStatusInput) ipStatusInput.value = '';
+    });
+
+  }());
   </script>
 
 

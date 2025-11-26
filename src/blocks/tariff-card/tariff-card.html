@@ -3,6 +3,7 @@
   "title": "СМАРТ 200",
   "speed": "до 200 Мбіт/с",
   "tvInfo": '<span class="visually-hidden">Недоступно</span><svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>',
+  "ipMode": "off"
 })
 -->
 
@@ -10,6 +11,7 @@
          data-theme-dark="tariff-card--dark"
          data-theme-light="tariff-card--light"
          style="background-image: url('img/tariff-card-bg.png')"
+         data-ip-mode="@@ipMode"
 >
 
   <header class="tariff-card__header">
@@ -34,8 +36,18 @@
         </li>
         <li class="tariff-card__opt-item"
             aria-labelledby="tariff-ip">
-          <span class="visually-hidden">Недоступно</span>
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg>
+          <!-- <span class="visually-hidden">Недоступно</span>
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#void"></use></svg> -->
+          <div class="field-toggler" style="margin:0;">
+            <div class="field-toggler__input-wrap">
+              <label class="field-toggler__name">
+                <input class="field-toggler__input" type="checkbox" name="ip-choice" value="" data-ip-cost="50">
+                <span class="field-toggler__name-text" style="padding-right:48px;">&nbsp;
+                  <span class="visually-hidden">[[$langs? &uk=`Вимкнуто/Увімкнуто` &ru=`Выключено/Включено`]]</span>
+                </span>
+              </label>
+            </div>
+          </div>
         </li>
 
         <li class="tariff-card__opt-item  tariff-card__opt-item--tv"
