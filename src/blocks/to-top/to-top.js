@@ -1,49 +1,56 @@
-(function(){
-  if(document.getElementById('toTop')) {
+(function() {
+  var btn = document.getElementById('toTop');
+  if (!btn) return;
 
-    document.getElementById('toTop').addEventListener('click', function(e) {
-      e.preventDefault();
-      var scroll = window.pageYOffset;
-      var targetTop = 0;
-      var scrollDiff = (scroll - targetTop) * -1;
-      animate({
-        duration: 500,
-        timing: function(timeFraction) {
-          return Math.pow(timeFraction, 4); // https://learn.javascript.ru/js-animation
-        },
-        draw: function(progress) {
-          var scrollNow = scroll + progress * scrollDiff;
-          window.scrollTo(0,scrollNow);
-        }
-      });
-    }, false);
+  var isAnimating = false;
 
-    window.addEventListener('scroll', visibilityToggle);
-    visibilityToggle();
-  }
+  // Функция управления видимостью
+  function updateVisibility() {
+    // Если мы сейчас анимируем скролл — игнорируем любые проверки
+    if (isAnimating) return;
 
-  function visibilityToggle() {
-    if(window.pageYOffset >= 500) {
-      document.getElementById('toTop').classList.add('to-top--visible');
-    }
-    else {
-      document.getElementById('toTop').classList.remove('to-top--visible');
+    if (window.pageYOffset >= 500) {
+      btn.classList.add('to-top--visible');
+    } else {
+      btn.classList.remove('to-top--visible');
     }
   }
 
-  function animate(_ref) {
-    var timing = _ref.timing,
-        draw = _ref.draw,
-        duration = _ref.duration;
-    var start = performance.now();
-    requestAnimationFrame(function animate(time) {
-      var timeFraction = (time - start) / duration;
-      if (timeFraction > 1) timeFraction = 1;
-      var progress = timing(timeFraction);
-      draw(progress);
-      if (timeFraction < 1) {
-        requestAnimationFrame(animate);
-      }
+  // Обработка клика
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (isAnimating) return;
+
+    isAnimating = true;
+
+    // 1. Вешаем атрибут для CSS-блокировки и убираем класс видимости
+    btn.setAttribute('data-scrolling', 'true');
+    btn.classList.remove('to-top--visible');
+
+    // 2. Нативный плавный скролл
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-  }
+
+    // 3. Следим за окончанием скролла
+    var checkArrival = setInterval(function() {
+      if (window.pageYOffset === 0) {
+        clearInterval(checkArrival);
+
+        // Разблокируем только когда приехали наверх
+        btn.removeAttribute('data-scrolling');
+        isAnimating = false;
+
+        // На всякий случай обновляем видимость (наверху кнопка скроется)
+        updateVisibility();
+      }
+    }, 100);
+  }, false);
+
+  // Слушаем скролл
+  window.addEventListener('scroll', updateVisibility);
+
+  // Инициализация при загрузке
+  updateVisibility();
 }());
