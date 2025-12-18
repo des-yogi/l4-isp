@@ -1,25 +1,18 @@
 .to-top {
-
   $block-name:                &; // #{$block-name}__element
 
   position: fixed;
   right: 12px;
   bottom: 16px;
-  z-index: 10;
-  //width: 56px;
-  //height: 56px;
-  //color: transparent;
-  //background-color: $secondary-color;
-  //font: 0/0 a;
-  // см. img_to_bg/to-up.svg
-  // http://yoksel.github.io/url-encoder/ru/
-  //background-size: 30px;
-  //background-image: svg-load('../blocks/sprite-svg/svg/chevron-down.svg', fill=$white);
-  //background-repeat: no-repeat;
-  //background-position: center;
-  //border: 2px solid $white;
-  //border-radius: $border-radius;
-  //transform: rotate(180deg);
+  z-index: 150;
+  user-select: none;
+  cursor: pointer;
+
+  // Базовое состояние: скрыта
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  will-change: opacity, visibility;
 
   @media (min-width: $screen-md) {
     right: 40px;
@@ -29,19 +22,19 @@
     bottom: 24px;
   }
 
-  // @media (min-width: $screen-xxl) {
-  //   bottom: 26px;
-  // }
+  // Состояние видимости (управляется через JS при скролле)
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
 
-  .js & {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s;
-
-    &--visible {
-      opacity: 1;
-      visibility: visible;
-    }
+  // Жёсткая блокировка: когда нажали кнопку и едем вверх
+  // Атрибут вешается на кнопку через JS
+  &[data-scrolling="true"] {
+    transition: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 }
 
