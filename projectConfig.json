@@ -128,7 +128,8 @@
     "tvch-modal": [],
     "tv-select-modal": [],
     "field-file": [],
-    "tariff-alert": []
+    "tariff-alert": [],
+    "top-banner": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

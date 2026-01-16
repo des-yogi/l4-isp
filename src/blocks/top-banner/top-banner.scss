@@ -1,0 +1,80 @@
+.top-banner {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+
+    @media (max-width: $screen-md - 1) {
+      width: 100%;
+    }
+
+    @media (min-width: $screen-md) {
+      font-size: $font-size;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: inherit;
+    }
+  }
+
+  &__text {
+    display: block;
+    //align-items: center;
+    position: relative;
+    z-index: 1;
+    //padding-top: 8px;
+    //padding-bottom: 8px;
+    text-align: center;
+    text-shadow: 0 0 8px $black;
+    max-width: 100%; /* Задана ширина контейнера */
+    overflow: hidden; /* Скрываем лишний текст */
+    white-space: nowrap; /* Запрещаем перенос текста */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+  }
+
+  &__left-img,
+  &__right-img {
+    display: block;
+    height: 40px;
+    width: 100px;
+    background-color: rgba($white, 0);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (max-width: $screen-md - 1) {
+      position: absolute;
+    }
+  }
+
+  &__left-img {
+    margin-right: 16px;
+    background-position: right center;
+
+    @media (max-width: $screen-md - 1) {
+      left: 0;
+    }
+  }
+
+  &__right-img {
+    margin-left: 16px;
+    background-position: left center;
+
+    @media (max-width: $screen-md - 1) {
+      right: 0;
+    }
+  }
+}

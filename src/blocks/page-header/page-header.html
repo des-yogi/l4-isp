@@ -2,94 +2,98 @@
 @ @include('blocks/page-header/page-header.html')
 -->
 
-<header id="header"
+<div id="header"
         class="page-header"
         data-theme-dark="page-header--dark"
         data-theme-light="page-header--light">
 
-  <div class="page-header__top">
-    <div class="container  page-header__top-content">
+  @@include('../../blocks/top-banner/top-banner.html')
 
-      <div class="page-header__top-left">
-        <a href="#" class="page-header__link  page-header__link--business" aria-label="Для бізнесу">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#briefcase"></use></svg>
-          <span>Для бізнесу</span>
-        </a>
-        <a href="#" class="page-header__link  page-header__link--faq" aria-label="FAQ">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-          <span>FAQ</span>
-        </a>
-        <a href="#" class="page-header__link  page-header__link--map" aria-label="Мапа покриття">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#map"></use></svg>
-          <span>Мапа покриття</span>
-        </a>
-        <div class="dropdown  page-header__phones">
-          <button class="page-header__link  page-header__link--tel  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Contact phones">
-            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
-            <span>098-786-69-66</span>
-            <svg class="dropdown-shevron" width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down"></use></svg>
-          </button>
-          <ul class="dropdown-menu  page-header__phones-list"
-              data-theme-dark="page-header__phones-list--dark"
-              data-theme-light="page-header__phones-list--light">
-            <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
-            <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
-            <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
-          </ul>
+  <header>
+    <div class="page-header__top">
+      <div class="container  page-header__top-content">
+
+        <div class="page-header__top-left">
+          <a href="#" class="page-header__link  page-header__link--business" aria-label="Для бізнесу">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#briefcase"></use></svg>
+            <span>Для бізнесу</span>
+          </a>
+          <a href="#" class="page-header__link  page-header__link--faq" aria-label="FAQ">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+            <span>FAQ</span>
+          </a>
+          <a href="#" class="page-header__link  page-header__link--map" aria-label="Мапа покриття">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#map"></use></svg>
+            <span>Мапа покриття</span>
+          </a>
+          <div class="dropdown  page-header__phones">
+            <button class="page-header__link  page-header__link--tel  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Contact phones">
+              <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
+              <span>098-786-69-66</span>
+              <svg class="dropdown-shevron" width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#down"></use></svg>
+            </button>
+            <ul class="dropdown-menu  page-header__phones-list"
+                data-theme-dark="page-header__phones-list--dark"
+                data-theme-light="page-header__phones-list--light">
+              <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+              <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+              <li><a class="dropdown-item  page-header__phones-link" href="tel:+380987866966">098-786-69-66</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="page-header__top-center">
+          <span class="page-header__badge-icon">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#battery"></use></svg>
+          </span>
+          <span class="page-header__badge-text">Працює без світла 72 години!</span>
+        </div>
+
+        <div class="page-header__top-right">
+          <a href="#" class="page-header__link  page-header__link--user">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
+            <span>Кабінет</span>
+          </a>
+
+          @@include('../../blocks/messengers/messengers.html')
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container  page-header__main">
+      <div class="page-header__main-content"
+           data-theme-dark="page-header__main-content--dark" data-theme-light="page-header__main-content--light"
+           data-badge="Ми в мережі 19 років, 3 місяці та 24 днів">
+
+        @@include('../../blocks/logo/logo.html', {
+          "addClass": "logo--header"
+        })
+
+        @@include('../../blocks/main-nav/main-nav.html')
+
+        <div class="page-header__service">
+
+          <a href="#"
+             class="btn  btn--header  page-header__wallet-link  page-header__wallet-link--dt"
+             data-theme-dark="btn--dark"
+             data-theme-light="btn--light">
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet"></use></svg>
+            <span>Поповнити</span>
+          </a>
+
+          @@include('../../blocks/theme-toggler/theme-toggler.html')
+
+          @@include('../../blocks/search-btn/search-btn.html')
+
+          @@include('../../blocks/burger/burger.html')
+
         </div>
       </div>
-
-      <div class="page-header__top-center">
-        <span class="page-header__badge-icon">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#battery"></use></svg>
-        </span>
-        <span class="page-header__badge-text">Працює без світла 72 години!</span>
-      </div>
-
-      <div class="page-header__top-right">
-        <a href="#" class="page-header__link  page-header__link--user">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
-          <span>Кабінет</span>
-        </a>
-
-        @@include('../../blocks/messengers/messengers.html')
-      </div>
-
     </div>
-  </div>
+  </header>
 
-  <div class="container  page-header__main">
-    <div class="page-header__main-content"
-         data-theme-dark="page-header__main-content--dark" data-theme-light="page-header__main-content--light"
-         data-badge="Ми в мережі 19 років, 3 місяці та 24 днів">
-
-      @@include('../../blocks/logo/logo.html', {
-        "addClass": "logo--header"
-      })
-
-      @@include('../../blocks/main-nav/main-nav.html')
-
-      <div class="page-header__service">
-
-        <a href="#"
-           class="btn  btn--header  page-header__wallet-link  page-header__wallet-link--dt"
-           data-theme-dark="btn--dark"
-           data-theme-light="btn--light">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet"></use></svg>
-          <span>Поповнити</span>
-        </a>
-
-        @@include('../../blocks/theme-toggler/theme-toggler.html')
-
-        @@include('../../blocks/search-btn/search-btn.html')
-
-        @@include('../../blocks/burger/burger.html')
-
-      </div>
-    </div>
-  </div>
-
-</header>
+</div>
 
 <!-- Mob Nav -->
 @@include('../../blocks/mob-nav/mob-nav.html')
