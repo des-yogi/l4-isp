@@ -446,6 +446,18 @@ a {
     padding-top: 232px; // 142+90
   }
 
+  &.show {
+    padding-top: 152px; // 88+24 +40 top-banner
+
+    @media (min-width: $screen-md) {
+      padding-top: 262px; //132+90 +40 top-banner
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 272px; // 142+90 +40 top-banner
+    }
+  }
+
   &--hero {
     padding-top: 0 !important;
   }
