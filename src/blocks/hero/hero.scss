@@ -63,6 +63,22 @@
         height: 100%;
       }
     }
+
+    &.show {
+      padding-top: 152px; // 88+24 +40 top-banner
+
+      @media (min-width: $screen-md) {
+        padding-top: 210px; // 126+44 +40 top-banner
+      }
+
+      @media (min-width: $screen-xl) {
+        padding-top: 230px; // 126+64 +40 top-banner
+      }
+
+      @media (min-width: $screen-xxl) {
+        padding-top: 170px; // 126+4 +40 top-banner
+      }
+    }
   }
 
   &__col-text {
