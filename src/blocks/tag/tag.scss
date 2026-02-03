@@ -10,6 +10,7 @@
   line-height: 1;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  white-space: nowrap;
   border-radius: $border-radius--4;
 
   &:empty {

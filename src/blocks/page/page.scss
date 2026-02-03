@@ -740,6 +740,57 @@ a {
   }
 }
 
+// Colors list
+.white {
+  color: var(--grey-800) !important;
+  background-color: var(--white) !important;
+}
+
+.lightgrey {
+  color: var(--grey-900) !important;
+  background-color: var(--grey-300) !important;
+}
+
+.black {
+  color: var(--white) !important;
+  background-color: var(--grey-900) !important;
+}
+
+.blue {
+  color: var(--grey-900) !important;
+  background-color: var(--blue-500) !important;
+}
+
+.lightblue {
+  color: var(--grey-900) !important;
+  background-color: var(--blue-300) !important;
+}
+
+.red {
+  color: var(--white) !important;
+  background-color: var(--red) !important;
+}
+
+.orange {
+  color: var(--grey-900) !important;
+  background-color: var(--orange) !important;
+}
+
+.purple {
+  color: var(--white) !important;
+  background-color: var(--purple) !important;
+}
+
+.green {
+  color: var(--grey-900) !important;
+  background-color: var(--green) !important;
+}
+
+.yellow {
+  color: var(--grey-900) !important;
+  background-color: var(--yellow) !important;
+}
+
 // background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);
 // background-image: svg-load('../blocks/sprite-svg/svg/phone.svg', fill=$main-color);
 
