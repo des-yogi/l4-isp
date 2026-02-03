@@ -129,7 +129,8 @@
     "tv-select-modal": [],
     "field-file": [],
     "tariff-alert": [],
-    "top-banner": []
+    "top-banner": [],
+    "alert": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
@@ -170,7 +171,8 @@
     "./src/js/libs/lazy-loader.js",
     "./src/js/libs/*.{js,json,lottie}",
     "./src/js/libs/lazy-lottie-init.js",
-    "./src/js/libs/lazy-maps-init.js"
+    "./src/js/libs/lazy-maps-init.js",
+    "./src/js/libs/tv-select-modal.js"
   ],
   "dirs": {
     "srcPath": "./src/",

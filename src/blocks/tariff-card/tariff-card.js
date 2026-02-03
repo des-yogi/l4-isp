@@ -54,7 +54,7 @@ function initTariffCards() {
       }
     }
 
-    // === 4. Логика IPTV (существующая, минимально тронута) ===
+    // === 4. Логика IPTV (существующая) ===
     const addIptvHandler = () => {
       if (!addIptv || !chanSelect) return;
       addIptv.style.display = 'none';

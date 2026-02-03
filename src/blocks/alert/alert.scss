@@ -1,0 +1,28 @@
+.alert {
+  $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+  padding: 8px 16px 8px 48px;
+  margin-bottom: 20px;
+  hyphens: none;
+  color: var(--text-color);
+  background-color: var(--opacity-blue-12);
+  border-radius: $border-radius--16;
+  border: 1px solid var(--opacity-blue-20);
+
+  &:empty {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-size: 24px;
+    background-image: svg-load('../blocks/sprite-svg/svg/info.svg', fill=$main-color);
+  }
+}
