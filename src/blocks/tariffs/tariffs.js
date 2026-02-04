@@ -13,4 +13,11 @@ let tariffsSwiper = null; // Глобальная переменная
       type: 'fraction',
     }
   });
+
+  const close = () => window.__hideAllPopovers?.();
+
+  tariffsSwiper.on('touchStart', close);
+  tariffsSwiper.on('sliderMove', close);
+  tariffsSwiper.on('touchMove', close);
+  tariffsSwiper.on('slideChangeTransitionStart', close);
 })();
