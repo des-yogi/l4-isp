@@ -9,8 +9,11 @@
 
   &__col {
     @include col(xs, 12);
-    @include col(md, 10);
-    @include col(xl, 8);
+
+    &--header {
+      @include col(md, 10);
+      @include col(xl, 8);
+    }
   }
 
   // &__title {

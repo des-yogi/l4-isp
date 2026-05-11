@@ -7,7 +7,7 @@
         data-theme-dark="page-header--dark"
         data-theme-light="page-header--light">
 
-  @@include('../../blocks/top-banner/top-banner.html')
+  <!-- @@include('../../blocks/top-banner/top-banner.html') -->
 
   <header>
     <div class="page-header__top">
@@ -82,7 +82,22 @@
             <span>Поповнити</span>
           </a>
 
-          @@include('../../blocks/theme-toggler/theme-toggler.html')
+          <button id="toggle-theme" class="theme-toggler  xs-hide" data-theme-dark="theme-toggler--dark" data-theme-light="theme-toggler--light" aria-label="Переключити на темну тему" aria-pressed="false">
+            <span class="visually-hidden">Переключити колірну тему</span>
+            <span class="theme-toggler__icon theme-toggler__icon--dark" aria-hidden="true">
+              <svg width="24" height="24"><use xlink:href="img/sprite-svg.svg#dark-mode"></use></svg>
+            </span>
+            <span class="theme-toggler__icon theme-toggler__icon--light" aria-hidden="true">
+              <svg width="24" height="24"><use xlink:href="img/sprite-svg.svg#light-mode"></use></svg>
+            </span>
+          </button>
+
+          <a href="#" class="search-btn  md-hide"
+                      data-theme-dark="search-btn--dark"
+                      data-theme-light="search-btn--light">
+            <span class="visually-hidden">Особистий кабінет</span>
+            <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
+          </a>
 
           @@include('../../blocks/search-btn/search-btn.html')
 

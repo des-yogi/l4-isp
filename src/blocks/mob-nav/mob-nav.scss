@@ -52,7 +52,15 @@
 
   &__search-container {
     display: flex;
+    justify-content: space-between;
     gap: 16px;
+
+    & > .btn {
+      flex: 1 1;
+      flex-basis: max-content;
+      padding-left: 12px;
+      padding-right: 16px;
+    }
   }
 
   &__service {
@@ -60,7 +68,7 @@
     flex-wrap: wrap;
     //justify-content: space-between;
     //gap: 12px;
-    margin-top: 8px;
+    margin-top: 12px;
     list-style: none;
     padding-left: 0;
     margin-bottom: 0;
@@ -97,6 +105,15 @@
         white-space: nowrap;
       }
 
+      &--tel {
+        justify-content: initial;
+        width: 100%;
+
+        .dropdown-shevron {
+          margin-left: auto;
+        }
+      }
+
       &--map {
         flex-direction: row-reverse;
       }
@@ -119,12 +136,23 @@
 
     & .dropdown-menu {
       //max-width: 190px;
-      width: 190px;
+      min-width: 190px;
+      width: 100%;
+
+      .dropdown-item {
+        padding-left: 30px;
+      }
     }
 
     .messengers {
       gap: 8px;
     }
+  }
+
+  &__serv-caption {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
   }
 
   &__main {

@@ -74,7 +74,7 @@
   },
   "dependencies": {
     "autosize": "^6.0.1",
-    "bootstrap": "^5.3.7",
+    "bootstrap": "^5.3.8",
     "choices.js": "^11.1.0",
     "focus-visible": "^5.2.0",
     "imask": "^7.6.1",

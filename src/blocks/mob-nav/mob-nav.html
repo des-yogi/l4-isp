@@ -25,28 +25,35 @@
         <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#lens"></use></svg>
       </button>
 
-      <a href="#"
+      @@include('../../blocks/theme-toggler/theme-toggler.html')
+      <!-- <a href="#"
          class="btn btn--header page-header__wallet-link btn--light"
          data-theme-dark="btn--dark"
          data-theme-light="btn--light">
         <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet"></use></svg>
         <span>Поповнити</span>
+      </a> -->
+    </div>
+
+    <div class="mob-nav__search-container" style="margin-top: 12px;">
+      <a href="#"
+         class="btn page-header__wallet-link btn--light"
+         data-theme-dark="btn--dark"
+         data-theme-light="btn--light">
+        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wallet"></use></svg>
+        <span>Оплата</span>
+      </a>
+
+      <a href="#"
+         class="btn  btn--secondary page-header__wallet-link"
+         data-theme-dark="btn--secondary--dark"
+         data-theme-light="btn--secondary--light">
+        <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
+        <span>Кабінет</span>
       </a>
     </div>
 
     <ul class="mob-nav__service">
-      <li>
-        <a href="#" class="page-header__link  page-header__link--faq" aria-label="FAQ">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
-          <span>FAQ</span>
-        </a>
-
-        <a href="#" class="page-header__link  page-header__link--map" aria-label="Мапа покриття">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#map"></use></svg>
-          <span>Мапа покриття</span>
-        </a>
-      </li>
-
       <li class="dropdown  page-header__phones">
         <button class="page-header__link  page-header__link--tel  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Contact phones">
           <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#phone"></use></svg>
@@ -62,14 +69,26 @@
         </ul>
       </li>
 
-      <li style="justify-content: space-between;">
-        <a href="#" class="page-header__link  page-header__link--user">
-          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#user"></use></svg>
-          <span>Кабінет</span>
-        </a>
+      <li style="gap: 12px 8px;">
+        <span class="mob-nav__serv-caption">
+          <span>Тех. підтримка</span>
+        </span>
 
         @@include('../../blocks/messengers/messengers.html')
       </li>
+
+      <li>
+        <a href="#" class="page-header__link  page-header__link--faq" aria-label="FAQ">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#faq"></use></svg>
+          <span>FAQ</span>
+        </a>
+
+        <a href="#" class="page-header__link  page-header__link--map" aria-label="Мапа покриття">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#map"></use></svg>
+          <span>Мапа покриття</span>
+        </a>
+      </li>
+
     </ul>
 
     <div class="mob-nav__main">

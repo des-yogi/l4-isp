@@ -447,6 +447,7 @@ a {
   }
 
   &.show {
+    // для случае, когда есть Верхний баннер
     padding-top: 152px; // 88+24 +40 top-banner
 
     @media (min-width: $screen-md) {
@@ -789,6 +790,21 @@ a {
 .yellow {
   color: var(--grey-900) !important;
   background-color: var(--yellow) !important;
+}
+
+// helpers
+.xs-hide {
+
+  @media (max-width: $screen-md - 1) {
+    display: none;
+  }
+}
+
+.md-hide {
+
+  @media (min-width: $screen-md) {
+    display: none !important;
+  }
 }
 
 // background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);
