@@ -190,6 +190,16 @@ address,
 figure {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  font-size: $font-size-sm;
+  font-weight: 400;
+
+  @media (min-width: $screen-md) {
+    font-size: $font-size;
+  }
+
+  @media (min-width: $screen-xxl) {
+    font-size: $font-size-lg;
+  }
 
   &:first-child {
     margin-top: 0;

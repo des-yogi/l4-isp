@@ -1,47 +1,16 @@
-(function() {
-  const block = 'theme-toggler';
-  const btn = document.querySelector(`.${block}`);
-  if (!btn) return;
-
-  // Утилита: Получить текущую тему по модификатору
-  function getTheme() {
-    if (btn.classList.contains(`${block}--dark`)) return 'dark';
-    if (btn.classList.contains(`${block}--light`)) return 'light';
-    return 'light'; // дефолт
-  }
-
-  // Установить aria-атрибуты
-  function setA11yAttrs(theme) {
-    btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-    btn.setAttribute(
-      'aria-label',
-      theme === 'dark'
-        ? 'Переключити на світлу тему'
-        : 'Переключити на темну тему'
-    );
-  }
-
-  // Обновлять aria при каждом изменении классов (например, после переключения темы)
-  const observer = new MutationObserver(() => setA11yAttrs(getTheme()));
-  observer.observe(btn, { attributes: true, attributeFilter: ['class'] });
-
-  // Инициализация на старте
-  setA11yAttrs(getTheme());
-
-  // Доступность: space/enter
-  btn.addEventListener('keydown', (e) => {
-    if (e.key === ' ' || e.key === 'Enter') {
-      e.preventDefault();
-      btn.click();
-    }
-  });
-})();
-
 (function () {
+  const block = 'theme-toggler';
   const html = document.documentElement;
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  const btnId = 'toggle-theme';
   const STORAGE_KEY = 'site-theme';
+
+  /**
+   * Получить все переключатели темы
+   * @returns {NodeListOf<Element>}
+   */
+  function getTogglers() {
+    return document.querySelectorAll('.' + block);
+  }
 
   /**
    * Получить сохранённую тему из localStorage
@@ -67,66 +36,65 @@
 
   /**
    * Получить текущую системную тему
+   * @returns {'light'|'dark'}
    */
   function getSystemTheme() {
     return prefersDark.matches ? 'dark' : 'light';
   }
 
   /**
-   * Отключить анимацию при первой установке темы (чтобы не было моргания)
+   * Отключить анимацию при первой установке темы
    */
   function disableTransitionTemporarily() {
     html.classList.add('no-transition');
     void html.offsetWidth;
-    setTimeout(() => {
+    setTimeout(function () {
       html.classList.remove('no-transition');
     }, 10);
   }
 
   /**
-   * Включить плавный переход (используется при ручном переключении)
+   * Включить плавный переход
    */
   function enableThemeTransition() {
     html.classList.add('theme-transition');
-    setTimeout(() => {
+    setTimeout(function () {
       html.classList.remove('theme-transition');
     }, 350);
   }
 
   /**
    * Применить классы для элементов с data-theme-light/data-theme-dark
-   * Работает даже если указан только один из вариантов!
+   * Работает даже если указан только один из вариантов
+   * @param {'light'|'dark'} theme
    */
   function applyThemeClasses(theme) {
-    document.querySelectorAll('[data-theme-light], [data-theme-dark]').forEach(el => {
+    document.querySelectorAll('[data-theme-light], [data-theme-dark]').forEach(function (el) {
       const lightClass = el.getAttribute('data-theme-light');
       const darkClass = el.getAttribute('data-theme-dark');
-      if (lightClass) el.classList.toggle(lightClass, theme === 'light');
-      if (darkClass) el.classList.toggle(darkClass, theme === 'dark');
+
+      if (lightClass) {
+        el.classList.toggle(lightClass, theme === 'light');
+      }
+
+      if (darkClass) {
+        el.classList.toggle(darkClass, theme === 'dark');
+      }
     });
   }
 
   /**
    * Применить стиль для Google Maps через data-атрибуты на #map
+   * @param {'light'|'dark'} theme
    */
   function applyMapStyle(theme) {
     const mapEl = document.getElementById('map');
     if (!mapEl || !window.myMap) return;
-    const mapId = mapEl.getAttribute(`data-map-${theme}`);
-    if (!mapId) return;
-    window.myMap.setOptions({ mapId });
-  }
 
-  /**
-   * Применить тему (основная функция)
-   * @param {'light'|'dark'} theme
-   * @param {boolean} animate
-   */
-  function applyTheme(theme, animate = false) {
-    if (animate) enableThemeTransition();
-    html.setAttribute('data-theme', theme);
-    applyThemeClasses(theme);
-    applyMapStyle(theme);
+    const mapId = mapEl.getAttribute('data-map-' + theme);
+    if (!mapId) return;
+
+    window.myMap.setOptions({ mapId: mapId });
   }
 
   /**
@@ -138,29 +106,86 @@
   }
 
   /**
-   * Применить текущую тему (без анимации)
-   * Используется после AJAX-загрузки новых элементов
+   * Обновить состояние всех тогглеров
+   * @param {'light'|'dark'} theme
+   */
+  function syncTogglers(theme) {
+    getTogglers().forEach(function (btn) {
+      btn.classList.toggle(block + '--dark', theme === 'dark');
+      btn.classList.toggle(block + '--light', theme === 'light');
+
+      btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      btn.setAttribute(
+        'aria-label',
+        theme === 'dark'
+          ? 'Переключити на світлу тему'
+          : 'Переключити на темну тему'
+      );
+    });
+  }
+
+  /**
+   * Применить тему
+   * @param {'light'|'dark'} theme
+   * @param {boolean} animate
+   */
+  function applyTheme(theme, animate) {
+    if (animate) {
+      enableThemeTransition();
+    }
+
+    html.setAttribute('data-theme', theme);
+    applyThemeClasses(theme);
+    applyMapStyle(theme);
+    syncTogglers(theme);
+  }
+
+  /**
+   * Повторно применить текущую тему
    */
   function reapplyCurrentTheme() {
     const currentTheme = getCurrentTheme();
     applyThemeClasses(currentTheme);
+    applyMapStyle(currentTheme);
+    syncTogglers(currentTheme);
     console.log('🎨 Тема применена к новым элементам:', currentTheme);
   }
 
   /**
-   * Переключение темы по кнопке
+   * Переключить тему
    */
   function toggleTheme() {
     const current = getCurrentTheme();
     const next = current === 'dark' ? 'light' : 'dark';
+
     saveTheme(next);
     applyTheme(next, true);
   }
 
   /**
+   * Навесить обработчики на все тогглеры
+   */
+  function bindTogglers() {
+    getTogglers().forEach(function (btn) {
+      if (btn.dataset.themeTogglerBound === 'true') return;
+
+      btn.addEventListener('click', toggleTheme);
+
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          toggleTheme();
+        }
+      });
+
+      btn.dataset.themeTogglerBound = 'true';
+    });
+  }
+
+  /**
    * Инициализация
    */
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('DOMContentLoaded', function () {
     disableTransitionTemporarily();
 
     const savedTheme = getSavedTheme();
@@ -170,24 +195,16 @@
       applyTheme(getSystemTheme(), false);
     }
 
-    const btn = document.getElementById(btnId);
-    if (btn) btn.addEventListener('click', toggleTheme);
+    bindTogglers();
 
-    prefersDark.addEventListener('change', (e) => {
+    prefersDark.addEventListener('change', function (e) {
       if (!getSavedTheme()) {
         applyTheme(e.matches ? 'dark' : 'light', true);
       }
     });
   });
 
-  // ✅ ЭКСПОРТИРУЕМ ФУНКЦИИ В WINDOW
   window.applyCurrentTheme = reapplyCurrentTheme;
   window.getCurrentTheme = getCurrentTheme;
-
-  console.log('📦 Функции темы экспортированы:', {
-    applyCurrentTheme: typeof window.applyCurrentTheme,
-    getCurrentTheme: typeof window.getCurrentTheme
-  });
+  window.bindThemeTogglers = bindTogglers;
 })();
-
-

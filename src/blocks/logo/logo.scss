@@ -4,11 +4,13 @@
 
   display: inline-flex;
   align-items: center;
+  align-self: center;
 
   &:hover,
   &:focus {
 
     svg {
+      display: block;
       fill: var(--blue-500);
     }
   }
@@ -22,6 +24,24 @@
     @media (min-width: $screen-xl) {
       width: 169px !important;
       height: 56px !important;
+    }
+  }
+
+  &--header {
+
+    svg {
+
+      @media (max-width: $screen-sm - 1) {
+        width: 44px !important;
+        aspect-ratio: 1 / 1;
+      }
+
+      .text {
+
+        @media (max-width: $screen-sm - 1) {
+          display: none;
+        }
+      }
     }
   }
 
