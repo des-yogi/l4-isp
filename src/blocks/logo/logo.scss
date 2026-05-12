@@ -31,14 +31,14 @@
 
     svg {
 
-      @media (max-width: $screen-sm - 1) {
+      @media (max-width: 360px - 1) {
         width: 44px !important;
         aspect-ratio: 1 / 1;
       }
 
       .text {
 
-        @media (max-width: $screen-sm - 1) {
+        @media (max-width: 360px - 1) {
           display: none;
         }
       }
