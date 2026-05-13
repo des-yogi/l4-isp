@@ -355,9 +355,14 @@ a {
 .container {
   display: block;
   width: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 10px; //12
+  padding-right: 10px; //12
   background: none;
+
+  @media (min-width: $screen-sm) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 
   @media (min-width: $screen-md) {
     padding-left: 40px;
